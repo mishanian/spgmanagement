@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.container {
+    margin-top: 50px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.big_title{
+	margin-top: 30px;
+}
+
+.criteria{
+    padding-top: 3px;
+    font-size: 16px;
+}
+
+.text-field{
+  height: 34px;
+  padding: 6px 6px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.middle_title{
+  margin-left: 85px;
+  margin-top:10px;
+}
+
+.well-custom{
+  margin-left: 90px;
+  width: 950px;
+}
+
+p .text-center{
+  text-align: center;
+}
+
+.begin{
+  padding-left: 30px;
+}
+
+.form-main{
+  margin-top: 35px;
+  padding-top: 30px;
+  border-top:2px solid #e5e5e5;
+}
+
+input[type=text]{
+    min-width: 0!important;
+}
+
+
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px) {		
+}
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px) {
+}

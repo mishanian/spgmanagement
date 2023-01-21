@@ -1,0 +1,42 @@
+/*table style*/
+
+.table-uniform thead{
+    font-weight: normal;
+    background-color: white;
+    color: black;
+    vertical-align: top;
+    padding: 3px;
+}
+
+.table-uniform tbody tr td{
+    padding: 3px;
+    border-top: 1px solid;
+    border-left: 0px;
+    border-right: 1px solid;
+    border-color: black;
+}
+
+.table-uniform {
+    border: 1px solid;
+    border-color: black;
+}
+
+.table-button{
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
+    width: 68px;
+    height: 25px;
+    line-height: 6px;
+}
+
+.table-button:hover{
+    background-color: white;
+}
+
+.table-hover thead{
+    font-weight:bold;
+}
+
+
+

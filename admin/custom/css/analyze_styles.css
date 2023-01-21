@@ -1,0 +1,115 @@
+#body_payment{
+    font-size: 8pt;
+}
+.modal_wait {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+    url('../images/loadinganimation.gif')
+    50% 50%
+    no-repeat;
+}
+body.loading .modal_wait {
+    overflow: hidden;
+}
+
+#body_payment td
+{
+    white-space: nowrap;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal_wait {
+    display: block;
+}
+#myDiv {
+    border-style: solid ;
+    border-color: #0e90d2 ;
+    border-radius: 15px;
+}
+#myDiv2 {
+ /*   border-style: solid ;
+    border-radius: 15px;
+*/
+}
+#table{
+
+    align-items: center;
+}
+.scroll
+{
+    overflow: scroll;
+}
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+canvas{
+ /*   width:1000px !important;*/
+    height:400px !important;
+}
+.heightPanelBody{
+    height: 200px;
+    padding: 15px;
+}
+.heightPanelBody2{
+    height: 300px;
+    padding: 15px;
+}
+.widthPanel1{
+    width: 150px;
+}
+.widthPanel2{
+    width: 750px;
+}
+.padding-1{
+
+    /*padding-right:20;*/
+    /*padding-left: -100px;*/
+    /*offset-before: -10px;*/
+    /*offset-start: 20px;*/
+}
+.panel {
+    border-radius: 25px;
+}
+.panel-heading{
+    border-radius: 15px 15px 0 0;
+    padding: 20px;
+}
+/*================================================================*/
+
+.col6
+{
+    height: 360px;
+}
+.headcolfont{
+    background-color: #35bbe8 !important;
+    color: white!important;
+    }
+.panel2
+{
+    width: 200px;
+    height: 300px;
+}
+
+.panel-heading
+{
+    height: 50px;
+}
+/*================================================================*/
+.bf{
+    font-weight: bold;
+    color: white;
+}
+.hcol{
+    background-color: #e58a83 !important;
+}
+h4 {
+    font-size:14px;
+}

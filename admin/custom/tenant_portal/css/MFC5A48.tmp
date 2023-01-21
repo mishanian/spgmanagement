@@ -1,0 +1,156 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* @import url('css/font-awesome.min.css');*/
+
+/* In html file */
+/*<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="viewport" content="width=device-width">*/
+
+/**
+ * 8.0 Media Queries
+ * ----------------------------------------------------------------------------
+ */
+
+/* Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+@media (max-width: 1599px) {
+}
+
+@media (max-width: 1098px) {
+
+	}
+
+@media (max-width: 1069px) {
+
+}
+
+@media (max-width: 999px) {
+}
+@media (max-width: 992px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
+
+/* Collapse oversized image and pulled images after iPad breakpoint. */
+@media (max-width: 767px) {
+	#profile_search .bell{ margin-right:30px;}
+	#profile_search .input-group{ width:93%;}
+	#profile_search h1{ margin:30px 10px; font-size:16px;}
+	#header .navbar-default .navbar-nav>li>a, #header .navbar-default .navbar-nav li:last-child a{ text-align:left; padding:10px; }
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form
+	#header nav .navbar-default .navbar-collapse, #header nav .navbar-default .navbar-form{ background:none;}
+	#profile_search .pro_pic span{ margin-left:10px;}
+	#header .navbar-toggle{ margin-right:0px;}
+	.graphs .chart_width{ width:50%; margin:auto;}
+	#header .navbar-default .navbar-nav>li>a, #header .navbar-default .navbar-nav li:last-child a{ color:#fff;}
+	#profile_search h1{ margin: 10px 10px 10px 0px;}
+	#profile_search .col-xs-4{ text-align:left;}
+	#profile_search .col-xs-4 h1:last-child{ margin:0px;}
+	
+}
+
+@media (max-width: 643px) {
+}
+
+@media (max-width: 480px) {
+	#profile_search .pro_pic span{ margin-left:0px}
+	#profile_search .pro_pic span .text-center{ text-align:left;}
+	#profile_search h1{margin: 37px 20px 37px 0px;}
+	#profile_search .bell{ margin-right: 22px;
+    margin-top: 34px; font-size:16px;}
+	#profile_search .pro_pic img{ display:none;}
+	#header{ background:#3ca7f9;}
+	#header .navbar-toggle{ border:none;}
+	#header .navbar-default .navbar-toggle .icon-bar{ background:#fff;}
+	#header .navbar-default .navbar-toggle:focus, #header .navbar-default .navbar-toggle:hover{ background:none;}
+	.buildings .headings_box ul li.pull-left, .payment .headings_box ul li.pull-left, .tenants .headings_box ul li.pull-left, .p_tenants .headings_box ul li.pull-left, .maintenance .headings_box ul li.pull-left, .profile .headings_box ul li.pull-left, .scroll_menu .headings_box ul li.pull-left{ font-size:16px;}
+	.buildings .headings_box ul li span, .payment .headings_box ul li span, .tenants .headings_box ul li span, .p_tenants .headings_box ul li span, .maintenance .headings_box ul li span, .profile .headings_box ul li span, .scroll_menu .headings_box ul li span{ font-size:18px;}
+	.headings_box img{ width:24px;}
+	.buildings .points li, .payment .points li, .tenants .points li, .p_tenants .points li, .maintenance .points li, .profile .points li{ width:49%; padding:10px;}
+	#contant .col-xs-6{ width:100%;}
+	.buildings{ min-height:auto;}
+	.buildings .headings_box ul li.pull-left, .payment .headings_box ul li.pull-left, .tenants .headings_box ul li.pull-left, .p_tenants .headings_box ul li.pull-left, .maintenance .headings_box ul li.pull-left, .profile .headings_box ul li.pull-left, .scroll_menu .headings_box ul li.pull-left{ margin-top:0px;}
+	.tenants .points li, .p_tenants .points li, .profile .points li{ width:32%;}
+	#profile_search .hide_div{ display:none;}
+	#profile_search .col-xs-4{ width:49%;}
+	#counters{ margin-top:0px;}
+	.pro_pic_2{ display:block; width:60%; float:left;}
+	.pro_pic_2 h3{ font-size:14px; color:#fff; text-align:left; margin: 6px 0px;}
+	.pro_pic_2 li{ display:inline-block; margin-right:1px;}
+	.pro_pic_2 li i{ color:#fff;}
+	#counters .order_icon{ float:none; margin:auto;}
+	#counters .order_cntnt{    float: none;
+    margin: auto;
+    text-align: center;}
+	
+	
+	
+	
+}
+
+/* Mobile devices */
+@media (max-width: 359px) {
+	
+	
+	#counters .expenses .order_cntnt h2, #counters .revenue .order_cntnt h2, #counters .orders .order_cntnt h2, #counters .user .order_cntnt h2{ font-size:20px;}
+}
+/**
+ * 9.0 Print
+ * ----------------------------------------------------------------------------
+ */
+
+/* Retina-specific styles. */
+@media print,
+	(-o-min-device-pixel-ratio: 5/4),
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 120dpi) {
+
+}
+
+@media print {
+
+}

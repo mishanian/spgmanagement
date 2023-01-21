@@ -1,0 +1,5282 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ew-language date="2018/1/2" version="14.0.0" id="zh-CN" name="Chinese" desc="Chinese" author="e.World Technology Ltd.">
+  <!-- 
+	*** Important Notes:
+	1. Language ID should follow: https://developers.google.com/recaptcha/docs/language,
+	2. Locale settings are placed in a separate locale files under the "locales" folder,
+	3. Locale files must be named with language ID of language file (and converted to lowercase), e.g. en.json,
+	4. Locale files are ALWAYS used, regardless of whether the project is single language or multiple language.
+-->
+  <global>
+    <phrase id="actiondeleted" value="删除" />
+    <phrase id="actioninserted" value="插入" />
+    <phrase id="actioninsertedgridadd" value="插入 (Grid-Add)" />
+    <phrase id="actionupdated" value="更新" />
+    <phrase id="actionupdatedgridedit" value="更新 (Grid-Edit)" />
+    <phrase id="actionupdatedmultiupdate" value="更新 (多选)" />
+    <phrase id="activateaccount" value="您的账户已激活" />
+    <phrase id="activatefailed" value="激活失败" />
+    <phrase id="add" value="添加" />
+    <phrase id="addblankrow" value="添加空白行" class="glyphicon glyphicon-plus ewIcon" />
+    <!-- v11 -->
+    <phrase id="addbtn" value="添加" client="1" />
+    <!-- v2018 -->
+    <phrase id="addlink" value="添加" class="glyphicon glyphicon-plus ewIcon" />
+    <!-- v11 -->
+    <phrase id="addmasterdetaillink" value="高级添加" class="icon-md-add ewIcon" />
+    <!-- v11 -->
+    <phrase id="addsuccess" value="添加成功" />
+    <phrase id="advancedsearch" value="高级搜索" />
+    <!-- v11 -->
+    <phrase id="advancedsearchbtn" value="高级搜索" class="icon-advanced-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="allrecords" value="全部" />
+    <phrase id="allword" value="全部单词" />
+    <phrase id="alwaysask" value="一直需要我的用户名和密码" />
+    <!-- Deprecated since v2018 -->
+    <phrase id="anyword" value="任意单词" />
+    <phrase id="audittrailautologin" value="自动登录" />
+    <phrase id="audittrailfailedattempt" value="操作失败: %n" />
+    <phrase id="audittrailuserloggedin" value="该用户已登录" />
+    <phrase id="audittrailpasswordexpired" value="密码已过期" />
+    <phrase id="audittraillogin" value="登录" />
+    <phrase id="audittraillogout" value="退出登录" />
+    <phrase id="autologin" value="除非我主动注销 否则保持登录" />
+    <!-- Deprecated since v2018 -->
+    <phrase id="autologinfailed" value="自动登录失败" />
+    <!-- v2018 -->
+    <phrase id="average" value="平均值" />
+    <phrase id="backtolist" value="返回列表" />
+    <phrase id="backtologin" value="返回登录页" />
+    <phrase id="backtomasterrecordpage" value="返回到主表" />
+    <phrase id="batchdeletebegin" value="*** 开始批量删除 ***" />
+    <phrase id="batchdeleterollback" value="*** 撤销批量删除 ***" />
+    <phrase id="batchdeletesuccess" value="*** 批量删除成功 ***" />
+    <phrase id="batchinsertbegin" value="*** 批量添加开始 ***" />
+    <phrase id="batchinsertrollback" value="*** 撤销批量添加 ***" />
+    <phrase id="batchinsertsuccess" value="*** 批量添加成功 ***" />
+    <phrase id="batchupdatebegin" value="*** 批量更新开始 ***" />
+    <phrase id="batchupdaterollback" value="*** 撤销批量更新 ***" />
+    <phrase id="batchupdatesuccess" value="*** 批量更新成功 ***" />
+    <phrase id="buttonactions" value="操作" class="icon-options ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonaddedit" value="添加/编辑" class="icon-addedit ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttondetails" value="管理/详情" class="icon-master-detail ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonexport" value="导出" class="icon-export ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonlistoptions" value="选项" class="icon-options ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonsearch" value="搜索" class="icon-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="cancelbtn" value="取消" client="1" />
+    <!-- v2017 -->
+    <phrase id="cancellink" value="取消" class="glyphicon glyphicon-remove ewIcon" />
+    <!-- v11 -->
+    <phrase id="changepwd" value="修改密码" />
+    <phrase id="changepwdpage" value="修改密码" />
+    <phrase id="changepwdbtn" value="修改" />
+    <phrase id="choosefilebtn" value="选择..." />
+    <!-- v11 -->
+    <phrase id="choosefile" value="选择文件" />
+    <!-- v11 -->
+    <phrase id="choosefiles" value="选择多个文件" />
+    <!-- v11 -->
+    <phrase id="clickrecaptcha" value="请进行人机检查" client="1" />
+    <!-- v12 -->
+    <phrase id="closebtn" value="关闭" client="1" />
+    <!-- v2017 -->
+    <phrase id="confirm" value="确认" />
+    <phrase id="confirmbtn" value="确认" client="1" />
+    <!-- v2017 -->
+    <phrase id="confirmcancel" value="您想要取消吗?" client="1" />
+    <!-- v12 -->
+    <phrase id="confirmpassword" value="确认密码" />
+    <phrase id="conflictcancellink" value="取消" />
+    <phrase id="lightboxtitle" value=" " client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxcurrent" value="第 {current} 张图片 一共 {total} 张" client="1" />
+    <!-- Note: DO NOT translate "{current}" and "{total}" -->
+    <!-- v11 -->
+    <phrase id="lightboxprevious" value="上一张" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxnext" value="下一张" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxclose" value="关闭" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxxhrerror" value="内容加载失败" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboximgerror" value="图片加载失败" client="1" />
+    <!-- v11 -->
+    <phrase id="copy" value="复制" />
+    <phrase id="copylink" value="复制" class="icon-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="count" value="总数" />
+    <phrase id="countselected" value="%s 已选中" client="1" />
+    <!-- v12 -->
+    <phrase id="currentpassword" value="当前密码: " client="1" />
+    <!-- v12 -->
+    <phrase id="customactioncompleted" value="'%s' 已完成" />
+    <phrase id="customactioncancelled" value="'%s' 已取消" />
+    <phrase id="customactionfailed" value="'%s' 失败" />
+    <!-- v12 -->
+    <phrase id="customactionnotallowed" value="'%s' 不允许" />
+    <!-- v12 -->
+    <phrase id="customview" value="自定义视图" />
+    <phrase id="delete" value="删除" />
+    <phrase id="deletebtn" value="删除" />
+    <phrase id="deletecancelled" value="删除已取消" />
+    <phrase id="deleteconfirmmsg" value="确定要删除吗?" client="1" />
+    <phrase id="deletefilter" value="删除过滤条件" />
+    <!-- v12 -->
+    <phrase id="deletefilterconfirm" value="删除过滤条件 %s?" client="1" />
+    <!-- v12 -->
+    <phrase id="deletelink" value="删除" class="glyphicon glyphicon-trash ewIcon" />
+    <!-- v11 -->
+    <phrase id="deleteselectedlink" value="删除选中的记录" class="glyphicon glyphicon-trash ewIcon" />
+    <!-- v11 -->
+    <phrase id="deletesuccess" value="已删除" />
+    <phrase id="detaillink" value="" />
+    <phrase id="detailcount" value="&lt;span class='label label-info ewDetailCount%c'&gt;%c&lt;/span&gt;" />
+    <!-- v2018 -->
+    <phrase id="masterdetailcopylink" value="概览/详情 复制" class="icon-md-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="masterdetaileditlink" value="概览/详情 编辑" class="icon-md-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="masterdetaillistlink" value="详情列表" class="icon-table ewIcon" />
+    <!-- v11 -->
+    <phrase id="masterdetailviewlink" value="概览/详情 查看" class="icon-md-view ewIcon" />
+    <!-- v11 -->
+    <phrase id="dupindex" value="重复的 '%v' 单一指针 '%f'" />
+    <phrase id="dupkey" value="重复编号: '%f'" />
+    <phrase id="edit" value="编辑" />
+    <phrase id="editbtn" value="编辑" client="1" />
+    <!-- v2018 -->
+    <phrase id="editlink" value="编辑" class="icon-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="enterfiltername" value="输入过滤条件" client="1" />
+    <!-- v12 -->
+    <phrase id="enternewpassword" value="请输入新密码" client="1" />
+    <phrase id="enteroldpassword" value="请输入旧密码" client="1" />
+    <phrase id="enterpassword" value="请输入密码" client="1" />
+    <phrase id="enterpwd" value="请输入密码" client="1" />
+    <phrase id="enterrequiredfield" value="请输入必填项 - %s" />
+    <!-- v11 -->
+    <phrase id="entersearchcriteria" value="请输入查询条件" />
+    <phrase id="enterusername" value="请输入用户名" client="1" />
+    <phrase id="entervalidatecode" value="请输入验证码" client="1" />
+    <!-- v11 -->
+    <phrase id="entersenderemail" value="请输入发件人邮箱" client="1" />
+    <phrase id="enterpropersenderemail" value="超出邮件数量限制或地址不正确" client="1" />
+    <phrase id="enterrecipientemail" value="请输入收件人邮箱" client="1" />
+    <phrase id="enterproperrecipientemail" value="超出收件人数量限制或地址不正确" client="1" />
+    <phrase id="enterproperccemail" value="超出抄送数量限制或地址不正确" client="1" />
+    <phrase id="enterproperbccemail" value="超出密件抄送数量限制或地址不正确" client="1" />
+    <phrase id="entersubject" value="请输入主题" client="1" />
+    <phrase id="emailformsender" value="从" />
+    <phrase id="emailformrecipient" value="发送到" />
+    <phrase id="emailformcc" value="抄送" />
+    <phrase id="emailformbcc" value="密件抄送" />
+    <phrase id="emailformsubject" value="主题" />
+    <phrase id="emailformmessage" value="信息" />
+    <phrase id="emailformcontenttype" value="发送形式" />
+    <phrase id="emailformcontenttypeurl" value="URL" />
+    <phrase id="emailformcontenttypehtml" value="HTML" />
+    <phrase id="enteruid" value="请输入您的用户名" client="1" />
+    <phrase id="entervalidemail" value="请输入有效邮箱" client="1" />
+    <phrase id="exactphrase" value="准确短语" />
+    <phrase id="exceedmaxretry" value="超出最大尝试次数，账户已锁定，请 %t 分钟后重试。" />
+    <phrase id="exceedmaxemailexport" value="超出最大导出邮件数量，请稍后重试。" />
+    <phrase id="exporting" value="导出中，请稍后..." client="1" />
+    <!-- v2018 -->
+    <phrase id="exporttocsv" value="导出为 CSV" class="icon-csv ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttocsvtext" value="CSV" />
+    <phrase id="exporttoemail" value="导出为邮件" class="icon-email ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttoemailtext" value="邮件" client="1" />
+    <phrase id="exporttoexcel" value="导出为 Excel" class="icon-excel ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttoexceltext" value="Excel" />
+    <phrase id="exporttohtml" value="导出为 HTML" class="icon-html ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttohtmltext" value="HTML" />
+    <phrase id="exporttopdf" value="导出为 PDF" class="icon-pdf ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttopdftext" value="PDF" />
+    <phrase id="exporttoword" value="导出为 Word" class="icon-word ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttowordtext" value="Word" />
+    <phrase id="exporttoxml" value="导出为 XML" class="icon-xml ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttoxmltext" value="XML" />
+    <phrase id="failedtoexport" value="导出失败" client="1" />
+    <!-- v2018 -->
+    <phrase id="failedtosendmail" value="发送邮件失败 " />
+    <phrase id="fieldname" value="名称" />
+    <phrase id="fieldrequiredindicator" value="&lt;span class=&quot;ewRequired&quot;&gt;&amp;nbsp;*&lt;/span&gt;" />
+    <phrase id="filenotfound" value="文件未找到" />
+    <!-- *** characters need to be supported by EW_TMP_IMAGE_FONT *** -->
+    <phrase id="filter" value="过滤" />
+    <!-- v12 -->
+    <phrase id="filtername" value="过滤条件" client="1" />
+    <!-- v12 -->
+    <phrase id="filters" value="过滤" class="icon-filter ewIcon" />
+    <!-- v12 -->
+    <phrase id="overwritebtn" value="覆盖" client="1" />
+    <!-- v2017 -->
+    <phrase id="overwritelink" value="覆盖" />
+    <phrase id="forgotpwd" value="忘记密码" />
+    <phrase id="generatepassword" value="建议密码" class="glyphicon glyphicon-flash ewIcon" />
+    <!-- v12 -->
+    <phrase id="goback" value="后退" />
+    <phrase id="gridaddcancelled" value="取消多个添加" />
+    <!-- v11 -->
+    <phrase id="gridaddlink" value="多个添加" class="icon-grid-add ewIcon" />
+    <!-- v11 -->
+    <phrase id="gridcancellink" value="取消" class="glyphicon glyphicon-remove ewIcon" />
+    <!-- v11 -->
+    <phrase id="grideditcancelled" value="取消多个编辑" />
+    <!-- v11 -->
+    <phrase id="grideditlink" value="多个编辑" class="icon-grid-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="gridinsertlink" value="插入" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="gridsavelink" value="保存" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="highlight" value="高亮" />
+    <!-- v11 -->
+    <phrase id="highlightbtn" value="高亮" class="icon-highlight ewIcon" />
+    <!-- v11 -->
+    <phrase id="homepage" value="主页" class="glyphicon glyphicon-home ewIcon" />
+    <!-- v11 -->
+    <phrase id="incorrectcreditcard" value="错误的信用卡号码" />
+    <phrase id="incorrectdate" value="错误的日期 (%s)" />
+    <phrase id="incorrectdateymd" value="错误的日期 (yyyy%smm%sdd)" />
+    <phrase id="incorrectdatemdy" value="错误的日期 (mm%sdd%syyyy)" />
+    <phrase id="incorrectdatedmy" value="错误的日期 (dd%smm%syyyy)" />
+    <phrase id="incorrectshortdateymd" value="错误的日期 (yy%smm%sdd)" />
+    <phrase id="incorrectshortdatemdy" value="错误的日期 (mm%sdd%syy)" />
+    <phrase id="incorrectshortdatedmy" value="错误的日期 (dd%smm%syy)" />
+    <phrase id="incorrectemail" value="错误的邮箱" client="1" />
+    <phrase id="incorrectfield" value="错误的项目" client="1" />
+    <phrase id="incorrectfloat" value="错误的浮点数" client="1" />
+    <phrase id="incorrectguid" value="错误的GUID" client="1" />
+    <phrase id="incorrectinteger" value="错误的整数" client="1" />
+    <phrase id="incorrectphone" value="错误的电话号码" client="1" />
+    <phrase id="incorrectregexp" value="语句不吻合" client="1" />
+    <phrase id="incorrectrange" value="数字必须介于 %1 与 %2 之间" client="1" />
+    <phrase id="incorrectssn" value="错误的社保号码" client="1" />
+    <phrase id="incorrecttime" value="错误的时间 (hh%smm%sss)" />
+    <phrase id="incorrectzip" value="错误的邮政编码" client="1" />
+    <phrase id="inlineaddlink" value="无效添加" class="icon-inline-add ewIcon" />
+    <!-- v11 -->
+    <phrase id="inlinecopylink" value="行内复制" class="icon-inline-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="inlineeditlink" value="行内编辑" class="icon-inline-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="insertcancelled" value="取消添加" />
+    <phrase id="insertfailed" value="添加失败" client="1" />
+    <phrase id="insertlink" value="添加" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="insertsuccess" value="添加成功" />
+    <phrase id="invalidemail" value="无效邮箱" />
+    <phrase id="invalidfield" value="无效项目" />
+    <phrase id="invalidkeyvalue" value="无效关键值" />
+    <phrase id="invalidrecord" value="无效记录! 关键值为空" client="1" />
+    <phrase id="invalidpostrequest" value="无效post请求" />
+    <!-- v11 -->
+    <phrase id="invalidparameter" value="无效参数" />
+    <phrase id="invalidpassword" value="无效密码" />
+    <phrase id="invalidnewpassword" value="无效的新密码" />
+    <phrase id="invaliduidpwd" value="错误的用户名或密码" />
+    <phrase id="keep" value="保持" />
+    <phrase id="language" value="语言" />
+    <phrase id="listactionbutton" value="动作" class="icon-user ewIcon" />
+    <!-- v12 -->
+    <phrase id="loading" value="读取中..." client="1" />
+    <phrase id="login" value="登录" />
+    <phrase id="logincancelled" value="取消登陆" />
+    <phrase id="loginfacebook" value="用Facebook登录" />
+    <!-- v2018 -->
+    <phrase id="loginfailed" value="用 %p 登录失败" />
+    <!-- v2018 -->
+    <phrase id="logingoogle" value="用Google登录" />
+    <!-- v2018 -->
+    <phrase id="loginoptions" value="选项" />
+    <!-- v11 -->
+    <phrase id="loginor" value="- 或 -" />
+    <!-- v2018 -->
+    <phrase id="loginpage" value="登录" />
+    <phrase id="logout" value="退出登录" />
+    <phrase id="lookuplink" value="查询 - %s" class="glyphicon glyphicon-search ewIcon" />
+    <!-- v2017 -->
+    <phrase id="masterrecord" value="概括记录: " />
+    <phrase id="maxfilesize" value="超出最大文件限制 (%s bytes)。" client="1" />
+    <phrase id="messageok" value="确定" client="1" />
+    <phrase id="midnight" value="午夜" />
+    <!-- v2017 -->
+    <phrase id="mismatchpassword" value="密码不吻合" client="1" />
+    <phrase id="missinglookuptablename" value="缺少查询表名" />
+    <phrase id="missingdisplayfieldname" value="缺少展示项目名" />
+    <phrase id="missingdisplayfieldvalue" value="缺少展示项目值" />
+    <phrase id="missinguserlevelid" value="缺少用户等级ID" />
+    <phrase id="missinguserlevelname" value="缺少用户等级名称" />
+    <phrase id="mobilemenu" value="菜单" />
+    <phrase id="more" value="更多" client="1" />
+    <!-- v2018 -->
+    <phrase id="multiplemasterdetails" value="概览/详情" class="icon-master-detail ewIcon" />
+    <!-- v11 -->
+    <phrase id="new" value="新建" />
+    <phrase id="newpassword" value="新密码" />
+    <phrase id="newvalue" value="新值" />
+    <!-- v12 -->
+    <phrase id="next" value="下一个" client="1" />
+    <!-- v12 -->
+    <phrase id="noaddrecord" value="无项目需要添加" client="1" />
+    <phrase id="nofieldselected" value="无项目要更新" client="1" />
+    <phrase id="nopermission" value="您没有权限访问 %s。" />
+    <!-- v12.0.6 -->
+    <phrase id="noaddpermission" value="您没有权限添加记录。" />
+    <phrase id="nodeletepermission" value="您没有权限删除记录。" />
+    <phrase id="noeditpermission" value="您没有权限修改记录。" />
+    <phrase id="noon" value="中午" />
+    <!-- v2017 -->
+    <phrase id="norecord" value="没有找到记录" client="1" />
+    <!-- v2017 -->
+    <phrase id="norecordforkey" value="没有找到key = 的记录" />
+    <phrase id="norecordselected" value="没有选中记录" client="1" />
+    <phrase id="notablegenerated" value="没有表生成" />
+    <phrase id="nouserlevel" value="无用户级别设置" />
+    <phrase id="of" value="of" client="1" />
+    <!-- v2017 -->
+    <phrase id="old" value="旧的" />
+    <phrase id="oldpassword" value="旧的密码" />
+    <phrase id="optionalreadyexist" value="该选项已存在" />
+    <phrase id="page" value="页" client="1" />
+    <!-- v2017 -->
+    <phrase id="pagerfirst" value="第一页" />
+    <phrase id="pagerlast" value="最后页" />
+    <phrase id="pagernext" value="下一页" />
+    <phrase id="pagerprevious" value="上一页" />
+    <phrase id="password" value="密码" />
+    <phrase id="passwordmask" value="********" />
+    <!-- v12 -->
+    <phrase id="passwordrequest" value="密码要求" />
+    <phrase id="passwordchanged" value="密码已修改" />
+    <phrase id="passwordexpired" value="密码已过期，请修改密码。" />
+    <phrase id="passwordstrength" value="密码强度: %p" client="1" />
+    <!-- v12 -->
+    <phrase id="passwordtoosimple" value="您的密码过于简单" client="1" />
+    <!-- v12 -->
+    <phrase id="permission" value="许可" class="icon-user ewIcon" />
+    <!-- v11 -->
+    <phrase id="permissionaddcopy" value="添加/复制" client="1" />
+    <!-- v2018 -->
+    <phrase id="permissiondelete" value="删除" client="1" />
+    <!-- v2018 -->
+    <phrase id="permissionedit" value="编辑" client="1" />
+    <!-- v2018 -->
+    <phrase id="permissionlistsearchview" value="列表/搜索/查看" client="1" />
+    <!-- v2018 -->
+    <phrase id="permissionlist" value="列表" client="1" />
+    <!-- v2018 -->
+    <phrase id="permissionsearch" value="搜索" client="1" />
+    <!-- v2018 -->
+    <phrase id="permissionview" value="查看" client="1" />
+    <!-- v2018 -->
+    <phrase id="pickdate" value="选择一个日期" />
+    <phrase id="pleaseselect" value="请选择" client="1" />
+    <!-- v12 -->
+    <phrase id="pleasewait" value="请稍等..." client="1" />
+    <phrase id="primarykeyunspecified" value="Primary key unspecified" />
+    <phrase id="printerfriendly" value="支持打印机" class="icon-print ewIcon" />
+    <!-- v11 -->
+    <phrase id="printerfriendlytext" value="支持打印机" />
+    <phrase id="prev" value="上一个" client="1" />
+    <!-- v12 -->
+    <phrase id="pwdemailsent" value="密码已发送到您的邮箱" />
+    <phrase id="resetpwdemailsent" value="重设密码已发送到您的邮箱" />
+    <phrase id="quicksearch" value="快速搜索" />
+    <phrase id="quicksearchbtn" value="搜索" />
+    <phrase id="quicksearchauto" value="自动" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchautoshort" value="" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchall" value="全部词组" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchallshort" value="全部" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchany" value="任意词组" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchanyshort" value="任意" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchexact" value="精确对比" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchexactshort" value="精确" client="1" />
+    <!-- v11 -->
+    <phrase id="record" value="记录" client="1" />
+    <!-- v2017 -->
+    <phrase id="recordchangedbyotheruser" value="数据已被其他用户修改。请单击 重新加载 恢复数据（您表格中的数据将被覆盖）或单击 覆盖 来覆盖被修改的数据。" />
+    <phrase id="recorddeleted" value="条记录已删除" />
+    <phrase id="recordinserted" value="条记录已添加" />
+    <phrase id="recordupdated" value="条记录已更新" />
+    <phrase id="recordsperpage" value="页内记录数" client="1" />
+    <!-- v2017 -->
+    <phrase id="register" value="注册" />
+    <phrase id="registerbtn" value="注册" />
+    <phrase id="registersuccess" value="注册成功" />
+    <phrase id="registersuccessactivate" value="注册成功。一封邮件已发送到您的邮箱，请查看并单击邮件内的链接来激活您的账户。" />
+    <phrase id="registerpage" value="Registration" />
+    <phrase id="relatedrecordrequired" value="无法添加或更新记录，因为主表 '%t' 中外键不存在。" />
+    <phrase id="relatedrecordexists" value="您无法删除记录，因为细节表 '%t' 中已存在相关记录" />
+    <phrase id="reloadbtn" value="重新加载" client="1" />
+    <!-- v2017 -->
+    <phrase id="reloadlink" value="重新加载" />
+    <phrase id="rememberme" value="记住我" />
+    <phrase id="remove" value="删除" />
+    <phrase id="replace" value="替换" />
+    <phrase id="report" value="报告" />
+    <phrase id="requestpwd" value="请求密码" />
+    <!-- v2018 -->
+    <phrase id="reset" value="重置" />
+    <phrase id="resendregisteremailbtn" value="重发注册邮件" />
+    <!-- v12 -->
+    <phrase id="resendregisteremailsuccess" value="用户 '%u' 的注册邮件已重新发送" />
+    <!-- v12 -->
+    <phrase id="resendregisteremailfailure" value="用户 '%u' 的注册邮件发送失败" />
+    <!-- v12 -->
+    <phrase id="resetconcurrentuserbtn" value="重设用户 session" />
+    <!-- v12 -->
+    <phrase id="resetconcurrentusersuccess" value="用户 '%u' 的session已重设" />
+    <!-- v12 -->
+    <phrase id="resetconcurrentuserfailure" value="用户 '%u' 的session重设失败" />
+    <!-- v12 -->
+    <phrase id="resetloginretrybtn" value="重设尝试登录次数" />
+    <!-- v12 -->
+    <phrase id="resetloginretrysuccess" value="用户 '%u' 的尝试登录次数已重设" />
+    <!-- v12 -->
+    <phrase id="resetloginretryfailure" value="用户 '%u' 的尝试登录次数重设失败" />
+    <!-- v12 -->
+    <phrase id="resetsearchbtn" value="重设" class="icon-reset-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="resetsearch" value="重设" />
+    <phrase id="rptavg" value="平均值" />
+    <phrase id="rptdtlrec" value="细节记录" />
+    <phrase id="rptgrandtotal" value="总数" />
+    <phrase id="rptmax" value="最大值" />
+    <phrase id="rptmin" value="最小值" />
+    <phrase id="rptsum" value="总数" />
+    <phrase id="rptsumhead" value="总数" />
+    <phrase id="savebtn" value="保存" client="1" />
+    <!-- v2018 -->
+    <phrase id="savecurrentfilter" value="保存当前过滤条件" />
+    <!-- v12 -->
+    <phrase id="saveusername" value="保存我的用户名" />
+    <!-- Deprecated since v2018 -->
+    <phrase id="search" value="搜索" client="1" />
+    <!-- v2017 -->
+    <phrase id="searchbtn" value="搜索" client="1" />
+    <!-- v2018 -->
+    <phrase id="searchlink" value="搜索" class="glyphicon glyphicon-search ewIcon" />
+    <!-- v2018 -->
+    <phrase id="searchpanel" value="搜索界面" />
+    <!-- v11 -->
+    <phrase id="selectbtn" value="选择" client="1" />
+    <!-- v2017 -->
+    <phrase id="sendemailbtn" value="发送" />
+    <phrase id="sendemailsuccess" value="邮件发送成功" client="1" />
+    <phrase id="sendpwd" value="发送" />
+    <phrase id="sequencenumber" value="%s." />
+    <phrase id="servercommunicationerror" value="与服务器通讯时发生错误。" />
+    <!-- v2017 -->
+    <phrase id="sessionwillexpire" value="您的会话将于 %s 秒后过期。单击确认来保持您的会话。" client="1" />
+    <!-- v12 -->
+    <phrase id="sessionexpired" value="您的会话已过期" client="1" />
+    <!-- v12 -->
+    <phrase id="setpasswordexpiredbtn" value="设置密码过期" />
+    <!-- v12 -->
+    <phrase id="setpasswordexpiredsuccess" value="用户 '%u' 的密码被设置为已过期" />
+    <!-- v12 -->
+    <phrase id="setpasswordexpiredfailure" value="由于过期，用户 '%u' 密码设置失败" />
+    <!-- v12 -->
+    <phrase id="showallbtn" value="展示全部" class="icon-reset-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="showall" value="展示全部" />
+    <!-- v11 -->
+    <phrase id="srchlegend" value="" />
+    <phrase id="table" value="表格" />
+    <phrase id="tbltypetable" value="表格: " />
+    <phrase id="tbltypeview" value="查看: " />
+    <phrase id="tbltypecustomview" value="个性查看: " />
+    <phrase id="tbltypereport" value="报告: " />
+    <phrase id="to" value="to" />
+    <phrase id="total" value="总数" />
+    <phrase id="unauthorizeduserid" value="当前用户 (%c) 无权分配用户ID (%u)." />
+    <phrase id="unauthorizedparentuserid" value="当前用户 (%c) 无权分配夫级用户ID (%p)." />
+    <phrase id="unauthorizedmasteruserid" value="当前用户 (%c) 无权插入记录。过滤： %f" />
+    <phrase id="update" value="更新" />
+    <phrase id="updatebtn" value="更新" client="1" />
+    <!-- v2017 -->
+    <phrase id="updatecancelled" value="取消更新" />
+    <phrase id="updatefailed" value="更新失败" />
+    <phrase id="updatelink" value="更新" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="updateselectall" value="选择全部" />
+    <!-- v11 -->
+    <phrase id="updateselectedlink" value="更新选中项" class="icon-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="updatesuccess" value="更新成功" />
+    <phrase id="uploading" value="正在更新..." client="1" />
+    <phrase id="uploadstart" value="开始" client="1" />
+    <phrase id="uploadcancel" value="取消" client="1" />
+    <phrase id="uploaddelete" value="删除" client="1" />
+    <phrase id="uploadoverwrite" value="覆盖旧文件吗？" client="1" />
+    <phrase id="uploaderrmsg1" value="上传文件超出了 php.ini 文件中的最大限制" />
+    <phrase id="uploaderrmsg2" value="上传文件超出了 HTML 中 form 的最大文件限制" />
+    <phrase id="uploaderrmsg3" value="文件部分上传" />
+    <phrase id="uploaderrmsg4" value="无文件上传" />
+    <phrase id="uploaderrmsg6" value="临时文件夹丢失" />
+    <phrase id="uploaderrmsg7" value="文件写入失败" />
+    <phrase id="uploaderrmsg8" value="一个 PHP extension 阻止了文件上传" />
+    <phrase id="uploaderrmsgpostmaxsize" value="上传文件超出了 php.ini 文件中 post_max_size 的最大限制" />
+    <phrase id="uploaderrmsgmaxfilesize" value="文件过大" client="1" />
+    <phrase id="uploaderrmsgminfilesize" value="文件过小" client="1" />
+    <phrase id="uploaderrmsgacceptfiletypes" value="文件格式不允许" client="1" />
+    <phrase id="uploaderrmsgmaxnumberoffiles" value="文件数量过多" client="1" />
+    <phrase id="uploaderrmsgmaxwidth" value="图片宽度超出限制" />
+    <phrase id="uploaderrmsgminwidth" value="图片没有满足宽度最小要求" />
+    <phrase id="uploaderrmsgmaxheight" value="图片高度超出限制" />
+    <phrase id="uploaderrmsgminheight" value="图片没有满足高度最小要求" />
+    <phrase id="uploaderrmsgmaxfilelength" value="文件名长度超出限制" client="1" />
+    <phrase id="useradministrator" value="Administrator" client="1" />
+    <!-- v12 -->
+    <phrase id="useranonymous" value="Anonymous" client="1" />
+    <!-- v12 -->
+    <phrase id="userdefault" value="Default" client="1" />
+    <!-- v12 -->
+    <phrase id="useremail" value="邮件" />
+    <phrase id="userexists" value="用户已存在" />
+    <phrase id="userlevel" value="用户等级: " />
+    <phrase id="userleveladministratorname" value="1级的用户等级名称必须为 'Administrator'" client="1" />
+    <phrase id="userlevelanonymousname" value="2级的用户等级名称必须为 'Anonymous'" client="1" />
+    <!-- v12 -->
+    <phrase id="userlevelpermission" value="用户等级许可" />
+    <phrase id="userlevelidinteger" value="用户等级必须为整数" client="1" />
+    <phrase id="userleveldefaultname" value="0级用户级别名称必须为 'Default'" client="1" />
+    <phrase id="userlevelidincorrect" value="用户定义的用户级别ID必须大于0" client="1" />
+    <phrase id="userlevelnameincorrect" value="用户定义的用户级别名称不可以为 'Administrator' 或 'Default'" client="1" />
+    <phrase id="userloggedin" value="用户 '%u' 已登陆" />
+    <phrase id="username" value="用户名" />
+    <phrase id="usernotfound" value="未找到用户 '%u' " />
+    <!-- v2018 -->
+    <phrase id="userprofilecorrupted" value="用户资料已过期。请退出登录并重新登录。" />
+    <phrase id="valuenotexist" value="值不存在" client="1" />
+    <!-- v11 -->
+    <phrase id="view" value="查看" />
+    <phrase id="viewimagegallery" value="单击查看图片" />
+    <!-- v12 -->
+    <phrase id="viewlink" value="查看" class="icon-view ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpageaddlink" value="添加" class="glyphicon glyphicon-plus ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpagecopylink" value="复制" class="icon-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpagedeletelink" value="删除" class="glyphicon glyphicon-trash ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpagedetaillink" value="" />
+    <phrase id="viewpageeditlink" value="编辑" class="icon-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="wrongfiletype" value="文件格式不被允许。" client="1" />
+    <phrase id="tableorview" value="表格" client="1" />
+    <!-- v2018 -->
+    <phrase id="=" value="&amp;nbsp;" />
+    <!-- v12 -->
+    <phrase id="equal" value="=" />
+    <!-- v12 -->
+    <phrase id="&lt;&gt;" value="&amp;lt;&amp;gt;" />
+    <phrase id="&lt;" value="&amp;lt;" />
+    <phrase id="&lt;=" value="&amp;lt;=" />
+    <phrase id="&gt;" value="&amp;gt;" />
+    <phrase id="&gt;=" value="&amp;gt;=" />
+    <phrase id="like" value="包括" />
+    <phrase id="not like" value="不包括" />
+    <!-- v11.0.3 -->
+    <phrase id="starts with" value="开始于" />
+    <phrase id="ends with" value="结束于" />
+    <phrase id="is null" value="为空" />
+    <phrase id="is not null" value="不为空" />
+    <phrase id="between" value="在此之间" />
+    <phrase id="and" value="和" />
+    <phrase id="or" value="或" />
+    <phrase id="am" value="上午" />
+    <!-- v2017 -->
+    <phrase id="pm" value="下午" />
+    <!-- v2017 -->
+  </global>
+  <project>
+    <phrase id="bodytitle" value="I Live In Managers Control Panel" />
+    <phrase id="footertext" value="&amp;copy;2017 iLivein. All rights reserved. - &lt;a href='contact_us.php' target=_blank&gt;Contact Us&lt;/a&gt; - &lt;a href='terms.php' target=_blank&gt;Terms of Service&lt;/a&gt;" />
+    <menu id="723">
+      <phrase id="menutext" value="transactions moneris" />
+    </menu>
+    <menu id="724">
+      <phrase id="menutext" value="transactions paypal" />
+    </menu>
+    <menu id="718">
+      <phrase id="menutext" value="Tenant Portal" />
+    </menu>
+    <menu id="715">
+      <phrase id="menutext" value="bulletins" />
+    </menu>
+    <menu id="304">
+      <phrase id="menutext" value="Home" />
+    </menu>
+    <menu id="238">
+      <phrase id="menutext" value="Profile" />
+    </menu>
+    <menu id="1">
+      <phrase id="menutext" value="Companies" />
+    </menu>
+    <menu id="3">
+      <phrase id="menutext" value="Senior Property Manager" />
+    </menu>
+    <menu id="189">
+      <phrase id="menutext" value="Employees" />
+    </menu>
+    <menu id="187">
+      <phrase id="menutext" value="Owners" />
+    </menu>
+    <menu id="27">
+      <phrase id="menutext" value="业主" />
+    </menu>
+    <menu id="102">
+      <phrase id="menutext" value="共同所有者" />
+    </menu>
+    <menu id="331">
+      <phrase id="menutext" value="Online Listing Table" />
+    </menu>
+    <menu id="512">
+      <phrase id="menutext" value="Online Listing" />
+    </menu>
+    <menu id="26">
+      <phrase id="menutext" value="建筑物" />
+    </menu>
+    <menu id="14">
+      <phrase id="menutext" value="建筑物" />
+    </menu>
+    <menu id="16">
+      <phrase id="menutext" value="地板" />
+    </menu>
+    <menu id="711">
+      <phrase id="menutext" value="Docs" />
+    </menu>
+    <menu id="13">
+      <phrase id="menutext" value="公寓" />
+    </menu>
+    <menu id="526">
+      <phrase id="menutext" value="Lock Infos" />
+    </menu>
+    <menu id="515">
+      <phrase id="menutext" value="Property Info" />
+    </menu>
+    <menu id="57">
+      <phrase id="menutext" value="建筑图片" />
+    </menu>
+    <menu id="145">
+      <phrase id="menutext" value="建筑文件" />
+    </menu>
+    <menu id="30">
+      <phrase id="menutext" value="Apartment Documents" />
+    </menu>
+    <menu id="56">
+      <phrase id="menutext" value="Apartment Pictures" />
+    </menu>
+    <menu id="62">
+      <phrase id="menutext" value="Storage Units" />
+    </menu>
+    <menu id="61">
+      <phrase id="menutext" value="Parking Units" />
+    </menu>
+    <menu id="410">
+      <phrase id="menutext" value="Tenants" />
+    </menu>
+    <menu id="332">
+      <phrase id="menutext" value="Tenant Infos" />
+    </menu>
+    <menu id="716">
+      <phrase id="menutext" value="Tenant Statement" />
+    </menu>
+    <menu id="64">
+      <phrase id="menutext" value="Lease Info" />
+    </menu>
+    <menu id="720">
+      <phrase id="menutext" value="Parkings" />
+    </menu>
+    <menu id="725">
+      <phrase id="menutext" value="Storages" />
+    </menu>
+    <menu id="524">
+      <phrase id="menutext" value="Potential Tenants" />
+    </menu>
+    <menu id="717">
+      <phrase id="menutext" value="view tenant statement wo balance" />
+    </menu>
+    <menu id="58">
+      <phrase id="menutext" value="租客" />
+    </menu>
+    <menu id="712">
+      <phrase id="menutext" value="Docs" />
+    </menu>
+    <menu id="420">
+      <phrase id="menutext" value="Potential Tenants Info" />
+    </menu>
+    <menu id="713">
+      <phrase id="menutext" value="Docs" />
+    </menu>
+    <menu id="33">
+      <phrase id="menutext" value="Request Info" />
+    </menu>
+    <menu id="714">
+      <phrase id="menutext" value="Requests" />
+    </menu>
+    <menu id="143">
+      <phrase id="menutext" value="Payments &amp; Deposits" />
+    </menu>
+    <menu id="297">
+      <phrase id="menutext" value="Deposits" />
+    </menu>
+    <menu id="321">
+      <phrase id="menutext" value="Rental Payments" />
+    </menu>
+    <menu id="302">
+      <phrase id="menutext" value="Payments" />
+    </menu>
+    <menu id="100">
+      <phrase id="menutext" value="Invoices" />
+    </menu>
+    <menu id="10">
+      <phrase id="menutext" value="Admin" />
+    </menu>
+    <menu id="7">
+      <phrase id="menutext" value="User Levels" />
+    </menu>
+    <menu id="8">
+      <phrase id="menutext" value="User Level Permissions" />
+    </menu>
+    <menu id="719">
+      <phrase id="menutext" value="Financial Distributes" />
+    </menu>
+    <menu id="323">
+      <phrase id="menutext" value="User List" />
+    </menu>
+    <menu id="510">
+      <phrase id="menutext" value="Settings" />
+    </menu>
+    <menu id="32">
+      <phrase id="menutext" value="Audit Trail" />
+    </menu>
+    <menu id="11">
+      <phrase id="menutext" value="Setup" />
+    </menu>
+    <menu id="636">
+      <phrase id="menutext" value="Types" />
+    </menu>
+    <menu id="521">
+      <phrase id="menutext" value="Deposit Types" />
+    </menu>
+    <menu id="17">
+      <phrase id="menutext" value="Floor Types" />
+    </menu>
+    <menu id="327">
+      <phrase id="menutext" value="Floor Categories" />
+    </menu>
+    <menu id="146">
+      <phrase id="menutext" value="Size Types" />
+    </menu>
+    <menu id="292">
+      <phrase id="menutext" value="Picture Types" />
+    </menu>
+    <menu id="527">
+      <phrase id="menutext" value="Lock Types" />
+    </menu>
+    <menu id="305">
+      <phrase id="menutext" value="Apartment Types" />
+    </menu>
+    <menu id="306">
+      <phrase id="menutext" value="Apartment Sub Types" />
+    </menu>
+    <menu id="31">
+      <phrase id="menutext" value="Document Types" />
+    </menu>
+    <menu id="34">
+      <phrase id="menutext" value="Request Type" />
+    </menu>
+    <menu id="99">
+      <phrase id="menutext" value="Invoice Types" />
+    </menu>
+    <menu id="144">
+      <phrase id="menutext" value="Owner Types" />
+    </menu>
+    <menu id="188">
+      <phrase id="menutext" value="Building Types" />
+    </menu>
+    <menu id="296">
+      <phrase id="menutext" value="Payment Period Types" />
+    </menu>
+    <menu id="303">
+      <phrase id="menutext" value="Payment Types" />
+    </menu>
+    <menu id="298">
+      <phrase id="menutext" value="Payment Methods" />
+    </menu>
+    <menu id="637">
+      <phrase id="menutext" value="Status" />
+    </menu>
+    <menu id="59">
+      <phrase id="menutext" value="Tenant Status" />
+    </menu>
+    <menu id="520">
+      <phrase id="menutext" value="Renovation Status" />
+    </menu>
+    <menu id="29">
+      <phrase id="menutext" value="Apartment Status" />
+    </menu>
+    <menu id="54">
+      <phrase id="menutext" value="Request Status" />
+    </menu>
+    <menu id="63">
+      <phrase id="menutext" value="Vacancy Status" />
+    </menu>
+    <menu id="65">
+      <phrase id="menutext" value="Lease Status" />
+    </menu>
+    <menu id="101">
+      <phrase id="menutext" value="Payment Status" />
+    </menu>
+    <menu id="4">
+      <phrase id="menutext" value="Job Titles" />
+    </menu>
+    <menu id="2">
+      <phrase id="menutext" value="Countries" />
+    </menu>
+    <menu id="5">
+      <phrase id="menutext" value="Provinces" />
+    </menu>
+    <menu id="12">
+      <phrase id="menutext" value="Languages" />
+    </menu>
+    <menu id="15">
+      <phrase id="menutext" value="Facilities" />
+    </menu>
+    <menu id="60">
+      <phrase id="menutext" value="Amenities" />
+    </menu>
+    <menu id="28">
+      <phrase id="menutext" value="Currencies" />
+    </menu>
+    <menu id="307">
+      <phrase id="menutext" value="Price Discloures" />
+    </menu>
+    <menu id="299">
+      <phrase id="menutext" value="Side Faces" />
+    </menu>
+    <menu id="518">
+      <phrase id="menutext" value="Taxes" />
+    </menu>
+    <menu id="707">
+      <phrase id="menutext" value="Maintenance" />
+    </menu>
+    <menu id="638">
+      <phrase id="menutext" value="Equipment Infos" />
+    </menu>
+    <menu id="708">
+      <phrase id="menutext" value="Appliance Infos" />
+    </menu>
+    <menu id="529">
+      <phrase id="menutext" value="Rooms" />
+    </menu>
+    <menu id="528">
+      <phrase id="menutext" value="Room Equipments" />
+    </menu>
+    <menu id="639">
+      <phrase id="menutext" value="Brand Infos" />
+    </menu>
+    <menu id="709">
+      <phrase id="menutext" value="Appliance Types" />
+    </menu>
+    <menu id="291">
+      <phrase id="menutext" value="Reports" />
+    </menu>
+    <menu id="411">
+      <phrase id="menutext" value="Payable This Month" />
+    </menu>
+    <menu id="412">
+      <phrase id="menutext" value="Pending This Month" />
+    </menu>
+    <menu id="414">
+      <phrase id="menutext" value="Vacancy Report" />
+    </menu>
+    <menu id="506">
+      <phrase id="menutext" value="Others" />
+    </menu>
+    <menu id="721">
+      <phrase id="menutext" value="portal properties" />
+    </menu>
+    <menu id="722">
+      <phrase id="menutext" value="portal users" />
+    </menu>
+    <menu id="522">
+      <phrase id="menutext" value="question info" />
+    </menu>
+    <menu id="710">
+      <phrase id="menutext" value="request assignees" />
+    </menu>
+    <menu id="523">
+      <phrase id="menutext" value="question infos" />
+    </menu>
+    <menu id="525">
+      <phrase id="menutext" value="source type" />
+    </menu>
+    <menu id="519">
+      <phrase id="menutext" value="taxes" />
+    </menu>
+    <menu id="516">
+      <phrase id="menutext" value="rental payments wo status" />
+    </menu>
+    <menu id="513">
+      <phrase id="menutext" value="kijiji settings" />
+    </menu>
+    <menu id="514">
+      <phrase id="menutext" value="kijiji payments" />
+    </menu>
+    <menu id="508">
+      <phrase id="menutext" value="Terms of Service" />
+    </menu>
+    <menu id="55">
+      <phrase id="menutext" value="Request Assign To" />
+    </menu>
+    <menu id="509">
+      <phrase id="menutext" value="Contact Us" />
+    </menu>
+    <menu id="507">
+      <phrase id="menutext" value="Payment" />
+    </menu>
+    <menu id="416">
+      <phrase id="menutext" value="lease payment view" />
+    </menu>
+    <menu id="417">
+      <phrase id="menutext" value="vacancy next month" />
+    </menu>
+    <menu id="418">
+      <phrase id="menutext" value="view all payments" />
+    </menu>
+    <menu id="419">
+      <phrase id="menutext" value="view leases" />
+    </menu>
+    <menu id="330">
+      <phrase id="menutext" value="Events" />
+    </menu>
+    <menu id="328">
+      <phrase id="menutext" value="office maintenance event assigntos" />
+    </menu>
+    <menu id="329">
+      <phrase id="menutext" value="office maintenance event principal info" />
+    </menu>
+    <menu id="313">
+      <phrase id="menutext" value="booking infos" />
+    </menu>
+    <menu id="314">
+      <phrase id="menutext" value="calendar infos" />
+    </menu>
+    <menu id="315">
+      <phrase id="menutext" value="event availabilities" />
+    </menu>
+    <menu id="316">
+      <phrase id="menutext" value="event infos" />
+    </menu>
+    <menu id="317">
+      <phrase id="menutext" value="office maintenance event infos" />
+    </menu>
+    <menu id="318">
+      <phrase id="menutext" value="office maintenance event uploads" />
+    </menu>
+    <menu id="511">
+      <phrase id="menutext" value="Sign Up" />
+    </menu>
+    <menu id="858">
+      <phrase id="menutext" value="Calendar" />
+    </menu>
+    <menu id="859">
+      <phrase id="menutext" value="Office Event List" />
+    </menu>
+    <menu id="726">
+      <phrase id="menutext" value="Create Event" />
+    </menu>
+    <menu id="727">
+      <phrase id="menutext" value="Create Event Detail" />
+    </menu>
+    <menu id="728">
+      <phrase id="menutext" value="Book Event" />
+    </menu>
+    <menu id="729">
+      <phrase id="menutext" value="Event Booking List" />
+    </menu>
+    <menu id="731">
+      <phrase id="menutext" value="Office Create Event" />
+    </menu>
+    <menu id="732">
+      <phrase id="menutext" value="Office Event Details" />
+    </menu>
+    <menu id="733">
+      <phrase id="menutext" value="Calendar" />
+    </menu>
+    <menu id="730">
+      <phrase id="menutext" value="Details Event" />
+    </menu>
+    <table id="company_infos">
+      <phrase id="tblcaption" value="公司" />
+      <phrase id="tblpagecaption1" value="Company Info" />
+      <phrase id="tblpagecaption2" value="Company Website" />
+      <phrase id="tblpagecaption3" value="Physical Mail Return Address" />
+      <phrase id="tblpagecaption4" value="Time Config" />
+      <phrase id="tblpagecaption5" value="Financial" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="NAME" />
+      </field>
+      <field id="logo">
+        <phrase id="fldcaption" value="Logo" />
+      </field>
+      <field id="website">
+        <phrase id="fldcaption" value="COMPANY WEB SITE URL" />
+      </field>
+      <field id="phone">
+        <phrase id="fldcaption" value="COMPANY PHONE NUMBER" />
+      </field>
+      <field id="fax">
+        <phrase id="fldcaption" value="COMPANY FAX NUMBER" />
+      </field>
+      <field id="address1">
+        <phrase id="fldcaption" value="ADDRESS LINE 1" />
+      </field>
+      <field id="address2">
+        <phrase id="fldcaption" value="ADDRESS LINE 2" />
+      </field>
+      <field id="postal_code">
+        <phrase id="fldcaption" value="ZIP / POSTAL CODE" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="COUNTRY" />
+      </field>
+      <field id="province_id">
+        <phrase id="fldcaption" value="STATE / PROVINCE" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="CITY" />
+      </field>
+      <field id="latitude">
+        <phrase id="fldcaption" value="LATITUDE" />
+      </field>
+      <field id="longitude">
+        <phrase id="fldcaption" value="LONGITUDE" />
+      </field>
+      <field id="googlemap">
+        <phrase id="fldcaption" value="Google Map" />
+      </field>
+      <field id="sub_domain">
+        <phrase id="fldcaption" value="WEBSITE CUSTOM SUB-DOMAIN" />
+      </field>
+      <field id="web_title">
+        <phrase id="fldcaption" value="WEBSITE TITLE (3 - 4 WORDS)" />
+      </field>
+      <field id="web_description">
+        <phrase id="fldcaption" value="WEBSITE DESCRIPTION (250 CHARS MAX)" />
+      </field>
+      <field id="web_keywords">
+        <phrase id="fldcaption" value="WEBSITE KEYWORDS (6 WORDS MAX)" />
+      </field>
+      <field id="web_favicon">
+        <phrase id="fldcaption" value="CUSTOM FAVICON" />
+      </field>
+      <field id="homepage_slogan">
+        <phrase id="fldcaption" value="HOME PAGE SLOGAN (ENG)" />
+      </field>
+      <field id="homepage_slogan_fr">
+        <phrase id="fldcaption" value="HOME PAGE SLOGAN (FRN)" />
+      </field>
+      <field id="homepage_background">
+        <phrase id="fldcaption" value="BACKGROUND IMAGE (9999 X 9999)" />
+      </field>
+      <field id="enable_about">
+        <phrase id="fldcaption" value="Enable About Page" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Yes" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="No" />
+      </field>
+      <field id="about_mission">
+        <phrase id="fldcaption" value="MISSION STATEMENT (ENG)" />
+      </field>
+      <field id="about_mission_fr">
+        <phrase id="fldcaption" value="MISSION STATEMENT (FRN)" />
+      </field>
+      <field id="about_history">
+        <phrase id="fldcaption" value="OUR HISTORY" />
+      </field>
+      <field id="about_history_fr">
+        <phrase id="fldcaption" value="OUR HISTORY FR" />
+      </field>
+      <field id="about">
+        <phrase id="fldcaption" value="ABOUT US" />
+      </field>
+      <field id="about_fr">
+        <phrase id="fldcaption" value="ABOUT US FR" />
+      </field>
+      <field id="show_phone">
+        <phrase id="fldcaption" value="Display Company Phone Number" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="show_address">
+        <phrase id="fldcaption" value="Display Head Office Address" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="enable_contact">
+        <phrase id="fldcaption" value="Enable Contact Page" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="contact_email">
+        <phrase id="fldcaption" value="CONTACT US EMAIL" />
+      </field>
+      <field id="facebook">
+        <phrase id="fldcaption" value="FACEBOOK" />
+      </field>
+      <field id="twitter">
+        <phrase id="fldcaption" value="TWITTER" />
+      </field>
+      <field id="googleplus">
+        <phrase id="fldcaption" value="GOOGLE+" />
+      </field>
+      <field id="linkedin">
+        <phrase id="fldcaption" value="LINKEDIN" />
+      </field>
+      <field id="youtube">
+        <phrase id="fldcaption" value="YOUTUBE" />
+      </field>
+      <field id="instagram">
+        <phrase id="fldcaption" value="INSTAGRAM" />
+      </field>
+      <field id="languages_id">
+        <phrase id="fldcaption" value="Languages" />
+      </field>
+      <field id="time_zone">
+        <phrase id="fldcaption" value="COMPANY TIMEZONE" />
+      </field>
+      <field id="physical_address1">
+        <phrase id="fldcaption" value="ADDRESS LINE 1" />
+      </field>
+      <field id="physical_address2">
+        <phrase id="fldcaption" value="ADDRESS LINE 2" />
+      </field>
+      <field id="physical_country_id">
+        <phrase id="fldcaption" value="COUNTRY" />
+      </field>
+      <field id="physical_province_id">
+        <phrase id="fldcaption" value="STATE / PROVINCE" />
+      </field>
+      <field id="physical_city">
+        <phrase id="fldcaption" value="CITY" />
+      </field>
+      <field id="physical_postal_code">
+        <phrase id="fldcaption" value="ZIP / POSTAL CODE" />
+      </field>
+      <field id="renewal_gap_day">
+        <phrase id="fldcaption" value="Renewal Gap (Day)" />
+      </field>
+      <field id="to_assess_day">
+        <phrase id="fldcaption" value="To Be Assessed (Day)" />
+      </field>
+      <field id="renewal_notification_day">
+        <phrase id="fldcaption" value="Renewal Notification (Day)" />
+      </field>
+    </table>
+    <table id="employee_infos">
+      <phrase id="tblcaption" value="雇员" />
+      <phrase id="tblpagecaption1" value="Employee Info" />
+      <phrase id="tblpagecaption2" value="Buildings" />
+      <phrase id="tblpagecaption3" value="Owners" />
+      <phrase id="tblpagecaption4" value="Employees" />
+      <phrase id="tblpagecaption5" value="Tenants" />
+      <phrase id="tblpagecaption6" value="Leases" />
+      <phrase id="tblpagecaption7" value="Requests" />
+      <phrase id="tblpagecaption8" value="Rent &amp; Deposits" />
+      <phrase id="tblpagecaption9" value="Request" />
+      <phrase id="tblpagecaption10" value="Reports" />
+      <field id="employee_id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="Company" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="mobile">
+        <phrase id="fldcaption" value="Mobile" />
+      </field>
+      <field id="phone_number">
+        <phrase id="fldcaption" value="Office Phone" />
+      </field>
+      <field id="phone_ext">
+        <phrase id="fldcaption" value="Phone Ext" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="province_id">
+        <phrase id="fldcaption" value="Province" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="job_title_id">
+        <phrase id="fldcaption" value="Job Title" />
+      </field>
+      <field id="language_id">
+        <phrase id="fldcaption" value="Language" />
+      </field>
+      <field id="notify_from">
+        <phrase id="fldcaption" value="Notify From" />
+      </field>
+      <field id="notify_to">
+        <phrase id="fldcaption" value="Notify To" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Inactive" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Active" />
+      </field>
+      <field id="admin_id">
+        <phrase id="fldcaption" value="Administrator" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="user_level">
+        <phrase id="fldcaption" value="Level of Access" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="Username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+      <field id="s_bl_v_al">
+        <phrase id="fldcaption" value="View All Buildings" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_bl_e_al">
+        <phrase id="fldcaption" value="Edit Non-Created Buildings" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_bl_v_cm">
+        <phrase id="fldcaption" value="View Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_bl_e_cm">
+        <phrase id="fldcaption" value="Edit Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="building_ids">
+        <phrase id="fldcaption" value="Buildings" />
+      </field>
+      <field id="kijiji_settings_id">
+        <phrase id="fldcaption" value="kijiji settings id" />
+      </field>
+      <field id="s_ow_v_al">
+        <phrase id="fldcaption" value="View All Owners" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_ow_e_al">
+        <phrase id="fldcaption" value="Edit Non-Created Owners" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_ow_v_cm">
+        <phrase id="fldcaption" value="View Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_ow_e_cm">
+        <phrase id="fldcaption" value="Edit Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_em_v_al">
+        <phrase id="fldcaption" value="View All Employees" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_em_v_ac">
+        <phrase id="fldcaption" value="View All Active Employees" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_em_v_mo">
+        <phrase id="fldcaption" value="View Employees Mobile No." />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_em_e_al">
+        <phrase id="fldcaption" value="Edit Non-Created Employees" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_em_v_cm">
+        <phrase id="fldcaption" value="View Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_em_e_cm">
+        <phrase id="fldcaption" value="Edit Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_tt_v_al">
+        <phrase id="fldcaption" value="View All Tenants" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_tt_v_ac">
+        <phrase id="fldcaption" value="View All Available Tenants" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_tt_v_dt">
+        <phrase id="fldcaption" value="View Tenant Personal Details" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_tt_v_hi">
+        <phrase id="fldcaption" value="View Tenant History" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_tt_v_ex">
+        <phrase id="fldcaption" value="Export Tenant List" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_v_al">
+        <phrase id="fldcaption" value="View All Leases" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_v_py">
+        <phrase id="fldcaption" value="View Upcoming Payments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_v_tr">
+        <phrase id="fldcaption" value="Terminate Lease" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_v_rw">
+        <phrase id="fldcaption" value="Renew Lease" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_v_ca">
+        <phrase id="fldcaption" value="Cancel Lease" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_e_al">
+        <phrase id="fldcaption" value="Edit Non-Created Leases" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_v_cm">
+        <phrase id="fldcaption" value="View Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_le_e_cm">
+        <phrase id="fldcaption" value="Edit Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_de_v_al">
+        <phrase id="fldcaption" value="View Rent Payments &amp; Deposits" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_de_v_dt">
+        <phrase id="fldcaption" value="View Deposit Details" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_de_v_cm">
+        <phrase id="fldcaption" value="View Deposit Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_de_e_cm">
+        <phrase id="fldcaption" value="Edit Deposit Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_lp_v_al">
+        <phrase id="fldcaption" value="View Rent Payment" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_lp_e_al">
+        <phrase id="fldcaption" value="Edit Rent Payment" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_lp_v_cm">
+        <phrase id="fldcaption" value="View Rent Payment Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_lp_e_cm">
+        <phrase id="fldcaption" value="Edit Rent Payment Comments" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_uct">
+        <phrase id="fldcaption" value="View unassigned Current Tenant Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_upt">
+        <phrase id="fldcaption" value="View unassigned Past Tenant Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_uce">
+        <phrase id="fldcaption" value="View unassigned Current Employee Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_upe">
+        <phrase id="fldcaption" value="View unassigned Past Employee Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_pim">
+        <phrase id="fldcaption" value="Post Internal Messages" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_e_tc">
+        <phrase id="fldcaption" value="Change Tenant Created Issue Status" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_e_ect">
+        <phrase id="fldcaption" value="Change Employee Created Tenant Issues Status" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_rtc">
+        <phrase id="fldcaption" value="Respond to Tenant Created Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_rec">
+        <phrase id="fldcaption" value="Respond to Employee Created Tenant Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_sit">
+        <phrase id="fldcaption" value="Send Issue to Tenants" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_csm">
+        <phrase id="fldcaption" value="Send Custom SMS Messages" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_cvm">
+        <phrase id="fldcaption" value="Send Custom Voice Messages" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_mu">
+        <phrase id="fldcaption" value="Send Manual Updates" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_re">
+        <phrase id="fldcaption" value="Force Resolve or Re-open an Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_a_as">
+        <phrase id="fldcaption" value="Add Assignees" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_d_as">
+        <phrase id="fldcaption" value="Remove Assignees" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_pr">
+        <phrase id="fldcaption" value="Print Issues" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_aas">
+        <phrase id="fldcaption" value="View Issue Auto-Assign" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_e_aas">
+        <phrase id="fldcaption" value="Edit Issue Auto-Assign" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_e_cat">
+        <phrase id="fldcaption" value="Change Issue Category" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_e_pri">
+        <phrase id="fldcaption" value="Change Issue Priority" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_is_v_red">
+        <phrase id="fldcaption" value="View issue read status" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_rp_v_al">
+        <phrase id="fldcaption" value="Access To Trends &amp; Reports" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_rp_v_lm">
+        <phrase id="fldcaption" value="View Lower Management Reports" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="s_rp_v_um">
+        <phrase id="fldcaption" value="View Upper Management Reports" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="df_responsible_request_types">
+        <phrase id="fldcaption" value="Handeling Request Types" />
+      </field>
+    </table>
+    <table id="owner_infos">
+      <phrase id="tblcaption" value="房主" />
+      <field id="owner_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="owner_type_id">
+        <phrase id="fldcaption" value="Type" />
+      </field>
+      <field id="mobile">
+        <phrase id="fldcaption" value="Mobile" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="address">
+        <phrase id="fldcaption" value="Address" />
+      </field>
+      <field id="address2">
+        <phrase id="fldcaption" value="Address 2" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="province_id">
+        <phrase id="fldcaption" value="Province" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="postal_code">
+        <phrase id="fldcaption" value="Postal Code" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="financial_institution">
+        <phrase id="fldcaption" value="Financial Institution ID" />
+      </field>
+      <field id="financial_accountno">
+        <phrase id="fldcaption" value="Payor/Payee Account" />
+      </field>
+      <field id="user_level">
+        <phrase id="fldcaption" value="user level" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="Username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="coowners">
+      <phrase id="tblcaption" value="Condo Owners" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="mobile">
+        <phrase id="fldcaption" value="Mobile" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="send_report">
+        <phrase id="fldcaption" value="Send Report" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Employee Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="manager_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="Username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+    </table>
+    <table id="manager_infos_28old29">
+      <phrase id="tblcaption" value="Managers" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="mobile">
+        <phrase id="fldcaption" value="Mobile" />
+      </field>
+      <field id="phone_number">
+        <phrase id="fldcaption" value="Phone Number" />
+      </field>
+      <field id="phone_ext">
+        <phrase id="fldcaption" value="Phone Ext" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="province_id">
+        <phrase id="fldcaption" value="Province" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="job_title_id">
+        <phrase id="fldcaption" value="Job Title" />
+      </field>
+      <field id="language_id">
+        <phrase id="fldcaption" value="Language" />
+      </field>
+      <field id="notify_from">
+        <phrase id="fldcaption" value="Notify From" />
+      </field>
+      <field id="notify_to">
+        <phrase id="fldcaption" value="Notify To" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="Username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Creator Owner" />
+      </field>
+      <field id="manager_id">
+        <phrase id="fldcaption" value="Manager" />
+      </field>
+      <field id="user_level">
+        <phrase id="fldcaption" value="user level" />
+      </field>
+    </table>
+    <table id="building_infos">
+      <phrase id="tblcaption" value="建筑物" />
+      <phrase id="tblpagecaption1" value="Address" />
+      <phrase id="tblpagecaption2" value="Physical Mail Address" />
+      <phrase id="tblpagecaption3" value="Rules" />
+      <phrase id="tblpagecaption4" value="Facilities" />
+      <phrase id="tblpagecaption5" value="Pictures" />
+      <phrase id="tblpagecaption6" value="Comments" />
+      <phrase id="tblpagecaption7" value="Requests" />
+      <field id="building_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_name">
+        <phrase id="fldcaption" value="Building Name" />
+      </field>
+      <field id="featured">
+        <phrase id="fldcaption" value="Featured" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="address">
+        <phrase id="fldcaption" value="Address" />
+      </field>
+      <field id="county_id">
+        <phrase id="fldcaption" value="County" />
+      </field>
+      <field id="province_id">
+        <phrase id="fldcaption" value="Province" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="postal_code">
+        <phrase id="fldcaption" value="Postal Code" />
+      </field>
+      <field id="latitude">
+        <phrase id="fldcaption" value="Latitude" />
+      </field>
+      <field id="longitude">
+        <phrase id="fldcaption" value="Longitude" />
+      </field>
+      <field id="radius">
+        <phrase id="fldcaption" value="radius" />
+      </field>
+      <field id="google_maps">
+        <phrase id="fldcaption" value="Google Maps" />
+      </field>
+      <field id="building_currency">
+        <phrase id="fldcaption" value="Building Currency" />
+      </field>
+      <field id="building_timezone">
+        <phrase id="fldcaption" value="Building Timezone" />
+      </field>
+      <field id="daylight_savingtime">
+        <phrase id="fldcaption" value="Daylight Savingtime" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="physical_address">
+        <phrase id="fldcaption" value="Physical Address" />
+      </field>
+      <field id="physical_country">
+        <phrase id="fldcaption" value="Physical Country" />
+      </field>
+      <field id="physical_province">
+        <phrase id="fldcaption" value="Physical Province" />
+      </field>
+      <field id="physical_city">
+        <phrase id="fldcaption" value="Physical City" />
+      </field>
+      <field id="physical_postal_code">
+        <phrase id="fldcaption" value="Physical Postal Code" />
+      </field>
+      <field id="rules">
+        <phrase id="fldcaption" value="Rules" />
+      </field>
+      <field id="rules_fr">
+        <phrase id="fldcaption" value="Rules FR" />
+      </field>
+      <field id="building_type_id">
+        <phrase id="fldcaption" value="Building Type" />
+      </field>
+      <field id="facilities_id">
+        <phrase id="fldcaption" value="Facilities" />
+      </field>
+      <field id="feature_picture">
+        <phrase id="fldcaption" value="Featured" />
+      </field>
+      <field id="pictures">
+        <phrase id="fldcaption" value="Pictures" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="public_comments">
+        <phrase id="fldcaption" value="Public Comments" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="kijiji_listing_priority_type">
+        <phrase id="fldcaption" value="kijiji listing priority type" />
+      </field>
+      <field id="kijiji_prioritize_media">
+        <phrase id="fldcaption" value="kijiji prioritize media" />
+      </field>
+      <field id="kijiji_listing_diff_num_room">
+        <phrase id="fldcaption" value="kijiji listing diff num room" />
+      </field>
+      <field id="kijiji_showed_units_count">
+        <phrase id="fldcaption" value="kijiji showed units count" />
+      </field>
+      <field id="issue_normal_ntf">
+        <phrase id="fldcaption" value="Normal Issues Notification" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="SMS" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Email" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Voice" />
+      </field>
+      <field id="issue_normal">
+        <phrase id="fldcaption" value="Normal Issues" />
+      </field>
+      <field id="issue_serious_ntf">
+        <phrase id="fldcaption" value="Serious Issues Notification" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="SMS" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Email" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Voice" />
+      </field>
+      <field id="issue_serious">
+        <phrase id="fldcaption" value="Serious Issues" />
+      </field>
+      <field id="issue_urgent_ntf">
+        <phrase id="fldcaption" value="Urgent Issues Notification" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="SMS" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Email" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Voice" />
+      </field>
+      <field id="issue_urgent">
+        <phrase id="fldcaption" value="Urgent Issues" />
+      </field>
+      <field id="issue_past_after_days">
+        <phrase id="fldcaption" value="Change to Past Issue After (Days)" />
+      </field>
+      <field id="issue_ignored">
+        <phrase id="fldcaption" value="issue ignored" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="floor_infos">
+      <phrase id="tblcaption" value="地板" />
+      <field id="floor_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="floor_type_id">
+        <phrase id="fldcaption" value="Floor Type" />
+      </field>
+      <field id="floor_name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="floor_category_id">
+        <phrase id="fldcaption" value="Category" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="apartment_infos">
+      <phrase id="tblcaption" value="公寓" />
+      <phrase id="tblpagecaption1" value="General Info" />
+      <phrase id="tblpagecaption2" value="Price" />
+      <phrase id="tblpagecaption3" value="Amenities" />
+      <phrase id="tblpagecaption4" value="Pictures" />
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="Floor" />
+      </field>
+      <field id="apartment_type_id">
+        <phrase id="fldcaption" value="Type" />
+      </field>
+      <field id="apartment_type_sub_id">
+        <phrase id="fldcaption" value="Sub Type" />
+      </field>
+      <field id="unit_number">
+        <phrase id="fldcaption" value="Unit" />
+      </field>
+      <field id="coowner_id">
+        <phrase id="fldcaption" value="Condo Owner" />
+      </field>
+      <field id="apartment_status">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="renovation_status">
+        <phrase id="fldcaption" value="Renovation Status" />
+      </field>
+      <field id="area">
+        <phrase id="fldcaption" value="Area" />
+      </field>
+      <field id="side_facing">
+        <phrase id="fldcaption" value="Side Facing" />
+      </field>
+      <field id="size_type_id">
+        <phrase id="fldcaption" value="Size" />
+      </field>
+      <field id="bath_rooms">
+        <phrase id="fldcaption" value="Bath rooms" />
+      </field>
+      <field id="bedrooms">
+        <phrase id="fldcaption" value="Bedrooms" />
+      </field>
+      <field id="powder_room">
+        <phrase id="fldcaption" value="Powder room" />
+      </field>
+      <field id="dining_room">
+        <phrase id="fldcaption" value="Dining room" />
+      </field>
+      <field id="current_price">
+        <phrase id="fldcaption" value="Current $" />
+      </field>
+      <field id="base_rent">
+        <phrase id="fldcaption" value="Base Rent $" />
+      </field>
+      <field id="additional_rent">
+        <phrase id="fldcaption" value="Additional Rent $" />
+      </field>
+      <field id="gross_rent">
+        <phrase id="fldcaption" value="Gross Rent $" />
+      </field>
+      <field id="tax_select">
+        <phrase id="fldcaption" value="Tax" />
+      </field>
+      <field id="tax1_rate">
+        <phrase id="fldcaption" value="GST Rate" />
+      </field>
+      <field id="tax1">
+        <phrase id="fldcaption" value="Tax GST $" />
+      </field>
+      <field id="tax2_rate">
+        <phrase id="fldcaption" value="QST Rate" />
+      </field>
+      <field id="tax2">
+        <phrase id="fldcaption" value="Tax QST $" />
+      </field>
+      <field id="tax3_rate">
+        <phrase id="fldcaption" value="HST Rate" />
+      </field>
+      <field id="tax3">
+        <phrase id="fldcaption" value="Tax HST $" />
+      </field>
+      <field id="total_rent">
+        <phrase id="fldcaption" value="Total Rent $" />
+      </field>
+      <field id="monthly_price">
+        <phrase id="fldcaption" value="Monthly $" />
+      </field>
+      <field id="weekly_price">
+        <phrase id="fldcaption" value="Weekly $" />
+      </field>
+      <field id="price_discloure_id">
+        <phrase id="fldcaption" value="Price Discloure $" />
+      </field>
+      <field id="available_date">
+        <phrase id="fldcaption" value="Available on" />
+      </field>
+      <field id="listing_type">
+        <phrase id="fldcaption" value="Listing Type" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Normal" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Featured" />
+      </field>
+      <field id="video">
+        <phrase id="fldcaption" value="video" />
+      </field>
+      <field id="floor_plan">
+        <phrase id="fldcaption" value="Floor Plan" />
+      </field>
+      <field id="comment">
+        <phrase id="fldcaption" value="Comment" />
+      </field>
+      <field id="public_comments">
+        <phrase id="fldcaption" value="Public Comments" />
+      </field>
+      <field id="amenities">
+        <phrase id="fldcaption" value="Amenities" />
+      </field>
+      <field id="air_conditioning">
+        <phrase id="fldcaption" value="Air Conditioning" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="None" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Central Air" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="A/C Window Unit" />
+        <phrase id="fldtagvalue4" value="3" />
+        <phrase id="fldtagcaption4" value="A/C Wall Mounted" />
+      </field>
+      <field id="heating">
+        <phrase id="fldcaption" value="Heating" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="None" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Electrical" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Oil" />
+        <phrase id="fldtagvalue4" value="3" />
+        <phrase id="fldtagcaption4" value="Gas" />
+        <phrase id="fldtagvalue5" value="4" />
+        <phrase id="fldtagcaption5" value="Central" />
+        <phrase id="fldtagvalue6" value="5" />
+        <phrase id="fldtagcaption6" value="Hot Water" />
+      </field>
+      <field id="fire_place">
+        <phrase id="fldcaption" value="Fire Place" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="None" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Fireplace Gas" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Fireplace Wood" />
+      </field>
+      <field id="floor_type">
+        <phrase id="fldcaption" value="Floor Type" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Not Specified" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Carpet" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Cement" />
+        <phrase id="fldtagvalue4" value="3" />
+        <phrase id="fldtagcaption4" value="Hardwood" />
+        <phrase id="fldtagvalue5" value="4" />
+        <phrase id="fldtagcaption5" value="Tile" />
+      </field>
+      <field id="wifi">
+        <phrase id="fldcaption" value="Wifi" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Not Available" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Available" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Free" />
+      </field>
+      <field id="furnished">
+        <phrase id="fldcaption" value="Furnished" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Partial" />
+      </field>
+      <field id="feature_picture">
+        <phrase id="fldcaption" value="Featured" />
+      </field>
+      <field id="pictures">
+        <phrase id="fldcaption" value="Pictures" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="kijiji_feeding">
+        <phrase id="fldcaption" value="kijiji feeding" />
+      </field>
+      <field id="kijiji_candidate">
+        <phrase id="fldcaption" value="kijiji candidate" />
+      </field>
+      <field id="kijiji_force_list">
+        <phrase id="fldcaption" value="Kijiji Force List" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+      <field id="popup_time">
+        <phrase id="fldcaption" value="popup time" />
+      </field>
+    </table>
+    <table id="tenant_infos">
+      <phrase id="tblcaption" value="租客" />
+      <phrase id="tblpagecaption1" value="General Info" />
+      <phrase id="tblpagecaption2" value="Car Details" />
+      <field id="tenant_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="active_status">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Current Tenant" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Potential Tenant" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Prevoius Tenant" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Unit" />
+      </field>
+      <field id="delinquent">
+        <phrase id="fldcaption" value="Delinquent" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="potential_id">
+        <phrase id="fldcaption" value="Potential" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="date_of_birth">
+        <phrase id="fldcaption" value="Date of Birth" />
+      </field>
+      <field id="sex">
+        <phrase id="fldcaption" value="Sex" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Not Specified" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Male" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Female" />
+      </field>
+      <field id="_language">
+        <phrase id="fldcaption" value="Language" />
+      </field>
+      <field id="home_number">
+        <phrase id="fldcaption" value="Home Number" />
+      </field>
+      <field id="mobile">
+        <phrase id="fldcaption" value="Mobile Number" />
+      </field>
+      <field id="work_number">
+        <phrase id="fldcaption" value="Work Number" />
+      </field>
+      <field id="work_number_ext">
+        <phrase id="fldcaption" value="Work Number Ext" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="home_address">
+        <phrase id="fldcaption" value="Home Address" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="comment">
+        <phrase id="fldcaption" value="Comment" />
+      </field>
+      <field id="car_make">
+        <phrase id="fldcaption" value="Car Make" />
+      </field>
+      <field id="car_model">
+        <phrase id="fldcaption" value="Car Model" />
+      </field>
+      <field id="car_color">
+        <phrase id="fldcaption" value="Car Color" />
+      </field>
+      <field id="license_plate">
+        <phrase id="fldcaption" value="License Plate Provice / Country" />
+      </field>
+      <field id="plate_number">
+        <phrase id="fldcaption" value="Plate Number" />
+      </field>
+      <field id="parking_sticker">
+        <phrase id="fldcaption" value="Parking Sticker" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="UserName" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="user_level">
+        <phrase id="fldcaption" value="user level" />
+      </field>
+      <field id="created_dt">
+        <phrase id="fldcaption" value="Created DT" />
+      </field>
+      <field id="created_by">
+        <phrase id="fldcaption" value="Created By" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="active id" />
+      </field>
+      <field id="login_active">
+        <phrase id="fldcaption" value="Active Login" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Can Login" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+      <field id="last_login_time">
+        <phrase id="fldcaption" value="last login time" />
+      </field>
+    </table>
+    <table id="potential_tenant_infos">
+      <phrase id="tblcaption" value="Potential Tenants" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="active_status">
+        <phrase id="fldcaption" value="Active Status" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="delinquent">
+        <phrase id="fldcaption" value="Delinquent" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="potential_id">
+        <phrase id="fldcaption" value="Potential" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="date_of_birth">
+        <phrase id="fldcaption" value="Date of Birth" />
+      </field>
+      <field id="sex">
+        <phrase id="fldcaption" value="Sex" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Not Specified" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Male" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Female" />
+      </field>
+      <field id="_language">
+        <phrase id="fldcaption" value="Language" />
+      </field>
+      <field id="home_number">
+        <phrase id="fldcaption" value="Home Number" />
+      </field>
+      <field id="mobile_number">
+        <phrase id="fldcaption" value="Mobile Number" />
+      </field>
+      <field id="work_number">
+        <phrase id="fldcaption" value="Work Number" />
+      </field>
+      <field id="work_number_ext">
+        <phrase id="fldcaption" value="Work Number Ext" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="home_address">
+        <phrase id="fldcaption" value="Home Address" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="comment">
+        <phrase id="fldcaption" value="Comment" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="userpass" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+      <field id="user_level">
+        <phrase id="fldcaption" value="user level" />
+      </field>
+      <field id="created_dt">
+        <phrase id="fldcaption" value="created dt" />
+      </field>
+      <field id="created_by">
+        <phrase id="fldcaption" value="created by" />
+      </field>
+    </table>
+    <table id="parking_unit_infos">
+      <phrase id="tblcaption" value="Parking Units" />
+      <field id="parking_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="Floor" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="monthly_price">
+        <phrase id="fldcaption" value="Monthly Price" />
+      </field>
+      <field id="weekly_price">
+        <phrase id="fldcaption" value="Weekly Price" />
+      </field>
+      <field id="status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+    </table>
+    <table id="storage_unit_infos">
+      <phrase id="tblcaption" value="Storage Units" />
+      <field id="storage_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="Floor" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="monthly_price">
+        <phrase id="fldcaption" value="Monthly Price" />
+      </field>
+      <field id="weekly_price">
+        <phrase id="fldcaption" value="Weekly Price" />
+      </field>
+      <field id="status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Senior Property Manager" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+    </table>
+    <table id="lease_infos">
+      <phrase id="tblcaption" value="Lease info" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="lease_status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="Tenant" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Unit" />
+      </field>
+      <field id="payment_period">
+        <phrase id="fldcaption" value="Period" />
+      </field>
+      <field id="lease_amount">
+        <phrase id="fldcaption" value="Amount" />
+      </field>
+      <field id="storage_amount">
+        <phrase id="fldcaption" value="Storage" />
+      </field>
+      <field id="parking_amount">
+        <phrase id="fldcaption" value="Parking" />
+      </field>
+      <field id="total_amount">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="length_of_lease">
+        <phrase id="fldcaption" value="Length of Lease" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="Start" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="End" />
+      </field>
+      <field id="move_in_date">
+        <phrase id="fldcaption" value="Move in Date" />
+      </field>
+      <field id="move_out_date">
+        <phrase id="fldcaption" value="Move out Date" />
+      </field>
+      <field id="create_date">
+        <phrase id="fldcaption" value="Created Date" />
+      </field>
+      <field id="debit_credit">
+        <phrase id="fldcaption" value="Debit Credit" />
+      </field>
+      <field id="move_out_debit">
+        <phrase id="fldcaption" value="Move out Debit" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="parking_id">
+        <phrase id="fldcaption" value="Parking" />
+      </field>
+      <field id="storage_id">
+        <phrase id="fldcaption" value="Storage" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="renewal_notice_date">
+        <phrase id="fldcaption" value="Renewal Notice Date" />
+      </field>
+      <field id="renewal">
+        <phrase id="fldcaption" value="Renewal" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Active" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Confirmed Renewal" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Auto Renewd" />
+        <phrase id="fldtagvalue4" value="3" />
+        <phrase id="fldtagcaption4" value="Not-Renewal" />
+      </field>
+      <field id="lease_renewed_id">
+        <phrase id="fldcaption" value="Previous Lease" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="lease_payments">
+      <phrase id="tblcaption" value="Details" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="lease_id">
+        <phrase id="fldcaption" value="Lease" />
+      </field>
+      <field id="invoice_type_id">
+        <phrase id="fldcaption" value="Invoice Type" />
+      </field>
+      <field id="payment_status_id">
+        <phrase id="fldcaption" value="Payment Status" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="Due Date" />
+      </field>
+      <field id="lease_amount">
+        <phrase id="fldcaption" value="Payment Amount" />
+      </field>
+      <field id="parking_amount">
+        <phrase id="fldcaption" value="Parking Amount" />
+      </field>
+      <field id="storage_amount">
+        <phrase id="fldcaption" value="Storage Amount" />
+      </field>
+      <field id="total">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="paid_amount">
+        <phrase id="fldcaption" value="Paid Amount" />
+      </field>
+      <field id="outstanding">
+        <phrase id="fldcaption" value="Outstanding" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="Payment Method" />
+      </field>
+      <field id="date_paid">
+        <phrase id="fldcaption" value="Date Paid" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+    </table>
+    <table id="lease_payment_details">
+      <phrase id="tblcaption" value="All Payments" />
+      <field id="id">
+        <phrase id="fldcaption" value="payment detail id" />
+      </field>
+      <field id="ref">
+        <phrase id="fldcaption" value="Invoice No." />
+      </field>
+      <field id="lease_payment_id">
+        <phrase id="fldcaption" value="Lease Payment" />
+      </field>
+      <field id="payment_type_id">
+        <phrase id="fldcaption" value="Payment Type" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="Payment Method" />
+      </field>
+      <field id="amount">
+        <phrase id="fldcaption" value="Amount" />
+      </field>
+      <field id="cf_amount">
+        <phrase id="fldcaption" value="Convenience Fee" />
+      </field>
+      <field id="paid_amount">
+        <phrase id="fldcaption" value="Paid Amount" />
+      </field>
+      <field id="payment_date">
+        <phrase id="fldcaption" value="Payment Date" />
+      </field>
+      <field id="payment_detail">
+        <phrase id="fldcaption" value="Payment Details (Chq No., etc)" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="comments" />
+      </field>
+      <field id="entry_datetime">
+        <phrase id="fldcaption" value="Entry Date" />
+      </field>
+      <field id="entry_user_id">
+        <phrase id="fldcaption" value="Entry User" />
+      </field>
+      <field id="p_id">
+        <phrase id="fldcaption" value="Pay ID" />
+      </field>
+      <field id="p_state">
+        <phrase id="fldcaption" value="P State" />
+      </field>
+      <field id="p_create_time">
+        <phrase id="fldcaption" value="Pay Create Time" />
+      </field>
+      <field id="p_invoice_number">
+        <phrase id="fldcaption" value="Pay Invoice Number" />
+      </field>
+      <field id="p_description">
+        <phrase id="fldcaption" value="Pay Description" />
+      </field>
+      <field id="p_payer_id">
+        <phrase id="fldcaption" value="Pay Payer ID" />
+      </field>
+      <field id="p_merchant_id">
+        <phrase id="fldcaption" value="Pay Merchant ID" />
+      </field>
+      <field id="p_total">
+        <phrase id="fldcaption" value="Pay Total" />
+      </field>
+      <field id="p_response">
+        <phrase id="fldcaption" value="Pay Response" />
+      </field>
+      <field id="p_bank_transaction_id">
+        <phrase id="fldcaption" value="Pay Transaction ID" />
+      </field>
+      <field id="p_bank_approval_code">
+        <phrase id="fldcaption" value="Pay Bank Approval Code" />
+      </field>
+      <field id="p_iso_code">
+        <phrase id="fldcaption" value="Pay ISO Code" />
+      </field>
+      <field id="p_trans_name">
+        <phrase id="fldcaption" value="Pay trans name" />
+      </field>
+      <field id="p_cardholder">
+        <phrase id="fldcaption" value="Pay Cardholder" />
+      </field>
+      <field id="p_creditcard_no">
+        <phrase id="fldcaption" value="Pay Creditcard No" />
+      </field>
+      <field id="p_creditcard">
+        <phrase id="fldcaption" value="Pay Credit Card" />
+      </field>
+      <field id="p_expiry_date">
+        <phrase id="fldcaption" value="Pay Expiry Date" />
+      </field>
+      <field id="p_result">
+        <phrase id="fldcaption" value="Pay Result" />
+      </field>
+      <field id="p_convenience_fee">
+        <phrase id="fldcaption" value="Convenience Fee" />
+      </field>
+      <field id="p_cf_success">
+        <phrase id="fldcaption" value="Pay Conv. Fee" />
+      </field>
+      <field id="p_cf_fee_rate">
+        <phrase id="fldcaption" value="Pay Conv. Fee Rate" />
+      </field>
+      <field id="p_cf_fee_type">
+        <phrase id="fldcaption" value="Pay Conv. Fee Type" />
+      </field>
+      <field id="p_response_code">
+        <phrase id="fldcaption" value="Response Code" />
+      </field>
+      <field id="sent_to_bank">
+        <phrase id="fldcaption" value="Sent to the Bank" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="paypal_id">
+        <phrase id="fldcaption" value="paypal id" />
+      </field>
+      <field id="moneris_id">
+        <phrase id="fldcaption" value="moneris id" />
+      </field>
+    </table>
+    <table id="lease_parkings">
+      <phrase id="tblcaption" value="Parkings" />
+      <field id="lease_parking_id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="lease_id">
+        <phrase id="fldcaption" value="Lease" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="Start Date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="End Date" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="parking_id">
+        <phrase id="fldcaption" value="Parking" />
+      </field>
+      <field id="lease_amount">
+        <phrase id="fldcaption" value="Amount" />
+      </field>
+    </table>
+    <table id="lease_storages">
+      <phrase id="tblcaption" value="Storages" />
+      <field id="lease_storage_id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="lease_id">
+        <phrase id="fldcaption" value="Lease" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="Start Date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="End Date" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="storage_id">
+        <phrase id="fldcaption" value="Storage" />
+      </field>
+      <field id="lease_amount">
+        <phrase id="fldcaption" value="Amount" />
+      </field>
+    </table>
+    <table id="request_infos">
+      <phrase id="tblcaption" value="Request Info" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="location">
+        <phrase id="fldcaption" value="Location" />
+      </field>
+      <field id="request_type_id">
+        <phrase id="fldcaption" value="Request Type" />
+      </field>
+      <field id="approvevisit">
+        <phrase id="fldcaption" value="Approve to Visit" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="timefromvisit">
+        <phrase id="fldcaption" value="Visit Time From" />
+      </field>
+      <field id="timetovisit">
+        <phrase id="fldcaption" value="Visit Time To" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="message">
+        <phrase id="fldcaption" value="Message" />
+      </field>
+      <field id="status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="entry_datetime">
+        <phrase id="fldcaption" value="Submited on" />
+      </field>
+      <field id="created_user_id">
+        <phrase id="fldcaption" value="created user id" />
+      </field>
+      <field id="common_area_detail">
+        <phrase id="fldcaption" value="common area detail" />
+      </field>
+      <field id="request_category">
+        <phrase id="fldcaption" value="request category" />
+      </field>
+    </table>
+    <table id="request_communications">
+      <phrase id="tblcaption" value="Communications" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="entry_date">
+        <phrase id="fldcaption" value="Time Stamp" />
+      </field>
+      <field id="request_id">
+        <phrase id="fldcaption" value="Request" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+      <field id="user_id">
+        <phrase id="fldcaption" value="user id" />
+      </field>
+      <field id="if_seen_by_tenant">
+        <phrase id="fldcaption" value="if seen by tenant" />
+      </field>
+      <field id="is_system_msg">
+        <phrase id="fldcaption" value="is system msg" />
+      </field>
+    </table>
+    <table id="deposits">
+      <phrase id="tblcaption" value="Deposits" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="deposit_type_id">
+        <phrase id="fldcaption" value="Type" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="tenant_id">
+        <phrase id="fldcaption" value="Tenant" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="Payment Method" />
+      </field>
+      <field id="amount">
+        <phrase id="fldcaption" value="Amount" />
+      </field>
+      <field id="paid_date">
+        <phrase id="fldcaption" value="Paid Date" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="deposit_status">
+        <phrase id="fldcaption" value="Return" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Returned" />
+      </field>
+      <field id="return_date">
+        <phrase id="fldcaption" value="Return Date" />
+      </field>
+      <field id="return_employee_id">
+        <phrase id="fldcaption" value="Return Employee" />
+      </field>
+    </table>
+    <table id="lock_infos">
+      <phrase id="tblcaption" value="Lock Infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="lock_type_id">
+        <phrase id="fldcaption" value="Lock Type" />
+      </field>
+      <field id="pass_code">
+        <phrase id="fldcaption" value="Pass Code" />
+      </field>
+      <field id="location">
+        <phrase id="fldcaption" value="Location" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+    </table>
+    <table id="rooms">
+      <phrase id="tblcaption" value="Rooms" />
+      <field id="room_id">
+        <phrase id="fldcaption" value="room id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="room_equipments">
+      <phrase id="tblcaption" value="Room Equipments" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="room_id">
+        <phrase id="fldcaption" value="Room" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="equipment_infos">
+      <phrase id="tblcaption" value="Equipment Infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="room_id">
+        <phrase id="fldcaption" value="Room" />
+      </field>
+      <field id="room_equipment_id">
+        <phrase id="fldcaption" value="Room Equipment" />
+      </field>
+      <field id="brand">
+        <phrase id="fldcaption" value="Brand" />
+      </field>
+      <field id="brand_id">
+        <phrase id="fldcaption" value="Brands" />
+      </field>
+      <field id="location">
+        <phrase id="fldcaption" value="Location" />
+      </field>
+      <field id="model">
+        <phrase id="fldcaption" value="Model" />
+      </field>
+      <field id="serial">
+        <phrase id="fldcaption" value="Serial" />
+      </field>
+      <field id="year_install">
+        <phrase id="fldcaption" value="Installed Year" />
+      </field>
+      <field id="last_maintenance">
+        <phrase id="fldcaption" value="Last Maintenance" />
+      </field>
+      <field id="paint_code">
+        <phrase id="fldcaption" value="paint code" />
+      </field>
+    </table>
+    <table id="appliance_infos">
+      <phrase id="tblcaption" value="Appliance Infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Unit" />
+      </field>
+      <field id="appliance_type_id">
+        <phrase id="fldcaption" value="Appliance Type" />
+      </field>
+      <field id="brand_id">
+        <phrase id="fldcaption" value="Brand" />
+      </field>
+      <field id="brand">
+        <phrase id="fldcaption" value="Brand" />
+      </field>
+      <field id="model">
+        <phrase id="fldcaption" value="Model" />
+      </field>
+      <field id="serial">
+        <phrase id="fldcaption" value="Serial" />
+      </field>
+      <field id="year_install">
+        <phrase id="fldcaption" value="Installed Year" />
+      </field>
+      <field id="last_maintenance">
+        <phrase id="fldcaption" value="Last Maintenance" />
+      </field>
+      <field id="paint_code">
+        <phrase id="fldcaption" value="paint code" />
+      </field>
+    </table>
+    <table id="building_pictures">
+      <phrase id="tblcaption" value="建筑图片" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="picture_type_id">
+        <phrase id="fldcaption" value="Type" />
+      </field>
+      <field id="order_no">
+        <phrase id="fldcaption" value="Order" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+    </table>
+    <table id="building_documents">
+      <phrase id="tblcaption" value="建筑文件" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="document_type_id">
+        <phrase id="fldcaption" value="Document Type" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+      <field id="show_id">
+        <phrase id="fldcaption" value="Show" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="apartment_pictures">
+      <phrase id="tblcaption" value="Pictures" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="picture_type_id">
+        <phrase id="fldcaption" value="Type" />
+      </field>
+      <field id="order_no">
+        <phrase id="fldcaption" value="Order" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+    </table>
+    <table id="apartment_documents">
+      <phrase id="tblcaption" value="Docs" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="document_type_id">
+        <phrase id="fldcaption" value="Document Type" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="show_id">
+        <phrase id="fldcaption" value="Show" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="facilities">
+      <phrase id="tblcaption" value="Facilities" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="countries">
+      <phrase id="tblcaption" value="Countries" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="provinces">
+      <phrase id="tblcaption" value="Provinces" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="tax1">
+        <phrase id="fldcaption" value="GST" />
+      </field>
+      <field id="tax2">
+        <phrase id="fldcaption" value="QST" />
+      </field>
+      <field id="tax3">
+        <phrase id="fldcaption" value="HST" />
+      </field>
+    </table>
+    <table id="userlevels">
+      <phrase id="tblcaption" value="User Levels" />
+      <field id="userlevelid">
+        <phrase id="fldcaption" value="userlevelid" />
+      </field>
+      <field id="userlevelname">
+        <phrase id="fldcaption" value="userlevelname" />
+      </field>
+      <field id="manager_access">
+        <phrase id="fldcaption" value="manager access" />
+      </field>
+    </table>
+    <table id="userlevelpermissions">
+      <phrase id="tblcaption" value="User Level Permissions" />
+      <field id="userlevelid">
+        <phrase id="fldcaption" value="userlevelid" />
+      </field>
+      <field id="_tablename">
+        <phrase id="fldcaption" value="tablename" />
+      </field>
+      <field id="permission">
+        <phrase id="fldcaption" value="permission" />
+      </field>
+    </table>
+    <table id="languages">
+      <phrase id="tblcaption" value="Languages" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="job_titles">
+      <phrase id="tblcaption" value="Job Titles" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="floor_types">
+      <phrase id="tblcaption" value="Floor Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="lock_types">
+      <phrase id="tblcaption" value="Lock Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="currencies">
+      <phrase id="tblcaption" value="Currencies" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="apartment_status">
+      <phrase id="tblcaption" value="Apartment Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+      <field id="manual_access">
+        <phrase id="fldcaption" value="Manual Access" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="document_types">
+      <phrase id="tblcaption" value="Document Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="audittrail">
+      <phrase id="tblcaption" value="Audit Trail" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="datetime">
+        <phrase id="fldcaption" value="datetime" />
+      </field>
+      <field id="script">
+        <phrase id="fldcaption" value="script" />
+      </field>
+      <field id="user">
+        <phrase id="fldcaption" value="user" />
+      </field>
+      <field id="action">
+        <phrase id="fldcaption" value="action" />
+      </field>
+      <field id="_table">
+        <phrase id="fldcaption" value="table" />
+      </field>
+      <field id="_field">
+        <phrase id="fldcaption" value="field" />
+      </field>
+      <field id="keyvalue">
+        <phrase id="fldcaption" value="keyvalue" />
+      </field>
+      <field id="oldvalue">
+        <phrase id="fldcaption" value="oldvalue" />
+      </field>
+      <field id="newvalue">
+        <phrase id="fldcaption" value="newvalue" />
+      </field>
+    </table>
+    <table id="request_types">
+      <phrase id="tblcaption" value="Request Type" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="internal_only">
+        <phrase id="fldcaption" value="internal only" />
+      </field>
+    </table>
+    <table id="request_status">
+      <phrase id="tblcaption" value="Request Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="internal_only">
+        <phrase id="fldcaption" value="internal only" />
+      </field>
+    </table>
+    <table id="tenant_status">
+      <phrase id="tblcaption" value="Tenant Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="amenities">
+      <phrase id="tblcaption" value="Amenities" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="vacancy_status">
+      <phrase id="tblcaption" value="Vacancy Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="lease_status">
+      <phrase id="tblcaption" value="Lease Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="home_php">
+      <phrase id="tblcaption" value="Home" />
+    </table>
+    <table id="payment_status">
+      <phrase id="tblcaption" value="Payment Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="owners_types">
+      <phrase id="tblcaption" value="Owner Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="size_types">
+      <phrase id="tblcaption" value="size types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="request_assignees">
+      <phrase id="tblcaption" value="request assignees" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="request_id">
+        <phrase id="fldcaption" value="request id" />
+      </field>
+      <field id="user_id">
+        <phrase id="fldcaption" value="user id" />
+      </field>
+      <field id="last_access_time">
+        <phrase id="fldcaption" value="last access time" />
+      </field>
+      <field id="notify_by_sms">
+        <phrase id="fldcaption" value="notify by sms" />
+      </field>
+      <field id="notify_by_email">
+        <phrase id="fldcaption" value="notify by email" />
+      </field>
+      <field id="notify_by_voice">
+        <phrase id="fldcaption" value="notify by voice" />
+      </field>
+    </table>
+    <table id="building_types">
+      <phrase id="tblcaption" value="building types" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="picture_types">
+      <phrase id="tblcaption" value="Picture Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="invoice_types">
+      <phrase id="tblcaption" value="Invoice Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="payment_period_types">
+      <phrase id="tblcaption" value="payment period types" />
+      <field id="id">
+        <phrase id="fldcaption" value="Id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="payment_methods">
+      <phrase id="tblcaption" value="Payment Methods" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="side_faces">
+      <phrase id="tblcaption" value="side faces" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="rental_payments">
+      <phrase id="tblcaption" value="Rental Payments" />
+      <field id="lease_id">
+        <phrase id="fldcaption" value="lease id" />
+      </field>
+      <field id="lease_payment_id">
+        <phrase id="fldcaption" value="lease payment id" />
+      </field>
+      <field id="payment_status_id">
+        <phrase id="fldcaption" value="Status" />
+      </field>
+      <field id="invoice_type_id">
+        <phrase id="fldcaption" value="Payment Status" />
+      </field>
+      <field id="total">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="total_discount">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="discount">
+        <phrase id="fldcaption" value="Discount" />
+      </field>
+      <field id="paid">
+        <phrase id="fldcaption" value="Paid" />
+      </field>
+      <field id="outstanding">
+        <phrase id="fldcaption" value="Outstanding" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="Due Date" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="Payment Method" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="Tenants" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="payment_status_id_f">
+        <phrase id="fldcaption" value="Payment Status" />
+      </field>
+      <field id="building_name">
+        <phrase id="fldcaption" value="building name" />
+      </field>
+      <field id="building_address">
+        <phrase id="fldcaption" value="building address" />
+      </field>
+      <field id="unit_number">
+        <phrase id="fldcaption" value="unit number" />
+      </field>
+      <field id="owner_name">
+        <phrase id="fldcaption" value="owner name" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="Start Date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="End Date" />
+      </field>
+      <field id="move_out_date">
+        <phrase id="fldcaption" value="Move out" />
+      </field>
+      <field id="lease_status_id">
+        <phrase id="fldcaption" value="Lease Status" />
+      </field>
+      <field id="lease_amount">
+        <phrase id="fldcaption" value="Lease Amount" />
+      </field>
+    </table>
+    <table id="view_tenant_infos">
+      <phrase id="tblcaption" value="Tenant Infos" />
+      <phrase id="tblpagecaption1" value="General Info" />
+      <phrase id="tblpagecaption2" value="Car Details" />
+      <field id="tenant_id">
+        <phrase id="fldcaption" value="Id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="Full Name" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="mobile">
+        <phrase id="fldcaption" value="Mobile Number" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="building_name">
+        <phrase id="fldcaption" value="Building Name" />
+      </field>
+      <field id="unit_number">
+        <phrase id="fldcaption" value="Unit Number" />
+      </field>
+      <field id="parking_id">
+        <phrase id="fldcaption" value="Parking" />
+      </field>
+      <field id="storage_id">
+        <phrase id="fldcaption" value="Storage" />
+      </field>
+      <field id="parking_name">
+        <phrase id="fldcaption" value="Parking Name" />
+      </field>
+      <field id="storage_name">
+        <phrase id="fldcaption" value="Storage Name" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="Start Date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="End Date" />
+      </field>
+      <field id="delinquent">
+        <phrase id="fldcaption" value="Delinquent" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="potential_id">
+        <phrase id="fldcaption" value="Potential" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="date_of_birth">
+        <phrase id="fldcaption" value="Date of Birth" />
+      </field>
+      <field id="sex">
+        <phrase id="fldcaption" value="Sex" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Not Specified" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Male" />
+        <phrase id="fldtagvalue3" value="2" />
+        <phrase id="fldtagcaption3" value="Female" />
+      </field>
+      <field id="_language">
+        <phrase id="fldcaption" value="Language" />
+      </field>
+      <field id="home_number">
+        <phrase id="fldcaption" value="Home Number" />
+      </field>
+      <field id="work_number">
+        <phrase id="fldcaption" value="Work Number" />
+      </field>
+      <field id="work_number_ext">
+        <phrase id="fldcaption" value="Work Ext" />
+      </field>
+      <field id="home_address">
+        <phrase id="fldcaption" value="Home Address" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="City" />
+      </field>
+      <field id="country_id">
+        <phrase id="fldcaption" value="Country" />
+      </field>
+      <field id="comment">
+        <phrase id="fldcaption" value="Comment" />
+      </field>
+      <field id="car_make">
+        <phrase id="fldcaption" value="Car Make" />
+      </field>
+      <field id="car_model">
+        <phrase id="fldcaption" value="Car Model" />
+      </field>
+      <field id="car_color">
+        <phrase id="fldcaption" value="Car Color" />
+      </field>
+      <field id="license_plate">
+        <phrase id="fldcaption" value="License Plate Provice / Country" />
+      </field>
+      <field id="plate_number">
+        <phrase id="fldcaption" value="Plate Number" />
+      </field>
+      <field id="parking_sticker">
+        <phrase id="fldcaption" value="Parking Sticker" />
+      </field>
+      <field id="login_active">
+        <phrase id="fldcaption" value="Active Login" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Can Login" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="UserName (Email)" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="created_dt">
+        <phrase id="fldcaption" value="Created Date" />
+      </field>
+      <field id="created_by">
+        <phrase id="fldcaption" value="Created By" />
+      </field>
+      <field id="lease_id">
+        <phrase id="fldcaption" value="Lease" />
+      </field>
+      <field id="lease_status_id">
+        <phrase id="fldcaption" value="lease status id" />
+      </field>
+    </table>
+    <table id="pending_this_month">
+      <phrase id="tblcaption" value="Pending This Month" />
+      <field id="lease_id">
+        <phrase id="fldcaption" value="lease id" />
+      </field>
+      <field id="lease_payments_id">
+        <phrase id="fldcaption" value="lease payments id" />
+      </field>
+      <field id="payment_status_id">
+        <phrase id="fldcaption" value="Payment Status" />
+      </field>
+      <field id="total">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="amount_outstanding">
+        <phrase id="fldcaption" value="Amount Outstanding" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="Due Date" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="Tenant" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="Floor" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+    </table>
+    <table id="payment_types">
+      <phrase id="tblcaption" value="Payment Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="apartment_types">
+      <phrase id="tblcaption" value="Apartment Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="apartment_types_sub">
+      <phrase id="tblcaption" value="Apartment Sub Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="apartment_type_id">
+        <phrase id="fldcaption" value="Type" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="event_list_php">
+      <phrase id="tblcaption" value="Events" />
+    </table>
+    <table id="price_discloures">
+      <phrase id="tblcaption" value="Price Discloures" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="payable_this_month">
+      <phrase id="tblcaption" value="Payable This Month" />
+      <field id="lease_payments_id">
+        <phrase id="fldcaption" value="Lease Payments" />
+      </field>
+      <field id="payment_status_id">
+        <phrase id="fldcaption" value="Payment Status" />
+      </field>
+      <field id="total">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="amount_outstanding">
+        <phrase id="fldcaption" value="Amount Outstanding" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="Due Date" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="Tenants" />
+      </field>
+      <field id="lease_id">
+        <phrase id="fldcaption" value="lease id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="Floor" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+    </table>
+    <table id="vacancy_report">
+      <phrase id="tblcaption" value="Vacancy Report" />
+      <field id="available_date">
+        <phrase id="fldcaption" value="Available Date" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="floor">
+        <phrase id="fldcaption" value="Floor" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="apartment_types_sub_id">
+        <phrase id="fldcaption" value="Apartment Types" />
+      </field>
+      <field id="size_type_id">
+        <phrase id="fldcaption" value="Size Type" />
+      </field>
+      <field id="monthly_price">
+        <phrase id="fldcaption" value="Monthly Price" />
+      </field>
+      <field id="upcoming_date">
+        <phrase id="fldcaption" value="Upcoming Date" />
+      </field>
+      <field id="status_next_period">
+        <phrase id="fldcaption" value="Status Next Period" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+    </table>
+    <table id="userlist">
+      <phrase id="tblcaption" value="User List" />
+      <field id="full_name">
+        <phrase id="fldcaption" value="full name" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="userpass" />
+      </field>
+      <field id="user_level">
+        <phrase id="fldcaption" value="user level" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="email" />
+      </field>
+      <field id="user_id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="active id" />
+      </field>
+    </table>
+    <table id="lease_payment_view">
+      <phrase id="tblcaption" value="lease payment view" />
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="apartment id" />
+      </field>
+      <field id="tenant_id">
+        <phrase id="fldcaption" value="tenant id" />
+      </field>
+      <field id="size_type_id">
+        <phrase id="fldcaption" value="size type id" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="end date" />
+      </field>
+      <field id="outstanding">
+        <phrase id="fldcaption" value="outstanding" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="due date" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+      <field id="available_date">
+        <phrase id="fldcaption" value="available date" />
+      </field>
+      <field id="payment_total">
+        <phrase id="fldcaption" value="payment total" />
+      </field>
+    </table>
+    <table id="vacancy_next_month">
+      <phrase id="tblcaption" value="vacancy next month" />
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="floor id" />
+      </field>
+      <field id="unit_number">
+        <phrase id="fldcaption" value="unit number" />
+      </field>
+      <field id="apartment_types_sub">
+        <phrase id="fldcaption" value="apartment types sub" />
+      </field>
+      <field id="size_type">
+        <phrase id="fldcaption" value="size type" />
+      </field>
+      <field id="monthly_price">
+        <phrase id="fldcaption" value="monthly price" />
+      </field>
+      <field id="status_next_month">
+        <phrase id="fldcaption" value="status next month" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+    </table>
+    <table id="view_all_payments">
+      <phrase id="tblcaption" value="view all payments" />
+      <field id="lease_id">
+        <phrase id="fldcaption" value="lease id" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="tenant ids" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="start date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="end date" />
+      </field>
+      <field id="move_in_date">
+        <phrase id="fldcaption" value="move in date" />
+      </field>
+      <field id="move_out_date">
+        <phrase id="fldcaption" value="move out date" />
+      </field>
+      <field id="delinquent">
+        <phrase id="fldcaption" value="Delinquent" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="Due Date" />
+      </field>
+      <field id="total">
+        <phrase id="fldcaption" value="Total" />
+      </field>
+      <field id="outstanding">
+        <phrase id="fldcaption" value="Outstanding" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+      <field id="period">
+        <phrase id="fldcaption" value="Period" />
+      </field>
+    </table>
+    <table id="view_leases">
+      <phrase id="tblcaption" value="view leases" />
+      <field id="tenant_id">
+        <phrase id="fldcaption" value="Tenant" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="Start Date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="End Date" />
+      </field>
+      <field id="move_in_date">
+        <phrase id="fldcaption" value="Move in date" />
+      </field>
+      <field id="move_out_date">
+        <phrase id="fldcaption" value="Move out date" />
+      </field>
+      <field id="delinquent">
+        <phrase id="fldcaption" value="Delinquent" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+    </table>
+    <table id="booking_infos">
+      <phrase id="tblcaption" value="booking infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="event_id">
+        <phrase id="fldcaption" value="event id" />
+      </field>
+      <field id="booking_start">
+        <phrase id="fldcaption" value="booking start" />
+      </field>
+      <field id="customer_email">
+        <phrase id="fldcaption" value="customer email" />
+      </field>
+      <field id="booking_date">
+        <phrase id="fldcaption" value="booking date" />
+      </field>
+      <field id="customer_name">
+        <phrase id="fldcaption" value="customer name" />
+      </field>
+      <field id="booking_end">
+        <phrase id="fldcaption" value="booking end" />
+      </field>
+      <field id="telephone">
+        <phrase id="fldcaption" value="telephone" />
+      </field>
+      <field id="visitor_desired_unit">
+        <phrase id="fldcaption" value="visitor desired unit" />
+      </field>
+      <field id="potential_status">
+        <phrase id="fldcaption" value="potential status" />
+      </field>
+      <field id="ps_modified_by">
+        <phrase id="fldcaption" value="ps modified by" />
+      </field>
+      <field id="source_type">
+        <phrase id="fldcaption" value="source type" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="pay_php">
+      <phrase id="tblcaption" value="Payment" />
+    </table>
+    <table id="terms_php">
+      <phrase id="tblcaption" value="Terms of Service" />
+    </table>
+    <table id="contact_us_php">
+      <phrase id="tblcaption" value="Contact Us" />
+    </table>
+    <table id="calendar_infos">
+      <phrase id="tblcaption" value="calendar infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="calendar_type">
+        <phrase id="fldcaption" value="calendar type" />
+      </field>
+    </table>
+    <table id="event_availabilities">
+      <phrase id="tblcaption" value="event availabilities" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="event_id">
+        <phrase id="fldcaption" value="event id" />
+      </field>
+      <field id="availability_specific_date">
+        <phrase id="fldcaption" value="availability specific date" />
+      </field>
+      <field id="availability_start">
+        <phrase id="fldcaption" value="availability start" />
+      </field>
+      <field id="availability_end">
+        <phrase id="fldcaption" value="availability end" />
+      </field>
+      <field id="availability_type">
+        <phrase id="fldcaption" value="availability type" />
+      </field>
+    </table>
+    <table id="kijiji_listing_php">
+      <phrase id="tblcaption" value="Online Listing" />
+    </table>
+    <table id="event_infos">
+      <phrase id="tblcaption" value="event infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="event_name">
+        <phrase id="fldcaption" value="event name" />
+      </field>
+      <field id="event_location">
+        <phrase id="fldcaption" value="event location" />
+      </field>
+      <field id="event_duration">
+        <phrase id="fldcaption" value="event duration" />
+      </field>
+      <field id="event_custom_duration">
+        <phrase id="fldcaption" value="event custom duration" />
+      </field>
+      <field id="event_max_book_per_day">
+        <phrase id="fldcaption" value="event max book per day" />
+      </field>
+      <field id="event_increment">
+        <phrase id="fldcaption" value="event increment" />
+      </field>
+      <field id="event_buffer_before">
+        <phrase id="fldcaption" value="event buffer before" />
+      </field>
+      <field id="event_buffer_after">
+        <phrase id="fldcaption" value="event buffer after" />
+      </field>
+      <field id="event_less_hour">
+        <phrase id="fldcaption" value="event less hour" />
+      </field>
+      <field id="event_is_open">
+        <phrase id="fldcaption" value="event is open" />
+      </field>
+      <field id="event_description">
+        <phrase id="fldcaption" value="event description" />
+      </field>
+      <field id="event_max_book_per_slot">
+        <phrase id="fldcaption" value="event max book per slot" />
+      </field>
+      <field id="event_rolling_week">
+        <phrase id="fldcaption" value="event rolling week" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="resonsible_employee_id">
+        <phrase id="fldcaption" value="resonsible employee id" />
+      </field>
+    </table>
+    <table id="office_maintenance_event_infos">
+      <phrase id="tblcaption" value="office maintenance event infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="event_name">
+        <phrase id="fldcaption" value="event name" />
+      </field>
+      <field id="event_info">
+        <phrase id="fldcaption" value="event info" />
+      </field>
+      <field id="event_date">
+        <phrase id="fldcaption" value="event date" />
+      </field>
+      <field id="event_frequency">
+        <phrase id="fldcaption" value="event frequency" />
+      </field>
+      <field id="event_frequency_type">
+        <phrase id="fldcaption" value="event frequency type" />
+      </field>
+      <field id="event_type">
+        <phrase id="fldcaption" value="event type" />
+      </field>
+      <field id="event_category">
+        <phrase id="fldcaption" value="event category" />
+      </field>
+      <field id="person_in_contact">
+        <phrase id="fldcaption" value="person in contact" />
+      </field>
+      <field id="contact_number">
+        <phrase id="fldcaption" value="contact number" />
+      </field>
+      <field id="event_created_by_user_id">
+        <phrase id="fldcaption" value="event created by user id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="created_date">
+        <phrase id="fldcaption" value="created date" />
+      </field>
+    </table>
+    <table id="building_infos_view">
+      <phrase id="tblcaption" value="Property Info" />
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building Name" />
+      </field>
+      <field id="building_name">
+        <phrase id="fldcaption" value="Building Name" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Unit No." />
+      </field>
+      <field id="unit_no">
+        <phrase id="fldcaption" value="unit_no" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner Name" />
+      </field>
+      <field id="owner_name">
+        <phrase id="fldcaption" value="owner name" />
+      </field>
+      <field id="featured">
+        <phrase id="fldcaption" value="Featured" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="building_type_id">
+        <phrase id="fldcaption" value="building type id" />
+      </field>
+      <field id="address">
+        <phrase id="fldcaption" value="Address" />
+      </field>
+      <field id="physical_country">
+        <phrase id="fldcaption" value="physical country" />
+      </field>
+      <field id="county_id">
+        <phrase id="fldcaption" value="county id" />
+      </field>
+      <field id="province_id">
+        <phrase id="fldcaption" value="province id" />
+      </field>
+      <field id="city">
+        <phrase id="fldcaption" value="city" />
+      </field>
+      <field id="postal_code">
+        <phrase id="fldcaption" value="postal code" />
+      </field>
+      <field id="physical_address">
+        <phrase id="fldcaption" value="physical address" />
+      </field>
+      <field id="physical_province">
+        <phrase id="fldcaption" value="physical province" />
+      </field>
+      <field id="physical_city">
+        <phrase id="fldcaption" value="physical city" />
+      </field>
+      <field id="physical_postal_code">
+        <phrase id="fldcaption" value="physical postal code" />
+      </field>
+      <field id="latitude">
+        <phrase id="fldcaption" value="latitude" />
+      </field>
+      <field id="longitude">
+        <phrase id="fldcaption" value="longitude" />
+      </field>
+      <field id="radius">
+        <phrase id="fldcaption" value="radius" />
+      </field>
+      <field id="google_maps">
+        <phrase id="fldcaption" value="google maps" />
+      </field>
+      <field id="rules">
+        <phrase id="fldcaption" value="rules" />
+      </field>
+      <field id="rules_fr">
+        <phrase id="fldcaption" value="rules fr" />
+      </field>
+      <field id="facilities_id">
+        <phrase id="fldcaption" value="facilities id" />
+      </field>
+      <field id="building_currency">
+        <phrase id="fldcaption" value="building currency" />
+      </field>
+      <field id="building_timezone">
+        <phrase id="fldcaption" value="building timezone" />
+      </field>
+      <field id="daylight_savingtime">
+        <phrase id="fldcaption" value="daylight savingtime" />
+      </field>
+      <field id="feature_picture">
+        <phrase id="fldcaption" value="feature picture" />
+      </field>
+      <field id="pictures">
+        <phrase id="fldcaption" value="pictures" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="comments" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="user_ids">
+        <phrase id="fldcaption" value="User IDs" />
+      </field>
+      <field id="company_employees">
+        <phrase id="fldcaption" value="company employees" />
+      </field>
+    </table>
+    <table id="rental_payments_wo_status">
+      <phrase id="tblcaption" value="rental payments wo status" />
+      <field id="lease_id">
+        <phrase id="fldcaption" value="lease id" />
+      </field>
+      <field id="lease_payment_id">
+        <phrase id="fldcaption" value="lease payment id" />
+      </field>
+      <field id="payment_status_id_f">
+        <phrase id="fldcaption" value="payment status id f" />
+      </field>
+      <field id="invoice_type_id">
+        <phrase id="fldcaption" value="invoice type id" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="due date" />
+      </field>
+      <field id="total">
+        <phrase id="fldcaption" value="total" />
+      </field>
+      <field id="discount">
+        <phrase id="fldcaption" value="discount" />
+      </field>
+      <field id="total_discount">
+        <phrase id="fldcaption" value="total discount" />
+      </field>
+      <field id="paid">
+        <phrase id="fldcaption" value="paid" />
+      </field>
+      <field id="outstanding">
+        <phrase id="fldcaption" value="outstanding" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="payment method id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="apartment id" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="tenant ids" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="building_name">
+        <phrase id="fldcaption" value="building name" />
+      </field>
+      <field id="building_address">
+        <phrase id="fldcaption" value="building address" />
+      </field>
+      <field id="unit_number">
+        <phrase id="fldcaption" value="unit number" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+      <field id="owner_name">
+        <phrase id="fldcaption" value="owner name" />
+      </field>
+      <field id="start_date">
+        <phrase id="fldcaption" value="start date" />
+      </field>
+      <field id="end_date">
+        <phrase id="fldcaption" value="end date" />
+      </field>
+      <field id="move_out_date">
+        <phrase id="fldcaption" value="move out date" />
+      </field>
+      <field id="lease_status_id">
+        <phrase id="fldcaption" value="lease status id" />
+      </field>
+      <field id="lease_amount">
+        <phrase id="fldcaption" value="lease amount" />
+      </field>
+    </table>
+    <table id="office_maintenance_event_uploads">
+      <phrase id="tblcaption" value="office maintenance event uploads" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="event_id">
+        <phrase id="fldcaption" value="event id" />
+      </field>
+      <field id="upload_date">
+        <phrase id="fldcaption" value="upload date" />
+      </field>
+      <field id="upload_name">
+        <phrase id="fldcaption" value="upload name" />
+      </field>
+    </table>
+    <table id="office_maintenance_event_assigntos">
+      <phrase id="tblcaption" value="office maintenance event assigntos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="office_maintenance_event_id">
+        <phrase id="fldcaption" value="office maintenance event id" />
+      </field>
+      <field id="assigned_user_id">
+        <phrase id="fldcaption" value="assigned user id" />
+      </field>
+      <field id="assigned_employee_id">
+        <phrase id="fldcaption" value="assigned employee id" />
+      </field>
+      <field id="assigned_manager_id">
+        <phrase id="fldcaption" value="assigned manager id" />
+      </field>
+      <field id="assigned_owner_id">
+        <phrase id="fldcaption" value="assigned owner id" />
+      </field>
+      <field id="assigned_other_principal_id">
+        <phrase id="fldcaption" value="assigned other principal id" />
+      </field>
+    </table>
+    <table id="office_maintenance_event_principal_info">
+      <phrase id="tblcaption" value="office maintenance event principal info" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="principal_name">
+        <phrase id="fldcaption" value="principal name" />
+      </field>
+      <field id="principal_email">
+        <phrase id="fldcaption" value="principal email" />
+      </field>
+      <field id="principal_telephone">
+        <phrase id="fldcaption" value="principal telephone" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+    </table>
+    <table id="floor_categories">
+      <phrase id="tblcaption" value="Floor Categories" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="online_listing">
+      <phrase id="tblcaption" value="Online Listing" />
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Apartment" />
+      </field>
+      <field id="from_date">
+        <phrase id="fldcaption" value="From Date" />
+      </field>
+      <field id="to_date">
+        <phrase id="fldcaption" value="To Date" />
+      </field>
+    </table>
+    <table id="settings">
+      <phrase id="tblcaption" value="Settings" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="active_id">
+        <phrase id="fldcaption" value="Active" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="language_id">
+        <phrase id="fldcaption" value="Language" />
+      </field>
+      <field id="contact_us">
+        <phrase id="fldcaption" value="Contact Us" />
+      </field>
+      <field id="terms">
+        <phrase id="fldcaption" value="Terms" />
+      </field>
+      <field id="privacy">
+        <phrase id="fldcaption" value="Privacy" />
+      </field>
+      <field id="refunds">
+        <phrase id="fldcaption" value="Refunds" />
+      </field>
+      <field id="cf_pp_balance_f">
+        <phrase id="fldcaption" value="Paypal Balance Flat" />
+      </field>
+      <field id="cf_pp_cc_p">
+        <phrase id="fldcaption" value="Paypal Credit Card %" />
+      </field>
+      <field id="cf_m_cc_p">
+        <phrase id="fldcaption" value="Moneris Credit Card %" />
+      </field>
+      <field id="cf_m_interac_f">
+        <phrase id="fldcaption" value="Moneris Interac Flat" />
+      </field>
+      <field id="financial_originator">
+        <phrase id="fldcaption" value="Originator ID Number" />
+      </field>
+      <field id="financial_originator_short">
+        <phrase id="fldcaption" value="Originator Short Name" />
+      </field>
+      <field id="financial_cpa">
+        <phrase id="fldcaption" value="CPA code" />
+      </field>
+      <field id="financial_institute">
+        <phrase id="fldcaption" value="Financial Institution ID/Transit Number for returned payments" />
+      </field>
+      <field id="financial_accountno">
+        <phrase id="fldcaption" value="Account Number for returned payments" />
+      </field>
+    </table>
+    <table id="view_questions_and_visits">
+      <phrase id="tblcaption" value="Potential Tenants" />
+      <field id="source_type_id">
+        <phrase id="fldcaption" value="Source" />
+      </field>
+      <field id="customer_name">
+        <phrase id="fldcaption" value="Customer Name" />
+      </field>
+      <field id="customer_phone">
+        <phrase id="fldcaption" value="Customer Phone" />
+      </field>
+      <field id="customer_email">
+        <phrase id="fldcaption" value="Customer Email" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="unit_id">
+        <phrase id="fldcaption" value="Unit" />
+      </field>
+      <field id="potential_status">
+        <phrase id="fldcaption" value="Potential Status" />
+      </field>
+      <field id="ps_modified_by">
+        <phrase id="fldcaption" value="ps modified by" />
+      </field>
+      <field id="visit_or_question">
+        <phrase id="fldcaption" value="Visit or Question" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Visit" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Question" />
+      </field>
+      <field id="happening_date">
+        <phrase id="fldcaption" value="Date of Entry" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="signup">
+      <phrase id="tblcaption" value="Sign Up" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="first_name">
+        <phrase id="fldcaption" value="First Name" />
+      </field>
+      <field id="last_name">
+        <phrase id="fldcaption" value="Last Name" />
+      </field>
+      <field id="phone_number">
+        <phrase id="fldcaption" value="Phone Number" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="Email" />
+      </field>
+      <field id="property_address">
+        <phrase id="fldcaption" value="Property Address" />
+      </field>
+      <field id="property_type_id">
+        <phrase id="fldcaption" value="Property Type" />
+      </field>
+      <field id="property_number">
+        <phrase id="fldcaption" value="Property Number" />
+      </field>
+      <field id="tax_document">
+        <phrase id="fldcaption" value="Proof of Ownership" />
+      </field>
+      <field id="reviewed">
+        <phrase id="fldcaption" value="Reviewed" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+      <field id="createdt">
+        <phrase id="fldcaption" value="Created On" />
+      </field>
+      <field id="updatedt">
+        <phrase id="fldcaption" value="Update On" />
+      </field>
+    </table>
+    <table id="kijiji_settings">
+      <phrase id="tblcaption" value="kijiji settings" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="slots_number">
+        <phrase id="fldcaption" value="slots number" />
+      </field>
+      <field id="feed_by_price">
+        <phrase id="fldcaption" value="feed by price" />
+      </field>
+      <field id="feed_by_price_order_strategy">
+        <phrase id="fldcaption" value="feed by price order strategy" />
+      </field>
+      <field id="feed_by_value">
+        <phrase id="fldcaption" value="feed by value" />
+      </field>
+      <field id="feed_by_value_order_strategy">
+        <phrase id="fldcaption" value="feed by value order strategy" />
+      </field>
+      <field id="feed_carousel">
+        <phrase id="fldcaption" value="feed carousel" />
+      </field>
+    </table>
+    <table id="kijiji_payments">
+      <phrase id="tblcaption" value="kijiji payments" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="inovice_number">
+        <phrase id="fldcaption" value="inovice number" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="buy_slots_count">
+        <phrase id="fldcaption" value="buy slots count" />
+      </field>
+      <field id="buy_slots_price">
+        <phrase id="fldcaption" value="buy slots price" />
+      </field>
+      <field id="created_time">
+        <phrase id="fldcaption" value="created time" />
+      </field>
+      <field id="payment_time">
+        <phrase id="fldcaption" value="payment time" />
+      </field>
+      <field id="slots_due_time">
+        <phrase id="fldcaption" value="slots due time" />
+      </field>
+      <field id="payment_amount">
+        <phrase id="fldcaption" value="payment amount" />
+      </field>
+      <field id="payment_status">
+        <phrase id="fldcaption" value="payment status" />
+      </field>
+      <field id="c_f_amount">
+        <phrase id="fldcaption" value="C F amount" />
+      </field>
+      <field id="total_amount">
+        <phrase id="fldcaption" value="total amount" />
+      </field>
+      <field id="transactions_paypal_id">
+        <phrase id="fldcaption" value="transactions paypal id" />
+      </field>
+      <field id="transactions_moneris_id">
+        <phrase id="fldcaption" value="transactions moneris id" />
+      </field>
+    </table>
+    <table id="taxes">
+      <phrase id="tblcaption" value="taxes" />
+      <field id="province_id">
+        <phrase id="fldcaption" value="province id" />
+      </field>
+      <field id="tax_id">
+        <phrase id="fldcaption" value="tax id" />
+      </field>
+      <field id="percentage">
+        <phrase id="fldcaption" value="percentage" />
+      </field>
+    </table>
+    <table id="tax_infos">
+      <phrase id="tblcaption" value="Taxes" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="renovation_status">
+      <phrase id="tblcaption" value="Renovation Status" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="deposit_types">
+      <phrase id="tblcaption" value="Deposit Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="question_info">
+      <phrase id="tblcaption" value="question info" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="customer_name">
+        <phrase id="fldcaption" value="customer name" />
+      </field>
+      <field id="customer_phone">
+        <phrase id="fldcaption" value="customer phone" />
+      </field>
+      <field id="customer_email">
+        <phrase id="fldcaption" value="customer email" />
+      </field>
+      <field id="content">
+        <phrase id="fldcaption" value="content" />
+      </field>
+      <field id="related_unit">
+        <phrase id="fldcaption" value="related unit" />
+      </field>
+      <field id="potential_status">
+        <phrase id="fldcaption" value="potential status" />
+      </field>
+      <field id="ps_modified_by">
+        <phrase id="fldcaption" value="ps modified by" />
+      </field>
+    </table>
+    <table id="question_infos">
+      <phrase id="tblcaption" value="question infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="customer_name">
+        <phrase id="fldcaption" value="customer name" />
+      </field>
+      <field id="customer_phone">
+        <phrase id="fldcaption" value="customer phone" />
+      </field>
+      <field id="customer_email">
+        <phrase id="fldcaption" value="customer email" />
+      </field>
+      <field id="content">
+        <phrase id="fldcaption" value="content" />
+      </field>
+      <field id="related_unit">
+        <phrase id="fldcaption" value="related unit" />
+      </field>
+      <field id="potential_status">
+        <phrase id="fldcaption" value="potential status" />
+      </field>
+      <field id="ps_modified_by">
+        <phrase id="fldcaption" value="ps modified by" />
+      </field>
+      <field id="submission_date">
+        <phrase id="fldcaption" value="submission date" />
+      </field>
+      <field id="source_type">
+        <phrase id="fldcaption" value="source" />
+      </field>
+      <field id="company_id">
+        <phrase id="fldcaption" value="company id" />
+      </field>
+    </table>
+    <table id="source_type">
+      <phrase id="tblcaption" value="source type" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+    </table>
+    <table id="brand_infos">
+      <phrase id="tblcaption" value="Brand Infos" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+      <field id="building">
+        <phrase id="fldcaption" value="For Building" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+      <field id="apartment">
+        <phrase id="fldcaption" value="For Apartment" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Yes" />
+      </field>
+    </table>
+    <table id="appliance_types">
+      <phrase id="tblcaption" value="Appliance Types" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="Name" />
+      </field>
+    </table>
+    <table id="floor_documents">
+      <phrase id="tblcaption" value="Docs" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="floor_id">
+        <phrase id="fldcaption" value="floor id" />
+      </field>
+      <field id="document_type_id">
+        <phrase id="fldcaption" value="document type id" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="file" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="remarks" />
+      </field>
+      <field id="show_id">
+        <phrase id="fldcaption" value="Show" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="requests_php">
+      <phrase id="tblcaption" value="Requests" />
+    </table>
+    <table id="lease_documents">
+      <phrase id="tblcaption" value="Docs" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="lease_id">
+        <phrase id="fldcaption" value="Lease ID" />
+      </field>
+      <field id="document_type_id">
+        <phrase id="fldcaption" value="Document Type" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+      <field id="show_id">
+        <phrase id="fldcaption" value="Show" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="view_tenant_statement_wo_balance">
+      <phrase id="tblcaption" value="view tenant statement wo balance" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="dbcr">
+        <phrase id="fldcaption" value="DBCR" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="due date" />
+      </field>
+      <field id="amount">
+        <phrase id="fldcaption" value="amount" />
+      </field>
+      <field id="description">
+        <phrase id="fldcaption" value="description" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="tenant ids" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="comments" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="employee id" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="payment method id" />
+      </field>
+      <field id="payment_type_id">
+        <phrase id="fldcaption" value="payment type id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="apartment id" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="owner id" />
+      </field>
+      <field id="sent_to_bank">
+        <phrase id="fldcaption" value="sent to bank" />
+      </field>
+    </table>
+    <table id="view_tenant_statement">
+      <phrase id="tblcaption" value="View Tenant Statement" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="dbcr">
+        <phrase id="fldcaption" value="DBCR" />
+        <phrase id="fldtagvalue1" value="d" />
+        <phrase id="fldtagcaption1" value="Debit" />
+        <phrase id="fldtagvalue2" value="c" />
+        <phrase id="fldtagcaption2" value="Credit" />
+      </field>
+      <field id="due_date">
+        <phrase id="fldcaption" value="Date" />
+      </field>
+      <field id="amount">
+        <phrase id="fldcaption" value="Amount" />
+      </field>
+      <field id="payment_type_id">
+        <phrase id="fldcaption" value="Payment Type" />
+      </field>
+      <field id="payment_method_id">
+        <phrase id="fldcaption" value="Payment Method" />
+      </field>
+      <field id="description">
+        <phrase id="fldcaption" value="Description" />
+      </field>
+      <field id="tenant_ids">
+        <phrase id="fldcaption" value="Tenant" />
+      </field>
+      <field id="charge">
+        <phrase id="fldcaption" value="Charge" />
+      </field>
+      <field id="payment">
+        <phrase id="fldcaption" value="Payment" />
+      </field>
+      <field id="balance">
+        <phrase id="fldcaption" value="Balance" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="Building" />
+      </field>
+      <field id="apartment_id">
+        <phrase id="fldcaption" value="Unit" />
+      </field>
+      <field id="owner_id">
+        <phrase id="fldcaption" value="Owner" />
+      </field>
+      <field id="comments">
+        <phrase id="fldcaption" value="Comments" />
+      </field>
+      <field id="employee_id">
+        <phrase id="fldcaption" value="Employee" />
+      </field>
+      <field id="sent_to_bank">
+        <phrase id="fldcaption" value="Sent to Bank" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="tenant_portal_php">
+      <phrase id="tblcaption" value="Tenant Portal" />
+    </table>
+    <table id="tenant_documents">
+      <phrase id="tblcaption" value="Docs" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="tenant_id">
+        <phrase id="fldcaption" value="Tenant" />
+      </field>
+      <field id="document_type_id">
+        <phrase id="fldcaption" value="Document Type" />
+      </field>
+      <field id="file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="remarks">
+        <phrase id="fldcaption" value="Remarks" />
+      </field>
+      <field id="show_id">
+        <phrase id="fldcaption" value="Show" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="No" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Yes" />
+      </field>
+    </table>
+    <table id="bulletins">
+      <phrase id="tblcaption" value="bulletins" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="building_id">
+        <phrase id="fldcaption" value="building id" />
+      </field>
+      <field id="issuer_user_id">
+        <phrase id="fldcaption" value="issuer user id" />
+      </field>
+      <field id="create_time">
+        <phrase id="fldcaption" value="create time" />
+      </field>
+      <field id="issue_from">
+        <phrase id="fldcaption" value="issue from" />
+      </field>
+      <field id="issue_to">
+        <phrase id="fldcaption" value="issue to" />
+      </field>
+      <field id="title">
+        <phrase id="fldcaption" value="title" />
+      </field>
+      <field id="content">
+        <phrase id="fldcaption" value="content" />
+      </field>
+    </table>
+    <table id="financial_distributes">
+      <phrase id="tblcaption" value="Financial Distributes" />
+      <field id="fd_id">
+        <phrase id="fldcaption" value="FD ID" />
+      </field>
+      <field id="fd_q">
+        <phrase id="fldcaption" value="Quarter" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Q1" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Q2" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Q3" />
+        <phrase id="fldtagvalue4" value="4" />
+        <phrase id="fldtagcaption4" value="Q4" />
+      </field>
+      <field id="fd_date">
+        <phrase id="fldcaption" value="Date" />
+      </field>
+      <field id="fd_records">
+        <phrase id="fldcaption" value="No. Records" />
+      </field>
+      <field id="fd_status">
+        <phrase id="fldcaption" value="Status" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Downloaded" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Upload to Bank" />
+      </field>
+      <field id="fd_from_date">
+        <phrase id="fldcaption" value="From Date" />
+      </field>
+      <field id="fd_to_date">
+        <phrase id="fldcaption" value="To Date" />
+      </field>
+      <field id="fd_file">
+        <phrase id="fldcaption" value="File" />
+      </field>
+      <field id="fd_leasepd_ids">
+        <phrase id="fldcaption" value="Lease Amount" />
+      </field>
+    </table>
+    <table id="portal_properties">
+      <phrase id="tblcaption" value="portal properties" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="portal_user_id">
+        <phrase id="fldcaption" value="portal user id" />
+      </field>
+      <field id="address">
+        <phrase id="fldcaption" value="address" />
+      </field>
+      <field id="area">
+        <phrase id="fldcaption" value="area" />
+      </field>
+      <field id="bedrooms">
+        <phrase id="fldcaption" value="bedrooms" />
+      </field>
+      <field id="bathrooms">
+        <phrase id="fldcaption" value="bathrooms" />
+      </field>
+      <field id="size_type_id">
+        <phrase id="fldcaption" value="size type id" />
+      </field>
+      <field id="property_type_id">
+        <phrase id="fldcaption" value="property type id" />
+      </field>
+      <field id="monthly_price">
+        <phrase id="fldcaption" value="monthly price" />
+      </field>
+      <field id="description">
+        <phrase id="fldcaption" value="description" />
+      </field>
+      <field id="feature_picture">
+        <phrase id="fldcaption" value="feature picture" />
+      </field>
+      <field id="pictures">
+        <phrase id="fldcaption" value="pictures" />
+      </field>
+      <field id="title">
+        <phrase id="fldcaption" value="title" />
+      </field>
+      <field id="active">
+        <phrase id="fldcaption" value="active" />
+      </field>
+      <field id="popup_time">
+        <phrase id="fldcaption" value="popup time" />
+      </field>
+    </table>
+    <table id="portal_users">
+      <phrase id="tblcaption" value="portal users" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="full_name">
+        <phrase id="fldcaption" value="full name" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="username" />
+      </field>
+      <field id="userpass">
+        <phrase id="fldcaption" value="userpass" />
+      </field>
+      <field id="_email">
+        <phrase id="fldcaption" value="email" />
+      </field>
+      <field id="phone">
+        <phrase id="fldcaption" value="phone" />
+      </field>
+      <field id="user_type">
+        <phrase id="fldcaption" value="user type" />
+      </field>
+    </table>
+    <table id="transactions_moneris">
+      <phrase id="tblcaption" value="transactions moneris" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="response_order_id">
+        <phrase id="fldcaption" value="response order id" />
+      </field>
+      <field id="bank_transaction_id">
+        <phrase id="fldcaption" value="bank transaction id" />
+      </field>
+      <field id="bank_approval_code">
+        <phrase id="fldcaption" value="bank approval code" />
+      </field>
+      <field id="iso_code">
+        <phrase id="fldcaption" value="iso code" />
+      </field>
+      <field id="trans_name">
+        <phrase id="fldcaption" value="trans name" />
+      </field>
+      <field id="cardholder">
+        <phrase id="fldcaption" value="cardholder" />
+      </field>
+      <field id="creditcard_no">
+        <phrase id="fldcaption" value="creditcard no" />
+      </field>
+      <field id="creditcard">
+        <phrase id="fldcaption" value="creditcard" />
+      </field>
+      <field id="expiry_date">
+        <phrase id="fldcaption" value="expiry date" />
+      </field>
+      <field id="result">
+        <phrase id="fldcaption" value="result" />
+      </field>
+      <field id="convenience_fee">
+        <phrase id="fldcaption" value="convenience fee" />
+      </field>
+      <field id="cf_success">
+        <phrase id="fldcaption" value="cf success" />
+      </field>
+      <field id="cf_fee_rate">
+        <phrase id="fldcaption" value="cf fee rate" />
+      </field>
+      <field id="cf_fee_type">
+        <phrase id="fldcaption" value="cf fee type" />
+      </field>
+      <field id="response_code">
+        <phrase id="fldcaption" value="response code" />
+      </field>
+      <field id="message">
+        <phrase id="fldcaption" value="message" />
+      </field>
+    </table>
+    <table id="transactions_paypal">
+      <phrase id="tblcaption" value="transactions paypal" />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="p_id">
+        <phrase id="fldcaption" value="p id" />
+      </field>
+      <field id="p_state">
+        <phrase id="fldcaption" value="p state" />
+      </field>
+      <field id="p_create_time">
+        <phrase id="fldcaption" value="p create time" />
+      </field>
+      <field id="p_invoice_number">
+        <phrase id="fldcaption" value="p invoice number" />
+      </field>
+      <field id="p_description">
+        <phrase id="fldcaption" value="p description" />
+      </field>
+      <field id="p_payer_id">
+        <phrase id="fldcaption" value="p payer id" />
+      </field>
+      <field id="p_merchant_id">
+        <phrase id="fldcaption" value="p merchant id" />
+      </field>
+      <field id="p_total">
+        <phrase id="fldcaption" value="p total" />
+      </field>
+    </table>
+    <table id="create_event_oneonone_php">
+      <phrase id="tblcaption" value="Create Event" />
+    </table>
+    <table id="create_event_oneonone_availability_php">
+      <phrase id="tblcaption" value="Create Event Detail" />
+    </table>
+    <table id="book_event_php">
+      <phrase id="tblcaption" value="Book Event" />
+    </table>
+    <table id="event_booking_list_php">
+      <phrase id="tblcaption" value="Event Booking List" />
+    </table>
+    <table id="details_event_oneonone_php">
+      <phrase id="tblcaption" value="Details Event" />
+    </table>
+    <table id="office_create_event_php">
+      <phrase id="tblcaption" value="Office Create Event" />
+    </table>
+    <table id="office_event_details_php">
+      <phrase id="tblcaption" value="Office Event Details" />
+    </table>
+    <table id="calendar_php">
+      <phrase id="tblcaption" value="Calendar" />
+    </table>
+    <table id="office_event_list_php">
+      <phrase id="tblcaption" value="Office Event List" />
+    </table>
+  </project>
+</ew-language>

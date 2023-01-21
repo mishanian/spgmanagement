@@ -1,0 +1,20 @@
+[13-Feb-2018 14:49:47 America/Montreal] PHP Fatal error:  Call to a member function get_credit_check_request_info_by_id() on null in /home/beavertest/public_html/admin/custom/services/Class.CreditInfoRequest.php on line 18
+[13-Feb-2018 15:37:55 America/Montreal] PHP Fatal error:  Class 'pdo\Test\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 10
+[13-Feb-2018 15:40:54 America/Montreal] PHP Fatal error:  Class 'pdo\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 10
+[13-Feb-2018 15:53:44 America/Montreal] PHP Fatal error:  Class 'public_html\pdo\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 11
+[13-Feb-2018 15:56:33 America/Montreal] PHP Fatal error:  Class 'Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 11
+[13-Feb-2018 15:57:17 America/Montreal] PHP Fatal error:  Class 'public_html\pdo\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 9
+[13-Feb-2018 16:01:24 America/Montreal] PHP Fatal error:  Class 'public_html\pdo\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 9
+[13-Feb-2018 16:01:57 America/Montreal] PHP Fatal error:  Class 'public_html\pdo\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 9
+[13-Feb-2018 16:04:31 America/Montreal] PHP Fatal error:  Class 'public_html\pdo\Test' not found in /home/beavertest/public_html/admin/custom/services/test_pdo.php on line 9
+[13-Feb-2018 16:17:56 America/Montreal] PHP Fatal error:  Class 'public_html\pdo\PDO' not found in /home/beavertest/public_html/pdo/Class.DAO.php on line 42
+[13-Feb-2018 16:58:04 America/Montreal] PHP Fatal error:  Call to a member function get_credit_check_request_info_by_id() on null in /home/beavertest/public_html/admin/custom/services/Class.CreditInfoRequest.php on line 18
+[13-Feb-2018 17:00:24 America/Montreal] PHP Fatal error:  Call to a member function get_credit_check_request_info_by_id() on null in /home/beavertest/public_html/admin/custom/services/Class.CreditInfoRequest.php on line 28
+[15-Feb-2018 14:32:48 America/Montreal] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 140
+[15-Feb-2018 14:32:48 America/Montreal] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 982
+[15-Feb-2018 14:32:48 America/Montreal] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 987
+[15-Feb-2018 14:32:48 America/Montreal] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 992
+[15-Feb-2018 14:32:48 America/Montreal] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 997
+[15-Feb-2018 14:32:49 America/Montreal] PHP Fatal error:  Call to a member function add_lease_sign_request() on null in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 2083
+[15-Feb-2018 14:52:43 America/Montreal] PHP Fatal error:  Call to a member function add_lease_sign_request() on null in /home/beavertest/public_html/admin/custom/services/lease_generator.php on line 2083
+[04-May-2018 17:48:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/beavertest/public_html/admin/custom/services/sendSMSEmail.php:74) in /home/beavertest/public_html/admin/custom/services/services_controller.php on line 54

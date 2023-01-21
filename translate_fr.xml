@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<words>
+  <translation string="Home" value="Accueil"/>
+  <translation string="Listing" value="Inscription"/>
+  <translation string="About Us" value="À propos de nous"/>
+  <translation string="Contact Us" value="Contactez nous"/>
+  <translation string="Sign In" value="connexion"/>
+  <translation string="Register" value="S'enregistrer"/>
+  <translation string="Find Your Ideal Home" value="TROUVEZ VOTRE MAISON IDÉALE"/>
+  <translation string="search" value="chercher"/>
+  <translation string="All Provinces" value="Toutes les provinces"/>
+  <translation string="Quebec" value="Québec"/>
+  <translation string="Ontario" value="Ontario"/>
+  <translation string="Nova Scotia" value="Nouvelle-Écosse"/>
+  <translation string="New Brunswick" value="Nouveau-Brunswick"/>
+  <translation string="Manitoba" value="Manitoba"/>
+  <translation string="British Columbia" value="Colombie britannique"/>
+  <translation string="Prince Edward Island" value="Île-du-Prince-Édouard"/>
+  <translation string="Saskatchewan" value="Saskatchewan"/>
+  <translation string="Alberta" value="Alberta"/>
+  <translation string="Newfoundland And Labrador" value="Terre-Neuve-et-Labrador"/>
+  <translation string="Any Size" value="N'importe quelle taille"/>
+  <translation string="1 ½ Studio" value=" 1 ½ Studio "/>
+  <translation string="2 ½ Bachelor" value=" 2 ½ Bachelier "/>
+  <translation string="3 ½ One Bedroom" value=" 3 ½ une chambre "/>
+  <translation string="4 ½ Two Bedrooms" value=" 4 ½ Deux chambres "/>
+  <translation string="5 ½ Three Bedrooms" value=" 5 ½ Trois chambres "/>
+  <translation string="6 ½ Four Bedrooms" value=" 6 ½ Quatre chambres "/>
+  <translation string="7 ½ Five Bedrooms" value=" 7 ½ cinq chambres "/>
+  <translation string="Featured Properties" value="Propriétés en vedette"/>
+  <translation string="Commercial" value=" Commercial "/>
+  <translation string="Any Price" value="N'importe quel prix"/>
+  <translation string="$500 or less" value=" 500 $ ou moins "/>
+  <translation string="$501 to $1000" value=" 501 $ à 1000 $ "/>
+  <translation string="$1001 to $1500" value=" 1001 $ à 1500 $ "/>
+  <translation string="$1501 to $2000" value=" 1501 $ à 2000 $ "/>
+  <translation string="$2001 or above" value=" 2001 $ ou plus "/>
+  <translation string="Options" value="Options"/>
+  <translation string="Pets Allowed" value=" Animaux acceptés "/>
+  <translation string="Furnished" value=" Meublé "/>
+  <translation string="QUICK SEARCH BY SIZES" value="RECHERCHE RAPIDE PAR TAILLES"/>
+  <translation string="Find apartments with your ideal size" value="Trouvez des appartements avec votre taille idéale"/>
+  <translation string="Read More" value="Lire la suite"/>
+  <translation string="Follow Us" value="Suivez nous"/>
+  <translation string="powered by SPG Management" value="alimenté par SPG Management"/>
+  <translation string="All rights reserved" value="Tous droits réservés"/>
+  <translation string="Details" value="Détails"/>
+  <translation string="Our History" value="Notre histoire"/>
+  <translation string="SPG Canada is a federal registered company based in Montreal and was established for the purpose of real estate investing and providing professional, proactive and dynamic property management services in the city of Montreal and surrounding areas." value="SPG Canada est une société de droit fédéral établie à Montréal et établie à des fins d'investissement immobilier et de prestation de services de gestion de propriété professionnelle, proactive et dynamique dans la ville de Montréal et ses environs."/>
+  <translation string="SPG Canada principals and senior staff have over 20 years of combined property management and construction experience in Canada and China. This experience is crucial for the successful and efficient management of our costumer’s property. In addition, our superior service, thorough knowledge of building construction, maintenance and repair, sets us apart from our competitors. Our corporate philosophy is to eliminate the burdens of management while saving our customer’s time and money, while providing our professional advice for real estate investing. In fact, we have owned quite few estates in the region of Montreal and Toronto area. As the landlord, we understand deeply the challenges property owners face every day and we have designed our services to ensure the smooth operation of our customer’s property in an efficient and effective manner. At SPG, we focus on our customer and we will customize our services in a manner that best suits their needs." value="Les directeurs et les cadres supérieurs de SPG Canada cumulent plus de 20 ans d'expérience combinée en gestion immobilière et en construction au Canada et en Chine. Cette expérience est cruciale pour la gestion réussie et efficace de la propriété de notre client. De plus, notre service supérieur, notre connaissance approfondie de la construction, de l'entretien et de la réparation des bâtiments nous distinguent de nos concurrents. Notre philosophie d'entreprise est d'éliminer les fardeaux de la gestion tout en économisant du temps et de l'argent pour nos clients, tout en fournissant nos conseils professionnels pour l'investissement immobilier. En fait, nous possédons très peu de propriétés dans la région de Montréal et de la région de Toronto. En tant que propriétaire, nous comprenons tous les jours les défis auxquels sont confrontés les propriétaires et nous avons conçu nos services pour assurer le bon fonctionnement de la propriété de nos clients de manière efficiente et efficace. Chez SPG, nous nous concentrons sur nos clients et nous personnalisons nos services de la manière qui convient le mieux à leurs besoins."/>
+  <translation string="About SPG Canada" value="À propos de SPG Canada"/>
+  <translation string="Your Email" value="Votre email"/>
+  <translation string="Your Phone" value="Votre numéro de téléphone"/>
+  <translation string="Subject" value="Assujettir"/>
+  <translation string="Your Message" value="Votre message"/>
+  <translation string="HEAD OFFICE" value="SIÈGE SOCIAL"/>
+  <translation string="Send" value="Envoyer"/>
+  <translation string="Properties" value="Propriétés"/>
+  <translation string="Property" value="Propriété"/>
+  <translation string="Building" value="Bâtiment"/>
+  <translation string="Transaction Date" value="Date de la transaction"/>
+  <translation string="EFT Total" value="Total EFT"/>
+  <translation string="Transaction Status" value="Statut de transaction"/>
+  <translation string="Number of Payments" value="Nombre de paiements"/>
+  <translation string="Date" value="Date"/>
+  <translation string="Filter" value="filtre"/>
+  <translation string="Payments" value="Paiements"/>
+  <translation string="Download" value="Télécharger"/>
+  <translation string="Buildings" value="Bâtiments"/>
+  <translation string="Select a date" value="Choisissez une date"/>
+  <translation string="Units" value="Unités"/>
+  <translation string="Security Codes" value="Codes de sécurité"/>
+  <translation string="Tenants" value="Locataires"/>
+  <translation string="Leases" value="Baux"/>
+  <translation string="Tenants Statement" value="Déclaration des locataires"/>
+  <translation string="Profile" value="Profil"/>
+  <translation string="Requests" value="Requêtes"/>
+  <translation string="Company" value="Compagnie"/>
+  <translation string="Employees" value="Des employés"/>
+  <translation string="Online Listing" value="Liste en ligne"/>
+  <translation string="Calendar" value="Calendrier"/>
+  <translation string="Potential Tenant" value="Locataire potentiel"/>
+  <translation string="Potential Tenant List" value="Liste des locataires potentiels"/>
+  <translation string="Credit Checking" value="Vérification de crédit"/>
+  <translation string="Lease Signing" value="Signature de bail"/>
+  <translation string="Equipment Information" value="Informations sur l'équipement"/>
+  <translation string="Appliances" value="Appareils"/>
+  <translation string="Maintenance" value="Entretien"/>
+  <translation string="Recent Requests" value="Demandes récentes"/>
+  <translation string="Bulletins" value="Bulletins"/>
+  <translation string="Deposits" value="Dépôts"/>
+  <translation string="Payments and Deposits" value="Paiements et dépôts"/>
+  <translation string="Rental Payment" value="Paiement du loyer"/>
+  <translation string="Unread" value="Non lu"/>
+  <translation string="Parking" value="Parking"/>
+  <translation string="Available" value="Disponible"/>
+  <translation string="Unavailable" value="Indisponible"/>
+  <translation string="Online Payment" value="Paiement en ligne"/>
+  <translation string="Rent Range" value="Gamme de Rent"/>
+  <translation string="Available Units List" value="Liste des unités disponibles"/>
+  <translation string="Unit" value="Unité"/>
+  <translation string="Rent" value="Prix"/>
+  <translation string="Size" value="Taille"/>
+  <translation string="Bed" value="lits"/>
+  <translation string="WC" value="WC"/>
+  <translation string="NEXT PROPERTY" value="PROPRIETE SUIVANTE"/>
+  <translation string="PREVIOUS PROPERTY" value="PROPRIÉTÉ PRÉCÉDENTE"/>
+
+  <translation string="Available On" value="Disponible sur"/>
+  <translation string="Avail. On" value="Disponible sur"/>
+  <translation string="Unit Details" value="Détails de l'unité"/>
+  <translation string="Unit Number" value="Numéro d'unité"/>
+  <translation string="Visit Appointment" value="Visite rendez-vous"/>
+  <translation string="Monthly Rent" value="Loyer mensuel"/>
+  <translation string="Floor" value="Numéro d'étage"/>
+  <translation string="Available Date" value="Date disponible"/>
+  <translation string="Available Now!" value="Disponible dès maintenant!"/>
+  <translation string="Amenities" value="Équipements"/>
+  <translation string="Building Facilities" value="Installations de bâtiment"/>
+  <translation string="Building Description" value="Description du bâtiment"/>
+  <translation string="Unit Description" value="Description de l'unité"/>
+  <translation string="Unit Pictures" value="Photos de l'unité"/>
+  <translation string="Transactions From" value="Transactions de"/>
+  <translation string="Transactions To" value="Transactions à"/>
+  <translation string="Download PDF" value="Télécharger le fichier PDF"/>
+  <translation string="Generate Report" value="Générer un rapport"/>
+  <translation string="Select Building" value="Choisir un bâtiment"/>
+  <translation string="Payments" value="Paiements"/>
+  <translation string="Reset Filter" value="Réinitialiser le filtre"/>
+  <translation string="Questions?" value="Des questions?"/>
+  <translation string="Read More" value="Lire plus"/>
+  <translation string="1 bedroom" value="1 chambre"/>
+  <translation string="2 bedrooms" value="2 chambres"/>
+  <translation string="3 bedrooms" value="3 chambres"/>
+  <translation string="4 bedrooms" value="4 chambres"/>
+  <translation string="Bedrooms" value="Chambres"/>
+  <translation string="500 or less" value="500 ou moins"/>
+  <translation string="501 to 1000" value="501 à 1000"/>
+  <translation string="1000 to 1500" value="1000 à 1500"/>
+  <translation string="Areas (Sqft)" value="Surface (Sq Ft)"/>
+  <translation string="month" value="mois"/>
+  <translation string="Download Floor Plan" value="Télécharger le plan d'étage"/>
+  <translation string="Download" value="Télécharger"/>
+  <translation string="TRANSACTIONS FROM" value="TRANSACTIONS DE"/>
+  <translation string="TRANSACTIONS TO" value="TRANSACTIONS À"/>
+  <translation string="Apartments" value="Appartements"/>
+  <translation string="Download Floor Plan" value="Télécharger le plan d'étage"/>
+  <translation string="Questions" value="Des questions"/>
+  <translation string="Month" value="Mois"/>
+  <translation string="Sorry, there is no available pictures for this unit now." value="Désolé, il n'y a pas d'images disponibles pour cet appareil maintenant."/>
+  <translation string="Sorry. There are no units available at this time. Please come back later." value="Pardon. Il n'y a pas d'unités disponibles pour le moment. Merci de revenir plus tard."/>
+
+  <translation string="TOTAL OPEN ISSUES" value="QUESTIONS OUVERTES TOTALES"/>
+  <translation string="Urgent" value="Urgent"/>
+  <translation string="Serious" value="Sérieux"/>
+  <translation string="Normal" value="Ordinaire"/>
+  <translation string="TOTAL TENANT SIGNUP STATUS" value="STATUT DE SIGNATURE DU LOCATAIRE TOTAL"/>
+  <translation string="Signed Up" value="Signé"/>
+  <translation string="Total" value="Total"/>
+  <translation string="Total Storage " value="Stockage total"/>
+  <translation string="Total Units" value="Unités totales"/>
+  <translation string="Total Parking Spots" value="Total des places de stationnement"/>
+  <translation string="Vacancy" value="Poste vacant"/>
+  <translation string="Parking Spots" value="Places de stationnement"/>
+  <translation string="Storage Units" value="Unités de stockage"/>
+  <translation string="Unresolved Issues" value="Les questions non résolues"/>
+  <translation string="TOTAL VACANCIES" value="VACANCES TOTALES"/>
+  <translation string="TOTAL CURRENT VACANCY LOSS" value="PERTE TOTALE DE VACANCE DE COURANT"/>
+</words>

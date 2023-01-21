@@ -1,0 +1,9 @@
+AuthType Basic
+AuthName "kijijirss"
+AuthUserFile "/home/spgmgmt/public_html/.htpasswd"
+require valid-user
+SetEnvIf Request_URI "(/home/spgmgmt/public_html/admin/custom/kijijirss)$" allow
+SetEnvIf Request_URI "(/home/spgmgmt/public_html/admin/custom/kijijirss/kijiji_feeding\.xml)$"  allow
+Order allow,deny
+Allow from env=allow
+Satisfy any

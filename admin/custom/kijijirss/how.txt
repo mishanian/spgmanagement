@@ -1,0 +1,5 @@
+https://kijijirss:pTC3LR*6%Xa5@www.spgmanagement.com/admin/custom/kijijirss/kijiji_feeding.xml
+
+https://kijijirss:pTC3LR*6%Xa5@www.spgmanagement.com/admin/custom/kijijirss/test.php
+
+htpasswd -c /home/spgmgmt/public_html/.htpasswd kijijirss

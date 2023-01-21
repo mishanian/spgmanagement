@@ -1,0 +1,785 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="investigation_form">
+      <fieldset>
+
+        <!-- Form Name -->
+
+        <legend>Credit Investigation / Credit Conseil</legend>
+
+        <div class="form-group">
+          <label class="col-md-11 control-label">100-1650 boul Rene Levesque West, Montreal, Quebec (H3H 2S1)</label>
+          <label class="col-md-11 control-label">Intercom: 8888 Tel: 514-937-3529 Fax: (855) 666-6364</label>
+          <label class="col-md-11 control-label">info@spg-canada.com (Mon-Fri 09:00-13:00 and 15:00-18:00, Sat 11:00-13:00)</label>
+          <label class="col-md-11 control-label">Please Complete all * fields or application will be returned to you unprocessed.</label>
+          <label class="col-md-11 control-label">S.V.P. Remplir tous les * champs ou demande vous sera retournée sans avoir été traitée.</label>
+        </div>
+
+        <legend>Dwelling ID</legend>
+
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Applying Dwelling Address / Adresse Logements Demandé</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="dwelling_address" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Apt / Apt</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="dwelling_apt" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">City / Ville</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="dwelling_city" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Province / Province</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="dwelling_province" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Postal Code / Code Postal</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="dwelling_postalcode" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+        <legend>Prospective Tenant</legend>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Surname / Nom de Famille</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_surname" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">First Name / Prénom</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_firstname" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Driver ID / Permis de Conduire</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_driverid" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Passport ID / Passeport</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_passportid" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Date of Birth / *Date de Naissance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_dateofbirth" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*SIN No. / *No. de NAS</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_sinno" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Gender / Sexe</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="tenant_gender" value="woman" /> Woman / Femme
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="tenant_gender" value="man" /> Man / Homme
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Status / État Civil</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="tenant_status" value="married" /> Married / Marié
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="tenant_status" value="separated" /> Separated / Séparé
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="tenant_status" value="single" /> Single / Célibataire
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="tenant_status" value="divorced" /> Divorced / Divorcé
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Current Address / *Adresse Actuelle</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_address" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Apt / Apt</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_apt" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Tel / Tél</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input name="tenant_tel" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">City / Ville</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_city" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Province / Province</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_province" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Postal Code / Code Postal</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_postalcode" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">How long have lived there? / Depuis combien de Temps y résider?</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_howlong" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">E-Mail / Curriel Électronique</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input name="tenant_email" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Name of the Landlord / Nom du Propriétaire</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_landlord" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Your Name on the Lease? / Votre nom sur le bail?</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="tenant_onlease" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Tel of the Landlord/Superintenant / *Tél du Propriétaire/Directeur</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input name="tenant_tellandlord" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*End of Current Lease Date / *Date de Fin du Bail Actuel</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_endlease" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Current Rent / *Loyer Actuel</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="tenant_rent" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+
+        <legend>Dependents / Les Personnes à Charge</legend>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Number / Nombre</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="dependent_number" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Gender / Sexe</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="dependent_gender" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Age / Âge</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="dependent_age" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+
+        <legend>Employment</legend>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Name of Employer / Nom de l'Employeur</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="employment_name" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Tel / Tél</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input name="employment_tel" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Company Address / Adresse de la Société</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="employment_address" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Unit / Unite</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="employment_unit" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">City / Ville</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="employment_city" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Province / Province</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="employment_province" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Postal Code / Code Postal</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="employment_postalcode" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Occupational Title / Titre de la Profession</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="employment_occupation" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Monthly Salary / Salaire Mensuel</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="employment_salary" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">How long have you worked there? / Combien de temps avez-vous travaillé?</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="employment_howlong" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Other resource of Income, explain / Autre ressource de revenu, d'expliquer</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="employment_other" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Do you have the most recent pay-stub? If yes, please provide.</br>*Avez-vous le plus récenttalon de paie? Si oui, le presenter svp.</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="employment_paystub" value="yes" /> Yes / Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="employment_paystub" value="no" /> No / Non
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+        <legend>Banking</legend>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Name of Bank / Nom de la Banque</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <input name="banking_name" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Bank Branch Address / Adresse de la Succursale de Banque</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <input name="banking_address" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Account No. / *Numéro de Compte</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <input name="banking_accountno" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Transit Number / *Numéro de Transit</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <input name="banking_transit" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Institutional Number / *Numéro de l'Institution</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <input name="banking_institution" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Tel / Tél</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input name="banking_tel" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-11 control-label">You can also provide us an void check under your name. / Vous pouvez aussi nous fournir un spécimen de chèque à votre nom.</label>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Credit Card Number / *Numéro de la carte de crédit</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_creditcard" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Credit Card Company / Compagnie de Carte de Crédit</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_company" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">*Expire Date / *Date d'Exp</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_expire" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Payment / Paiement</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_payment" value="visa" /> VISA
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_payment" value="mastercard" /> Master Card
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_payment" value="americanexpress" /> American Express
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_payment" value="visadebit" /> VISA-Debit
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Name of Insurance Company / Nom de la Compagnie d'Assurance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_insurance" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Policy No. / Numéro de Police</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_policyno" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Type of Insurance / Type d'Assurance</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_insurancetype" value="auto" /> Auto / Voiture
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_insurancetype" value="home" /> Home / Maison
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_insurancetype" value="life" /> Life / Vie
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-11 control-label">To make your moving more smooth, provide us with your hydroquebec account number for us to contact HydroQuebec on your behalf.</br>Pour rendre votre déménagement plus lisse, nous fournir votre numéro de compte HydroQuebec pour nous contacter HydroQuebec.</label>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">HydroQuec Account # / No. de Compte Hydro</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_hydroquebec" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Account is active on the current above mentioned address.</br>Compte est actif à l'adresse mentionnée ci-dessus en cours.</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_active" value="yes" /> Yes / Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="banking_active" value="no" /> No / Non
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Moving Date / Date d'Occupation</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="banking_movingdate" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <legend>Questions</legend>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Have you ever been convicted of a crime?</br>Avez-vous déjà été reconnu coupable d'un crime?</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_crime" value="yes" /> Yes / Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_crime" value="no" /> No / Non
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Have you ever declared bankruptcy?</br>Avez-vous déjà déclaré faillite?</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_bankruptcy" value="yes" /> Yes / Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_bankruptcy" value="no" /> No / Non
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Have you ever been opening a file in Regie du Logement of Quebec?</br>Avez-vous déjà été l'ouverture d'un fichier dans la Régie du logement du Québec?</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_file" value="yes" /> Yes / Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_file" value="no" /> No / Non
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-7 control-label">Have you ever been declined by a Credit Card Company, if yes, which credit card.</br> Avez-vous déjà été refusé par une société de carte de crédit, si oui, lequel crédit card.</label>
+          <div class="col-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_declined" value="yes" /> Yes / Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="question_declined" value="no" /> No / Non
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-7 control-label">If yes, name of the Credit Card Company / Si oui, nom de la Société de Carte de Crédit</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+              <input name="question_creditcompany" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Success message -->
+        <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-6 control-label"></label>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div><!-- /.container -->
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+</script> 
+</body>
+</html>

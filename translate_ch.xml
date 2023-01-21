@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<words>
+    <translation string="Home" value="主页"/>
+    <translation string="Listing" value="房源"/>
+    <translation string="About Us" value="关于我们"/>
+    <translation string="Contact Us" value="站内留言"/>
+    <translation string="ContactUsHeading" value="联系方式"/>
+    <translation string="Sign In" value="登录"/>
+    <translation string="Register" value="注册"/>
+    <translation string="Find Your Ideal Home" value="找到你“理想”的家"/>
+    <translation string="search" value="搜索"/>
+    <translation string="All Provinces" value="省份"/>
+    <translation string="Quebec" value="魁北克省"/>
+    <translation string="Ontario" value="安大略省"/>
+    <translation string="Nova Scotia" value="新斯科舍省"/>
+    <translation string="New Brunswick" value="新不伦瑞克省"/>
+    <translation string="Manitoba" value="曼尼托巴省"/>
+    <translation string="British Columbia" value="不列颠哥伦比亚省"/>
+    <translation string="Prince Edward Island" value="爱德华王子岛"/>
+    <translation string="Saskatchewan" value="萨斯喀彻温省"/>
+    <translation string="Alberta" value="阿尔伯塔省"/>
+    <translation string="Newfoundland And Labrador" value="纽芬兰和拉布拉多地区"/>
+    <translation string="Any Size" value="户型不限"/>
+    <translation string="1 ½ Studio" value="一个半"/>
+    <translation string="2 ½ Bachelor" value="二个半"/>
+    <translation string="3 ½ One Bedroom" value="三个半"/>
+    <translation string="4 ½ Two Bedrooms" value=" 四个半"/>
+    <translation string="5 ½ Three Bedrooms" value=" 五个半"/>
+    <translation string="6 ½ Four Bedrooms" value=" 六个半"/>
+    <translation string="7 ½ Five Bedrooms" value=" 7个半"/>
+    <translation string="Featured Properties" value="房源信息："/>
+    <translation string="Commercial" value="商业地产"/>
+    <translation string="Any Price" value=" 租金不限"/>
+    <translation string="$500 or less" value="  &lt;= ¥500"/>
+    <translation string="$501 to $1000" value="$501-$1000"/>
+    <translation string="$1001 to $1500" value="$1001-$1500"/>
+    <translation string="$1501 to $2000" value="$1501-$2000"/>
+    <translation string="$2001 or above" value=" &gt;= 2001"/>
+    <translation string="Options" value="其他"/>
+    <translation string="Pets Allowed" value="允许饲养宠物"/>
+    <translation string="Furnished" value="带家具"/>
+    <translation string="QUICK SEARCH BY SIZES" value="根据户型选择"/>
+    <translation string="Find apartments with your ideal size" value="找到你理想中的户型"/>
+    <translation string="Read More" value="更多…"/>
+    <translation string="Follow Us" value="关于我们"/>
+    <translation string="powered by SPG Management" value="SPG Management 制作"/>
+    <translation string="All rights reserved" value=" 版权所有"/>
+    <translation string="Details" value="详情…"/>
+    <translation string="Our History" value="公司历史"/>
+    <translation string="About SPG Canada" value="关于 SPG Canada"/>
+    <translation string="Your Email" value="E-mail"/>
+    <translation string="Your Phone" value="电话："/>
+    <translation string="Subject" value=" 主题："/>
+    <translation string="Your Message" value="正文："/>
+    <translation string="HEAD OFFICE" value="公司地址："/>
+    <translation string="Send" value="发送"/>
+    <translation string="Properties" value="房产"/>
+    <translation string="Storage" value="存储"/>
+    <translation string="Property" value="财产"/>
+    <translation string="Building" value="公寓"/>
+    <translation string="Transaction Date" value="转账日期"/>
+    <translation string="EFT Total" value="总共EFT"/>
+    <translation string="Transaction Status" value="转账状态"/>
+    <translation string="Number of Payments" value="付款数量"/>
+    <translation string="Date" value="日期"/>
+    <translation string="Filter" value="过滤"/>
+    <translation string="Payments" value="付款"/>
+    <translation string="Download" value="下载"/>
+    <translation string="Select a date" value="选择日期"/>
+    <translation string="Buildings" value="公寓"/>
+    <translation string="Units" value="单元"/>
+    <translation string="Security Codes" value="安全码"/>
+    <translation string="Tenants" value="住户"/>
+    <translation string="Leases" value="租约"/>
+    <translation string="Tenants Statement" value="住户状态"/>
+    <translation string="Profile" value="档案"/>
+    <translation string="Company" value="公司"/>
+    <translation string="Employees" value="员工"/>
+    <translation string="Online Listing" value="在线列表"/>
+    <translation string="Calendar" value="日历"/>
+    <translation string="Potential Tenant" value="潜在住户"/>
+    <translation string="Credit Checking" value="信用调查"/>
+    <translation string="Lease Signing" value="租赁签署"/>
+    <translation string="Equipment Information" value="设备信息"/>
+    <translation string="Appliances" value="家电"/>
+    <translation string="Maintenance" value="保养"/>
+    <translation string="Recent Requests" value="最近的请求"/>
+    <translation string="Bulletins" value="公告"/>
+    <translation string="Deposits" value="押金"/>
+    <translation string="Payments and Deposits" value="付款和押金"/>
+    <translation string="Rental Payment" value="房租"/>
+    <translation string="Unread" value="未读"/>
+    <translation string="Parking" value="停车位"/>
+    <translation string="Availale" value="可用"/>
+    <translation string="Unavailale" value="不可用"/>
+    <translation string="Online Payment" value="在线支付"/>
+    <translation string="Rent Range" value="租金范围"/>
+    <translation string="Available Units List" value="可租单元列表"/>
+    <translation string="Unit" value="单元"/>
+    <translation string="Rent" value="房租"/>
+    <translation string="Size" value="大小"/>
+    <translation string="Bed" value="床"/>
+    <translation string="WC" value="厕所"/>
+    <translation string="Available On" value="可租日期在"/>
+	<translation string="Avail. On" value="可租日期在"/>
+    <translation string="Unit Details" value="单元细节"/>
+    <translation string="Unit Number" value="单元号"/>
+    <translation string="Visit Appointment" value="访问预约"/>
+    <translation string="Monthly Rent" value="月租金"/>
+    <translation string="Floor" value="地板"/>
+    <translation string="Available Date" value="可租日期"/>
+    <translation string="Amenities" value="设施"/>
+    <translation string="Building Facilities" value="建筑设施"/>
+    <translation string="Building Description" value="建筑描述"/>
+    <translation string="Unit Pictures" value="单位图片"/>
+    <translation string="Transactions From" value="交易来自"/>
+    <translation string="Transactions To" value="交易到"/>
+    <translation string="Download PDF" value="下载PDF"/>
+    <translation string="Generate Report" value="生成报告"/>
+    <translation string="Select Building" value="选择楼宇"/>
+    <translation string="Reset Filter" value="重置过滤"/>
+    <translation string="Unit Description" value="单位说明"/>
+    <translation string="NEXT PROPERTY" value="下一个物业"/>
+    <translation string="PREVIOUS PROPERTY" value="上一个物业"/>
+    <translation string="Available" value="可得到"/>
+    <translation string="Unavailable" value="不可用"/>
+    <translation string="Available Now!" value="现在有空！"/>
+    <translation string="Potential Tenant List" value="潜在租户名单"/>
+    <translation string="Download Floor Plan" value="下载平面图"/>
+    <translation string="Questions?" value="问题"/>
+    <translation string="Month" value="月"/>
+    <translation string="Apartments" value="公寓"/>
+    <!-- <translation string="For Rent" value="现在有空！"/>
+    <translation string="Floor" value="现在有空！"/> -->
+
+    <!-- request module-->
+    <translation string="Report an Request" value="问题报告"/>
+    <translation string="New Notification" value="公告创建"/>
+    <translation string="Current Requests" value="当前问题"/>
+    <translation string="Past Requests" value="问题记录"/>
+    <translation string="Category" value="类别"/>
+    <translation string="status" value="状态"/>
+    <translation string="Units" value="单元"/>
+    <translation string="From" value="从"/>
+    <translation string="To" value="到"/>
+    <translation string="Employee" value="管理员"/>
+    <translation string="OrderBy" value="排序"/>
+    <translation string="Clear" value="重置"/>
+    <translation string="Search" value="搜索"/>
+    <translation string="Current Requests List" value="当前问题列表"/>
+    <translation string="Requests Type" value="问题分类"/>
+    <translation string="Request Type" value="问题分类"/>
+    <translation string="Level" value="重要性"/>
+    <translation string="Date Created" value="创建时间"/>
+    <translation string="Days Old" value="时间间隔"/>
+    <translation string="Creator" value="创建者"/>
+    <translation string="Location" value="地址"/>
+    <translation string="Description" value="问题描述"/>
+    <translation string="Note: Please be prepared for at least 4 hours of visit for our handyman to work on this request" value="注意:请您至少预留4小时时间，让维修人员处理您的问题"/>
+    <translation string="Approve to Visit" value="访问允许"/>
+    <translation string="Visit Time" value="访问时间"/>
+    <translation string="Pictures" value="图片"/>
+    <translation string="Images" value="图片"/>
+    <translation string="select Images" value="选择图片"/>
+    <translation string="Tenant" value="租客"/>
+    <translation string="Message" value="描述"/>
+    <translation string="Notify Me by" value="通知方式"/>
+    <translation string="Email" value="邮件"/>
+    <translation string="SMS" value="短信"/>
+    <translation string="Voice" value="语音"/>
+    <translation string="Cancel" value="取消"/>
+    <translation string="Title" value="标题"/>
+    <translation string="Content" value="内容"/>
+    <translation string="Submit" value="提交"/>
+    <translation string="Internal Request" value="内部消息"/>
+    <translation string="Tenant Request" value="租客消息"/>
+    <translation string="Unread Request" value="未读消息"/>
+    <translation string="OPEN REQUESTS" value="未关闭问题"/>
+    <translation string="UNREAD" value="未读问题"/>
+    <translation string="Date Closed" value="关闭时间"/>
+    <translation string="Past Requests List" value="问题记录列表"/>
+    <translation string="Issue Time" value="发布时间"/>
+    <translation string="Issuer" value="取消"/>
+    <translation string="Active Period" value="取消"/>
+    <translation string="Close" value="取消"/>
+    <translation string="Created By" value="创建者"/>
+    <translation string="Created At" value="创建时间"/>
+    <translation string="Communications" value="对话"/>
+    <translation string="Attachments" value="附件"/>
+    <translation string="Recipient" value="接收者"/>
+    <translation string="Editing" value="编辑"/>
+    <translation string="Post" value="上传"/>
+    <translation string="Details" value="详细"/>
+    <translation string="Read Tenants" value="已读"/>
+    <translation string="Tenant Name" value="租客姓名"/>
+    <translation string="Login Account" value="登入帐号"/>
+    <translation string="Last Readed Time" value="最后浏览时间"/>
+    <translation string="Save" value="保存"/>
+
+    <translation string="TOTAL VACANCIES" value="总体空间"/>
+  <translation string="TOTAL CURRENT VACANCY LOSS" value="总电流空调损失"/>
+  <translation string="TOTAL OPEN ISSUES" value="总的开放问题"/>
+  <translation string="TOTAL TENANT SIGNUP STATUS" value="总共租户注册状态"/>
+  <translation string="Units" value="单位"/>
+  <translation string="Parking Spots" value="停车位"/>
+  <translation string="Storage Units" value="存储单元"/>
+  <translation string="Urgent" value="紧急"/>
+  <translation string="Serious" value="严重"/>
+  <translation string="Normal" value="正常"/>
+  <translation string="Signed Up" value="注册"/>
+  <translation string="Total" value="总"/>
+  <translation string="Total Units" value="单位总数"/>
+  <translation string="Total Parking Spots" value="总停车位"/>
+  <translation string="Total Storage" value="总存储量"/>
+  <translation string="Vacancy" value="空缺"/>
+  <translation string="Unresolved Issues" value="尚未解决的问题"/>
+  <translation string="Floor" value="地板"/>
+
+ <translation string="Heating Included" value="包暖" />
+ <translation string="Hot Water Included" value="包热水" />
+ <translation string="Electricity Included" value="包电力" />
+ <translation string="Fridge" value="冰箱" />
+ <translation string="Stove" value="炉灶" />
+ <translation string="Dishwasher" value="洗碗机" />
+ <translation string="Microwave" value="微波炉" />
+ <translation string="Washer" value="洗衣机" />
+ <translation string="Dryer" value="烘干机" />
+ <translation string="High Ceilings" value="高天花板" />
+ <translation string="Decorative Moldings" value="装饰木线条" />
+ <translation string="Balcony" value="阳台" />
+ <translation string="Terrace" value="露台" />
+ <translation string="Mezzanine" value="夹层" />
+ <translation string="Corner Unit" value="角落单位" />
+ <translation string="Cable Television Included" value="有线电视" />
+ <translation string="Internet Access Included" value="包括上网服务" />
+ <translation string="Air Exchange System" value="空调系统" />
+ <translation string="Elevator" value="电梯" />
+ <translation string="Indoor Parking" value="室内停车场" />
+ <translation string="Outdoor Parking" value="室外停车场" />
+ <translation string="Keytag Elevator System" value="保全电梯系统" />
+ <translation string="24-Hour Doorman" value="24小时门卫" />
+ <translation string="Surveillance Cameras" value="监控摄像机" />
+ <translation string="Gym" value="健身房" />
+ <translation string="Outdoor Swimming Pool" value="室外游泳池" />
+ <translation string="Indoor Swimming Pool" value="室内游泳池" />
+ <translation string="Dry Cleaning In Building" value="楼内洗衣房" />
+ <translation string="Cafe In Building" value="楼内咖啡店" />
+ <translation string="Bus Stop Nearby" value="附近有公交车站" />
+ <translation string="Metro Station Nearby" value="附近有地铁站" />
+ <translation string="Train Station Nearby" value="附近有火车站" />
+ <translation string="Bike Stand Nearby" value="附近有自行车停放处" />
+ <translation string="Bike Friendly" value="可以停放自行车" />
+ <translation string="Park Nearby" value="附近有公园" />
+ <translation string="Laundry Room On Each Floor" value="每个楼层含有洗衣房" />
+ <translation string="Laundry Facility" value="洗衣设施" />
+ <translation string="Janitor On Site" value="清洁工" />
+ <translation string="Concierge On Site" value="看门人" />
+ <translation string="Small Pets Allowed" value="允许小型宠物" />
+ <translation string="Large Dogs Allowed" value="允许携带大型犬" />
+ <translation string="Garbage Chute" value="垃圾槽" />
+ <translation string="Building Terrace" value="公寓天台" />
+ <translation string="Building Community Garden" value="社区花园" />
+ <translation string="Barbeques Allowed On Balconies" value="阳台允许带家具" />
+ <translation string="Satellite Connection Allowed" value="允许卫星连接" />
+ <translation string="24hr Access" value="24小时通道" />
+ <translation string="Virtual Office" value="虚拟办公室" />
+ <translation string="Private Office" value="私人办公室" />
+ <translation string="High Traffic" value="高流量" />
+ <translation string="Building Class A" value="A级公寓" />
+ <translation string="Independent Living" value="独立生活空间" />
+ <translation string="Independent Supportive Living" value="独立生活支持" />
+ <translation string="Assisted Living" value="辅助生活" />
+ <translation string="Memory Care" value="记忆护理" />
+ <translation string="Long Term Care" value="长期护理" />
+ <translation string="Short Term Care" value="短期护理" />
+ <translation string="Hospital" value="医院" />
+ <translation string="Hospital Nearby" value="附近医院" />
+ <translation string="Medical Clinic" value="诊所" />
+ <translation string="Nurses On Site" value="护士现场咨询" />
+ <translation string="Doctors On Site" value="医生现场咨询" />
+ <translation string="Medical Visits On Site" value="现场医疗访问" />
+ <translation string="24/7 Medical Services" value="24/7医疗服务" />
+ <translation string="Personal Hygiene Care" value="个人卫生护理" />
+ <translation string="Mini Bus Services" value="小型巴士服务" />
+ <translation string="Building Class AAA" value="AAA级公寓" />
+ <translation string="Building Class B" value="B级公寓" />
+ <translation string="Building Class C" value="C级公寓" />
+</words>

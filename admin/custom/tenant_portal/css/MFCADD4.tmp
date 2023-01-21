@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* @import url('css/font-awesome.min.css');*/
+
+/* In html file */
+/*<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="viewport" content="width=device-width">*/
+
+/**
+ * 8.0 Media Queries
+ * ----------------------------------------------------------------------------
+ */
+
+/* Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+@media (max-width: 1599px) {
+}
+
+@media (max-width: 1098px) {
+
+	}
+
+@media (max-width: 1069px) {
+
+}
+
+@media (max-width: 999px) {
+}
+
+/* Collapse oversized image and pulled images after iPad breakpoint. */
+@media (max-width: 767px) {
+	#profile_search .bell{ margin-right:30px;}
+	#profile_search .input-group{ width:93%;}
+	#profile_search h1{ margin:30px 10px; font-size:16px;}
+	#header .navbar-default .navbar-nav>li>a, #header .navbar-default .navbar-nav li:last-child a{ text-align:left; padding:10px; }
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form
+	#header nav .navbar-default .navbar-collapse, #header nav .navbar-default .navbar-form{ background:#f8f8f8;}
+	#profile_search .pro_pic span{ margin-left:10px;}
+	#header .navbar-toggle{ margin-right:0px;}
+	
+	
+}
+
+@media (max-width: 643px) {
+}
+
+@media (max-width: 480px) {
+	#profile_search .pro_pic span{ margin-left:0px}
+	#profile_search .pro_pic span .text-center{ text-align:left;}
+	#profile_search h1{ margin:10px;}
+	#profile_search .bell{ margin-right: 22px;
+    margin-top: 34px; font-size:16px;}
+	#profile_search .pro_pic img{ display:none;}
+	#header{ background:#3ca7f9;}
+	#header .navbar-toggle{ border:none;}
+	#header .navbar-default .navbar-toggle .icon-bar{ background:#fff;}
+}
+
+/* Mobile devices */
+@media (max-width: 359px) {
+}
+/**
+ * 9.0 Print
+ * ----------------------------------------------------------------------------
+ */
+
+/* Retina-specific styles. */
+@media print,
+	(-o-min-device-pixel-ratio: 5/4),
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 120dpi) {
+
+}
+
+@media print {
+
+}

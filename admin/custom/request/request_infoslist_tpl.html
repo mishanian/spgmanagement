@@ -1,0 +1,721 @@
+<?php
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/table_style.css">
+  <link rel="stylesheet" href="css/request-info.css">
+  <link rel="stylesheet" href="css/lightbox.min.css">
+</head>
+<body>
+<div id="container">
+  <div class="col-sm-12 col-md-4 report-btn">
+    <button class="btn btn-success" data-toggle="modal" data-target="#reportModal">Report an Issue</button>
+  </div>
+  <div class="col-sm-0 col-md-6" style="margin-top: 10px;">
+    <div class="col-md-4"><div class="category-box category-internal"></div><div class="box-text">Internal Issues</div></div>
+    <div class="col-md-4"><div class="category-box category-tenant"></div><div class="box-text">Tenant Issues</div></div>
+    <div class="col-md-4"><div class="category-box category-unread"></div><div class="box-text">Unread Issues</div></div>
+  </div>
+  <div class="col-sm-0 col-md-2">
+    <div class="box-text">OPEN ISSUES: 30<br>UPDATED: 6</div>
+  </div>
+
+  <div class="col-sm-12 col-md-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation"><a href="#current-issues" aria-controls="current-issues" role="tab" data-toggle="tab">Current Issues</a></li>
+      <li role="presentation"><a href="#past-issues" aria-controls="past-issues" role="tab" data-toggle="tab">Past Issues</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="current-issues">
+    <div id="filter-part-current" class="col-sm-12 col-md-12" style="padding: 15px 0;">
+      <div class="col-sm-4 col-md-3 filter-block">
+        <label for="filter_building_current" class="col-sm-4 col-md-3 filter-text">Building:</label>
+        <div class="col-sm-8 col-md-9">
+          <select class="form-control" id="filter_building_current">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_category_current" class="col-sm-4 col-md-3 filter-text">Category:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_category_current">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_status_current" class="col-sm-4 col-md-3 filter-text">Status:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_status_current">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_tenant_current" class="col-sm-4 col-md-3 filter-text">Tenant:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_tenant_current">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_created_from_current" class="col-sm-4 col-md-3 filter-text">From:</label>
+          <div class="col-sm-8 col-md-9">
+            <input type="date" class="form-control" id="filter_created_from_current">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_created_to_current" class="col-sm-4 col-md-3 filter-text">To:</label>
+          <div class="col-sm-8 col-md-9">
+            <input type="date" class="form-control" id="filter_created_to_current">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_employee_current" class="col-sm-4 col-md-3 filter-text">Employee:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_employee_current">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="order_by_current" class="col-sm-4 col-md-3 filter-text">OrderBy:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="order_by_current">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- filter end-->
+    <!-- issue list -->
+    <div id="issue-list" class="col-sm-12 col-md-12">
+      <legend>Request Issue List</legend>
+      <table class="table table-uniform table-hover">
+        <thead>
+        <tr>
+          <td class="col-md-2 text-center">Status</td>
+          <td class="col-md-1 text-center">Issue Type</td>
+          <td class="col-md-1 text-center">Level</td>
+          <td class="col-md-1 text-center">Date Created</td>
+          <td class="col-md-1 text-center">Days Old</td>
+          <td class="col-md-1 text-center">Creator</td>
+          <td class="col-md-2 text-center">Location</td>
+          <td class="col-md-3 text-center">Description</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success issue-line" data-toggle="modal" data-target="#iModal">
+          <td class="col-md-2 text-center">OPEN</td>
+          <td class="col-md-1 text-center">Heating</td>
+          <td class="col-md-1 text-center">NORMAL</td>
+          <td class="col-md-1 text-center">Oct 27, 2017</td>
+          <td class="col-md-1 text-center">1</td>
+          <td class="col-md-1 text-center" data-toggle="tooltip" data-container="body" title="Telephone: 111188881 Email:Tianen.chen@outlook.com">Daniel</td>
+          <td class="col-md-2 text-center" data-toggle="tooltip" data-container="body" title="xxxxxxxxxxx">Rue de Fort 5 floor-414</td>
+          <td class="col-md-3 text-center" data-toggle="tooltip" data-container="body" title="xxxxxxxxxxx">Repairing toilet</td>
+        </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+    <!-- issue list end -->
+
+    <div id="pagination-bottom" class="col-sm-12 col-md-12">
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+
+
+  <!--past issue panel-->
+  <div role="tabpanel" class="tab-pane" id="past-issues">
+    <div id="filter-part" class="col-sm-12 col-md-12" style="padding: 15px 0;">
+      <div class="col-sm-4 col-md-3 filter-block">
+        <label for="filter_building" class="col-sm-4 col-md-3 filter-text">Building:</label>
+        <div class="col-sm-8 col-md-9">
+          <select class="form-control" id="filter_building">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_category" class="col-sm-4 col-md-3 filter-text">Category:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_category">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_status" class="col-sm-4 col-md-3 filter-text">Status:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_status">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_tenant" class="col-sm-4 col-md-3 filter-text">Tenant:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_tenant">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_created_from" class="col-sm-4 col-md-3 filter-text">From:</label>
+          <div class="col-sm-8 col-md-9">
+            <input type="date" class="form-control" id="filter_created_from">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_created_to" class="col-sm-4 col-md-3 filter-text">To:</label>
+          <div class="col-sm-8 col-md-9">
+            <input type="date" class="form-control" id="filter_created_to">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="filter_employee" class="col-sm-4 col-md-3 filter-text">Employee:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="filter_employee">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-md-3 filter-block">
+        <div class="form-group">
+          <label for="order_by" class="col-sm-4 col-md-3 filter-text">OrderBy:</label>
+          <div class="col-sm-8 col-md-9">
+            <select class="form-control" id="order_by">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="iModal" tabindex="-1" role="dialog" aria-labelledby="iModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-title" id="iModalLabel"><div class="modal-h-id"><i>ISSUE #: </i>15975-008-0003</div></div>
+        <div class="modal-status modal-status-open"><span class="main-status">OPEN</span></div>
+
+        <div class="modal-created-by-info">
+          <i class="title">Created By:</i>
+          <br>
+          <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Tianen Chen
+          <br>
+          <span class="glyphicon glyphicon glyphicon glyphicon glyphicon-phone" aria-hidden="true"></span>&nbsp;+1464646464
+        </div>
+        
+        <div class="modal-created-daytime">
+          <i class="title">Created At:</i>
+          <br>
+          <img src="img/date-time.svg">&nbsp;2017/10/25
+          <br>
+          <img src="img/time.svg">&nbsp;15:56
+        </div>
+      </div>
+
+      <div class="modal-body" style="padding: 10px 16px">
+        <div class="modal-apart-info">
+          <img class="image modal-img" src="https://dlprdcaecontentst01.blob.core.windows.net/gothamcontent/account134/buildings/1372/image/preview">
+          <div class="text">
+            <span class="text-item-title">Building - info</span>
+            <span class="text-item">Floor - info</span>
+            <span class="text-item">add</span>
+          </div>
+        </div>
+
+
+
+        <ul class="nav nav-tabs" role="tablist" style="margin-top: 10px;">
+          <li role="presentation" class="active"><a href="#communication" aria-controls="communication" role="tab" data-toggle="tab">Communications</a></li>
+          <li role="presentation"><a href="#attach" aria-controls="attach" role="tab" data-toggle="tab">Attachments</a></li>
+          <li role="presentation"><a href="#recipient" aria-controls="recipient" role="tab" data-toggle="tab">Recipient</a></li>
+          <li role="presentation"><a href="#edit" aria-controls="edit" role="tab" data-toggle="tab">Editing</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="communication">
+            <div class="communication-div">
+              <div class="col-sm-12 col-md-12" style="overflow: auto; white-space: nowrap">
+                <div class="message-container bg-info">
+                  <div class="message-text">text</div>
+                  <div class="message-info">
+                    <div class="message-info-date" style="color: #0f0f0f">Oct 21, 17 11:29 AM</div>
+                    <div class="massage-info-name" style="color: #0f0f0f">Daniel Li, Employee</div>
+                  </div>
+                </div>
+                <div class="message-container bg-danger">
+                  <div class="message-text">text</div>
+                  <div class="message-info">
+                    <div class="message-info-date" style="color: #0f0f0f">Oct 21, 17 11:29 AM</div>
+                    <div class="massage-info-name" style="color: #0f0f0f">Daniel Li, Employee</div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="new_message">
+                <textarea id="message-text" name="message" placeholder="This text will be visible to employees only." style="overflow-y: hidden; height: 22px;"></textarea>
+
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="attach">
+            <div class="attach-div">
+              <div class="attach-title">
+                <p>Images:</p>
+              </div>
+              <div class="attach-image">
+                <a class="attach-a" href="img/attach-sample.jpeg" data-lightbox="attach-img" data-title="Picture Title">
+                  <img src="img/attach-sample.jpeg" href="#">
+                </a>
+                <a class="attach-a" href="img/attach-sample.jpeg" data-lightbox="attach-img" data-title="Picture Title">
+                  <img src="img/attach-sample.jpeg" href="#">
+                </a>
+              </div>
+              <div class="attach-form">
+                <form id="edit-attach">
+                  <label class="btn btn-primary btn-file">
+                    Select Images<input type="file" name="attach[]" style="display: none">
+                  </label>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="recipient">
+            <div class="recipient-div">
+              <div class="form">
+                <form id="edit-recipient" action="#" method="post">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Employee</label>
+                      <div class="col-sm-7">
+                        <table>
+                          <tr>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="employee">Daniel</label>
+                            </td>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="employee">Tianen</label>
+                            </td>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="employee">Tianen</label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="employee">Daniel</label>
+                            </td>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="employee">Tianen</label>
+                            </td>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="employee">Tianen</label>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Tenants</label>
+                      <div class="col-sm-7">
+                        <table>
+                          <tr>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="tenant">tenant1</label>
+                            </td>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="tenant">tenant2</label>
+                            </td>
+                            <td>
+                              <label class="checkbox"><input class="edit-input" type="checkbox" name="tenant">tenant3</label>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="form-group">
+                      <label class="edit-label"></label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="edit">
+            <div class="edit-div">
+              <div class="form">
+                <form id="edit-request" action="#" method="post">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4" for="location">Location</label>
+                      <div class="col-sm-8">
+                        <input class="edit-input form-control" id="location" name="location">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4" for="request-type">Request Type</label>
+                      <div class="col-sm-8">
+                        <select class="edit-select form-control" id="request-type" name="request-type" title="Type">
+                          <option value="">Repair</option>
+                          <option value="">Clean</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Approve to Visit</label>
+                      <div class="col-sm-8">
+                        <label class="radio-inline">
+                          <input class="edit-input" type="radio" name="approved" value="true" checked>Yes
+                        </label>
+                        <label class="radio-inline">
+                          <input class="edit-input" type="radio" name="approved" value="false">No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4" for="visitFrom">Visit Time from</label>
+                      <div class="col-sm-8">
+                        <input class="edit-input form-control" type="time" name="visitFrom" id="visitFrom" value="09:00:00">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4" for="visitTo">Visit Time to</label>
+                      <div class="col-sm-8">
+                        <input class="edit-input form-control" type="time" name="visitTo" id="visitTo" value="16:45:00">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Pictures</label>
+                      <div class="col-sm-8">
+                        <label class="btn btn-success btn-file">
+                          Select Images<input type="file" name="pictures[]" style="display: none">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Message</label>
+                      <div class="col-sm-8">
+                        <textarea class="edit-input form-control" name="message" rows="4"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Notify by</label>
+                      <div class="col-sm-8">
+                        <label class="checkbox-inline"><input class="edit-input" type="checkbox" name="notifyBy">Email</label>
+                        <label class="checkbox-inline"><input class="edit-input" type="checkbox" name="notifyBy">SMS</label>
+                        <label class="checkbox-inline"><input class="edit-input" type="checkbox" name="notifyBy">Voice</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label class="edit-label col-sm-4">Status</label>
+                      <div class="col-sm-8">
+                        <select class="edit-select form-control" id="request-status" name="request-status" title="Status">
+                          <option value="">open</option>
+                          <option value="">closed</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="col-sm-8 col-sm-offset-4">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-default">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="form-group">
+                      <label class="edit-label"></label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal for report issue button-->
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="iModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Report an Issue</h2>
+      </div>
+      <div class="reportAnIssue">
+        <div class="form">
+          <form id="reportIssue" action="#" method="post">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4" for="location">Location</label>
+                <div class="col-sm-8">
+                  <input class="edit-input form-control" id="report-location" name="location">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4" for="request-type">Request Type</label>
+                <div class="col-sm-8">
+                  <select class="edit-select form-control" id="report-request-type" name="request-type" title="Type">
+                    <option value="">Repair</option>
+                    <option value="">Clean</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4">Approve to Visit</label>
+                <div class="col-sm-8">
+                  <label class="radio-inline">
+                    <input class="edit-input" type="radio" name="approved" value="true" checked>Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input class="edit-input" type="radio" name="approved" value="false">No
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4" for="visitFrom">Visit Time from</label>
+                <div class="col-sm-8">
+                  <input class="edit-input form-control" type="time" name="visitFrom" id="report-visitFrom" value="09:00:00">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4" for="visitTo">Visit Time to</label>
+                <div class="col-sm-8">
+                  <input class="edit-input form-control" type="time" name="visitTo" id="report-visitTo" value="16:45:00">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4">Pictures</label>
+                <div class="col-sm-8">
+                  <label class="btn btn-success btn-file">
+                    Select Images<input type="file" name="reportAnIssue[]" style="display: none">
+                  </label>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4">Message</label>
+                <div class="col-sm-8">
+                  <textarea class="edit-input form-control" name="message" rows="4"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4">Notify by</label>
+                <div class="col-sm-8">
+                  <label class="checkbox-inline"><input class="edit-input" type="checkbox" name="notifyBy">Email</label>
+                  <label class="checkbox-inline"><input class="edit-input" type="checkbox" name="notifyBy">SMS</label>
+                  <label class="checkbox-inline"><input class="edit-input" type="checkbox" name="notifyBy">Voice</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="edit-label col-sm-4">Status</label>
+                <div class="col-sm-8">
+                  <select class="edit-select form-control" id="report-request-status" name="request-status" title="Status">
+                    <option value="">open</option>
+                    <option value="">closed</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                  <button type="submit" class="btn btn-success">Report this Issue</button>
+                  <button type="button" class="btn btn-default">Cancel</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label class="edit-label"></label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script>
+  lightbox.option({
+//      'alwaysShowNavOnTouchDevices' : true
+  })
+
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+<script>
+
+</script>

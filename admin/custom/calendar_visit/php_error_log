@@ -1,0 +1,35 @@
+[08-Nov-2022 05:52:46 Europe/Berlin] PHP Warning:  Undefined variable $DB_calendar in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[08-Nov-2022 05:52:46 Europe/Berlin] PHP Stack trace:
+[08-Nov-2022 05:52:46 Europe/Berlin] PHP   1. {main}() E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:0
+[08-Nov-2022 05:52:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function get_personal_office_maintenance_events() on null in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:15
+Stack trace:
+#0 {main}
+  thrown in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[11-Nov-2022 05:57:50 Europe/Berlin] PHP Warning:  Undefined variable $DB_calendar in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[11-Nov-2022 05:57:50 Europe/Berlin] PHP Stack trace:
+[11-Nov-2022 05:57:50 Europe/Berlin] PHP   1. {main}() E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:0
+[11-Nov-2022 05:57:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function get_personal_office_maintenance_events() on null in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:15
+Stack trace:
+#0 {main}
+  thrown in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[12-Nov-2022 03:18:20 Europe/Berlin] PHP Warning:  Undefined variable $DB_calendar in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[12-Nov-2022 03:18:20 Europe/Berlin] PHP Stack trace:
+[12-Nov-2022 03:18:20 Europe/Berlin] PHP   1. {main}() E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:0
+[12-Nov-2022 03:18:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function get_personal_office_maintenance_events() on null in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:15
+Stack trace:
+#0 {main}
+  thrown in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[12-Nov-2022 20:36:54 Europe/Berlin] PHP Warning:  Undefined variable $DB_calendar in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[12-Nov-2022 20:36:54 Europe/Berlin] PHP Stack trace:
+[12-Nov-2022 20:36:54 Europe/Berlin] PHP   1. {main}() E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:0
+[12-Nov-2022 20:36:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function get_personal_office_maintenance_events() on null in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:15
+Stack trace:
+#0 {main}
+  thrown in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[12-Nov-2022 20:38:42 Europe/Berlin] PHP Warning:  Undefined variable $DB_calendar in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15
+[12-Nov-2022 20:38:42 Europe/Berlin] PHP Stack trace:
+[12-Nov-2022 20:38:42 Europe/Berlin] PHP   1. {main}() E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:0
+[12-Nov-2022 20:38:42 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function get_personal_office_maintenance_events() on null in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php:15
+Stack trace:
+#0 {main}
+  thrown in E:\works\spgmanagement\admin\custom\calendar_visit\calendar_personal_event_source.php on line 15

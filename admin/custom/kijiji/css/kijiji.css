@@ -1,0 +1,74 @@
+.switch-margin{
+    margin-top: 12px;
+}
+
+.switch-margin-carousel{
+    margin-top: 15px;
+}
+
+.priority-module{
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.order-module{
+    margin-bottom: 15px;
+}
+
+.priority-module p{
+    color:#696969;
+}
+
+.order-module p{
+    color:#696969;
+}
+
+.caption-text{
+    text-align: center;
+}
+strong{
+    margin-left: 10px;
+    margin-right:10px;
+}
+
+.have-slots{
+    color: #63B8FF;
+    font-size: 22px;
+}
+
+.using-slots{
+    color: #FF8C00;
+    font-size: 20px;
+}
+
+.buy-btn{
+    margin-top: 10px;
+}
+
+#modal-amount-block{
+    margin-top: 15px;
+    margin-left: 65px;
+    font-size: 22px;
+    color: #99004d;
+}
+
+.box-text{
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.category-box{
+    display: inline-block;
+    float: left;
+    height: 15px;
+    margin: 2px 4px 0 0;
+    width: 30px;
+}
+
+.category-internal{
+    height: 23px;
+    width: 45px;
+    border: 1px solid #6b8e23;
+    background-color: #dff0d8;
+}
+

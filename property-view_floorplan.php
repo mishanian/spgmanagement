@@ -1,0 +1,1 @@
+<a href="<?php echo "admin/files/apartment_floorplans/" . str_replace(" ","%20",$apt_row['floor_plan']); ?>" download class="btn btn-success btn-sm" style="margin:5px"><?php echo $DB_snapshot->echot("Download Floor Plan"); ?></a>

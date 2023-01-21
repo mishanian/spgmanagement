@@ -1,0 +1,46 @@
+.pad-top{
+    padding-top: 20px;
+}
+
+.margin-top-bottom{
+    margin: 30px 50px 0px 0px;
+}
+
+.text-style{
+    font-family: "Segoe UI","Segoe WP","Helvetica Neue","RobotoRegular",sans-serif;
+    font-size: 14px;
+}
+
+.payment-content{
+    width: 88%;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+}
+
+.payment-content-title{
+    border-bottom: 1px solid #eeeeee;
+    padding:10px 10px;
+    margin-top: 0px;
+}
+
+.payment-content-body{
+    padding: 2px 15px;
+}
+
+.dl-title{
+    word-wrap: break-word;
+    position: relative;
+    text-align: left;
+}
+
+.dl-value{
+    word-wrap: break-word;
+    position: relative;
+    text-align: right;
+}
+
+.process_interac_btn{
+    float: left;
+    width: 88%;
+}
+

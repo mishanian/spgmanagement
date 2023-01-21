@@ -1,0 +1,13 @@
+
+.txt-gray{
+    color: gray;
+}
+
+.non-display{
+    display: none;
+}
+
+.filter-text{
+    padding-top: 5px;
+    font-weight: normal;
+}

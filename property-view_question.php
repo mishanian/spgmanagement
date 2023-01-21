@@ -1,0 +1,1 @@
+<a href="inquiry.php?building_id=<?php echo $building_id; ?>&apt_id=<?php echo $apt_id; ?>" class="btn btn-success btn-sm" style="margin:5px"><?php echo $DB_snapshot->echot("Questions?"); ?></a>

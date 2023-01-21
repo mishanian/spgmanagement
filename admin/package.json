@@ -1,0 +1,11 @@
+{
+    "name": "spgmanagement",
+    "version": "19.9.2",
+    "description": "spgmanagement",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "private": true,
+    "dependencies": {},
+    "engines": {
+        "node": ">=16"
+    }
+}

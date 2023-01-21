@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**** RESET CSS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+* {	magin:0;
+	padding:0;
+	-webkit-box-sizing:  border-box;
+	-moz-box-sizing:  border-box;
+	box-sizing:  border-box;
+}
+html, body, table, th, td, tr, tbody, thead, thead, tfoot, dl, dt, dd, div, em, strong, b, i, sub, sup, ul, ol, li, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, blockquote, a, abbr, acronym, address, big, small, cite, code, del, dfn, font, ins, kbd, q, s, samp, strike, fieldset, form, label, legend, caption, main, section, header, footer, aside, hgroup {
+	margin:0;
+	padding:0;
+	font-style:normal;
+	font-weight:normal;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	text-decoration:none;
+}
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+::-webkit-input-placeholder {
+   color: #ccc;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ccc;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ccc;  
+}
+
+:-ms-input-placeholder {  
+   color: #ccc;  
+}
+body {
+	font-size:13px;
+}
+strong, b {
+	font-weight:bold
+}
+i, em {
+	font-style:italic
+}
+input {
+	width:96%;
+	padding:8px;
+}
+textarea {
+	width:100%
+}
+select {
+	width:100%
+}
+img {
+	max-width:100%;
+	vertical-align:bottom;
+	border:none
+}
+ul, ol, li {
+	list-style:none;
+}
+/**** RESET CLASSES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+.clear {
+	clear:both
+}
+.f-left {
+	float:left
+}
+.f-right {
+	float:right
+}
+.a-left {
+	text-align:left
+}
+.a-right {
+	text-align:right
+}
+.a-center {
+	text-align:center
+}
+.a-justify {
+	text-align: justify
+}
+#page-wrapper {
+	background:#fff; text-align:center; width:auto;
+}
+.wrapper, main, .container {
+	max-width:1170px;
+	margin:auto; width:auto; text-align:center;
+}
+main:after, .wrapper:after, footer:after, header:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+/**** RESET LINKS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+a, a:link {
+	text-decoration:none;
+	color:#e10b01
+}
+a:hover, a:visited, a:focus, a:active {
+	color:#00469b
+}
+input:focus {
+	border:1px solid #999;
+}
+input[type="button"], input[type="submit"], button {
+	width:auto;
+	border:none;
+	background:#000;
+	padding:5px;
+	cursor:pointer;
+}
+input[type="button"]:hover, input[type="submit"]:hover, input[type="button"]:focus, input[type="submit"]:focus, button:hover, , button:focus {
+	border:none;
+	background:#999;
+}
+/**** HEADINGS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+h1 {
+	font-size:36px;
+	margin:30px 0
+}
+h2 {
+	font-size:30px;
+	margin:20px 0
+}
+h3 {
+	font-size:24px;
+	margin:15px 0
+}
+h4 {
+	font-size:18px;
+	margin:10px 0
+}
+h5 {
+	font-size:14px;
+	margin:10px 0
+}
+h6 {
+	font-size:12px;
+	margin:5px 0
+}
+/**** FONT SIZE
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+.f-size11{ font-size:11px;}
+
+/**** PADDINGS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+/*Padding Left*/
+.p-left10{ padding-left:10px}
+
+/*Padding Right*/
+.p-right10{ padding-right:10px}
+
+/*Padding Top*/
+.p-top10{ padding-top:10px}
+
+/*Padding Bottom*/
+.p-bottom10{ padding-bottom:10px}
+
+
+/**** MARGINS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------****/
+/*Margin Left*/
+.m-left10{ margin-left:10px}
+
+/*Margin Right*/
+.m-right10{ margin-right:10px;}
+
+/*Margin Top*/
+.m-top50{ margin-top:50px}
+
+/*Margin Bottom*/
+.m-bottom50{ margin-bottom:50px}
