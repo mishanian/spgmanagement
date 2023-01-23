@@ -36,68 +36,68 @@ $tenants=$statement->fetchAll(PDO::FETCH_ASSOC);
     <input type="hidden" name="submitted" id="submitted"  value="1">
 <div class="container">
 
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4">Please cancel a payment if it was entered by mistake.</div></div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12">Please cancel a payment if it was entered by mistake.</div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Payment Due Date:</div>
-        <div class="col-sm-2 col-md-2 col-lg-2"><strong><?=$due_date?></strong></div>
+        <div class="col-6">Payment Due Date:</div>
+        <div class="col-6"><strong><?=$due_date?></strong></div>
     </div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Rent Total</div>
-        <div class="col-sm-2 col-md-2 col-lg-2"><strong>$<?=$total?> (CAD)</strong></div>
+        <div class="col-6">Rent Total</div>
+        <div class="col-6"><strong>$<?=$total?> (CAD)</strong></div>
     </div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
 
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Tenant(s):</div>
-        <div class="col-sm-2 col-md-2 col-lg-2">
-                <? foreach ($tenants as $key){?>
-                    <strong><a href="tenant_infosview.php?showdetail=&id=<?=$key['id']?>" target="_blank"><?=$key['full_name']?></a></strong><br>
+        <div class="col-6">Tenant(s):</div>
+        <div class="col-6">
+                <? foreach ($tenants as $tenant){?>
+                    <strong><a href="tenant_infosview.php?showdetail=&id=<?=$tenant['tenant_id']?>" target="_blank"><?=$tenant['full_name']?></a></strong><br>
             <? }?>
         </div>
     </div>
 
 
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
 
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Building:</div>
-        <div class="col-sm-2 col-md-2 col-lg-2"><strong><?=$building_name?></strong></div>
+        <div class="col-6">Building:</div>
+        <div class="col-6"><strong><?=$building_name?></strong></div>
     </div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Appartment:</div>
-        <div class="col-sm-2 col-md-2 col-lg-2"><strong><?=$unit_number?></strong></div>
+        <div class="col-6">Appartment:</div>
+        <div class="col-6"><strong><?=$unit_number?></strong></div>
     </div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
 
 
-
-
-    <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Please type CANCEL to cancel this payment:</div>
-        <div class="col-sm-2 col-md-2 col-lg-2"><input type="text" name="cancel" id="cancel" size="6" placeholder="" value="" class="form-control" align="left"></div>
-    </div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
 
 
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">Reason for cancellation:</div>
-        <div class="col-sm-2 col-md-2 col-lg-2"><textarea name="comments"  id="comments" class="form-control"></textarea> </div>
+        <div class="col-6">Please type CANCEL to cancel this payment:</div>
+        <div class="col-6"><input type="text" name="cancel" id="cancel" size="6" placeholder="" value="" class="form-control" align="left"></div>
     </div>
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><hr></div></div>
+    <div class="row"><div class="col-12"><hr></div></div>
+
+
+    <div class="row">
+        <div class="col-6">Reason for cancellation:</div>
+        <div class="col-6"><textarea name="comments"  id="comments" class="form-control"></textarea> </div>
+    </div>
+    <div class="row"><div class="col-12"><hr></div></div>
 
 
 
 
-    <div class="row"><div class="col-sm-8 col-md-8 col-lg-8">Transaction Logs:<br><br></div></div>
+    <div class="row"><div class="col-12">Transaction Logs:<br><br></div></div>
 
     <?
     $SelectSql = "select entry_datetime,amount,payment_date, LPD.comments, EMP.full_name as employee_name, PM.name as payment_method, PT.name as payment_type from lease_payment_details LPD            
@@ -111,7 +111,9 @@ $tenants=$statement->fetchAll(PDO::FETCH_ASSOC);
     //$rowNumbers=$result->rowCount();
     if ( $result ) {
     ?>
-    <table class="table-condensed table-responsive stamp-table">
+				<div class="row"><div class="col-12">
+				<div class="table-responsive">
+            <table class="table">
         <tr style="font-size: 8pt">
             <td>Time Stamp</td>
             <td>Amount</td>
@@ -140,12 +142,15 @@ $tenants=$statement->fetchAll(PDO::FETCH_ASSOC);
 
             <?
         } // for each rows
+		?>
+		    </table></div>
+</div></div>		
+			<?
         }else { // if rowsNumber
             echo "No transaction yet";
 
         }
         ?>
-    </table>
 
 
 
@@ -155,11 +160,12 @@ $tenants=$statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-    <div class="row"><div class="col-sm-8 col-md-8 col-lg-8"><hr></div></div>
+
+    <div class="row"><div class="col-12"><hr></div></div>
 
 
 
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><button id="form-submit" class="btn btn-primary">Cancel the payment</button>  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button></div></div>
+    <div class="row"><div class="col-12"><button id="form-submit" class="btn btn-primary">Cancel the payment</button>  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button></div></div>
 
 </div>
 </form>

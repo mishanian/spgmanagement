@@ -55,21 +55,21 @@ LEFT JOIN building_infos BLD ON BLD.building_id=APP.building_id
 
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Payment Due Date:</div>
-                <div class="col-sm-2 col-md-2 col-lg-2"><strong><?= $due_date ?></strong></div>
+                <div class="col-4">Payment Due Date:</div>
+                <div class="col-4"><strong><?= $due_date ?></strong></div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Rent Total</div>
-                <div class="col-sm-2 col-md-2 col-lg-2"><strong>$<?= $total ?> (CAD)</strong></div>
+                <div class="col-4">Rent Total</div>
+                <div class="col-4"><strong>$<?= $total ?> (CAD)</strong></div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
@@ -77,70 +77,70 @@ LEFT JOIN building_infos BLD ON BLD.building_id=APP.building_id
 
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Tenant(s):</div>
-                <div class="col-sm-2 col-md-2 col-lg-2">
-                    <? foreach ($tenants as $key) { ?>
-                        <strong><a href="tenant_infosview.php?showdetail=&id=<?= $key['id'] ?>"
-                                   target="_blank"><?= $key['full_name'] ?></a></strong><br>
+                <div class="col-4">Tenant(s):</div>
+                <div class="col-4">
+                    <? foreach ($tenants as $tenant) { ?>
+                        <strong><a href="tenant_infosview.php?showdetail=&id=<?= $tenant['tenant_id'] ?>"
+                                   target="_blank"><?= $tenant['full_name'] ?></a></strong><br>
                     <? } ?>
                 </div>
             </div>
 
 
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
 
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Building:</div>
-                <div class="col-sm-2 col-md-2 col-lg-2"><strong><?= $building_name ?></strong></div>
+                <div class="col-4">Building:</div>
+                <div class="col-4"><strong><?= $building_name ?></strong></div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Appartment:</div>
-                <div class="col-sm-2 col-md-2 col-lg-2"><strong><?= $unit_number ?></strong></div>
+                <div class="col-4">Appartment:</div>
+                <div class="col-4"><strong><?= $unit_number ?></strong></div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
 
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Discount Amount:</div>
-                <div class="col-sm-2 col-md-2 col-lg-2"><input type="text" name="discount" id="discount" size="3"
+                <div class="col-4">Discount Amount:</div>
+                <div class="col-4"><input type="text" name="discount" id="discount" size="3"
                                                                placeholder="0" value="0" class="form-control"
                                                                align="left">$ (CAD)
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
 
 
             <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">Comments:</div>
-                <div class="col-sm-2 col-md-2 col-lg-2"><textarea name="comments" id="comments"
+                <div class="col-4">Comments:</div>
+                <div class="col-4"><textarea name="comments" id="comments"
                                                                   class="form-control"></textarea></div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-12">
                     <hr>
                 </div>
             </div>
 
-            <div class="row"><div class="col-sm-8 col-md-8 col-lg-8">Transaction Logs:<br><br></div></div>
+            <div class="row"><div class="col-12">Transaction Logs:<br><br></div></div>
 
                 <?
                 try {
@@ -160,7 +160,9 @@ LEFT JOIN building_infos BLD ON BLD.building_id=APP.building_id
                 //$rowNumbers=$result->rowCount();
                 if ( $result ) {
                 ?>
-            <table class="table-condensed table-responsive stamp-table">
+				<div class="row"><div class="col-12">
+				<div class="table-responsive">
+            <table class="table">
                 <tr style="font-size: 8pt">
                     <td>Time Stamp</td>
                     <td>Amount</td>
@@ -189,12 +191,15 @@ LEFT JOIN building_infos BLD ON BLD.building_id=APP.building_id
 
                     <?
                 } // for each rows
+				?>
+	            </table></div>
+</div></div>		
+<?	
                 }else { // if rowsNumber
                 echo "No transaction yet";
 
                 }
                 ?>
-            </table>
 
 
 
@@ -204,19 +209,13 @@ LEFT JOIN building_infos BLD ON BLD.building_id=APP.building_id
 
 
 
-            <div class="row"><div class="col-sm-8 col-md-8 col-lg-8"><hr></div></div>
+            <div class="row"><div class="col-12"><hr></div></div>
 
-    <div class="row"><div class="col-sm-4 col-md-4 col-lg-4"><button id="form-submit" class="btn btn-primary">Save changes</button>  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button></div></div>
+    <div class="row"><div class="col-12"><button id="form-submit" class="btn btn-primary">Save changes</button>  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button></div></div>
 
 </div>
 </form>
     <script>
-        $("input[name='discount']").TouchSpin({
-            min: 0,
-            max: 5000,
-            step: 0.01,
-            decimals: 2
-        });
 
 
         $(function () {
