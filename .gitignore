@@ -12,6 +12,8 @@
 **/paypal
 **/fpdf
 **/temp
+**/mpdf/
+**/mpdf2/
 admin/adminlte3/
 admin/bootstrap5/
 admin/ckeditor/

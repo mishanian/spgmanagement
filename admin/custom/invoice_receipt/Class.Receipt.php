@@ -185,9 +185,7 @@ class Receipt
       $to_telephone = $this->tenants_telephone[$i];
       $to_name = $this->tenants_name[$i];
       if (!empty($to_telephone)) {
-        echo ("SMS1");
         $this->send_receipt_sms($to_telephone, $to_name);
-        echo ("SMS2");
       }
 
       if ($i != $tenant_number - 1) {
@@ -445,7 +443,7 @@ class Receipt
       <td>
         <table cellspacing="0" cellpadding="0" style="background-color:white;">
           <tbody>
-          
+
           <tr style="background-color:white;">
             <td style="padding:15px 20px;">
               <div><span style="font-size:16px;font-family: Arial, sans-serif, serif, EmojiFont; color:#696969;">Dear&nbsp;<b>' . $to_name . '</b>,</span></div>
@@ -457,7 +455,7 @@ class Receipt
             <td align="center" style="text-align:center;padding:0; width: 600px;height: 25px;">
             <img src="https://www.spgmanagement.com/admin/phpimages/cityskyline.jpg" width = "640px"></td>
           </tr>
-          
+
           <tr>
             <td style="height:100px;padding:0 20px;">
               <table align="left" border="0" cellspacing="0" cellpadding="0">
@@ -522,7 +520,7 @@ class Receipt
           <div>
             <span style="font-size:13px;"><a href="mailto:info@mgmgmt.ca?Subject=From%20Client" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">Contact Us</font></a></span>
             </div>
- 
+
           </td>
         </tr>
         </tbody></table>

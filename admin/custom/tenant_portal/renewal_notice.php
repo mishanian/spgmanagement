@@ -100,7 +100,10 @@ include('./renewal_notice_content.php')
                         $renewal_gap_day = $resultSql['renewal_gap_day'];
                         $end_date_onj = date_create($end_date);
                         $renewal_letter_date = date_format(date_add($end_date_onj, date_interval_create_from_date_string("-" . $renewal_notification_day . " days")), "Y-m-d");
-                        $last_day_renewal = date_format(date_add(date_create($renewal_notice_date ? $renewal_notice_date : date("Y-m-d")), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
+                        $last_day_renewal = NULL;
+                        if (!empty($renewal_notice_date)) {
+                            $last_day_renewal = date_format(date_add(date_create($renewal_notice_date), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
+                        }
 
                         $is_signed = true;
                         $pdf = 1;
@@ -139,7 +142,7 @@ include('./renewal_notice_content.php')
                     // NOT insert the renewal date
                     //}
                     */
-                    $sql = "SELECT LRN.*, LI.lease_status_id  from lease_renewal_notice LRN LEFT JOIN lease_infos LI ON LRN.lease_id=LI.id WHERE LRN.lease_id=$lease_id and LRN.tenant_id=$tenant_id";
+                    $sql = "SELECT LRN.*, LI.lease_status_id, LI.total_amount  from lease_renewal_notice LRN LEFT JOIN lease_infos LI ON LRN.lease_id=LI.id WHERE LRN.lease_id=$lease_id and LRN.tenant_id=$tenant_id";
                     $Crud = new CRUD($DB_con);
                     $Crud->query($sql);
                     $row = $Crud->resultSingle();
@@ -149,6 +152,7 @@ include('./renewal_notice_content.php')
                     $company_id = $row['company_id'];
                     $employee_id = $row['employee_id'];
                     $lease_renewal_notice_id = $row['lease_renewal_notice_id'];
+                    $total_amount = $row['total_amount'];
 
 
                     console_log("start to add to history view");
@@ -181,10 +185,11 @@ include('./renewal_notice_content.php')
                 // extract($results);
                 $phone = $_POST['phone'];
 
-                $sql = "SELECT LRN.*, LI.lease_status_id  from lease_renewal_notice LRN LEFT JOIN lease_infos LI ON LRN.lease_id=LI.id WHERE LRN.lease_id=$lease_id and LRN.tenant_id=$tenant_id";
+                $sql = "SELECT LRN.*, LI.lease_status_id, LI.total_amount  from lease_renewal_notice LRN LEFT JOIN lease_infos LI ON LRN.lease_id=LI.id WHERE LRN.lease_id=$lease_id and LRN.tenant_id=$tenant_id";
                 $Crud = new CRUD($DB_con);
                 $Crud->query($sql);
                 $row = $Crud->resultSingle();
+                // die(var_dump($row));
                 if (empty($row)) {
                     die("No record found");
                 }
@@ -201,31 +206,37 @@ include('./renewal_notice_content.php')
                 $postal_code = $row['postal_code'];
                 $tenant_name = $row['tenant_name'];
                 $monthly_amount = $row['monthly_amount'];
+                $total_amount = $row['total_amount'];
 
                 $lease_renewal_notice_id = $row['lease_renewal_notice_id'];
                 // extract($_POST);
                 $accept = $_POST['accept'];
-                $sign_date = date("Y-m-d H:i:s");
+                $signed_date = date("Y-m-d H:i:s");
+                $sign_update = "";
                 switch ($accept) {
                     case 0:
                         $comment = "NOT Accept Renewal";
                         $lease_status_id = 9;
+                        $sign_update = ", is_signed=1, signed_date='$signed_date'";
                         break;
                     case 1:
                         $comment = "Accept Renewal";
                         $lease_status_id = 10;
+                        $sign_update = ", is_signed=1, signed_date='$signed_date'";
                         break;
                     case 2:
                         $comment = "Know Someone interested: " . $phone;
                         $lease_status_id = 9;
+                        $sign_update = ", is_signed=1, signed_date='$signed_date'";
                         break;
                     case 3:
                         $comment = "Skip";
                         $lease_status_id = 12;
+                        $sign_update = ", is_signed=1, signed_date='$signed_date'";
                         break;
                 }
                 $sql = "insert into history (table_id, user_id, history_type_id, open_datetime, subject, comments, client_data, employee_id,
-    company_id) VALUES ($lease_id, $tenant_id, $lease_status_id, '" . $sign_date . "', 'Renewal Request',
+    company_id) VALUES ($lease_id, $tenant_id, $lease_status_id, '" . $signed_date . "', 'Renewal Request',
     '$comment',:client_data,$employee_id,$company_id)";
                 $Crud->query($sql);
                 $Crud->bind("client_data", $client_data);
@@ -236,8 +247,9 @@ include('./renewal_notice_content.php')
                 WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND id=$lease_id";
                 $Crud->query($sqlupdate);
                 $Crud->execute();
-                $sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE()
-                WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND lease_id=$lease_id and tenant_id=$tenant_id";
+
+                $sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE(), lease_status_id=$lease_status_id $sign_update
+                WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND lease_id=$lease_id"; // and tenant_id=$tenant_id ; update for all tenants
                 // echo ($sqlupdate);
                 $Crud->query($sqlupdate);
                 $Crud->execute();
@@ -271,8 +283,10 @@ include('./renewal_notice_content.php')
                 $end_date_onj = date_create($end_date);
                 console_log("end date=" . $end_date);
                 $renewal_letter_date = date_format(date_add($end_date_onj, date_interval_create_from_date_string("-" . $renewal_notification_day . " days")), "Y-m-d");
-                $last_day_renewal = date_format(date_add(date_create($renewal_notice_date ? $renewal_notice_date : date("Y-m-d")), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
-
+                $last_day_renewal = NULL;
+                if (!empty($renewal_notice_date)) {
+                    $last_day_renewal = date_format(date_add(date_create($renewal_notice_date), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
+                }
                 console_log("renewal_notice_date=" . $renewal_notice_date);
                 $params = array(
                     "lease_id" => $lease_id, "tenant_id" => $tenant_id,
@@ -281,7 +295,7 @@ include('./renewal_notice_content.php')
                     "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date
                 );
                 // echo "params=";
-                die(var_dump($params));
+                // die(var_dump($params));
 
                 // echo ("start\n");
                 $text = render_renewal($params);
@@ -289,9 +303,8 @@ include('./renewal_notice_content.php')
 
                 //    require_once 'renewal_notice_content.php';
                 generatePDF($PDF_file_name, $text);
-                // die();
     ?>
-    <div class="container"><br /><br /><br />Thanks for your collabortion. <a href='../../home?skip=1'>Home Page</a>
+    <div class="container"><br /><br /><br />Thanks for your collaboration. <a href='../../home?skip=1'>Home Page</a>
         <br />
         <a target="_blank"
             href=<?= "../../files/renewal_notice/renewal_notice_l" . $lease_id . "_t" . $tenant_id . ".pdf" ?>>Download
@@ -307,8 +320,6 @@ include('./renewal_notice_content.php')
         <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
         <input type="hidden" name="length_of_lease" value="12">
         <input type="hidden" name="lease_amount" value="<?= $total_amount ?>">
-        <input type="hidden" name="parking_amount" value="<?= $parking_amount ?>">
-        <input type="hidden" name="storage_amount" value="<?= $storage_amount ?>">
         <input type="hidden" name="start_date_new" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
         <input type="hidden" name="end_date_new" value="<?= date("Y-m-d", strtotime($next_end_date)) ?>">
         <input type="hidden" name="move_in_date" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
@@ -340,6 +351,8 @@ include('./renewal_notice_content.php')
 <form action="renewal_notice.php" method="post" enctype="multipart/form-data" name="rform" id="rform">
     <input type="hidden" name="tenant_id" value="<?= $tenant_id ?>">
     <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
+    <input type="hidden" name="length_of_lease" value="12">
+    <input type="hidden" name="lease_amount" value="<?= $total_amount ?>">
     <input type="hidden" name="company_id" value="<?= $company_id ?>">
     <input type="hidden" name="employee_id" value="<?= $employee_id ?>">
     <div class="container">
@@ -428,6 +441,7 @@ function generatePDF($PDF_file_name, $text)
     $mpdf = new \Mpdf\Mpdf();
     $mpdf->WriteHTML($text);
     $mpdf->Output($PDF_file_name);
+    // die("<br>pdf generating2 PDF_file_name=$PDF_file_name");
 }
 
 function console_log($output, $with_script_tags = true)

@@ -92,7 +92,10 @@ include('./renewal_notice_content.php')
             $monthly_amount = $row['monthly_amount'];
             $end_date_onj = date_create($end_date);
             $renewal_letter_date = date_format(date_add($end_date_onj, date_interval_create_from_date_string("-" . $renewal_notification_day . " days")), "Y-m-d");
-            $last_day_renewal = date_format(date_add(date_create($renewal_notice_date ? $renewal_notice_date : date("Y-m-d")), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
+            $last_day_renewal = NULL;
+            if (!empty($renewal_notice_date)) {
+                $last_day_renewal = date_format(date_add(date_create($renewal_notice_date), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
+            }
 
 
             $sqlTenant = "select full_name as tenant_name, email as tenant_email from tenant_infos where tenant_id=$tenant_id";

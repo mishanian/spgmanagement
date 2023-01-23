@@ -224,8 +224,8 @@ if ($next_due <= 0) {
                                                     <td><?php
                                                                 if ($payment['invoice_type_id'] == '3') {
                                                                 ?>
-                                                        <div class="customComment" data-toggle="popover"
-                                                            data-trigger="hover" title="Comment"
+                                                        <div class="customComment" data-bs-toggle="popover"
+                                                            data-bs-trigger="hover" title="Comment"
                                                             data-content="<?php echo $payment['tenant_comments']; ?>"
                                                             data-placement="top">
                                                             <?php echo substr($payment['tenant_comments'], 0, 10) . "..."; ?>
@@ -273,15 +273,15 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading" style="align-self: left">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseOne<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i>Building Rules</a>
                                         </h5>
                                     </div>
                                     <div id="collapseOne<?= $apartment_id . "-" . $lease_id ?>"
                                         class="panel-collapse collapse ">
-                                        <div class="customComment text-align-left" data-toggle="popover"
-                                            data-trigger="hover" title="Rules"
+                                        <div class="customComment text-align-left" data-bs-toggle="popover"
+                                            data-bs-trigger="hover" title="Rules"
                                             data-content="<?= strip_tags($rules_content) ?>" data-placement="bottom">
                                             <?php
                                             $rules_content_len = strlen($rules_content);
@@ -306,7 +306,7 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseThree<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i><?= $doc_name ?>
                                                 Document</a>
@@ -338,7 +338,7 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseSeven<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i>Fire Escape plan</a>
                                         </h5>
@@ -363,7 +363,7 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseEight<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i>Public Garbage and
                                                 Recycle Information</a>
@@ -373,8 +373,8 @@ if ($next_due <= 0) {
                                         class="panel-collapse collapse">
                                         <div class="panel-body">
 
-                                            <div class="customComment text-align-left" data-toggle="popover"
-                                                data-trigger="hover" title="Garbage"
+                                            <div class="customComment text-align-left" data-bs-toggle="popover"
+                                                data-bs-trigger="hover" title="Garbage"
                                                 data-content="<?= strip_tags($schedules) ?>" data-placement="bottom">
                                                 <?php
                                                 $schedules_len = strlen($schedules);
@@ -392,7 +392,7 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseNine<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i>Public Washing-room
                                                 Information</a>
@@ -401,8 +401,8 @@ if ($next_due <= 0) {
                                     <div id="collapseNine<?= $apartment_id . "-" . $lease_id ?>"
                                         class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <div class="customComment text-align-left" data-toggle="popover"
-                                                data-trigger="hover" title="Washingroom_info"
+                                            <div class="customComment text-align-left" data-bs-toggle="popover"
+                                                data-bs-trigger="hover" title="Washingroom_info"
                                                 data-content="<?= strip_tags($washingroom_info) ?>"
                                                 data-placement="bottom">
                                                 <?php
@@ -420,7 +420,7 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseTen<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i>Administration Work hour
                                                 Information</a>
@@ -429,8 +429,8 @@ if ($next_due <= 0) {
                                     <div id="collapseTen<?= $apartment_id . "-" . $lease_id ?>"
                                         class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <div class="customComment text-align-left" data-toggle="popover"
-                                                data-trigger="hover" title="Work hour Information"
+                                            <div class="customComment text-align-left" data-bs-toggle="popover"
+                                                data-bs-trigger="hover" title="Work hour Information"
                                                 data-content="<?= strip_tags($workhour_info) ?>"
                                                 data-placement="bottom">
                                                 <?php
@@ -448,7 +448,7 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseTwelve<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle" aria-hidden="true"></i>Emergency
                                                 Information</a>
@@ -458,8 +458,8 @@ if ($next_due <= 0) {
                                         class="panel-collapse collapse">
                                         <div class="panel-body">
 
-                                            <div class="customComment text-align-left" data-toggle="popover"
-                                                data-trigger="hover" title="Emergency Information"
+                                            <div class="customComment text-align-left" data-bs-toggle="popover"
+                                                data-bs-trigger="hover" title="Emergency Information"
                                                 data-content="<?= strip_tags($emergency_info) ?>"
                                                 data-placement="bottom">
                                                 <?php
@@ -487,7 +487,7 @@ if ($next_due <= 0) {
 
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion"
+                                            <a data-bs-toggle="collapse" data-parent="#accordion"
                                                 href="#collapse<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"><i
                                                     class="fa fa-circle"
                                                     aria-hidden="true"></i><?= $appliance[0]['name'] ?></a>
@@ -821,7 +821,7 @@ if ($next_due <= 0) {
                                 <?php echo $bulletin['create_time']; ?><br>
                                 <b><?php echo $bulletin['message_title']; ?></b><br>
                             </li>
-                            <div class="customComment" data-toggle="popover" data-trigger="hover"
+                            <div class="customComment" data-bs-toggle="popover" data-bs-trigger="hover"
                                 title="<?php echo $bulletin['message_title']; ?>"
                                 data-content="<?php echo strip_tags($message_body) ?>" data-placement="bottom">
                                 <?php $msgLen = strlen($message_body);
@@ -1140,7 +1140,7 @@ loadjs.ready("jquery", function() {
 <script>
 loadjs.ready(["jquery", "head"], function() {
     $(document).ready(function() {
-        $('[data-toggle="popover"]').popover();
+        $('[data-bs-toggle="popover"]').popover();
         $('form').trigger("reset");
 
 

@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
+if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 class Template
@@ -8,7 +8,7 @@ class Template
   /**
    * emailTemplate - used to all sending emails function. All emails should follow this template
    *
-   * @param $title String The blue words in the begining of the content.
+   * @param $title String The blue words in the beginning of the content.
    * @param $subtitle String The words under the title before the logo picture.
    * @param $name String The addressed name after "Dear".
    * @param $body1 String The first paragraph.
@@ -135,7 +135,7 @@ class Template
         <tr>
           <td>
           <div>
-            
+
             <div style=\"margin:10px 0\"><span style=\"font - size:15px; color: #363636;\">$company_name <a href=\"http://$company_website\" target=\"_blank\" rel=\"noopener noreferrer\">$company_website</a></span></font></div>
             </div>
           </td>
