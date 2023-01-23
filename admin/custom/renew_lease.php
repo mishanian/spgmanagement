@@ -109,46 +109,6 @@ if (!empty($_POST['submitted'])) {
     $statement->execute([':comments' => $comments]);
     $lease_id_new = $DB_con->lastInsertId();
 
-    /**
-     * Renew the parking lease only if selected "YES"
-     * If the Radio button selected for the parking lease renewal input is "0" - do not renew the parking lease
-     */
-    if ($parking_lease_renew_choice == "1") {
-        if (isset($_POST["parking_ids"])) {
-            $leaseParkingsData = $_POST["parking_ids"];
-            if (count($leaseParkingsData) > 0) {
-                // Renew the parking Slots
-                foreach ($leaseParkingsData as $singleleaseParkingsData) {
-                    $singleParkingIds      = explode(",", $singleleaseParkingsData);
-                    $parking_id            = $singleParkingIds[0];
-                    $lease_parking_amount  = $singleParkingIds[1];
-                    $buildingId            = $singleParkingIds[2];
-                    $renewParking          = "INSERT INTO lease_parkings(start_date,end_date,lease_id,building_id,parking_id,lease_amount,lease_status_id) values('$start_date_new','$move_out_date_new',$lease_id_new,$buildingId,$parking_id,$lease_parking_amount,1)";
-                    // die($renewParking);
-                    $renewParkingStatement = $DB_con->prepare($renewParking);
-                    $renewParkingStatement->execute();
-                }
-            }
-        }
-    }
-
-    // Renew Storages for the current selected lease
-    if (isset($_POST["lease_storage_ids"])) {
-        $storageIdsData = $_POST["lease_storage_ids"];
-        if (count($storageIdsData) > 0) {
-            // Renew the Storages
-            foreach ($storageIdsData as $singleStorageData) {
-                $singleStorageIds      = explode(",", $singleStorageData);
-                $storage_id            = $singleStorageIds[0];
-                $lease_storage_amount  = $singleStorageIds[1];
-                $buildingId            = $singleStorageIds[2];
-                $renewStorage          = "INSERT INTO lease_storages(start_date,end_date,lease_id,building_id,storage_id,lease_amount,lease_status_id) values('$start_date_new','$move_out_date_new',$lease_id_new,$buildingId,$storage_id,$lease_storage_amount,1)";
-                $renewStorageStatement = $DB_con->prepare($renewStorage);
-                $renewStorageStatement->execute();
-            }
-        }
-    }
-
     $SelectSql = "update lease_infos set lease_status_id=10,renewal=1,lease_renewed_id = $lease_id_new, comments=CONCAT(comments,'next lease is renewed by signing on tenant portal') where id=$lease_id";
     $statement = $DB_con->prepare($SelectSql);
     $statement->execute();
@@ -203,25 +163,6 @@ if (!empty($_POST['submitted'])) {
 		die("Lease can't be renewed.");
 	}
     */
-
-    $parkingSelect
-        = "select * FROM lease_parkings LP
-                        LEFT JOIN parking_unit_infos PU ON
-                        PU.parking_id = LP.parking_id
-                        where LP.lease_id = $lease_id";
-
-    $parkingStatement = $DB_con->prepare($parkingSelect);
-    $parkingStatement->execute();
-    $parkingResult = $parkingStatement->fetchAll(PDO::FETCH_ASSOC);
-
-    $storageSelect
-        = "SELECT * FROM lease_storages LS
-                        LEFT JOIN storage_unit_infos SU ON
-                        SU.storage_id = LS.storage_id
-                        WHERE LS.lease_id = $lease_id";
-    $storageStatement = $DB_con->prepare($storageSelect);
-    $storageStatement->execute();
-    $storageResult = $storageStatement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($row as $key => $value) {
         $$key = $value;

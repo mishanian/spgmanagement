@@ -764,49 +764,6 @@ function showTenantContact($tenant_ids)
     return $ViewValue;
 }
 
-function showParking($lease_id)
-{
-    $ViewValues = "";
-    $ParkingNames = "";
-    //echo("LeaseID=$lease_id<br>");
-    if (!empty($lease_id)) {
-        if (!empty($lease_id)) {
-            $ParkingNames = ExecuteRows("select name from lease_parkings LP left JOIN parking_unit_infos PUI on LP.parking_id=PUI.parking_id where lease_id=" . $lease_id);
-        }
-        if (!empty($ParkingNames)) {
-            foreach ($ParkingNames as $PK) {
-                $ViewValues .= $PK['name'] . ", ";
-            }
-        }
-        //if (!empty($ParkingNames) && count($ParkingNames['name'])>=1){$ViewValues=implode("<br>",$ParkingNames['name']);}
-        //  if (!empty($ParkingNames) && count($ParkingNames==1)){$ViewValues=$ParkingNames;}
-    }
-
-    //           if (!empty($ParkingNames )){$ParkingNames .= $ParkingNames; $ViewValue .= "<a href='viewtenantinfosview?showdetail=&tenant_id=$tenant_id'>$tenant_name</a>";}
-    return $ViewValues;
-}
-
-function showStorage($lease_id)
-{
-    $ViewValues = "";
-    $StorageNames = "";
-    //echo("LeaseID=$lease_id<br>");
-    if (!empty($lease_id)) {
-        if (!empty($lease_id)) {
-            $StorageNames = ExecuteRows("select name from lease_storages LS left JOIN storage_unit_infos SUI on LS.storage_id=SUI.storage_id where lease_id=" . $lease_id);
-        }
-        if (!empty($StorageNames)) {
-            foreach ($StorageNames as $PK) {
-                $ViewValues .= $PK['name'] . ", ";
-            }
-        }
-        //if (count($StorageNames==1)){$ViewValues=$StorageNames;}
-    }
-
-    //           if (!empty($ParkingNames )){$ParkingNames .= $ParkingNames; $ViewValue .= "<a href='viewtenantinfosview?showdetail=&tenant_id=$tenant_id'>$tenant_name</a>";}
-    return $ViewValues;
-}
-
 
 function getInfo($id, $table_name, $fields)
 {

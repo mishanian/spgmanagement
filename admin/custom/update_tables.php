@@ -72,7 +72,7 @@ function update_tables($id, $field_name)
 	//vacant
 	//     $Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
 	// SET apartment_status=5 WHERE  apartment_status != 8 and renovation_status=4 AND (SELECT COUNT(*) FROM lease_infos LI WHERE CURDATE()<end_date AND lease_status_id IN(1,7) AND APP.apartment_id=LI.apartment_id)=0 " . $where.";";
-	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id 
+	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
 SET apartment_status=5 WHERE apartment_status NOT IN (6,8) and (SELECT COUNT(*) FROM lease_infos LI WHERE start_date > CURDATE() + INTERVAL 30 DAY AND lease_status_id IN(1,7) AND APP.apartment_id=LI.apartment_id) = 0 " . $where . ";";
 
 	//UpComing Vacany
@@ -86,14 +86,6 @@ SET apartment_status=8 WHERE LI.lease_status_id in (7) AND CURDATE() BETWEEN sta
 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
 	SET apartment_status=9 WHERE LI.lease_status_id in (9) AND CURDATE() BETWEEN start_date AND end_date AND APP.apartment_id=LI.apartment_id and renewal=0" . $where . ";";
 
-	//Occupied
-	//     $Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-	// SET apartment_status=6 WHERE renovation_status=4 AND lease_status_id IN (1,2,9) AND (SELECT COUNT(*) FROM lease_infos LI WHERE CURDATE()<end_date AND lease_status_id IN(1,7) AND APP.apartment_id=LI.apartment_id)>0 " . $where.";";
-	// $Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-	// SET apartment_status=6 WHERE lease_status_id IN (1,2,9) AND (SELECT COUNT(*) FROM lease_infos LI WHERE CURDATE()<end_date AND lease_status_id IN(1,7) AND APP.apartment_id=LI.apartment_id)>0 " . $where.";";
-
-	//	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-	//SET apartment_status=6 WHERE lease_status_id IN (1,2,8,10);";
 
 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
 SET apartment_status=6 WHERE lease_status_id IN (1,11,8,10);";
@@ -114,7 +106,7 @@ SET apartment_status=7 WHERE renovation_status=4 AND lease_status_id=7 AND APP.a
 
 	// Set to Vacant if there is no active lease
 	$Sql[] = "UPDATE apartment_infos AP2 SET AP2.apartment_status=5 , available_date=CONCAT(YEAR(CURDATE()), '-01-01')
-WHERE AP2.apartment_id NOT IN 
+WHERE AP2.apartment_id NOT IN
 (SELECT AP.apartment_id FROM (SELECT * FROM apartment_infos) AS AP LEFT JOIN lease_infos LI ON AP.apartment_id=LI.apartment_id WHERE lease_status_id NOT IN(3,4,5,6));";
 
 
@@ -128,62 +120,26 @@ SET APP.available_date=DATE_ADD(terminate_date, INTERVAL 1 DAY) WHERE lease_stat
 
 	//Available Date
 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (1,2,3,4)  AND 
+SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (1,2,3,4)  AND
 LI.start_date=(SELECT MAX(start_date) FROM lease_infos WHERE apartment_id=APP.apartment_id AND lease_status_id NOT IN (5,6,7,8,9,11)) " . $where . ";"; //AND CURDATE() BETWEEN start_date AND end_date
 
 
 	//Available Date
 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (7,8,9,11)  AND 
+SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (7,8,9,11)  AND
 LI.start_date=(SELECT MAX(start_date) FROM lease_infos WHERE apartment_id=APP.apartment_id AND lease_status_id NOT IN (1,2,3,4,5,6)) " . $where . ";"; //AND CURDATE() BETWEEN start_date AND end_date
 
 
 	//Add Lease info to the apartment
 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-SET APP.current_lease_status_id=LI.lease_status_id, APP.current_lease_id=LI.id WHERE lease_status_id IN (3,4,5,6)  AND 
+SET APP.current_lease_status_id=LI.lease_status_id, APP.current_lease_id=LI.id WHERE lease_status_id IN (3,4,5,6)  AND
 LI.start_date=(SELECT MAX(start_date) FROM lease_infos WHERE apartment_id=APP.apartment_id AND lease_status_id IN (3,4,5,6)) " . $where . ";";
 
 	//Add Lease info to the apartment
 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-SET APP.current_lease_status_id=LI.lease_status_id, APP.current_lease_id=LI.id WHERE lease_status_id IN (1,2,7,8,9,10,11)  AND 
+SET APP.current_lease_status_id=LI.lease_status_id, APP.current_lease_id=LI.id WHERE lease_status_id IN (1,2,7,8,9,10,11)  AND
 LI.start_date=(SELECT MAX(start_date) FROM lease_infos WHERE apartment_id=APP.apartment_id AND lease_status_id IN (1,2,7,8,9,10,11)) " . $where . ";"; //AND CURDATE() BETWEEN start_date AND end_date
 
-	// 	//Available Date - Rewrite if lease is upcomming 2
-	// 	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-	// SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (2) AND CURDATE() BETWEEN start_date AND end_date AND 
-	// LI.start_date=(SELECT MAX(start_date) FROM lease_infos WHERE apartment_id=APP.apartment_id AND lease_status_id NOT IN (5,6)) " . $where . ";";
-
-	//	//Available Date
-	//	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id
-	//SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (8) AND CURDATE() BETWEEN start_date AND end_date " . $where.";";
-
-
-
-	//Available Date
-	//	$Sql[] = "UPDATE apartment_infos APP
-	// SET APP.available_date=DATE_ADD((SELECT MAX(end_date) FROM lease_infos LI WHERE lease_status_id NOT IN (4,5,6) AND LI.apartment_id=APP.apartment_id), INTERVAL 1 DAY) WHERE APP.apartment_status=2" . $whereApp.";";
-
-	//	//Available Date
-	//	$Sql[] = "UPDATE apartment_infos APP LEFT JOIN lease_infos LI ON APP.apartment_id=LI.apartment_id SET APP.available_date=DATE_ADD(move_out_date, INTERVAL 1 DAY) WHERE lease_status_id IN (11)" . $where.";";
-
-	/*
-	// Parking - lease available date
-	$Sql[] = "UPDATE parking_unit_infos PU
-SET PU.available_date = DATE_ADD((SELECT MAX(end_date) FROM lease_parkings LI WHERE LI.parking_id=PU.parking_id), INTERVAL 1 DAY) ";
-
-	// Storage - lease available date
-	$Sql[] = "UPDATE storage_unit_infos SU
-SET SU.available_date = DATE_ADD((SELECT MAX(end_date) FROM lease_storages LI WHERE LI.lease_storage_id=SU.storage_id), INTERVAL 1 DAY) ";
-
-	// Lease Parking - expire based on the end date
-	$Sql[] = "UPDATE lease_parkings SU SET lease_status_id = 3  WHERE CURDATE() > end_date AND lease_status_id = 1";
-
-	// Lease Storage - expire based on the end date
-	$Sql[] = "UPDATE lease_storages SU SET lease_status_id = 3  WHERE CURDATE() > end_date AND lease_status_id = 1";
-*/
-	//
-	//    echo "<pre>";
-	//    print_r($Sql);
 
 	foreach ($Sql as $SelectSql) {
 		// echo "<p>".htmlentities($SelectSql)."</p>\n";
