@@ -54,33 +54,32 @@ foreach ($all_issues as $one) {
                             $pay_now_btn = 'disabled';
 
                     ?>
-                    <div class="col-sm-12">
-                        <div class="box-content-note">
-                            <h3>Here is your next due and due date.</h3>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="col-sm-6">
-                            <div class="due"><span>Next Due</span>
-                                <h3><?php echo "$" . $next_due; ?></h3>
+                        <div class="col-sm-12">
+                            <div class="box-content-note">
+                                <h3>Here is your next due and due date.</h3>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="due"><span>Due Date</span>
-                                <h3><?php echo $next_due_date; ?></h3>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <div class="due"><span>Next Due</span>
+                                    <h3><?php echo "$" . $next_due; ?></h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="due"><span>Due Date</span>
+                                    <h3><?php echo $next_due_date; ?></h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="pay.php?id=<?php echo $next_due_payment_id; ?>"><button class="btn btn-primary"
-                                <?php echo $pay_now_btn; ?>>Pay Now!</button></a>
-                    </div>
+                        <div class="col-sm-12">
+                            <a href="pay.php?id=<?php echo $next_due_payment_id; ?>"><button class="btn btn-primary" <?php echo $pay_now_btn; ?>>Pay Now!</button></a>
+                        </div>
                     <?php } else { ?>
-                    <div class="col-sm-12">
-                        <div class="box-content-note">
-                            <h3>You do not have any coming due.</h3>
+                        <div class="col-sm-12">
+                            <div class="box-content-note">
+                                <h3>You do not have any coming due.</h3>
+                            </div>
                         </div>
-                    </div>
                     <?php } ?>
                 </div>
             </div>
@@ -90,60 +89,59 @@ foreach ($all_issues as $one) {
                 </div>
                 <div class="box-content">
                     <?php if ($payments) { ?>
-                    <div class="box-table-head">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <!--                <th scope="col">Amount</th>-->
-                                    <th scope="col" class="col-sm-3">Due Date</th>
-                                    <th scope="col" class="col-sm-2">Paid</th>
-                                    <th scope="col" class="col-sm-2">Outstanding</th>
-                                    <th scope="col" class="col-sm-1">Inv.</th>
-                                    <th scope="col" class="col-sm-2">Pay</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="box-table">
-                        <table class="table table-striped">
-                            <tbody>
-                                <?php
-                                    foreach ($payments as $payment) { ?>
-                                <tr>
-                                    <!--                <th scope="row">--><?php //echo "$".$payment['total_discount'];
-                                                                                    ?>
-                                    <!--</th>-->
-                                    <td class="col-sm-3"><?php echo $payment['due_date']; ?></td>
-                                    <td class="col-sm-2"><?php echo $payment['paid']; ?></td>
-                                    <td class="col-sm-2"><?php echo $payment['outstanding']; ?></td>
-                                    <td class="col-sm-1">
-                                        <?php if ($payment['outstanding'] <= 0) { ?>
-                                        <a
-                                            href="custom/invoice_receipt/invoice_receipt_controller.php?download_invoice&lease_payment_id=<?php echo $payment['lease_payment_id'] ?>">
-                                            <i class="fa-solid fa-file-pdf fa-2x" aria-hidden="true"></i>
-                                        </a>
-                                        <?php } else { ?>
-                                        N/A
-                                        <?php } ?>
-                                    </td>
-                                    <td class="col-sm-2">
-                                        <?php if ($payment['outstanding'] > 0) { ?>
-                                        <a href="pay.php?id=<?php echo $payment['lease_payment_id'] ?>">
-                                            <button class="btn btn-primary">Pay</button>
-                                        </a>
-                                        <?php } ?>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <?php } else { ?>
-                    <div class="col-sm-12">
-                        <div class="box-content-note">
-                            <h3>You do not have any payments.</h3>
+                        <div class="box-table-head">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <!--                <th scope="col">Amount</th>-->
+                                        <th scope="col" class="col-sm-3">Due Date</th>
+                                        <th scope="col" class="col-sm-2">Paid</th>
+                                        <th scope="col" class="col-sm-2">Outstanding</th>
+                                        <th scope="col" class="col-sm-1">Inv.</th>
+                                        <th scope="col" class="col-sm-2">Pay</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
-                    </div>
+                        <div class="box-table">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <?php
+                                    foreach ($payments as $payment) { ?>
+                                        <tr>
+                                            <!--                <th scope="row">--><?php //echo "$".$payment['total_discount'];
+                                                                                    ?>
+                                            <!--</th>-->
+                                            <td class="col-sm-3"><?php echo $payment['due_date']; ?></td>
+                                            <td class="col-sm-2"><?php echo $payment['paid']; ?></td>
+                                            <td class="col-sm-2"><?php echo $payment['outstanding']; ?></td>
+                                            <td class="col-sm-1">
+                                                <?php if ($payment['outstanding'] <= 0) { ?>
+                                                    <a href="custom/invoice_receipt/invoice_receipt_controller.php?download_invoice&lease_payment_id=<?php echo $payment['lease_payment_id'] ?>">
+                                                        <i class="fa-solid fa-file-pdf fa-2x" aria-hidden="true"></i>
+                                                    </a>
+                                                <?php } else { ?>
+                                                    N/A
+                                                <?php } ?>
+                                            </td>
+                                            <td class="col-sm-2">
+                                                <?php if ($payment['outstanding'] > 0) { ?>
+                                                    <a href="pay.php?id=<?php echo $payment['lease_payment_id'] ?>">
+                                                        <button class="btn btn-primary">Pay</button>
+                                                    </a>
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php } else { ?>
+                        <div class="col-sm-12">
+                            <div class="box-content-note">
+                                <h3>You do not have any payments.</h3>
+                            </div>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -162,13 +160,11 @@ foreach ($all_issues as $one) {
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Building
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Building
                                         Schedule</a>
                                 </h4>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingOne">
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body"><?php echo $row['rules']; ?></div>
                             </div>
                         </div>
@@ -177,20 +173,17 @@ foreach ($all_issues as $one) {
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Building
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Building
                                         Document</a>
                                 </h4>
                             </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingTwo">
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                 <div class="panel-body">
                                     <?php
                                     $building_documents = $DB_tenant->get_building_documents($user_id);
                                     foreach ($building_documents as $building_document) {
                                         if ($building_document['building_file']) { ?>
-                                    <p><a href="<?php echo "files" . $building_document['building_file']; ?>"
-                                            download><?php echo $building_document['building_file_type']; ?></a></p>
+                                            <p><a href="<?php echo "files" . $building_document['building_file']; ?>" download><?php echo $building_document['building_file_type']; ?></a></p>
                                     <?php }
                                     } ?>
                                 </div>
@@ -201,20 +194,16 @@ foreach ($all_issues as $one) {
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">Apartment Document</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Apartment Document</a>
                                 </h4>
                             </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingThree">
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
                                     <?php $apartment_documents = $DB_tenant->get_apartment_documents($user_id);
                                     foreach ($apartment_documents as $apartment_document) {
                                         if ($apartment_document['apartment_file']) {
                                     ?>
-                                    <p><a href="<?php echo "files" . $apartment_document['apartment_file']; ?>"
-                                            download><?php echo $apartment_document['apartment_file_type']; ?></a></p>
+                                            <p><a href="<?php echo "files" . $apartment_document['apartment_file']; ?>" download><?php echo $apartment_document['apartment_file_type']; ?></a></p>
                                     <?php }
                                     } ?>
                                 </div>
@@ -224,20 +213,17 @@ foreach ($all_issues as $one) {
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Lease
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Lease
                                         Document</a>
                                 </h4>
                             </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingFour">
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                                 <div class="panel-body">
                                     <?php $lease_documents = $DB_tenant->get_lease_documents($user_id);
                                     foreach ($lease_documents as $lease_document) {
                                         if ($lease_document['lease_file']) {
                                     ?>
-                                    <p><a href="<?php echo "files" . $lease_document['lease_file']; ?>"
-                                            download><?php echo $lease_document['lease_file_type']; ?></a></p>
+                                            <p><a href="<?php echo "files" . $lease_document['lease_file']; ?>" download><?php echo $lease_document['lease_file_type']; ?></a></p>
                                     <?php }
                                     } ?>
                                 </div>
@@ -247,20 +233,17 @@ foreach ($all_issues as $one) {
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFive">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Tenant
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Tenant
                                         Document</a>
                                 </h4>
                             </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingFive">
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                                 <div class="panel-body">
                                     <?php $tenant_documents = $DB_tenant->get_tenant_documents($user_id);
                                     foreach ($tenant_documents as $tenant_document) {
                                         if ($tenant_document['tenant_file']) {
                                     ?>
-                                    <p><a href="<?php echo "files" . $tenant_document['tenant_file']; ?>"
-                                            download><?php echo $tenant_document['tenant_file_type']; ?></a></p>
+                                            <p><a href="<?php echo "files" . $tenant_document['tenant_file']; ?>" download><?php echo $tenant_document['tenant_file_type']; ?></a></p>
                                     <?php }
                                     } ?>
                                 </div>
@@ -277,49 +260,48 @@ foreach ($all_issues as $one) {
                 <div class="box-title">
                     <h3>Request List</h3>
                     <div class="box-content-button">
-                        <a href="requests.php?action=report"><button class="btn btn-primary">Report a
+                        <a href="requests?action=report"><button class="btn btn-primary">Report a
                                 Request</button></a>
                     </div>
                 </div>
                 <div class="box-content">
                     <?php if ($issues == null) { ?>
-                    <div class="col-sm-12">
-                        <div class="box-content-note">
-                            <h3>You do not have any requests currently.</h3>
+                        <div class="col-sm-12">
+                            <div class="box-content-note">
+                                <h3>You do not have any requests currently.</h3>
+                            </div>
                         </div>
-                    </div>
                     <?php } else { ?>
-                    <div class="box-table-head">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="col-sm-4">Type</th>
-                                    <th scope="col" class="col-sm-4">Status</th>
-                                    <th scope="col" class="col-sm-4">Message</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="box-table">
-                        <table class="table table-striped">
-                            <tbody>
-                                <?php
+                        <div class="box-table-head">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col-sm-4">Type</th>
+                                        <th scope="col" class="col-sm-4">Status</th>
+                                        <th scope="col" class="col-sm-4">Message</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="box-table">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <?php
                                     foreach ($issues as $row) {
                                         $message = $row['message'];
                                         $type = $row['request_type'];
                                         $status = $row['request_status'];
                                     ?>
-                                <tr>
-                                    <td class="col-sm-4"><?php echo $type; ?></td>
-                                    <td class="col-sm-4"><?php echo $status; ?></td>
-                                    <td class="col-sm-4 text-center non-overflow" data-toggle="tooltip"
-                                        data-placement="top" data-container="body" title="<?php echo $message; ?>">
-                                        <?php echo $message; ?></td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                        <tr>
+                                            <td class="col-sm-4"><?php echo $type; ?></td>
+                                            <td class="col-sm-4"><?php echo $status; ?></td>
+                                            <td class="col-sm-4 text-center non-overflow" data-toggle="tooltip" data-placement="top" data-container="body" title="<?php echo $message; ?>">
+                                                <?php echo $message; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -337,14 +319,14 @@ foreach ($all_issues as $one) {
                         $bulletins = $DB_tenant->get_tenant_bulletin($user_id);
                         foreach ($bulletins as $bulletin) {
                         ?>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><?php echo $bulletin['message_title']; ?></h3>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><?php echo $bulletin['message_title']; ?></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php echo $bulletin['message_body']; ?>
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                <?php echo $bulletin['message_body']; ?>
-                            </div>
-                        </div>
                         <?php } ?>
                     </div>
 
@@ -355,7 +337,7 @@ foreach ($all_issues as $one) {
     </div>
 </div>
 <script>
-$(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip()
-});
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
 </script>

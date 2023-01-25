@@ -6337,7 +6337,7 @@ $filter_employee_lst = $DB_request->get_employees_lst($user_id);
             },
             success: function() {
                 $("#new_request_loader").fadeOut();
-                window.location.replace('requests.php?unit_id=' + user_unit_id);
+                window.location.replace('requests?unit_id=' + user_unit_id);
             },
             error: function() {
                 console.log("submit_report() error");
@@ -6374,7 +6374,7 @@ $filter_employee_lst = $DB_request->get_employees_lst($user_id);
                 } else {
                     alert("Status is updated.");
                     // request status is not changed to closed - no need to show the payment tab - so refresh the page
-                    // window.location.replace('requests.php?unit_id=' + user_unit_id);
+                    // window.location.replace('requests?unit_id=' + user_unit_id);
                 }
             },
             error: function(result) {

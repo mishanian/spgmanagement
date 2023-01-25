@@ -112,36 +112,31 @@ if ($next_due <= 0) {
                             <div class="headings_box">
                                 <ul>
                                     <li class="pull-left">Payment</li>
-                                    <li class="pull-right"><span><img
-                                                src="custom/tenant_portal/images/list_payment_icon.png"
-                                                alt="building_icon"></span></li>
+                                    <li class="pull-right"><span><img src="custom/tenant_portal/images/list_payment_icon.png" alt="building_icon"></span></li>
                                     <div class="clearfix"></div>
                                 </ul>
                             </div>
 
-                            <div class="points" id="div_pay<?= $apartment_id . "-" . $lease_id ?>"
-                                style="overflow:scroll!important;">
+                            <div class="points" id="div_pay<?= $apartment_id . "-" . $lease_id ?>" style="overflow:scroll!important;">
                                 <div class="table-responsive">
                                     <?php if ($payments) { ?>
-                                    <form action="custom/checkout.php" method="post"
-                                        id="form_<?= $apartment_id . "_" . $lease_id ?>" class="form_<?= $lease_id ?>">
-                                        <input type="hidden" name="apartment_id" value="<?= $apartment_id ?>">
-                                        <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
-                                        <input type="hidden" name="product" value="Lease">
-                                        <!--add april 10 -->
+                                        <form action="custom/checkout.php" method="post" id="form_<?= $apartment_id . "_" . $lease_id ?>" class="form_<?= $lease_id ?>">
+                                            <input type="hidden" name="apartment_id" value="<?= $apartment_id ?>">
+                                            <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
+                                            <input type="hidden" name="product" value="Lease">
+                                            <!--add april 10 -->
 
-                                        <table class="table table-bordered"
-                                            id="table_pay<?= $apartment_id . "-" . $lease_id ?>">
-                                            <thead>
-                                                <?php $deposits = $DB_tenant->get_deposit_amount($lease_id);
+                                            <table class="table table-bordered" id="table_pay<?= $apartment_id . "-" . $lease_id ?>">
+                                                <thead>
+                                                    <?php $deposits = $DB_tenant->get_deposit_amount($lease_id);
                                                     $depositRowNo = 0;
                                                     if (!empty($deposits)) {
                                                     ?>
-                                                <tr>
-                                                    <th class="text_clr">Deposits</th>
-                                                </tr>
+                                                        <tr>
+                                                            <th class="text_clr">Deposits</th>
+                                                        </tr>
 
-                                                <?php
+                                                    <?php
 
                                                         $depositRowNo++;
                                                         foreach ($deposits as $deposit) {
@@ -154,62 +149,60 @@ if ($next_due <= 0) {
                                                     }
                                                     ?>
 
-                                                <tr>
-                                                    <th class="text_clr">Due Date</th>
-                                                    <th class="text_clr">Paid</th>
-                                                    <th class="text_clr">Balance</th>
-                                                    <th class="text_clr">Inv.</th>
-                                                    <th class="text_clr">Pay</th>
-                                                    <!-- Hide Payment
+                                                    <tr>
+                                                        <th class="text_clr">Due Date</th>
+                                                        <th class="text_clr">Paid</th>
+                                                        <th class="text_clr">Balance</th>
+                                                        <th class="text_clr">Inv.</th>
+                                                        <th class="text_clr">Pay</th>
+                                                        <!-- Hide Payment
                                                     <th class="text_clr"
                                                         <?php echo $payment['outstanding'] == 0 ? 'style="display:none;" ' : '' ?>>
                                                         Select
                                                     </th> -->
-                                                    <th class="text_clr">Comment</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                                        <th class="text_clr">Comment</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                                <?php
+                                                    <?php
                                                     // $sql = "SELECT * FROM payment LIMIT $record_index, $20";
 
                                                     foreach ($payments as $payment) {
                                                     ?>
-                                                <tr>
-                                                    <td>
-                                                        <?php echo $payment['due_date']; ?>
-                                                    </td>
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo $payment['due_date']; ?>
+                                                            </td>
 
-                                                    <td><?php echo number_format($payment['paid'], 2); ?></td>
-                                                    <td><?php echo number_format($payment['outstanding'], 2); ?></td>
-                                                    <?php if ($payment['outstanding'] <= 0) {
+                                                            <td><?php echo number_format($payment['paid'], 2); ?></td>
+                                                            <td><?php echo number_format($payment['outstanding'], 2); ?></td>
+                                                            <?php if ($payment['outstanding'] <= 0) {
                                                             ?>
-                                                    <td>
-                                                        <a
-                                                            href="custom/invoice_receipt/invoice_receipt_controller.php?download_invoice&lease_payment_id=<?php echo $payment['lease_payment_id'] ?>">
-                                                            <i class="fa-solid fa-file-pdf fa-2x"
-                                                                aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td class="text_clr">Paid</td>
-                                                    <?php
+                                                                <td>
+                                                                    <a href="custom/invoice_receipt/invoice_receipt_controller.php?download_invoice&lease_payment_id=<?php echo $payment['lease_payment_id'] ?>">
+                                                                        <i class="fa-solid fa-file-pdf fa-2x" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td class="text_clr">Paid</td>
+                                                            <?php
                                                             } else {
                                                                 if ($first_not_paid_lease_id == 0) {
                                                                     $first_not_paid_lease_id = $payment['lease_payment_id'];
                                                                 }
                                                                 //                                                $ScrollPay++;
                                                             ?>
-                                                    <td> N/A</td>
-                                                    <td class="text_clr">
-                                                        <!--                                                        <a href="pay.php?id=-->
-                                                        <? // echo $payment['lease_payment_id'];
+                                                                <td> N/A</td>
+                                                                <td class="text_clr">
+                                                                    <!--                                                        <a href="pay.php?id=-->
+                                                                    <? // echo $payment['lease_payment_id'];
                                                                     ?>
-                                                        <!--">pay</a>-->
-                                                        Unpaid
-                                                    </td>
-                                                    <?php
+                                                                    <!--">pay</a>-->
+                                                                    Unpaid
+                                                                </td>
+                                                            <?php
                                                             } ?>
-                                                    <!-- Hide Payment
+                                                            <!-- Hide Payment
                                                         <td>
                                                         <input class="selectPaymentrec"
                                                             data-amt="<?php echo $payment['outstanding'] ?>"
@@ -221,33 +214,30 @@ if ($next_due <= 0) {
                                                             <?php echo $payment['outstanding'] <= 0 ? 'style="display:none;" ' : '' ?>
                                                             onclick="ew.vars.calc<?= $apartment_id . "_" . $lease_id ?>(<?= $payment['outstanding'] ?>, this.checked,this);">
                                                     </td> -->
-                                                    <td><?php
+                                                            <td><?php
                                                                 if ($payment['invoice_type_id'] == '3') {
                                                                 ?>
-                                                        <div class="customComment" data-bs-toggle="popover"
-                                                            data-bs-trigger="hover" title="Comment"
-                                                            data-content="<?php echo $payment['tenant_comments']; ?>"
-                                                            data-placement="top">
-                                                            <?php echo substr($payment['tenant_comments'], 0, 10) . "..."; ?>
-                                                        </div>
+                                                                    <div class="customComment" data-bs-toggle="popover" data-bs-trigger="hover" title="Comment" data-content="<?php echo $payment['tenant_comments']; ?>" data-placement="top">
+                                                                        <?php echo substr($payment['tenant_comments'], 0, 10) . "..."; ?>
+                                                                    </div>
 
                                 </div>
                             </div>
-                            <?php
+                        <?php
                                                                 } ?>
-                            </td>
-                            </tr>
-                            <?php
+                        </td>
+                        </tr>
+                    <?php
                                                     } ?>
-                            </tbody>
-                            </table>
-                            <?php } else { ?>
-                            <div class="col-sm-12">
-                                <div class="box-content-note">
-                                    <h5>You do not have any payments.</h5>
-                                </div>
-                            </div>
-                            <?php } ?>
+                    </tbody>
+                    </table>
+                <?php } else { ?>
+                    <div class="col-sm-12">
+                        <div class="box-content-note">
+                            <h5>You do not have any payments.</h5>
+                        </div>
+                    </div>
+                <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -255,9 +245,7 @@ if ($next_due <= 0) {
                     <div class="headings_box">
                         <ul>
                             <li class="pull-left b_u_info">Building & Unit Information</li>
-                            <li class="pull-right"><span><b></b> <img
-                                        src="custom/tenant_portal/images/building_info_icon.png"
-                                        alt="building_icon"></span></li>
+                            <li class="pull-right"><span><b></b> <img src="custom/tenant_portal/images/building_info_icon.png" alt="building_icon"></span></li>
                             <div class="clearfix"></div>
                         </ul>
                     </div>
@@ -273,16 +261,11 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading" style="align-self: left">
                                         <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseOne<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i>Building Rules</a>
+                                            <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseOne<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i>Building Rules</a>
                                         </h5>
                                     </div>
-                                    <div id="collapseOne<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse ">
-                                        <div class="customComment text-align-left" data-bs-toggle="popover"
-                                            data-bs-trigger="hover" title="Rules"
-                                            data-content="<?= strip_tags($rules_content) ?>" data-placement="bottom">
+                                    <div id="collapseOne<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse ">
+                                        <div class="customComment text-align-left" data-bs-toggle="popover" data-bs-trigger="hover" title="Rules" data-content="<?= strip_tags($rules_content) ?>" data-placement="bottom">
                                             <?php
                                             $rules_content_len = strlen($rules_content);
                                             //if ($rules_content_len >= 50) {
@@ -303,56 +286,48 @@ if ($next_due <= 0) {
                                         $table_field = "tenant_id";
                                     }
                                     $doc_name = $table_field_array[0]['name']; ?>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseThree<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i><?= $doc_name ?>
-                                                Document</a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseThree<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <?php
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title">
+                                                <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseThree<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i><?= $doc_name ?>
+                                                    Document</a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <?php
                                                 $documents = $DB_tenant->get_documents($document_category_id, $table_field, $$table_field);
                                                 if (!empty($documents)) {
                                                     foreach ($documents as $document) {
                                                         if (!empty($document['file'])) {
                                                 ?>
-                                            <p>
-                                                <a target="_blank"
-                                                    href="<?php echo "files/attachments/" . $document['file']; ?>">download<?= $document['file']; ?></a>
-                                            </p>
-                                            <?php
+                                                            <p>
+                                                                <a target="_blank" href="<?php echo "files/attachments/" . $document['file']; ?>">download<?= $document['file']; ?></a>
+                                                            </p>
+                                                <?php
                                                         }
                                                     }
                                                 } ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php
                                 } ?>
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseSeven<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i>Fire Escape plan</a>
+                                            <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseSeven<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i>Fire Escape plan</a>
                                         </h5>
                                     </div>
-                                    <div id="collapseSeven<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
+                                    <div id="collapseSeven<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <!--                                            is_null-->
                                             <?php $fire_escape_plan = $DB_tenant->get_fire_escape_plan($apartment_id);
                                             if (!empty($fire_escape_plan)) {
                                             ?>
 
-                                            <a target="_blank"
-                                                href="<?php echo "files/" . $fire_escape_plan; ?>">download</a>
+                                                <a target="_blank" href="<?php echo "files/" . $fire_escape_plan; ?>">download</a>
 
                                             <?php
                                             }
@@ -363,19 +338,14 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseEight<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i>Public Garbage and
+                                            <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseEight<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i>Public Garbage and
                                                 Recycle Information</a>
                                         </h5>
                                     </div>
-                                    <div id="collapseEight<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
+                                    <div id="collapseEight<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
                                         <div class="panel-body">
 
-                                            <div class="customComment text-align-left" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" title="Garbage"
-                                                data-content="<?= strip_tags($schedules) ?>" data-placement="bottom">
+                                            <div class="customComment text-align-left" data-bs-toggle="popover" data-bs-trigger="hover" title="Garbage" data-content="<?= strip_tags($schedules) ?>" data-placement="bottom">
                                                 <?php
                                                 $schedules_len = strlen($schedules);
                                                 if ($schedules_len >= 50) {
@@ -392,19 +362,13 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseNine<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i>Public Washing-room
+                                            <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseNine<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i>Public Washing-room
                                                 Information</a>
                                         </h5>
                                     </div>
-                                    <div id="collapseNine<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
+                                    <div id="collapseNine<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <div class="customComment text-align-left" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" title="Washingroom_info"
-                                                data-content="<?= strip_tags($washingroom_info) ?>"
-                                                data-placement="bottom">
+                                            <div class="customComment text-align-left" data-bs-toggle="popover" data-bs-trigger="hover" title="Washingroom_info" data-content="<?= strip_tags($washingroom_info) ?>" data-placement="bottom">
                                                 <?php
                                                 $washingroom_info_len = strlen($washingroom_info);
                                                 if ($washingroom_info_len >= 50) {
@@ -420,19 +384,13 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseTen<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i>Administration Work hour
+                                            <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseTen<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i>Administration Work hour
                                                 Information</a>
                                         </h5>
                                     </div>
-                                    <div id="collapseTen<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
+                                    <div id="collapseTen<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <div class="customComment text-align-left" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" title="Work hour Information"
-                                                data-content="<?= strip_tags($workhour_info) ?>"
-                                                data-placement="bottom">
+                                            <div class="customComment text-align-left" data-bs-toggle="popover" data-bs-trigger="hover" title="Work hour Information" data-content="<?= strip_tags($workhour_info) ?>" data-placement="bottom">
                                                 <?php
                                                 $workhour_info_len = strlen($workhour_info);
                                                 if ($workhour_info_len >= 50) {
@@ -448,20 +406,14 @@ if ($next_due <= 0) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseTwelve<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle" aria-hidden="true"></i>Emergency
+                                            <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapseTwelve<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i>Emergency
                                                 Information</a>
                                         </h5>
                                     </div>
-                                    <div id="collapseTwelve<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
+                                    <div id="collapseTwelve<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
                                         <div class="panel-body">
 
-                                            <div class="customComment text-align-left" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" title="Emergency Information"
-                                                data-content="<?= strip_tags($emergency_info) ?>"
-                                                data-placement="bottom">
+                                            <div class="customComment text-align-left" data-bs-toggle="popover" data-bs-trigger="hover" title="Emergency Information" data-content="<?= strip_tags($emergency_info) ?>" data-placement="bottom">
                                                 <?php
                                                 $emergency_info_len = strlen($emergency_info);
                                                 if ($emergency_info_len >= 50) {
@@ -483,23 +435,19 @@ if ($next_due <= 0) {
                                     if (!empty($appliance[0]['name']) && !empty($appliance[0]['information'])) {
                                 ?>
 
-                                <div class="panel panel-default">
+                                        <div class="panel panel-default">
 
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            <a data-bs-toggle="collapse" data-parent="#accordion"
-                                                href="#collapse<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"><i
-                                                    class="fa fa-circle"
-                                                    aria-hidden="true"></i><?= $appliance[0]['name'] ?></a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapse<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"
-                                        class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <?= $appliance[0]['information'] ?>
+                                            <div class="panel-heading">
+                                                <h5 class="panel-title">
+                                                    <a data-bs-toggle="collapse" data-parent="#accordion" href="#collapse<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>"><i class="fa fa-circle" aria-hidden="true"></i><?= $appliance[0]['name'] ?></a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse<?= $j ?>-<?= $apartment_id . "-" . $lease_id ?>" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <?= $appliance[0]['information'] ?>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
                                 <?php
                                     }
                                 } ?>
@@ -522,8 +470,7 @@ if ($next_due <= 0) {
                     <div class="headings_box">
                         <ul>
                             <li class="pull-left">Total Payment</li>
-                            <li class="pull-right"><span><img src="custom/tenant_portal/images/list_payment_icon.png"
-                                        alt="building_icon"></span></li>
+                            <li class="pull-right"><span><img src="custom/tenant_portal/images/list_payment_icon.png" alt="building_icon"></span></li>
                             <div class="clearfix"></div>
                         </ul>
                     </div>
@@ -532,32 +479,21 @@ if ($next_due <= 0) {
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <tr>
-                                    <td><input type="radio"
-                                            name="if_partial_payment_<?= $apartment_id . "_" . $lease_id ?>" checked
-                                            value="0"></td>
+                                    <td><input type="radio" name="if_partial_payment_<?= $apartment_id . "_" . $lease_id ?>" checked value="0"></td>
                                     <td><b>Total Amount</b></td>
                                     <td>
                                         <span id="span_total_amount_<?= $apartment_id . "_" . $lease_id ?>">0</span>
-                                        <input type="hidden" data-aptid="<?php echo $apartment_id; ?>" size="5"
-                                            id="total_amount_<?= $apartment_id . "_" . $lease_id ?>"
-                                            class="classtotal_payment_<?php echo $apartment_id; ?>" name="total_payment"
-                                            value="0">
-                                        <input type="hidden" data-aptid="<?php echo $apartment_id; ?>" size="5"
-                                            id="pay_amount_<?= $apartment_id . "_" . $lease_id ?>" name="payment_amount"
-                                            value="0">
+                                        <input type="hidden" data-aptid="<?php echo $apartment_id; ?>" size="5" id="total_amount_<?= $apartment_id . "_" . $lease_id ?>" class="classtotal_payment_<?php echo $apartment_id; ?>" name="total_payment" value="0">
+                                        <input type="hidden" data-aptid="<?php echo $apartment_id; ?>" size="5" id="pay_amount_<?= $apartment_id . "_" . $lease_id ?>" name="payment_amount" value="0">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="radio"
-                                            name="if_partial_payment_<?= $apartment_id . "_" . $lease_id ?>" value="1">
+                                        <input type="radio" name="if_partial_payment_<?= $apartment_id . "_" . $lease_id ?>" value="1">
                                     </td>
                                     <td><b>Partial Payment<b></td>
                                     <td>
-                                        <input data-aptid="<?php echo $apartment_id; ?>" type="text" size="5"
-                                            class="partial_payment_entry_amt"
-                                            id="partial_pay_amount_<?= $apartment_id . "_" . $lease_id ?>"
-                                            name="partial_pay_amount_<?= $apartment_id . "_" . $lease_id ?>" disabled> $
+                                        <input data-aptid="<?php echo $apartment_id; ?>" type="text" size="5" class="partial_payment_entry_amt" id="partial_pay_amount_<?= $apartment_id . "_" . $lease_id ?>" name="partial_pay_amount_<?= $apartment_id . "_" . $lease_id ?>" disabled> $
                                         CAD
                                     </td>
                                 </tr>
@@ -570,14 +506,11 @@ if ($next_due <= 0) {
                         <div class="table-responsive">
                             <table class="table table-bordered" style="margin: 0px">
                                 <tr>
-                                    <td><input type="radio" name="payment_when_<?= $apartment_id . "_" . $lease_id ?>"
-                                            id="payment_when_<?= $apartment_id . "_" . $lease_id ?>_0" value="0"
-                                            checked></td>
+                                    <td><input type="radio" name="payment_when_<?= $apartment_id . "_" . $lease_id ?>" id="payment_when_<?= $apartment_id . "_" . $lease_id ?>_0" value="0" checked></td>
                                     <td><b> Pay By Myself</b></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="payment_when_<?= $apartment_id . "_" . $lease_id ?>"
-                                            id="payment_when_<?= $apartment_id . "_" . $lease_id ?>_1" value="1"></td>
+                                    <td><input type="radio" name="payment_when_<?= $apartment_id . "_" . $lease_id ?>" id="payment_when_<?= $apartment_id . "_" . $lease_id ?>_1" value="1"></td>
                                     <td><b>Have someone pay for you</b></td>
                                 </tr>
                             </table>
@@ -596,8 +529,7 @@ if ($next_due <= 0) {
                                 </tr>
                                 <br>
 
-                                <input id="paymentType<?= $apartment_id . "_" . $lease_id ?>" type="hidden"
-                                    name="paymentType<?= $apartment_id . "_" . $lease_id ?>">
+                                <input id="paymentType<?= $apartment_id . "_" . $lease_id ?>" type="hidden" name="paymentType<?= $apartment_id . "_" . $lease_id ?>">
                                 <?php
                                 //    if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== false
                                 //    || strpos($_SERVER['HTTP_USER_AGENT'], 'CriOS') !== false) {
@@ -606,16 +538,11 @@ if ($next_due <= 0) {
                                 ?>
                                 <tr>
                                     <!-- <td> <input type="radio" name="paymentType<?= $apartment_id . "_" . $lease_id ?>" checked  onclick="ew.vars.calc<?= $apartment_id . "_" . $lease_id ?>(0)" size="10" value="m2"></td> -->
-                                    <td><span
-                                            id="span_interac_<?= $apartment_id . "-" . $lease_id ?>"><?= $interactCharge ?>
+                                    <td><span id="span_interac_<?= $apartment_id . "-" . $lease_id ?>"><?= $interactCharge ?>
                                             $</span>
                                     </td>
-                                    <td><span data-aptid="<?php echo $apartment_id; ?>" data-ptype="m2" data-cf="0"
-                                            class="totalAmtDisplayWCf"
-                                            id="total_<?= $apartment_id . "-" . $lease_id ?>">0</span></td>
-                                    <td><img src="custom/tenant_portal/images/interac3.png" alt="interac" height="30"
-                                            onclick="ew.vars.submitPayForm(<?= $apartment_id ?>,<?= $lease_id ?>,'m2')"
-                                            style="cursor: pointer"></button></td>
+                                    <td><span data-aptid="<?php echo $apartment_id; ?>" data-ptype="m2" data-cf="0" class="totalAmtDisplayWCf" id="total_<?= $apartment_id . "-" . $lease_id ?>">0</span></td>
+                                    <td><img src="custom/tenant_portal/images/interac3.png" alt="interac" height="30" onclick="ew.vars.submitPayForm(<?= $apartment_id ?>,<?= $lease_id ?>,'m2')" style="cursor: pointer"></button></td>
                                 </tr>
                                 <!-- <tr> -->
                                 <!-- It was commented before <td><input type="radio" name="paymentType<?= $apartment_id . "_" . $lease_id ?>" onclick="ew.vars.calc<?= $apartment_id . "_" . $lease_id ?>(0)" size="10" value="p1"></td>-->
@@ -633,18 +560,12 @@ if ($next_due <= 0) {
                                 <tr>
                                     <!-- <td><input type="radio" name="paymentType<?= $apartment_id . "_" . $lease_id ?>"  onclick="ew.vars.calc<?= $apartment_id . "_" . $lease_id ?>(0)" size="10" value="m1"></td>-->
                                     <td>
-                                        <span
-                                            id="span_mastercard_<?= $apartment_id . "-" . $lease_id ?>"><?= $creditcardCharge ?>
+                                        <span id="span_mastercard_<?= $apartment_id . "-" . $lease_id ?>"><?= $creditcardCharge ?>
                                             %</span>
                                     </td>
-                                    <td><span data-aptid="<?php echo $apartment_id; ?>" data-ptype="m1" data-cf="2.9"
-                                            class="totalAmtDisplayWCf"
-                                            id="span_mastercard_<?= $apartment_id . "-" . $lease_id ?>">0</span>
+                                    <td><span data-aptid="<?php echo $apartment_id; ?>" data-ptype="m1" data-cf="2.9" class="totalAmtDisplayWCf" id="span_mastercard_<?= $apartment_id . "-" . $lease_id ?>">0</span>
                                     </td>
-                                    <td><img align="left" src="custom/tenant_portal/images/moneris3.png"
-                                            alt="Credit Card" height="30"
-                                            onclick="ew.vars.submitPayForm(<?= $apartment_id ?>,<?= $lease_id ?>,'m1')"
-                                            style="cursor: pointer"></td>
+                                    <td><img align="left" src="custom/tenant_portal/images/moneris3.png" alt="Credit Card" height="30" onclick="ew.vars.submitPayForm(<?= $apartment_id ?>,<?= $lease_id ?>,'m1')" style="cursor: pointer"></td>
                                 </tr>
                             </table>
                         </div>
@@ -668,15 +589,14 @@ if ($next_due <= 0) {
 
                         <div class="row">
                             <div class="col-md-5">
-                                <a href="requests.php?unit_id=<?php echo $apartment_id; ?>" style="color: #7C7C7C">
+                                <a href="requests?unit_id=<?php echo $apartment_id; ?>" style="color: #7C7C7C">
                                     <button class="btn btn-primary"> <strong> Request List </strong> </button>
                                 </a>
                             </div>
                             <div class="col-md-5">
-                                <!-- <a href="requests.php?direct=report&unit_id=<?php echo $apartment_id; ?>"> -->
+                                <!-- <a href="requests?direct=report&unit_id=<?php echo $apartment_id; ?>"> -->
                                 <a href="requestadd?unit_id=<?php echo $apartment_id; ?>">
-                                    <button class="btn btn-primary"
-                                        <?php echo $allow_create_request == 0 ? 'style="display:none;" ' : '' ?>>
+                                    <button class="btn btn-primary" <?php echo $allow_create_request == 0 ? 'style="display:none;" ' : '' ?>>
                                         <strong>Report a Request</strong>
                                     </button>
                                 </a>
@@ -684,7 +604,7 @@ if ($next_due <= 0) {
                         </div>
 
                         <ul>
-                            <!-- <li class="pull-left"><a   href="requests.php?unit_id=<?php echo $apartment_id; ?>"
+                            <!-- <li class="pull-left"><a   href="requests?unit_id=<?php echo $apartment_id; ?>"
                                                      style="color: #7C7C7C">
                                                        <button class="btn btn-primary">
 
@@ -693,7 +613,7 @@ if ($next_due <= 0) {
                                                     </a>
                                                    </li> -->
                             <!-- <li class="pull-right"><a
-                                        href="requests.php?direct=report&unit_id=<?php echo $apartment_id; ?>">
+                                        href="requests?direct=report&unit_id=<?php echo $apartment_id; ?>">
                                     <button class="btn btn-primary" <?php echo $allow_create_request == 0 ? 'style="display:none;" ' : '' ?>>
                                         Report a Request
                                     </button>
@@ -703,26 +623,26 @@ if ($next_due <= 0) {
                     </div>
                     <div class="points">
                         <?php if ($issues == null) { ?>
-                        <div class="col-sm-12">
-                            <div class="box-content-note">
-                                <h5>You do not have any requests currently.</h5>
+                            <div class="col-sm-12">
+                                <div class="box-content-note">
+                                    <h5>You do not have any requests currently.</h5>
+                                </div>
                             </div>
-                        </div>
                         <?php } else { ?>
 
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <!-- <th class="text_clr">Type</th> -->
-                                        <th class="text_clr">Message</th>
-                                        <th class="text_clr">Status</th>
-                                        <th class="text_clr">View</th>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <!-- <th class="text_clr">Type</th> -->
+                                            <th class="text_clr">Message</th>
+                                            <th class="text_clr">Status</th>
+                                            <th class="text_clr">View</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
                                         foreach ($issues as $row) {
                                             $message = $row['message'];
                                             $type = $row['request_type'];
@@ -732,30 +652,28 @@ if ($next_due <= 0) {
                                             } else {
                                                 $readColor = " white";
                                             } ?>
-                                    <tr style="border-bottom:1px solid #D0D0D0; background-color: <?= $readColor ?> ">
-                                        <!-- <td><?php echo $type; ?></td> -->
-                                        <td title="<?php echo $message; ?>">
-                                            <?php
+                                            <tr style="border-bottom:1px solid #D0D0D0; background-color: <?= $readColor ?> ">
+                                                <!-- <td><?php echo $type; ?></td> -->
+                                                <td title="<?php echo $message; ?>">
+                                                    <?php
                                                     $msglen = strlen($message);
                                                     if ($msglen >= 50) {
                                                         echo substr($message, 0, 50) . " ...";
                                                     } else {
                                                         echo $message;
                                                     } ?>
-                                            <? //=$row['last_access_time'].">".$row['last_access_time']
+                                                    <? //=$row['last_access_time'].">".$row['last_access_time']
                                                     ?>
-                                        </td>
-                                        <td><?php echo $status; ?></td>
-                                        <td><a
-                                                href="<?php echo 'requestadd?action=rview&rid=' . $row["id"] . '&unit_id=' . $apartment_id; ?>"><button
-                                                    class="btn btn-warning">View</button></a></td>
-                                    </tr>
-                                    <?php
+                                                </td>
+                                                <td><?php echo $status; ?></td>
+                                                <td><a href="<?php echo 'requestadd?action=rview&rid=' . $row["id"] . '&unit_id=' . $apartment_id; ?>"><button class="btn btn-warning">View</button></a></td>
+                                            </tr>
+                                        <?php
                                         } ?>
-                                </tbody>
+                                    </tbody>
 
-                            </table>
-                        </div>
+                                </table>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -765,8 +683,7 @@ if ($next_due <= 0) {
                     <div class="headings_box">
                         <ul>
                             <li class="pull-left">Notifications</li>
-                            <li class="pull-right"><span><b></b> <img
-                                        src="custom/tenant_portal/images/bulletins_icon.png" alt="building_icon"></span>
+                            <li class="pull-right"><span><b></b> <img src="custom/tenant_portal/images/bulletins_icon.png" alt="building_icon"></span>
                             </li>
                             <div class="clearfix"></div>
                         </ul>
@@ -785,20 +702,19 @@ if ($next_due <= 0) {
                             if (!in_array($results['lease_status_id'], [9]) && $date_diff <= $renewal_notification_day && !empty($results) && $results['renewal'] == 0) {
 
                             ?>
-                            <li>
-                                <h3 style="color:red">Renewal Notice</h3>
-                                <h3><a href="custom/tenant_portal/renewal_notice.php?tenant_id=<?= $tenant_id ?>&lease_id=<?= $lease_id ?>"
-                                        target="_blank">Please click here to see the detail</a></h3>
-                                <hr>
+                                <li>
+                                    <h3 style="color:red">Renewal Notice</h3>
+                                    <h3><a href="custom/tenant_portal/renewal_notice.php?tenant_id=<?= $tenant_id ?>&lease_id=<?= $lease_id ?>" target="_blank">Please click here to see the detail</a></h3>
+                                    <hr>
 
-                            </li>
-                            <? if (!empty($renewal_due_date)) { ?>
+                                </li>
+                                <? if (!empty($renewal_due_date)) { ?>
 
-                            <li>
-                                <h6 style="color:red">Due Date to Accept/Not Accept of renewal of the lease:
-                                    <b><?= $renewal_due_date ?></b>
-                                </h6>
-                            </li>
+                                    <li>
+                                        <h6 style="color:red">Due Date to Accept/Not Accept of renewal of the lease:
+                                            <b><?= $renewal_due_date ?></b>
+                                        </h6>
+                                    </li>
                             <?php }
                             } ?>
 
@@ -817,26 +733,24 @@ if ($next_due <= 0) {
                                 $history_type_id = 7;
                                 $user_tracker_email = $tenant_infos['email'];
                                 $id = $file_id; ?>
-                            <li>
-                                <?php echo $bulletin['create_time']; ?><br>
-                                <b><?php echo $bulletin['message_title']; ?></b><br>
-                            </li>
-                            <div class="customComment" data-bs-toggle="popover" data-bs-trigger="hover"
-                                title="<?php echo $bulletin['message_title']; ?>"
-                                data-content="<?php echo strip_tags($message_body) ?>" data-placement="bottom">
-                                <?php $msgLen = strlen($message_body);
+                                <li>
+                                    <?php echo $bulletin['create_time']; ?><br>
+                                    <b><?php echo $bulletin['message_title']; ?></b><br>
+                                </li>
+                                <div class="customComment" data-bs-toggle="popover" data-bs-trigger="hover" title="<?php echo $bulletin['message_title']; ?>" data-content="<?php echo strip_tags($message_body) ?>" data-placement="bottom">
+                                    <?php $msgLen = strlen($message_body);
                                     echo substr(strip_tags($message_body), 0, 70) . ($msgLen > 70 ? "..." : ""); ?>
-                                <p>
-                                    <?php if (!empty($bulletin['attachment'])) {
+                                    <p>
+                                        <?php if (!empty($bulletin['attachment'])) {
                                             echo "<a style='font-size:12pt' target='_blank'
                                     href='https://www.spgmanagement.com/admin/custom/download_file.php?fid=$slug&u=$user_tracker_id&id=$id&h=$history_type_id&e=$user_tracker_email&s=$subject'>attachment</a>";
                                         } ?>
-                                </p>
-                                <?php
+                                    </p>
+                                    <?php
                                     $history_type_id = 6;
                                     echo "<img border='0' src='https://www.spgmanagement.com/admin/custom/email_tracker.php?u=$user_tracker_id&id=$id&h=$history_type_id&e=$user_tracker_email&s=$subject' width='1' height='1' alt='' >"; ?>
-                                <hr>
-                            </div>
+                                    <hr>
+                                </div>
                             <?php
                             } ?>
 
@@ -851,24 +765,24 @@ if ($next_due <= 0) {
     <!--page-wrapper-->
 </div>
 <style>
-.customComment:hover {
-    cursor: pointer;
-}
+    .customComment:hover {
+        cursor: pointer;
+    }
 
-#prop_managment .bulletins .points {
-    height: auto !important;
-}
+    #prop_managment .bulletins .points {
+        height: auto !important;
+    }
 
-#prop_managment .bulletins {
-    height: auto !important;
-}
+    #prop_managment .bulletins {
+        height: auto !important;
+    }
 
-.text-align-left {
-    text-align: left;
-}
+    .text-align-left {
+        text-align: left;
+    }
 </style>
 <script>
-/*
+    /*
 loadjs.ready("jquery", function() {
     $(document).ready(function() {
         var
@@ -1138,37 +1052,37 @@ loadjs.ready("jquery", function() {
 */
 </script>
 <script>
-loadjs.ready(["jquery", "head"], function() {
-    $(document).ready(function() {
-        $('[data-bs-toggle="popover"]').popover();
-        $('form').trigger("reset");
+    loadjs.ready(["jquery", "head"], function() {
+        $(document).ready(function() {
+            $('[data-bs-toggle="popover"]').popover();
+            $('form').trigger("reset");
 
 
-        var rowId = <?= $scrollrowpos + $depositRowNo ?>;
+            var rowId = <?= $scrollrowpos + $depositRowNo ?>;
 
-        var Tablepos = $('#table_pay<?= $apartment_id . "-" . $lease_id ?> tr:eq(' + rowId + ')')
-            .offset()
-            .top;
-        var divPayPos = $('#div_pay<?= $apartment_id . "-" . $lease_id ?>').offset().top;
-        var goPos = Tablepos - divPayPos;
-        $('#div_pay<?= $apartment_id . "-" . $lease_id ?>').scrollTop(goPos);
-        $('#div_pay<?= $apartment_id . "-" . $lease_id ?>').animate({
-            scrollTop: goPos
-        }, 500);
-        $('#table_pay<?= $apartment_id . "-" . $lease_id ?> tr').css({
-            'background-color': 'none'
+            var Tablepos = $('#table_pay<?= $apartment_id . "-" . $lease_id ?> tr:eq(' + rowId + ')')
+                .offset()
+                .top;
+            var divPayPos = $('#div_pay<?= $apartment_id . "-" . $lease_id ?>').offset().top;
+            var goPos = Tablepos - divPayPos;
+            $('#div_pay<?= $apartment_id . "-" . $lease_id ?>').scrollTop(goPos);
+            $('#div_pay<?= $apartment_id . "-" . $lease_id ?>').animate({
+                scrollTop: goPos
+            }, 500);
+            $('#table_pay<?= $apartment_id . "-" . $lease_id ?> tr').css({
+                'background-color': 'none'
+            });
+            $('#table_pay<?= $apartment_id . "-" . $lease_id ?> tr:eq(' + rowId + ')').css({
+                'background-color': '#ccc'
+            });
+
+            /* Hide Payment
+                    document.getElementById("select" + "<?= $first_not_paid_lease_id ?>").click();
+                    document.getElementById("payment_when_" + "<?= $apartment_id . "_" . $lease_id ?>_0").click();
+            */
+
+
         });
-        $('#table_pay<?= $apartment_id . "-" . $lease_id ?> tr:eq(' + rowId + ')').css({
-            'background-color': '#ccc'
-        });
-
-        /* Hide Payment
-                document.getElementById("select" + "<?= $first_not_paid_lease_id ?>").click();
-                document.getElementById("payment_when_" + "<?= $apartment_id . "_" . $lease_id ?>_0").click();
-        */
-
-
     });
-});
 </script>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->

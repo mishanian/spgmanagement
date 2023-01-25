@@ -92,17 +92,17 @@ $goal_comp = 0;
 ?>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 <script>
-loadjs.ready(['head'], function() {
-    loadjs([
-        'custom/css/introjs.min.css',
-        'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
-        'custom/homepage/plugins/icheck-bootstrap/icheck-bootstrap.min.css',
-        'custom/homepage/plugins/jqvmap/jqvmap.min.css',
-        'custom/homepage/plugins/daterangepicker/daterangepicker.css',
-        'custom/homepage/plugins/summernote/summernote-bs4.css',
-        'https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'
-    ]);
-});
+    loadjs.ready(['head'], function() {
+        loadjs([
+            'custom/css/introjs.min.css',
+            'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
+            'custom/homepage/plugins/icheck-bootstrap/icheck-bootstrap.min.css',
+            'custom/homepage/plugins/jqvmap/jqvmap.min.css',
+            'custom/homepage/plugins/daterangepicker/daterangepicker.css',
+            'custom/homepage/plugins/summernote/summernote-bs4.css',
+            'https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'
+        ]);
+    });
 </script>
 <!-- Main content -->
 <section class="content">
@@ -131,8 +131,7 @@ loadjs.ready(['head'], function() {
                     <div class="icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <a href="buildinginfoslist?cmd=resetall" class="small-box-footer">More info <i
-                            class="fas fa-arrow-circle-right"></i></a>
+                    <a href="buildinginfoslist?cmd=resetall" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -147,8 +146,7 @@ loadjs.ready(['head'], function() {
                     <div class="icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <a href="apartmentinfoslist?cmd=resetall" class="small-box-footer">More info <i
-                            class="fas fa-arrow-circle-right"></i></a>
+                    <a href="apartmentinfoslist?cmd=resetall" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -163,8 +161,7 @@ loadjs.ready(['head'], function() {
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="viewtenantinfoslist?cmd=resetall" class="small-box-footer">More info <i
-                            class="fas fa-arrow-circle-right"></i></a>
+                    <a href="viewtenantinfoslist?cmd=resetall" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -179,8 +176,7 @@ loadjs.ready(['head'], function() {
                     <div class="icon">
                         <i class="fas fa-file-contract"></i>
                     </div>
-                    <a href="leaseinfoslist?cmd=resetall" class="small-box-footer">More info <i
-                            class="fas fa-arrow-circle-right"></i></a>
+                    <a href="leaseinfoslist?cmd=resetall" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -195,23 +191,19 @@ loadjs.ready(['head'], function() {
                 <!-- /.card -->
 
                 <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-primary" data-step='6'
-                    data-intro="you can see your tenant's request here!">
+                <div class="card direct-chat direct-chat-primary" data-step='6' data-intro="you can see your tenant's request here!">
                     <div class="card-header">
                         <h3 class="card-title">Requests</h3>
 
                         <div class="card-tools">
-                            <span data-toggle="tooltip" title="<?= $request_count ?> New Messages"
-                                class="badge badge-primary"><?= $request_count ?></span>
+                            <span data-toggle="tooltip" title="<?= $request_count ?> New Messages" class="badge badge-primary"><?= $request_count ?></span>
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                 <i class="fas fa-minus"></i>
                             </button>
-                            <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Contacts"
-                                data-widget="chat-pane-toggle2">
+                            <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle2">
                                 <i class="fas fa-comments"></i>
                             </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                    class="fas fa-times"></i>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
                             </button>
                         </div>
                     </div>
@@ -227,23 +219,20 @@ loadjs.ready(['head'], function() {
                                 $RequestDT = date_create($request['entry_datetime']);
 
                             ?>
-                            <div class="direct-chat-msg">
-                                <div class="direct-chat-infos clearfix">
-                                    <span class="direct-chat-name float-left"><?= $request['building_name'] ?> -
-                                        <?= $request['unit_number'] ?></span>
-                                    <span
-                                        class="direct-chat-timestamp float-right"><?= date_diff($RequestDT, $CurrentDT)->format('%a Day and %h hours'); ?></span>
+                                <div class="direct-chat-msg">
+                                    <div class="direct-chat-infos clearfix">
+                                        <span class="direct-chat-name float-left"><?= $request['building_name'] ?> -
+                                            <?= $request['unit_number'] ?></span>
+                                        <span class="direct-chat-timestamp float-right"><?= date_diff($RequestDT, $CurrentDT)->format('%a Day and %h hours'); ?></span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="custom/homepage/dist/img/user1-128x128.jpg" alt="message user image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                        <a href="requestadd?action=rview&rid=<?= $request['request_id'] ?>"><?= $request['message'] ?></a>
+                                    </div>
+                                    <!-- /.direct-chat-text -->
                                 </div>
-                                <!-- /.direct-chat-infos -->
-                                <img class="direct-chat-img" src="custom/homepage/dist/img/user1-128x128.jpg"
-                                    alt="message user image">
-                                <!-- /.direct-chat-img -->
-                                <div class="direct-chat-text">
-                                    <a
-                                        href="requestadd?action=rview&rid=<?= $request['request_id'] ?>"><?= $request['message'] ?></a>
-                                </div>
-                                <!-- /.direct-chat-text -->
-                            </div>
                             <? } ?>
                             <!-- /.direct-chat-msg -->
 
@@ -260,7 +249,7 @@ loadjs.ready(['head'], function() {
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
-                        <a href="requests.php?cmd=reset" class="btn btn-sm btn-secondary float-right">View All
+                        <a href="requests?cmd=reset" class="btn btn-sm btn-secondary float-right">View All
                             Requests</a>
                     </div>
                     <!-- /.card-footer -->
@@ -306,13 +295,12 @@ loadjs.ready(['head'], function() {
                                     if (!empty($unpaids)) {
                                         foreach ($unpaids as $unpaid) {
                                     ?>
-                                    <tr>
-                                        <td><a
-                                                href="lease_infosview.php?cmd=reset&showdetail=&id=<?= $unpaid['lease_id'] ?>"><?= $unpaid['building_name'] ?>
-                                                - <?= $unpaid['unit_number'] ?></a></td>
-                                        <td><?= $unpaid['total'] ?></td>
-                                        <td><span class="badge badge-success"><?= $unpaid['paid'] ?></span></td>
-                                    </tr>
+                                            <tr>
+                                                <td><a href="lease_infosview.php?cmd=reset&showdetail=&id=<?= $unpaid['lease_id'] ?>"><?= $unpaid['building_name'] ?>
+                                                        - <?= $unpaid['unit_number'] ?></a></td>
+                                                <td><?= $unpaid['total'] ?></td>
+                                                <td><span class="badge badge-success"><?= $unpaid['paid'] ?></span></td>
+                                            </tr>
                                     <?php
                                         }
                                     }
@@ -341,11 +329,11 @@ loadjs.ready(['head'], function() {
 <!-- /.content -->
 
 <script>
-loadjs.ready(['head', 'jquery'], function() {
-    loadjs([
-        'custom/js/intro.min.js',
-    ], 'introjs');
-});
+    loadjs.ready(['head', 'jquery'], function() {
+        loadjs([
+            'custom/js/intro.min.js',
+        ], 'introjs');
+    });
 </script>
 <? if (empty($_COOKIE['intro_help'])) {
     setcookie("intro_help", "done", time() + (10 * 365 * 24 * 60 * 60));
