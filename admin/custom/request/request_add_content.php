@@ -134,24 +134,24 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
 
                 <?php if ($user_level == 1 || $user_level == 24) { ?>
                 <li class="nav-item">
-                    <a id="addNewProjectTab" class="nav-link remove-for-tenant" data-toggle="tab" href="#project_add"><i
-                            class="fas fa-plus"></i>New Project</a>
+                    <a id="addNewProjectTab" class="nav-link remove-for-tenant" data-bs-toggle="tab"
+                        href="#project_add"><i class="fas fa-plus"></i>New Project</a>
                 </li>
                 <?php } ?>
 
                 <li class="nav-item">
-                    <a class="nav-link active" id="add_request_tag" data-toggle="tab" href="#request_add"><i
+                    <a class="nav-link active" id="add_request_tag" data-bs-toggle="tab" href="#request_add"><i
                             class="fas fa-plus"></i>
                         <?php echo (isset($_GET["type"]) && $_GET["type"] == "sp") ? "New Special Request" : "New Request" ?>
                     </a>
                 </li>
 
-                <!--                <li><a data-toggle="tab" href="#contract_add"><i class="fas fa-plus"></i> New Vendor Contract</a>-->
+                <!--                <li><a data-bs-toggle="tab" href="#contract_add"><i class="fas fa-plus"></i> New Vendor Contract</a>-->
                 <!--                </li>-->
 
                 <?php if (isset($_GET["action"]) && $_GET["action"] == "rview") { ?>
                 <li class="nav-item">
-                    <a class="nav-link" id="viewrequest_tag" data-toggle="tab" href="#request_view"> <i
+                    <a class="nav-link" id="viewrequest_tag" data-bs-toggle="tab" href="#request_view"> <i
                             class="far fa-eye"></i> View Request
                         <span id="request-num-val"></span></a>
                 </li> <?php } ?>
@@ -173,24 +173,24 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                     <li role="presentation" class="nav-item active"><a class="nav-link active"
                                             id="report_details_tag" href="#report_details"
                                             aria-controls="report_details" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Task Details"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Task Details"); ?></a>
                                     </li>
                                     <li class="nav-item" role="presentation"><a class="nav-link"
                                             id="pictures_new_report_tag" class="removeForFixedEventType"
                                             href="#pictures_new_report" aria-controls="pictures_new_report" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Pictures"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Pictures"); ?></a>
                                     </li>
                                     <li class="nav-item" role="presentation"><a class="nav-link"
                                             id="additional_info_new_report_tag" href="#additional_info_new_report"
                                             aria-controls="additional_info_new_report" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Additional Details"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Additional Details"); ?></a>
                                     </li>
                                     <li class="nav-item" role="presentation"><a class="nav-link"
                                             class="removeForFixedEventType remove-for-tenant"
                                             style="<?php echo (isset($_GET["type"]) && $_GET["type"] == "sp") ? "display:none" : "" ?>"
                                             id="recipient_report_tag" href="#recipient_report"
                                             aria-controls="recipient_report" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Invoices / Material"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Invoices / Material"); ?></a>
                                     </li>
                                 </ul>
 
@@ -422,12 +422,12 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                                             <div class="form-group row">
                                                                 <div class="col-sm-8 col-sm-offset-4">
                                                                     <button type="button"
-                                                                        data-target-tenant="pictures_new_report_tag"
+                                                                        data-bs-target-tenant="pictures_new_report_tag"
                                                                         data-fixedevent-target="additional_info_new_report_tag"
-                                                                        data-target="pictures_new_report_tag"
+                                                                        data-bs-target="pictures_new_report_tag"
                                                                         href="#recipient_report"
                                                                         aria-controls="recipient_report" role="tab"
-                                                                        data-toggle="tab" type="button"
+                                                                        data-bs-toggle="tab" type="button"
                                                                         class="btn btn-warning reportNewTaskNextBtn"
                                                                         id="reportNewTaskDetailNext"><?php echo $DB_snapshot->echot("Next"); ?>
                                                                         <i class="fas fa-arrow-right"></i></button>
@@ -682,7 +682,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                                 <div class="form-group row">
                                                     <div class="col-sm-8 col-sm-offset-4">
                                                         <button type="button"
-                                                            data-target="additional_info_new_report_tag"
+                                                            data-bs-target="additional_info_new_report_tag"
                                                             data-fixedevent-target="additional_info_new_report_tag"
                                                             type="button"
                                                             class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>
@@ -741,7 +741,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                             <div class="col-sm-12">
                                                 <div class="form-group row">
                                                     <div class="col-sm-8 col-sm-offset-4">
-                                                        <button data-target="additional_info_new_report_tag"
+                                                        <button data-bs-target="additional_info_new_report_tag"
                                                             type="button"
                                                             class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>
                                                             <i class="fas fa-arrow-right"></i></button>
@@ -1128,8 +1128,8 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                             <div class="col-sm-12">
                                                 <div class="form-group row">
                                                     <div class="col-sm-8 col-sm-offset-4">
-                                                        <button data-target="additional_info_new_report_tag"
-                                                            data-target-tenant="additional_info_new_report_tag"
+                                                        <button data-bs-target="additional_info_new_report_tag"
+                                                            data-bs-target-tenant="additional_info_new_report_tag"
                                                             type="button"
                                                             class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>
                                                             <i class="fas fa-arrow-right"></i></button>
@@ -1153,11 +1153,11 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
 
                     <ul class="nav nav-tabs">
                         <li class="nav-item active"><a class="nav-link active" style="background: antiquewhite;"
-                                data-toggle="tab" href="#project_add_inner"><i class="fas fa-plus"></i>
+                                data-bs-toggle="tab" href="#project_add_inner"><i class="fas fa-plus"></i>
                                 <strong>Add New Project</strong> </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" id="newContractAddTab" data-toggle="tab"
+                        <li class="nav-item"><a class="nav-link" id="newContractAddTab" data-bs-toggle="tab"
                                 href="#contract_add_inner"><i class="fas fa-plus"></i> New Vendor
                                 Contract</a>
                         </li>
@@ -1839,23 +1839,23 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                     <li role="presentation" class="nav-item active"><a class="nav-link"
                                             id="communication_tag" href="#communication" aria-controls="communication"
                                             role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Communications"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Communications"); ?></a>
                                     </li>
-                                    <!--      <li role="presentation"><a id="attach_tag" href="#attach" aria-controls="attach" role="tab" data-toggle="tab">-->
+                                    <!--      <li role="presentation"><a id="attach_tag" href="#attach" aria-controls="attach" role="tab" data-bs-toggle="tab">-->
                                     <?php //echo $DB_snapshot->echot("Attachments");
                                         ?>
                                     <!--</a></li>-->
                                     <li class="nav-item" role="presentation"><a class="nav-link" id="recipient_tag"
                                             href="#recipient" aria-controls="recipient" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Recipient"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Recipient"); ?></a>
                                     </li>
                                     <li class="nav-item" role="presentation"><a class="nav-link" id="edit_tag"
                                             href="#edit" aria-controls="edit" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Info"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Info"); ?></a>
                                     </li>
                                     <!--                                        <li role="presentation"><a id="payment_tag" href="#payment_tab"-->
                                     <!--                                                                   aria-controls="payment_tab" role="tab"-->
-                                    <!--                                                                   data-toggle="tab">-->
+                                    <!--                                                                   data-bs-toggle="tab">-->
                                     <?php //echo $DB_snapshot->echot("Payment");
                                         ?>
                                     <!--</a>-->
@@ -1863,12 +1863,12 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                     <li class="nav-item" role="presentation"><a class="nav-link"
                                             class="remove-for-tenant" id="materials_tag" href="#materialedit_tab"
                                             aria-controls="materialedit_tab" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Materials"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Materials"); ?></a>
                                     </li>
                                     <li class="nav-item" role="presentation"><a class="nav-link"
                                             class="remove-for-tenant" id="invoices_report_tag"
                                             href="#invoices_report_tab" aria-controls="invoices_report_tab" role="tab"
-                                            data-toggle="tab"><?php echo $DB_snapshot->echot("Attached Invoices"); ?></a>
+                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Attached Invoices"); ?></a>
                                     </li>
 
                                     <?php if ($user_level != 5) { ?>
@@ -1977,7 +1977,8 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                                                     <div class="dropup" id="recipient_dropdown_list">
                                                                         <button style="width:50%;"
                                                                             class="btn btn-primary dropdown-toggle"
-                                                                            type="button" data-toggle="dropdown"> List
+                                                                            type="button" data-bs-toggle="dropdown">
+                                                                            List
                                                                             <span class="caret"></span></button>
                                                                         <ul id="recipient-employee"
                                                                             class="dropdown-menu"
@@ -3230,7 +3231,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
 <script>
 loadjs.ready(["jquery", "head"], function() {
     loadjs([
-            "https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css",
+            "https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css",
             "https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css",
             "custom/request/js/bootstrap-datepicker.js",
             "custom/request/js/lightbox.min.js",
@@ -3238,7 +3239,7 @@ loadjs.ready(["jquery", "head"], function() {
             "https://code.jquery.com/ui/1.12.1/jquery-ui.js",
             "https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js",
             "custom/request/js/bootstrap-datetimepicker.min.js",
-            "https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js",
+            "https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"
         ], 'datatable'
         // , {
@@ -3552,13 +3553,13 @@ loadjs.ready('datatable', function() {
 
         $('#startReport').trigger('click');
 
-        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-bs-toggle="tooltip"]').tooltip();
 
         $(".reportNewTaskNextBtn").on("click", function() {
-            let target = $(this).attr("data-target");
+            let target = $(this).attr("data-bs-target");
             if (user_level == 5 || user_level == "5") {
                 // Get the target for the tenant
-                target = $(this).attr("data-target-tenant");
+                target = $(this).attr("data-bs-target-tenant");
             }
 
             let requestType = $('input[name=newreportTasktype]:checked').val();
@@ -4380,7 +4381,7 @@ loadjs.ready('datatable', function() {
                 string += '<i class="fa fa-eye-slash hidden-for-tenant-msg"></i>';
             }
             string += '               <a id="read_status_' + i +
-                '" class="message-info-read-status" tabindex="0" role="button" data-toggle="popover" data-container="body" data-trigger="focus">Reading status</a>\n' +
+                '" class="message-info-read-status" tabindex="0" role="button" data-bs-toggle="popover" data-container="body" data-trigger="focus">Reading status</a>\n' +
                 '                    <span class="message-info-date">' + data[i].created_time + '</span>\n' +
                 '                  </div>\n' +
                 '                </div>';
@@ -4393,12 +4394,12 @@ loadjs.ready('datatable', function() {
             for (r in assignees_status) {
                 if (assignees_status[r].read_status == 'read')
                     var temp =
-                        '<button type="button" class="btn btn-primary read-status-bk" data-toggle="tooltip" data-placement="right" title="last access: ' +
+                        '<button type="button" class="btn btn-primary read-status-bk" data-bs-toggle="tooltip" data-placement="right" title="last access: ' +
                         assignees_status[r].last_access_time + '">' + assignees_status[r].user_name +
                         '</button>';
                 else if (assignees_status[r].read_status == 'unread')
                     var temp =
-                        '<button type="button" class="btn btn-warning read-status-bk" data-toggle="tooltip"  data-placement="right" title="last access: ' +
+                        '<button type="button" class="btn btn-warning read-status-bk" data-bs-toggle="tooltip"  data-placement="right" title="last access: ' +
                         assignees_status[r].last_access_time + '">' + assignees_status[r].user_name +
                         '</button>';
 
@@ -4422,10 +4423,10 @@ loadjs.ready('datatable', function() {
         }
 
         $(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-bs-toggle="tooltip"]').tooltip();
         });
         $(function() {
-            $('[data-toggle="popover"]').popover();
+            $('[data-bs-toggle="popover"]').popover();
         });
 
         //set textare and file input
@@ -6222,19 +6223,19 @@ loadjs.ready('datatable', function() {
                 .request_level + '</td>\n' +
                 '              <td class="col-md-2 text-center">' + data_arr[i].created_time + '</td>\n' +
                 '              <td class="col-md-1 text-center">' + data_arr[i].interval + '</td>\n' +
-                '              <td class="col-md-1 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-1 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 persson_info + '">' + data_arr[i].creator_full_name + '</td>\n' +
-                '              <td class="col-md-2 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-2 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 data_arr[i].closed_by + '">' + data_arr[i].closed_by + '</td>\n' +
-                '              <td class="col-md-2 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-2 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 data_arr[i].address + '">' + data_arr[i].address + '</td>\n' +
-                '              <td class="col-md-2 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-2 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 data_arr[i].message + '">' + data_arr[i].message + '</td>\n' +
                 '            </tr>');
         }
 
         $(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-bs-toggle="tooltip"]').tooltip();
         });
 
         // change active class for a tags
@@ -6318,17 +6319,17 @@ loadjs.ready('datatable', function() {
                 '              <td class="col-md-1 text-center ' + level_label_class + '">' + data_arr[i]
                 .request_level + '</td>\n' +
                 '              <td class="col-md-1 text-center">' + data_arr[i].created_time + '</td>\n' +
-                '              <td class="col-md-1 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-1 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 persson_info + '">' + data_arr[i].creator_full_name + '</td>\n' +
-                '              <td class="col-md-2 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-2 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 data_arr[i].address + '">' + data_arr[i].address + '</td>\n' +
-                '              <td class="col-md-3 text-center non-overflow"  data-toggle="tooltip" data-container="body" title="' +
+                '              <td class="col-md-3 text-center non-overflow"  data-bs-toggle="tooltip" data-container="body" title="' +
                 data_arr[i].message + '">' + data_arr[i].message + '</td>\n' +
                 '            </tr>');
         }
 
         $(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-bs-toggle="tooltip"]').tooltip();
         });
 
         // change active class for a tags
@@ -6898,8 +6899,8 @@ loadjs.ready('datatable', function() {
 
 
 
-        $('[data-toggle="popover"]').popover();
-        // $('.issue-line').attr('data-toggle', 'modal');
+        $('[data-bs-toggle="popover"]').popover();
+        // $('.issue-line').attr('data-bs-toggle', 'modal');
 
         $('.issue-line').on('click', function() {
             let request_id = $(this).attr("data-request");
@@ -7218,42 +7219,8 @@ loadjs.ready('head', function() {
 }
 </style>
 
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"> -->
 
 
-<!-- <link rel="stylesheet" href="custom/request/css/bootstrap-datetimepicker.css" /> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.css" /> -->
-
-<!--<script src="custom/request/js/datetimepicker.min.js"></script>-->
-<!--<link rel="stylesheet" href="custom/request/css/datetimepicker.css" />-->
-
-
-
-
-
-
-
-
-
-
-
-<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-<!-- <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js"></script> -->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/selectize.min.js"></script>-->
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.min.css" />-->
-
-
-<!-- FILE UPLOAD SCRIPT FILE -->
-<!-- <script src="custom/request/js/custom-fileupload.js"></script>
-<script src="custom/request/js/request_add_content.js"></script> -->
-<!-- <script src="custom/request/js/bootstrap-datetimepicker.min.js"></script> -->
-<script>
-// loadjs.ready("head", function() {
-//     loadjs(["https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"]);
-// });
-</script>
 
 <?php
 function timediff($begin_time, $end_time)

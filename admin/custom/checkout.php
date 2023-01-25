@@ -33,7 +33,7 @@ if (floatval(number_format($_POST['payment_amount'], 2, '.', '')) <= 0.0) {
 	} else if ($_POST['product'] == 'Kijiji') {
 		header('Location: ../kijiji_listing.php');
 	} else {  //Lease
-		header('Location: ../tenant_portal.php');
+		header('Location: ../home');
 	}
 	exit(0);
 }
@@ -417,15 +417,15 @@ if ($gateway == "m1") {
 	//master 5454545454545454
 	//visa  4242424242424242
 ?>
-<form METHOD="POST" name="moneris_form" id="moneris_form" ACTION="<?= $action ?>">
-    <input type="hidden" name="ps_store_id" value="<?= $ps_store_id ?>">
-    <input type="hidden" name="hpp_key" value="<?= $hpp_key ?>">
-    <input type="hidden" name="charge_total" value="<?= str_replace(",", "", $total_payment) ?>">
-    <input type="hidden" name="order_id" value="<?= $invoice_no ?>">
-</form>
-<script>
-moneris_form.submit();
-</script>
+	<form METHOD="POST" name="moneris_form" id="moneris_form" ACTION="<?= $action ?>">
+		<input type="hidden" name="ps_store_id" value="<?= $ps_store_id ?>">
+		<input type="hidden" name="hpp_key" value="<?= $hpp_key ?>">
+		<input type="hidden" name="charge_total" value="<?= str_replace(",", "", $total_payment) ?>">
+		<input type="hidden" name="order_id" value="<?= $invoice_no ?>">
+	</form>
+	<script>
+		moneris_form.submit();
+	</script>
 <?
 }
 
@@ -443,81 +443,81 @@ if ($gateway == "m2") {
 
 	//$total_payment=1.00;
 ?>
-<form METHOD="POST" name="moneris_interac_form" id="moneris_interac_form" ACTION="<?= $action ?>">
-    <input type="hidden" name="ps_store_id" value="<?= $ps_store_id ?>">
-    <input type="hidden" name="hpp_key" value="<?= $hpp_key ?>">
-    <input type="hidden" name="charge_total" value="<?= str_replace(",", "", $total_payment) ?>">
-    <input type="hidden" name="order_id" value="<?= $invoice_no ?>">
-    <input type="hidden" name="note" value="<?= $tenant_month ?>">
-    <input type="hidden" name="email" value="<?= $tenant_emails ?>">
-    <input type="hidden" name="id1" value="<?= $invoice_no ?>">
-    <input type="hidden" name="description1" value="<?= $tenant_month ?>">
-    <input type="hidden" name="quantity1" value="1">
-    <input type="hidden" name="price1" value="<?= str_replace(",", "", $total_payment) ?>">
-    <input type="hidden" name="subtotal1" value="<?= str_replace(",", "", $total_payment) ?>">
+	<form METHOD="POST" name="moneris_interac_form" id="moneris_interac_form" ACTION="<?= $action ?>">
+		<input type="hidden" name="ps_store_id" value="<?= $ps_store_id ?>">
+		<input type="hidden" name="hpp_key" value="<?= $hpp_key ?>">
+		<input type="hidden" name="charge_total" value="<?= str_replace(",", "", $total_payment) ?>">
+		<input type="hidden" name="order_id" value="<?= $invoice_no ?>">
+		<input type="hidden" name="note" value="<?= $tenant_month ?>">
+		<input type="hidden" name="email" value="<?= $tenant_emails ?>">
+		<input type="hidden" name="id1" value="<?= $invoice_no ?>">
+		<input type="hidden" name="description1" value="<?= $tenant_month ?>">
+		<input type="hidden" name="quantity1" value="1">
+		<input type="hidden" name="price1" value="<?= str_replace(",", "", $total_payment) ?>">
+		<input type="hidden" name="subtotal1" value="<?= str_replace(",", "", $total_payment) ?>">
 
 
-    <input type="hidden" name="ship_first_name" value="<? if (!empty($tenant_names)) {
+		<input type="hidden" name="ship_first_name" value="<? if (!empty($tenant_names)) {
 																echo $tenant_names;
 															} else {
 																"";
 															} ?>">
-    <input type="hidden" name="ship_address_one" value="<?= $building_name . "-" . $unit_number ?>">
-    <input type="hidden" name="ship_phone" value="<?= $tenant_phones ?>">
-    <input type="hidden" name="ship_fax" value="<?= $tenant_emails ?>">
-    <input type="hidden" name="bill_first_name" value="<? if (!empty($tenant_names)) {
+		<input type="hidden" name="ship_address_one" value="<?= $building_name . "-" . $unit_number ?>">
+		<input type="hidden" name="ship_phone" value="<?= $tenant_phones ?>">
+		<input type="hidden" name="ship_fax" value="<?= $tenant_emails ?>">
+		<input type="hidden" name="bill_first_name" value="<? if (!empty($tenant_names)) {
 																echo $tenant_names;
 															} else {
 																"";
 															} ?>">
-    <input type="hidden" name="bill_address_one" value="<?= $building_name . "-" . $unit_number ?>">
-    <input type="hidden" name="bill_phone" value="<? if (!empty($tenant_phones)) {
+		<input type="hidden" name="bill_address_one" value="<?= $building_name . "-" . $unit_number ?>">
+		<input type="hidden" name="bill_phone" value="<? if (!empty($tenant_phones)) {
 															echo $tenant_phones;
 														} else {
 															"";
 														} ?>">
-    <input type="hidden" name="bill_fax" value="<? if (!empty($tenant_emails)) {
+		<input type="hidden" name="bill_fax" value="<? if (!empty($tenant_emails)) {
 														echo $tenant_emails;
 													} else {
 														"";
 													} ?>">
 
-</form>
-<script>
-moneris_interac_form.submit();
-</script>
+	</form>
+	<script>
+		moneris_interac_form.submit();
+	</script>
 <?
 }
 
 /* Cash payment method - send to the same moneris page */
 if ($gateway == "m3") {
 ?>
-<form METHOD="POST" name="cash_form" id="cash_form" ACTION="ExecutePayment_Cash.php">
-    <input type="hidden" name="ps_store_id" value="<?= $ps_store_id ?>">
-    <input type="hidden" name="hpp_key" value="<?= $hpp_key ?>">
-    <input type="hidden" name="charge_total" value="<?= str_replace(",", "", $total_payment) ?>">
-    <input type="hidden" name="order_id" value="<?= $invoice_no ?>">
-    <input type="hidden" name="note" value="<?= $tenant_month ?>">
-    <input type="hidden" name="email" value="<?= $tenant_emails ?>">
-    <input type="hidden" name="id1" value="<?= $invoice_no ?>">
-    <input type="hidden" name="description1" value="<?= $tenant_month ?>">
-    <input type="hidden" name="quantity1" value="1">
-    <input type="hidden" name="price1" value="<?= str_replace(",", "", $total_payment) ?>">
-    <input type="hidden" name="subtotal1" value="<?= str_replace(",", "", $total_payment) ?>">
+	<form METHOD="POST" name="cash_form" id="cash_form" ACTION="ExecutePayment_Cash.php">
+		<input type="hidden" name="ps_store_id" value="<?= $ps_store_id ?>">
+		<input type="hidden" name="hpp_key" value="<?= $hpp_key ?>">
+		<input type="hidden" name="charge_total" value="<?= str_replace(",", "", $total_payment) ?>">
+		<input type="hidden" name="order_id" value="<?= $invoice_no ?>">
+		<input type="hidden" name="note" value="<?= $tenant_month ?>">
+		<input type="hidden" name="email" value="<?= $tenant_emails ?>">
+		<input type="hidden" name="id1" value="<?= $invoice_no ?>">
+		<input type="hidden" name="description1" value="<?= $tenant_month ?>">
+		<input type="hidden" name="quantity1" value="1">
+		<input type="hidden" name="price1" value="<?= str_replace(",", "", $total_payment) ?>">
+		<input type="hidden" name="subtotal1" value="<?= str_replace(",", "", $total_payment) ?>">
 
 
-    <input type="hidden" name="ship_first_name" value="<?= $tenant_names ?>">
-    <input type="hidden" name="ship_address_one" value="<?= $building_name . "-" . $unit_number ?>">
-    <input type="hidden" name="ship_phone" value="<?= $tenant_phones ?>">
-    <input type="hidden" name="ship_fax" value="<?= $tenant_emails ?>">
-    <input type="hidden" name="bill_first_name" value="<?= $tenant_names ?>">
-    <input type="hidden" name="bill_address_one" value="<?= $building_name . "-" . $unit_number ?>">
-    <input type="hidden" name="bill_phone" value="<?= $tenant_phones ?>">
-    <input type="hidden" name="bill_fax" value="<?= $tenant_emails ?>">
-</form>
-<script>
-cash_form.submit();
-</script>
+		<input type="hidden" name="ship_first_name" value="<?= $tenant_names ?>">
+		<input type="hidden" name="ship_address_one" value="<?= $building_name . "-" . $unit_number ?>">
+		<input type="hidden" name="ship_phone" value="<?= $tenant_phones ?>">
+		<input type="hidden" name="ship_fax" value="<?= $tenant_emails ?>">
+		<input type="hidden" name="bill_first_name" value="<?= $tenant_names ?>">
+		<input type="hidden" name="bill_address_one" value="<?= $building_name . "-" . $unit_number ?>">
+		<input type="hidden" name="bill_phone" value="<?= $tenant_phones ?>">
+		<input type="hidden" name="bill_fax" value="<?= $tenant_emails ?>">
+	</form>
+	<script>
+		cash_form.submit();
+	</script>
 <?
 }
 ?>

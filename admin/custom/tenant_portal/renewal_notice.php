@@ -168,7 +168,7 @@ include('./renewal_notice_content.php')
                     // echo ($sqlupdate . "<br>");
                     $Crud->query($sqlupdate);
                     $Crud->execute();
-                    $sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE()
+                    $sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE(), last_day_renewal=DATE_ADD(CURDATE(), INTERVAL 30 DAY)
                     WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND lease_renewal_notice_id=$lease_renewal_notice_id";
                     // echo ($sqlupdate . "<br>");
                     $Crud->query($sqlupdate);
@@ -227,12 +227,10 @@ include('./renewal_notice_content.php')
                     case 2:
                         $comment = "Know Someone interested: " . $phone;
                         $lease_status_id = 9;
-                        $sign_update = ", is_signed=1, signed_date='$signed_date'";
                         break;
                     case 3:
                         $comment = "Skip";
                         $lease_status_id = 12;
-                        $sign_update = ", is_signed=1, signed_date='$signed_date'";
                         break;
                 }
                 $sql = "insert into history (table_id, user_id, history_type_id, open_datetime, subject, comments, client_data, employee_id,
@@ -243,13 +241,19 @@ include('./renewal_notice_content.php')
                 $Crud->execute();
                 $lastInsertId = $Crud->lastInsertId();
 
-                $sqlupdate = "UPDATE lease_infos SET renewal_notice_date=CURDATE(), renewal_notice_tenant_id=$tenant_id, comments=CONCAT(comments,'- Renewal Notice Date automatically added when it is viewed')
+                $sqlupdate = "UPDATE lease_infos SET renewal_notice_date=CURDATE(), renewal_notice_tenant_id=$tenant_id ,comments=CONCAT(comments,'- Renewal Notice Date automatically added when it is viewed')
                 WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND id=$lease_id";
                 $Crud->query($sqlupdate);
                 $Crud->execute();
 
-                $sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE(), lease_status_id=$lease_status_id $sign_update
+                $sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE(), last_day_renewal=DATE_ADD(CURDATE(), INTERVAL 30 DAY), lease_status_id=$lease_status_id $sign_update
                 WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND lease_id=$lease_id"; // and tenant_id=$tenant_id ; update for all tenants
+                // echo ($sqlupdate);
+                $Crud->query($sqlupdate);
+                $Crud->execute();
+                if (!empty($sign_update)) {
+                    $sqlupdate = "UPDATE lease_renewal_notice SET lease_status_id=$lease_status_id $sign_update WHERE lease_id=$lease_id"; // and tenant_id=$tenant_id ; update for all tenants
+                }
                 // echo ($sqlupdate);
                 $Crud->query($sqlupdate);
                 $Crud->execute();
@@ -319,7 +323,7 @@ include('./renewal_notice_content.php')
     <form id="renewForm" action="../renew_lease.php" method="post">
         <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
         <input type="hidden" name="length_of_lease" value="12">
-        <input type="hidden" name="lease_amount" value="<?= $total_amount ?>">
+        <input type="hidden" name="lease_amount" value="<?= $monthly_amount ?>">
         <input type="hidden" name="start_date_new" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
         <input type="hidden" name="end_date_new" value="<?= date("Y-m-d", strtotime($next_end_date)) ?>">
         <input type="hidden" name="move_in_date" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">

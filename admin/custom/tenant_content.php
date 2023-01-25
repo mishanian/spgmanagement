@@ -669,10 +669,10 @@ if ($next_due <= 0) {
                             ?>
                             <div class="headings_box">
                                 <ul>
-                                    <li class="pull-left"><a href="requests.php?unit_id=<?php echo $apartment_id; ?>"
+                                    <li class="pull-left"><a href="requests?unit_id=<?php echo $apartment_id; ?>"
                                             style="color: #7C7C7C">Request List</li>
                                     <li class="pull-right"><a
-                                            href="requests.php?direct=report&unit_id=<?php echo $apartment_id; ?>"><button
+                                            href="requests?direct=report&unit_id=<?php echo $apartment_id; ?>"><button
                                                 class="btn btn-primary"
                                                 <?php echo $allow_create_request == 0 ? 'style="display:none;" ' : '' ?>>Report
                                                 a Request</button></a></li>

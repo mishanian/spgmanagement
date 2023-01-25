@@ -2,6 +2,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+$today =  date("Y-m-d"); // "2023-01-06"; //
+$is_90_days = false;
+$is_175_days = true;
+
 $path = "./"; // default /custom if run from cron
 if (strpos($_SERVER['REQUEST_URI'], "cron_scripts") !== false) {
     $path = '../';
@@ -36,19 +41,18 @@ if (!empty($_GET['dd'])) {
 include($path . '../../pdo/dbconfig.php');
 $Crud = new CRUD($DB_con);
 
-
-
-$where = "lease_status_id IN(1,7) AND $where_building
+if ($is_90_days) {
+    $where = "lease_status_id IN(1,7) AND $where_building
 HAVING datediffrenew=CI.renewal_notification_day OR
 datediffnotif=CI.send_renewal_notification_after_notice OR
 datediffnotif=CI.send_renewal_notification_after_notice2
 OR $where_datediff";
 
-$where = "LI.id=2719";
-// $where = "LI.end_date<'2023-04-01' and LI.lease_status_id in (1,2,3,7,8,9,10,11,12)"; //Remove this where on production
-// $where = "LI.end_date<'2023-07-01' and LI.lease_status_id in (1,2,3,7,8,9,10,11,12)"; //Remove this where on production
+    $where = "LI.id=2719";
+    // $where = "LI.end_date<'2023-04-01' and LI.lease_status_id in (1,2,3,7,8,9,10,11,12)"; //Remove this where on production
+    // $where = "LI.end_date<'2023-07-01' and LI.lease_status_id in (1,2,3,7,8,9,10,11,12)"; //Remove this where on production
 
-$sqlSend = "SELECT LI.id as lease_id, LI.tenant_ids, LI.renewal_notice_date, LI.lease_status_id, LI.employee_id, LI.company_id,
+    $sqlSend = "SELECT LI.id as lease_id, LI.tenant_ids, LI.renewal_notice_date, LI.lease_status_id, LI.employee_id, LI.company_id,
 CI.renewal_notification_day, CI.send_renewal_notification_after_notice, CI.renewal_gap_day,
 CI.send_renewal_notification_after_notice2, building_name, unit_number, `start_date`, LI.end_date,
 BI.address, BI.city, BI.building_id, AI.apartment_id, PV.name as province_name , BI.postal_code ,
@@ -62,24 +66,99 @@ LEFT JOIN apartment_infos AI ON LI.apartment_id=AI.apartment_id
 LEFT JOIN provinces PV ON BI.province_id=PV.id
 WHERE $where
 ";
-// echo $sqlSend . "<br>";
-$Crud->query($sqlSend);
-$rows = $Crud->resultSet();
+
+
+    // echo $sqlSend . "<br>";
+    $Crud->query($sqlSend);
+    $rows = $Crud->resultSet();
 
 
 
-foreach ($rows as $row) {
-    // echo $row['tenant_ids']."<br>";
-    $end_date = "";
-    foreach ($row as $key => $value) {
-        // echo "$key=$value<br>\n";
-        $$key = $value;
+    foreach ($rows as $row) {
+        // echo $row['tenant_ids']."<br>";
+        $end_date = "";
+        foreach ($row as $key => $value) {
+            // echo "$key=$value<br>\n";
+            $$key = $value;
+        }
+
+        // echo "<hr>end date=" . $end_date . " end_date_onj=";
+
+        foreach (explode(",", $tenant_ids) as $tenant_id) {
+            //Find tenant Name
+            $sqlTenant = "select full_name as tenant_name, email as tenant_email from tenant_infos where tenant_id=$tenant_id";
+            $Crud->query($sqlTenant);
+            $rowTenant = $Crud->resultSingle();
+            $tenant_name = $rowTenant['tenant_name'];
+            $tenant_email = $rowTenant['tenant_email'];
+            $parking_amount = 0;
+            $parking_number = "";
+            $storage_number = "";
+            $storage_amount = 0;
+
+            $total_amount = $monthly_amount;
+            // $renewal_notice_date = date("Y-m-d"); //renewal_notice_date should not be date of sent, but date that open it.
+            $end_date_onj = date_create($end_date);
+            // echo $end_date_onj->format('Y-m-d H:i:s'), "<hr>";
+
+            $renewal_letter_date = date_format(date_add($end_date_onj, date_interval_create_from_date_string("-" . $renewal_notification_day . " days")), "Y-m-d");
+            // echo "end_date=$end_date";
+            // echo " end_date_onj=", $end_date_onj->format('Y-m-d H:i:s'), " renewal_notification_day=$renewal_notification_day renewal_letter_date=$renewal_letter_date<br> ";
+            $last_day_renewal = null;
+            if (!empty($renewal_notice_date)) {
+                $last_day_renewal = date_format(date_add(date_create($renewal_notice_date), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
+            }
+            $params = array(
+                "lease_id" => $lease_id, "tenant_id" => $tenant_id,
+                "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+                "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
+                "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date
+            );
+            // print_r($params);
+
+            $text = render_renewal($params);
+            // echo "<tr><td>Send to $tenant_name</td><td>$tenant_email</td><td>$end_date</td></tr>\n";
+            // echo $text;
+            // echo "<hr>";
+            $text .= "<h3><a href='https://spgmanagement.com/admin/custom/tenant_portal/renewal_notice.php?tenant_id=$tenant_id&lease_id=$lease_id' target='_blank'> Click here to sign the lease</a></h3>";
+            if ($email == 1) {
+                $text .= "<img src='https://spgmanagement.com/admin/custom/email_tracker.php?u=$tenant_id&h=13&id=$lease_id&e=$tenant_email&s=Important-Lease Renewal Notice - $building_name # $unit_number&c=Renewal Notification Email'>";
+            }
+            // if ($is_175_days) {
+            //     MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $tenant_email, $tenant_name, "Important - Lease Renewal Notice - $building_name # $unit_number", $text, false, "", "");
+            // }
+
+            $params['building_id'] = $building_id;
+            $params['apartment_id'] = $apartment_id;
+            $params['employee_id'] = $employee_id;
+            $params['company_id'] = $company_id;
+            $params['tenant_name'] = str_replace("'", "\'", $params['tenant_name']);
+            unset($params['lease_status_id']); //  lease_status_id should get from lease_infos not lease_renewal_notice (to have current lease status )
+            unset($params['email']); //  email should get from caller of the renewal_notice_content.php
+            unset($params['pdf']); //  email should get from caller of the renewal_notice_content.php
+            $sqlInsertInto = "INSERT IGNORE INTO lease_renewal_notice (" . implode(", ", array_keys($params)) . ") VALUES ('" . implode("','", array_values($params)) . "')";
+            // echo $sqlInsertInto . "<br>";
+            $insertIntoStmt = $DB_con->prepare($sqlInsertInto);
+            $insertIntoStmt->execute();
+            // die($text);
+        }
     }
-
-    // echo "<hr>end date=" . $end_date . " end_date_onj=";
-
-    foreach (explode(",", $tenant_ids) as $tenant_id) {
-        //Find tenant Name
+}
+if ($is_175_days) {
+    $sqlSend = "SELECT LRN.*,CI.renewal_gap_day,CI.renewal_notification_day, BI.building_name FROM lease_renewal_notice LRN
+    LEFT JOIN company_infos CI ON LRN.company_id=CI.id
+    LEFT JOIN building_infos BI ON LRN.building_id=BI.building_id
+    WHERE DATE_SUB(end_date, INTERVAL 175 DAY)='$today' ";
+    // echo $sqlSend;
+    $Crud->query($sqlSend);
+    $rows = $Crud->resultSet();
+    foreach ($rows as $row) {
+        // echo $row['tenant_id'] . "<br>";
+        $end_date = "";
+        foreach ($row as $key => $value) {
+            // echo "$key=$value<br>\n";
+            $$key = $value;
+        }
         $sqlTenant = "select full_name as tenant_name, email as tenant_email from tenant_infos where tenant_id=$tenant_id";
         $Crud->query($sqlTenant);
         $rowTenant = $Crud->resultSingle();
@@ -91,14 +170,11 @@ foreach ($rows as $row) {
         $storage_amount = 0;
 
         $total_amount = $monthly_amount;
-        // $renewal_notice_date = date("Y-m-d"); //renewal_notice_date should not be date of sent, but date that open it.
         $end_date_onj = date_create($end_date);
-        // echo $end_date_onj->format('Y-m-d H:i:s'), "<hr>";
 
         $renewal_letter_date = date_format(date_add($end_date_onj, date_interval_create_from_date_string("-" . $renewal_notification_day . " days")), "Y-m-d");
-        // echo "end_date=$end_date";
-        // echo " end_date_onj=", $end_date_onj->format('Y-m-d H:i:s'), " renewal_notification_day=$renewal_notification_day renewal_letter_date=$renewal_letter_date<br> ";
-        $last_day_renewal = NULL;
+        $last_day_renewal = null;
+        // die("renewal_notice_date=$renewal_notice_date renewal_gap_day=$renewal_gap_day");
         if (!empty($renewal_notice_date)) {
             $last_day_renewal = date_format(date_add(date_create($renewal_notice_date), date_interval_create_from_date_string("+" . $renewal_gap_day . " days")), "Y-m-d");
         }
@@ -111,28 +187,12 @@ foreach ($rows as $row) {
         // print_r($params);
 
         $text = render_renewal($params);
-        echo "<tr><td>Send to $tenant_name</td><td>$tenant_email</td><td>$end_date</td></tr>\n";
-        // echo $text;
-        // echo "<hr>";
-        $text .= "<h3><a href='https://spgmanagement.com/admin/custom/tenant_portal/renewal_notice.php?tenant_id=$tenant_id&lease_id=$lease_id' target='_blank'> Click here to sign the lease</a></h3>";
         if ($email == 1) {
             $text .= "<img src='https://spgmanagement.com/admin/custom/email_tracker.php?u=$tenant_id&h=13&id=$lease_id&e=$tenant_email&s=Important-Lease Renewal Notice - $building_name # $unit_number&c=Renewal Notification Email'>";
         }
+        // $tenant_email = "mishanian@yahoo.com";
+        echo "<tr><td>Send to $tenant_name</td><td>$tenant_email</td><td>$end_date</td></tr>\n";
         MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $tenant_email, $tenant_name, "Important - Lease Renewal Notice - $building_name # $unit_number", $text, false, "", "");
-
-        $params['building_id'] = $building_id;
-        $params['apartment_id'] = $apartment_id;
-        $params['employee_id'] = $employee_id;
-        $params['company_id'] = $company_id;
-        $params['tenant_name'] = str_replace("'", "\'", $params['tenant_name']);
-        unset($params['lease_status_id']); //  lease_status_id should get from lease_infos not lease_renewal_notice (to have current lease status )
-        unset($params['email']); //  email should get from caller of the renewal_notice_content.php
-        unset($params['pdf']); //  email should get from caller of the renewal_notice_content.php
-        $sqlInsertInto = "INSERT IGNORE INTO lease_renewal_notice (" . implode(", ", array_keys($params)) . ") VALUES ('" . implode("','", array_values($params)) . "')";
-        // echo $sqlInsertInto . "<br>";
-        $insertIntoStmt = $DB_con->prepare($sqlInsertInto);
-        $insertIntoStmt->execute();
-        // die($text);
     }
 }
 echo "</table><p>End of find relevant emails</p><hr>";
