@@ -7,6 +7,9 @@ include('../../../pdo/Class.Template.php');
 include('../sendSMSEmail.php');
 // $_POST['pay_slip_file']=$_FILES['pay_slip_file']['name'];
 // $_POST['bank_statement_file']=$_FILES['bank_statement_file']['name'];
+if (empty($_POST['signatureData'])) {
+  die("There is an error in the system. Please contact techsupport@spgmanagement.com with this error message: signatureData is empty for Credit Check Action.");
+}
 $signatureData = $_POST['signatureData'];
 unset($_POST["signatureData"]);
 unset($_POST["submit"]);
