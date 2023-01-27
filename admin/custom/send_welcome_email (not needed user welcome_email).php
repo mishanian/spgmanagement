@@ -28,7 +28,6 @@ $tenant_email = $tenant_infos['email'];
 $tenant_name = $tenant_infos['full_name'];
 $subject = "Home rental website credential";
 $title = "Credentials of Home Rental Website";
-// $bodyStaff1 = "A new <a href='https://www.spgmanagement.com/admin/credit_checkview.php?showdetail=&id=" . $last_id . "'>credit check</a> is added.";
 $bodyTenant1 = "Your lease is submitted. You can check the status of lease, report the issues online. <br>Your username: <b>" . $tenant_infos['username'] . "</b><br>Your Password: <b>" . $tenant_infos['userpass'] . "</b>";
 
 if (!empty($_GET['company_id'])) {

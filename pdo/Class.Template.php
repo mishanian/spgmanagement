@@ -34,7 +34,9 @@ class Template
     }
     // die(var_dump($company_id));
     $row = $DB_company->getCompanyInfo($company_id);
-
+    if ($row == false) {
+      die("Company not found");
+    }
     $company_name = $row['name'];
     $company_register = $row['registration_name'];
     $company_phone = $row['phone'];

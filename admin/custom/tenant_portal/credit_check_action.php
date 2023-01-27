@@ -33,7 +33,7 @@ $tenant_email = $_POST['tenant_email'];
 $tenant_name = $_POST['tenant_firstname'] . " " . $_POST['tenant_surname'];
 $subject = "The Credit Check is submitted";
 $title = "The Credit Check is submitted";
-$bodyStaff1 = "A new <a href='https://www.spgmanagement.com/admin/credit_checkview.php?showdetail=&id=" . $last_id . "'>credit check</a> is added.";
+$bodyStaff1 = "A new <a href='https://www.spgmanagement.com/admin/creditcheckedit/" . $last_id . "'>credit check</a> is added.";
 $bodyTenant1 = "Your credit check is submitted. You can check the status of credit check online. <br>Your username: <b>" . $_POST['userName'] . "</b><br>Your Password: <b>" . $_POST['userPass'] . "</b>";
 
 if (!empty($_GET['company_id'])) {
@@ -42,8 +42,8 @@ if (!empty($_GET['company_id'])) {
   $company_id = 9;
 } //SPG Canada
 
-//mail("apply@spg-canada.com","Credit Check","Hi, new <a href='https://www.spgmanagement.com/admin/credit_checkview.php?showdetail=&id=$last_id'>credit check</a> is added.", $headers); //apply@spg-canada.com
-$email_template = $TemplateObj->emailTemplate($title, '', 'Staff', $bodyStaff1, '', "https://www.spgmanagement.com/admin/credit_checkview.php?showdetail=&id=$last_id", 'credit check', $company_id, 0);
+//mail("apply@spg-canada.com","Credit Check","Hi, new <a href='https://www.spgmanagement.com/admin/creditcheckedit/$last_id'>credit check</a> is added.", $headers); //apply@spg-canada.com
+$email_template = $TemplateObj->emailTemplate($title, '', 'Staff', $bodyStaff1, '', "https://www.spgmanagement.com/admin/creditcheckedit/$last_id", 'credit check', $company_id, 0);
 $smtp_log = MySendEmail('info@mgmgmt.ca', 'Info - spgmanagement.com', 'apply@spg-canada.com', 'Apply', $subject, $email_template); // Send to Manager
 
 $email_template = $TemplateObj->emailTemplate($title, '', $tenant_name, $bodyTenant1, '', 'https://www.spgmanagement.com/admin/home', 'check progress', $company_id, 0);

@@ -226,36 +226,7 @@ if (!empty($_POST['submitted'])) {
                                 <div class="col-4"><strong> Total Lease Amount </strong></div>
                                 <div class="col-8">$<?= $total_amount ?> CAD</div>
                             </div>
-                            <!--
-                            <div class="row form-group">
-                                <div class="col-4"><strong> Storage Amount </strong></div>
-                                <div class="col-8">$<?php echo $row["storage_amount"]; ?> CAD</div>
-                            </div>
-                            <?php foreach ($parkingResult as $parking) {
-                                $bdName                    = $DB_building->getBdName($parking["building_id"]);
-                                $parking_amount_calculated += $parking["lease_amount"];
-                            ?>
-                            <input type="hidden" name="parking_ids[]"
-                                value="<?php echo $parking["parking_id"] . ',' . $parking["lease_amount"] . ',' . $parking["building_id"]; ?>" />
-                            <div class="row form-group">
-                                <div class="col-4"><strong>Parking Spot</strong></div>
-                                <div class="col-8">
-                                    <?php echo "$bdName : $parking[name] : $$parking[monthly_price]"; ?></strong>
-                                    CAD
-                                </div>
-                            </div>
-                            <?php
-                            }
-                            foreach ($storageResult as $storageSingle) { ?>
-                            <input type="hidden" name="lease_storage_ids[]"
-                                value="<?php echo $storageSingle["storage_id"] . ',' . $storageSingle["lease_amount"] . ',' . $storageSingle["building_id"]; ?>" />
-                            <?php }
-                            ?>
-                            <div class="row form-group">
-                                <div class="col-4"><strong>Parking Amount </strong></div>
-                                <div class="col-8">$<?php echo $parking_amount_calculated; ?>CAD</div>
-                            </div>
-                            -->
+
                             <div class="row form-group">
                                 <div class="col-4"><strong>Unit </strong></div>
                                 <div class="col-8"><?php echo $unit_number . " - $" . $total_amount . " CAD"; ?>
@@ -287,41 +258,7 @@ if (!empty($_POST['submitted'])) {
                                         id="lease_amount" size="6" value="<?= $monthly_price ?>"> CAD
                                 </div>
                             </div>
-                            <!--
-                            <div class="row form-group">
-                                <div class="col-4"><strong>Renew Parking Lease ?</strong></div>
-                                <div class="col-8">
-                                    <label class="radio-inline"><input type="radio" value="1"
-                                            name="renew_parking_lease_choice">Yes</label>
-                                    <label class="radio-inline"><input type="radio" value="0"
-                                            name="renew_parking_lease_choice" checked="checked">No</label>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-4"><strong>Parking Amount</strong></div>
-                                <div class="col-8">$ <input class="form-control" type="text" name="parking_amount"
-                                        id="lease_amount" size="6" value="<?php echo $parking_amount_calculated; ?>">
-                                    CAD
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-4"><strong>Storage Amount </strong></div>
-                                <div class="col-8">$ <input class="form-control" type="text" name="storage_amount"
-                                        id="lease_amount" size="6" value="<?php echo $row["storage_amount"] ?>"> CAD
-                                </div>
-                            </div>
-                            <?php foreach ($parkingResult as $parking) {
-                                $bdName = $DB_building->getBdName($parking["building_id"]);
-                            ?>
-                            <div class="row form-group">
-                                <div class="col-4"><strong>Parking Spot</strong></div>
-                                <div class="col-8">
-                                    <?php echo "$bdName : $parking[name] : $$parking[monthly_price]"; ?>
-                                    CAD
-                                </div>
-                            </div>
-                            <?php } ?>
-                            -->
+
                             <div class="row mt-2 form-group">
                                 <div class="col-4"><strong>Unit </strong></div>
                                 <div class="col-8"><a
@@ -383,19 +320,7 @@ if (!empty($_POST['submitted'])) {
         </script>
 
         <script type="text/javascript">
-        /*
-        modalform = new ew.Form("modalform", "view");
-        ew.createDateTimePicker("modalform", "start_date_new", {
-            // "ignoreReadonly": true,
-            "useCurrent": false,
-            "format": 0
-        });
-        ew.createDateTimePicker("modalform", "move_out_date_new_datepicker", {
-            // "ignoreReadonly": true,
-            "useCurrent": false,
-            "format": 0
-        });
-        */
+
         </script>
         <div class="row">
             <div class="col">

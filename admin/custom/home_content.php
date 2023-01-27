@@ -12,7 +12,7 @@ if (!empty($_SESSION['search_vendor_id']) || !empty($_SESSION['search_vendor_nam
     unset($_SESSION['search_vendor_name']);
 }
 
-if ((isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'changepwd') !== false)) {
+if ((isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'changepassword') !== false)) {
     header("Location: logout");
 }
 switch ($CUL) {
