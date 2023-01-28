@@ -11,7 +11,7 @@ function render_renewal($params)
 {
     extract($params);
     // die("lease_status_id=$lease_status_id last_day_renewal=$last_day_renewal empty=$empty");
-    $receive_date = !empty($renewal_notice_date) && $renewal_notice_date != "0000-00-00" ? $renewal_notice_date : date("Y-m-d");
+    $receive_date = !empty($renewal_notice_date) && $renewal_notice_date != "0000-00-00" ? $renewal_notice_date : "-";
     if (empty($empty)) {
         $empty = 0;
     }

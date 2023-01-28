@@ -2055,7 +2055,21 @@ class Request
 			//   $this->crud->bind(":server_ip",$_SERVER['SERVER_ADDR']);
 			$this->crud->bind(":open_datetime", date('Y-m-d H:i:s'));
 			$this->crud->execute();
-			return $this->crud->rowCount();
+			$count = $this->crud->rowCount();
+			if (in_array($history_type_id, [9, 10, 11, 12, 13])) { // Renewal Email is opened
+				$tenant_id = $user_id;
+				$lease_id = $table_id;
+				$sqlupdate = "UPDATE lease_infos SET renewal_notice_date=CURDATE(), renewal_notice_tenant_id=$tenant_id ,comments=CONCAT(comments,'- Renewal Notice Date automatically added when it is viewed')
+			WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND id=$lease_id";
+				$this->crud->query($sqlupdate);
+				$this->crud->execute();
+
+				$sqlupdate = "UPDATE lease_renewal_notice SET renewal_notice_date=CURDATE(), last_day_renewal=DATE_ADD(CURDATE(), INTERVAL 30 DAY)
+			WHERE (renewal_notice_date IS NULL OR renewal_notice_date='0000-00-00') AND lease_id=$lease_id"; // and tenant_id=$tenant_id ; update for all tenants
+				$this->crud->query($sqlupdate);
+				$this->crud->execute();
+			}
+			return $count;
 		} catch (PDOException $e) {
 			$e->getMessage();
 		}
