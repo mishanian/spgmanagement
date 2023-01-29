@@ -40,10 +40,11 @@ $body1 = <<<BODY
 <td><span style="color:darkblue; font-family: 'Arial'; font-size: 16px"><b>Email Proof Report</b></span><br>Company </td>
 <td align="right"><img src="../../images/logo.png"></td></tr>
 
+
 <tr><td colspan="2"><hr style="color:black;  background-color:black; height: 2px"></td></tr>
 
 <tr><td colspan="2"><table width="100%">
-<tr><td>Subject:</td><td>$title</td></tr>
+<tr><td>Subject:</td><td>$message_title</td></tr>
 <tr><td>Generate on:</td><td>$today</td></tr>
 <tr><td>Report number</td><td>$report_no</td></tr>
 </table></td></tr>
@@ -61,7 +62,7 @@ $body1 = <<<BODY
 
 <tr><td colspan="2"><b>Message</b><br>
 <table width="100%" align="center" style="border: 1px;" border="1" cellpadding="20">
-<tr><td>$content</td></tr>
+<tr><td>$message_body</td></tr>
 </table>
 
 <tr><td colspan="2">&nbsp;</td></tr>
@@ -99,7 +100,7 @@ $body2 = <<<BODY
 <tr><td colspan="2"><hr style="color:black;  background-color:black; height: 2px"></td></tr>
 
 <tr><td colspan="2"><table width="100%">
-<tr><td>Subject:</td><td>$title</td></tr>
+<tr><td>Subject:</td><td>$message_title</td></tr>
 <tr><td>Generate on:</td><td>$today</td></tr>
 <tr><td>Report number</td><td>$report_no</td></tr>
 </table></td></tr>
@@ -127,7 +128,7 @@ $body3 = <<<BODY
 <tr><td colspan="2"><hr style="color:black;  background-color:black; height: 2px"></td></tr>
 
 <tr><td colspan="2"><table width="100%">
-<tr><td>Subject:</td><td>$title</td></tr>
+<tr><td>Subject:</td><td>$message_title</td></tr>
 <tr><td>Generate on:</td><td>$today</td></tr>
 <tr><td>Report number</td><td>$report_no</td></tr>
 </table></td></tr>
