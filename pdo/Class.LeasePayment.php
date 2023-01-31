@@ -575,11 +575,48 @@ class LeasePayment
 		}
 	}
 
+	// lease invoices
+	public function addLeaseInvoices($lease_id, $employee_id, $company_id)
+	{
+		try {
+			$this->crud->query("SELECT * FROM lease_infos WHERE id IN (:lease_id)");
+			$this->crud->bind(":lease_id", $lease_id);
+			$leaseDetails = $this->crud->resultSingle();
+
+			$lease_amount = $leaseDetails['lease_amount'];
+			$lease_id = $leaseDetails['id'];
+			$start_date = date_create($leaseDetails['start_date']);
+			$length_of_lease = $leaseDetails['length_of_lease'];
+			$start_date = new \DateTime($leaseDetails['start_date']);
+			$end_date = new \DateTime($leaseDetails['end_date']);
+			$diff = date_diff($start_date, $end_date);
+			$diff = $diff->format("%y") * 12 + $diff->format("%m") + 1;
+			$payment_per_month = $lease_amount; ///$length_of_lease;
+			for ($i = 0; $i < $diff; $i++) {
+				$original_start_date = new \DateTime($leaseDetails['start_date']);
+				$du_date = $original_start_date->add(new \DateInterval('P' . $i . 'M'));
+				$du_date = $du_date->format('Y-m-d');
+				if ($i == 0) {
+					$invoice_type_id = 1;
+				} else {
+					$invoice_type_id = 2;
+				}
+				$query = "insert ignore into lease_payments (lease_id,invoice_type_id,due_date,lease_amount,total,outstanding, employee_id, company_id) values ($lease_id,$invoice_type_id,'$du_date',$payment_per_month,$payment_per_month,$payment_per_month," . $employee_id . "," . $company_id . ")";
+				echo $query . "<br>";
+				$this->crud->execute();
+			}
+			include_once("update_tables.php");
+			update_tables($lease_id, "lease_id");
+		} catch (PDOException $e) {
+			return $e->getMessage();
+		}
+	}
+
 	// Custom invoice - used in standalone payment page
 	public function addCustomInvoice($details)
 	{
 		try {
-			$this->crud->query("INSERT INTO lease_payments(lease_id,invoice_type_id,due_date,lease_amount,total,outstanding,payment_status_id,payment_method_id,comments) VALUES(:lease_id,:invoice_type_id,:due_date,:lease_amount,:total,:outstanding,:payment_status_id,:payment_method_id,:comments)");
+			$this->crud->query("INSERT INTO lease_payments (lease_id,invoice_type_id,due_date,lease_amount,total,outstanding,payment_status_id,payment_method_id,comments) VALUES(:lease_id,:invoice_type_id,:due_date,:lease_amount,:total,:outstanding,:payment_status_id,:payment_method_id,:comments)");
 			$this->crud->bind(":lease_id", $details["lease_id"]);
 			$this->crud->bind(":invoice_type_id", 3);
 			$this->crud->bind(":due_date", $details["due_date"]);

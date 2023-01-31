@@ -33,6 +33,18 @@ class Lease
         }
     }
 
+    public function getBuildingAndApartmentIdByLeaseId($lease_id)
+    {
+        try {
+            $this->crud->query("SELECT building_id, apartment_id FROM lease_infos WHERE id = :id");
+            $this->crud->bind(':id', $lease_id);
+            $row = $this->crud->resultSingle();
+            return $row;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function getLeaseInfo($apartment_id)
     {
         try {

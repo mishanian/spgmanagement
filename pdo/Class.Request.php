@@ -1131,7 +1131,8 @@ class Request
 			}
 		} else {
 			try {
-				$this->crud->query("SELECT building_infos.building_id AS building_id , building_name FROM  building_infos  WHERE building_infos.building_id = (SELECT MAX(lease_infos.building_id) FROM lease_infos WHERE find_in_set(:tenant_id,lease_infos.tenant_ids) AND lease_status_id IN (1,7,8,9))");
+				$query = "SELECT building_infos.building_id AS building_id , building_name FROM  building_infos  WHERE building_infos.building_id = (SELECT MAX(lease_infos.building_id) FROM lease_infos WHERE find_in_set(:tenant_id,lease_infos.tenant_ids) AND lease_status_id IN (1,7,8,9,10))";
+				$this->crud->query($query);
 				$this->crud->bind(":tenant_id", $user_id);
 				$result = $this->crud->resultSingle();
 				return $result;

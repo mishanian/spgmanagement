@@ -124,7 +124,7 @@ if (!empty($_POST['submitted'])) {
             $invoice_type_id = 2;
         }
 
-        $SelectSql = "insert into lease_payments (lease_id,invoice_type_id, due_date ,lease_amount,parking_amount,storage_amount, total,outstanding) values ($lease_id_new,$invoice_type_id,'$du_date',$lease_amount,$parking_amount, $storage_amount, $total_lease_amount,$total_lease_amount)";
+        $SelectSql = "insert into lease_payments (lease_id,invoice_type_id, due_date ,lease_amount,parking_amount,storage_amount, total,outstanding, employee_id, company_id) values ($lease_id_new,$invoice_type_id,'$du_date',$lease_amount,$parking_amount, $storage_amount, $total_lease_amount,$total_lease_amount, $employee_id, $company_id)";
         $statement = $DB_con->prepare($SelectSql);
         $statement->execute();
         //       $DB_con->commit();

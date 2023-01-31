@@ -328,7 +328,7 @@ $allProjectsRows = $DB_request->getUniqueProjects();
                     href="#current-issues"><?php echo $DB_snapshot->echot("Current Requests"); ?></a>
             </li>
 
-            <li id="past_issues_tabli"
+            <li id="past_issues_table"
                 class="nav-item <?php echo $view_past_request == 0 ? 'remove-for-tenant' : ''; ?> ">
                 <a class="nav-link " data-toggle="tab" href="#past-issues"
                     aria-controls="past-issues"><?php echo $DB_snapshot->echot("Past Requests"); ?></a>
@@ -340,25 +340,25 @@ $allProjectsRows = $DB_request->getUniqueProjects();
             </li>
             <?php } ?>
 
-            <li class="nav-item" id="bulletins_tabli"><a class="nav-link" data-toggle="tab" href="#bulletin"
+            <li class="nav-item" id="bulletins_table"><a class="nav-link" data-toggle="tab" href="#bulletin"
                     aria-controls="bulletin" data-toggle="tab"><?php echo $DB_snapshot->echot("Bulletins"); ?></a>
             </li>
 
             <?php if ($user_level != 5) { ?>
-            <li id="fixed_events_tabli" role="presentation"><a class="nav-link" data-toggle="tab" href="#fixed_events"
+            <li id="fixed_events_table" role="presentation"><a class="nav-link" data-toggle="tab" href="#fixed_events"
                     aria-controls="fixed_events"
                     data-toggle="tab"><?php echo $DB_snapshot->echot("Fixed Events"); ?></a>
             </li>
             <?php } ?>
 
             <?php if ($user_level == 23 || $user_level == 24) { ?>
-            <li class="nav-item" id="projects_tabli" role="presentation"><a class="nav-link" data-toggle="tab"
+            <li class="nav-item" id="projects_table" role="presentation"><a class="nav-link" data-toggle="tab"
                     href="#projects_table" aria-controls="projects_table"
                     data-toggle="tab"><?php echo $DB_snapshot->echot("Projects"); ?></a>
                 <?php } ?>
             </li>
-            <li class="nav-item" id="projects_requests_tabli" role="presentation"><a class="nav-link"
-                    style="display:none;" id="projects_requests_tabli_a" href="#projects_requests_table"
+            <li class="nav-item" id="projects_requests_table" role="presentation"><a class="nav-link"
+                    style="display:none;" id="projects_requests_table_a" href="#projects_requests_table"
                     aria-controls="projects_requests_table"
                     data-toggle="tab"><?php echo $DB_snapshot->echot("Vendor Requests"); ?></a>
             </li>
@@ -2350,7 +2350,7 @@ $allProjectsRows = $DB_request->getUniqueProjects();
                     </div>
                 </div>
 
-                <ul class="nav nav-tabs" role="tablist" style="margin-top: 10px;">
+                <ul class="nav nav-tabs" role="tablest" style="margin-top: 10px;">
                     <li role="presentation" class="active"><a id="communication_tag" href="#communication"
                             aria-controls="communication"><?php echo $DB_snapshot->echot("Communications"); ?></a>
                     </li>
@@ -2968,7 +2968,7 @@ $allProjectsRows = $DB_request->getUniqueProjects();
             </div>
             <div class="modal-body">
 
-                <ul class="nav nav-tabs" role="tablist" style="margin-top: 10px;">
+                <ul class="nav nav-tabs" role="tablest" style="margin-top: 10px;">
                     <li role="presentation" class="active"><a id="report_details_tag" href="#report_details"
                             aria-controls="report_details" role="tab"
                             data-toggle="tab"><?php echo $DB_snapshot->echot("Task Details"); ?></a>
@@ -4053,7 +4053,7 @@ $allProjectsRows = $DB_request->getUniqueProjects();
 
             <div class="modal-body">
 
-                <ul class="nav nav-tabs" role="tablist" style="margin-top: 10px;">
+                <ul class="nav nav-tabs" role="tablest" style="margin-top: 10px;">
                     <li role="presentation" class="active"><a id="bulletin_content_tag" href="#bulletin_content"
                             role="tab" aria-controls="bulletin_content"
                             data-toggle="tab"><?php echo $DB_snapshot->echot("Details"); ?></a>
@@ -4855,14 +4855,14 @@ loadjs.ready(['datatable'], function() {
         setTimeout(function() {
             if (location.search.indexOf('vid=') >= 0) {
                 // Vendor ID exists -
-                $("#fixed_events_tabli,#bulletins_tabli").hide();
+                $("#fixed_events_table,#bulletins_table").hide();
 
                 if (location.search.indexOf('rtype=') >= 0) {
                     rtype = (location.search.split('rtype=')[1] || '').split('&')[0];
                     if (rtype == "r") {
                         // Show the requests for the vendor
                         // $("#current_requests_filter").trigger("click");
-                        $("#projects_requests_tabli_a").show().trigger("click");
+                        $("#projects_requests_table_a").show().trigger("click");
                     } else {
                         // Show the projects for the vendor
                         $("#category-projects").trigger("click");
@@ -4925,14 +4925,14 @@ loadjs.ready(['datatable'], function() {
 
         // Show fixed events tab on Fixed event button click
         $("#category-fixed").on("click", function() {
-            // $("#fixed_events_tabli > a").toggleClass("hidden").trigger("click");
-            $("#fixed_events_tabli > a").trigger("click");
+            // $("#fixed_events_table > a").toggleClass("hidden").trigger("click");
+            $("#fixed_events_table > a").trigger("click");
         });
 
         // Show projects tab on projects button click in the filters dropdown
         $("#category-projects").on("click", function() {
-            // $("#projects_tabli > a").toggleClass("hidden").trigger("click");
-            $("#projects_tabli > a").trigger("click");
+            // $("#projects_table > a").toggleClass("hidden").trigger("click");
+            $("#projects_table > a").trigger("click");
         });
 
         $(".removeForRequestTaskType").hide();
@@ -8116,8 +8116,8 @@ loadjs.ready(['datatable'], function() {
         });
 
         $('#category-fixed').click(function(event) {
-            $("#fixed_events_tabli > a").trigger("click");
-            // $("#fixed_events_tabli").toggleClass("hidden");
+            $("#fixed_events_table > a").trigger("click");
+            // $("#fixed_events_table").toggleClass("hidden");
             filter_selected_id = "fixed";
         });
 

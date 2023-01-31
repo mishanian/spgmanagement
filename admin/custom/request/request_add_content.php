@@ -170,20 +170,23 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                             <div class="card-body bg-light">
 
                                 <ul class="nav nav-tabs" role="tablist" style="margin-top: 10px;">
-                                    <li role="presentation" class="nav-item active"><a class="nav-link active"
-                                            id="report_details_tag" href="#report_details"
-                                            aria-controls="report_details" role="tab"
-                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Task Details"); ?></a>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="report_details-tab" data-bs-toggle="tab"
+                                            data-bs-target="#report_details" type="button" role="tab"
+                                            aria-controls="report_details"
+                                            aria-selected="true"><?php echo $DB_snapshot->echot("Task Details"); ?></button>
                                     </li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link"
-                                            id="pictures_new_report_tag" class="removeForFixedEventType"
-                                            href="#pictures_new_report" aria-controls="pictures_new_report" role="tab"
-                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Pictures"); ?></a>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pictures_new_report-tab" data-bs-toggle="tab"
+                                            data-bs-target="#pictures_new_report" type="button" role="tab"
+                                            aria-controls="pictures_new_report"
+                                            aria-selected="false"><?php echo $DB_snapshot->echot("Pictures"); ?>5</button>
                                     </li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link"
-                                            id="additional_info_new_report_tag" href="#additional_info_new_report"
-                                            aria-controls="additional_info_new_report" role="tab"
-                                            data-bs-toggle="tab"><?php echo $DB_snapshot->echot("Additional Details"); ?></a>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="additional_info_new_report-tab"
+                                            data-bs-toggle="tab" data-bs-target="#additional_info_new_report"
+                                            type="button" role="tab" aria-controls="additional_info_new_report"
+                                            aria-selected="false"><?php echo $DB_snapshot->echot("Additional Details"); ?></button>
                                     </li>
                                     <li class="nav-item" role="presentation"><a class="nav-link"
                                             class="removeForFixedEventType remove-for-tenant"
@@ -196,7 +199,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
 
                                 <div class="tab-content" style="margin-top: 10px;">
 
-                                    <div role="tabpanel" class="tab-pane active" id="report_details">
+                                    <div role="tabpanel" class="tab-pane fade show active" id="report_details">
                                         <div class="reportAnIssue">
                                             <div class="form">
                                                 <form id="reportIssue" enctype="multipart/form-data">
@@ -421,19 +424,10 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                                         <div class="col-sm-12">
                                                             <div class="form-group row">
                                                                 <div class="col-sm-8 col-sm-offset-4">
-                                                                    <button type="button"
-                                                                        data-bs-target="#pictures_new_report_tag"
-                                                                        data-fixedevent-target="additional_info_new_report_tag"
-                                                                        href="#recipient_report"
-                                                                        aria-controls="recipient_report" role="tab"
-                                                                        data-bs-toggle="tab" type="button"
-                                                                        class="btn btn-warning reportNewTaskNextBtn"
-                                                                        id="reportNewTaskDetailNext"><?php echo $DB_snapshot->echot("Next"); ?>
-                                                                        <i class="fas fa-arrow-right"></i></button>
-                                                                    <!--                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">-->
-                                                                    <?php //echo $DB_snapshot->echot("Cancel");
-                                                                    ?>
-                                                                    <!--</button>-->
+                                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                                        data-bs-target="#pictures_new_report"
+                                                                        type="button"
+                                                                        role="tab"><?php echo $DB_snapshot->echot("Next"); ?>6</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -446,7 +440,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                         </div>
                                     </div>
 
-                                    <div role="tabpanel" class="tab-pane remove-for-tenant" id="recipient_report">
+                                    <div role="tabpanel" class="tab-pane fade remove-for-tenant" id="recipient_report">
 
                                         <div style="display:none;" class="handymanReport-div card card-default">
                                             <div class="card-header">Add Handyman to this Task</div>
@@ -682,9 +676,8 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                                     <div class="col-sm-8 col-sm-offset-4">
                                                         <button type="button"
                                                             data-bs-target="#additional_info_new_report_tag"
-                                                            data-fixedevent-target="additional_info_new_report_tag"
                                                             type="button"
-                                                            class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>
+                                                            class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>1
                                                             <i class="fas fa-arrow-right"></i></button>
                                                         <!--                                                        <button type="button" class="btn btn-default" data-dismiss="modal">-->
                                                         <?php //echo $DB_snapshot->echot("Cancel");
@@ -742,7 +735,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                                     <div class="col-sm-8 col-sm-offset-4">
                                                         <button data-bs-target="#additional_info_new_report_tag"
                                                             type="button"
-                                                            class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>
+                                                            class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>2
                                                             <i class="fas fa-arrow-right"></i></button>
                                                         <!--                                                        <button type="button" class="btn btn-default" data-dismiss="modal">-->
                                                         <?php //echo $DB_snapshot->echot("Cancel");
@@ -1127,9 +1120,9 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
                                             <div class="col-sm-12">
                                                 <div class="form-group row">
                                                     <div class="col-sm-8 col-sm-offset-4">
-                                                        <button data-bs-target="#additional_info_new_report_tag"
-                                                            type="button"
-                                                            class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>
+                                                        <button data-bs-target="#additional_info_new_report"
+                                                            data-bs-toggle="tab" type="button"
+                                                            class="btn btn-warning reportNewTaskNextBtn"><?php echo $DB_snapshot->echot("Next"); ?>3
                                                             <i class="fas fa-arrow-right"></i></button>
                                                         <!--                                                        <button type="button" class="btn btn-default" data-dismiss="modal">-->
                                                         <?php //echo $DB_snapshot->echot("Cancel");
@@ -3226,8 +3219,7 @@ $vendorInfos         = $requestHandler->vendor->getVendorsList();
 <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
 <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap2.min.css" />
-<!-- <script src="custom/request/js/bootstrap-datepicker.js"></script> -->
-<!-- <script src="custom/request/js/lightbox.min.js"></script> -->
+
 <script>
 loadjs.ready(["jquery", "head"], function() {
     loadjs([
@@ -3242,10 +3234,6 @@ loadjs.ready(["jquery", "head"], function() {
             "https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"
         ], 'datatable'
-        // , {
-        //   success: function() {alert("files are loaded"); },
-        //   error: function(pathsNotFound) { alert("error in loadjs"); }
-        // }
 
     );
 });
