@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$today = "2023-06-08"; // date("Y-m-d"); // "2023-01-06"; //
+$today = date("Y-m-d"); // "2023-06-08"; //  // "2023-01-06"; //
 $email_body_management = "Dear Management,<br><br>The renewal notice is generated:<br><br>";
 $generatedCount = 0;
 $sentCount = 0;

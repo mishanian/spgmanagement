@@ -32,19 +32,12 @@ class Template
     if ($employee_id == 0 && !empty($_SESSION['employee_id'])) {
       $employee_id = $_SESSION['employee_id'];
     }
-    // die(var_dump($company_id));
     $row = $DB_company->getCompanyInfo($company_id);
     if ($row == false) {
       die("Company not found");
     }
     $company_name = $row['name'];
-    $company_register = $row['registration_name'];
-    $company_phone = $row['phone'];
     $company_website = $row['website'];
-    $rowe = $DB_employee->getEmployeeInfo($employee_id);
-    $employee_name = $rowe['full_name'];
-    $employee_phone = $rowe['phone_number'];
-    $employee_email = $rowe['email'];
     $email_content = "
 <div align=\"center\" style=\"text-align: center; width:90%; background-color:#E8E8E8;\">
   <table align=\"center\" cellspacing=\"0\" cellpadding=\"0\" style=\"max-width:600px; background:#E8E8E8;\">
