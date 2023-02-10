@@ -59,9 +59,10 @@ include('./renewal_notice_content.php')
         extract($row);
         $params = array(
             "lease_id" => $lease_id, "tenant_id" => $tenant_id,
-            "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+            "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
             "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
-            "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date
+            "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date,
+            "terms_en" => $terms_en, "terms_fr" => $terms_fr
         );
         // die(var_dump($params));
         $text = render_renewal($params);

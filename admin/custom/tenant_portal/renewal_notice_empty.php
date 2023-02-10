@@ -19,23 +19,22 @@ include('./renewal_notice_content.php')
     <title>Renewal Notice</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-    table {
-        width: 100%;
-    }
+        table {
+            width: 100%;
+        }
 
-    #signature {
-        width: 300px;
-        height: 200px;
-        border: 1px solid black;
-    }
+        #signature {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
     </style>
     <style media="print">
-    p {
-        line-height: 150%;
-    }
+        p {
+            line-height: 150%;
+        }
     </style>
 </head>
 
@@ -105,9 +104,10 @@ include('./renewal_notice_content.php')
             $tenant_email = $rowTenant['tenant_email'];
             $params = array(
                 "lease_id" => $lease_id, "tenant_id" => $tenant_id,
-                "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+                "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
                 "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
-                "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 1, "renewal_letter_date" => $renewal_letter_date
+                "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 1, "renewal_letter_date" => $renewal_letter_date,
+                "terms_en" => $terms_en, "terms_fr" => $terms_fr
             );
             $text = render_renewal($params);
 
@@ -133,9 +133,10 @@ include('./renewal_notice_content.php')
             // $params['tenant_name'] = str_replace("'", "\'", $params['tenant_name']);
             $params = array(
                 "lease_id" => $lease_id, "tenant_id" => $tenant_id,
-                "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+                "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
                 "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
-                "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 1, "renewal_letter_date" => $renewal_letter_date
+                "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 1, "renewal_letter_date" => $renewal_letter_date,
+                "terms_en" => $terms_en, "terms_fr" => $terms_fr
             );
             $text = render_renewal($params);
         }

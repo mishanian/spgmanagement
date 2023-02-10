@@ -20,6 +20,25 @@ class Request
 
 	// -------------------  basic info -----------------------
 
+
+	public function get_tenant_requests($tenant_id, $apartment_id)
+	{
+		try {
+			$sql = "SELECT *, RS.name as request_status, RT.name as request_type, RI.id as request_id FROM request_infos RI
+			left join request_status RS ON RI.status_id=RS.id
+			left join request_types RT ON RI.request_type_id=RT.id
+			WHERE employee_id=:tenant_id AND apartment_id=:apartment_id order by RI.id desc";
+			$this->crud->query($sql);
+			$this->crud->bind(":tenant_id", $tenant_id);
+			$this->crud->bind(":apartment_id", $apartment_id);
+			$result = $this->crud->resultset();
+			return $result;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+
 	/**
 	 * get the detailed related info about the request
 	 * info list :
@@ -248,7 +267,7 @@ class Request
 			$requestAssigneesCriteria = "SELECT request_id  FROM request_assignees $userIdAdminrequestAssigneesCriteria";
 			//	die("additional_criteria=".$additional_criteria);
 			$queryString
-				= "SELECT request_infos.id,task_type,vendor_id,is_active,project_name,project_id,contract_id,datetime_from,building_id,apartment_id,location,employee_id,request_type_id,request_category,
+				= "SELECT request_infos.id,task_type,vendor_id,request_infos.is_active,project_name,project_id,contract_id,datetime_from,building_id,apartment_id,location,employee_id,request_type_id,request_category,
 					request_types.name AS request_type, status_id, approveVisit, timeFromVisit, timeToVisit, message,closed_by, entry_datetime AS created_time,
 					(if(request_infos.status_id IN (3,4,14,15,16,17,18,19,20,22),'closed','open')) AS issue_status,(SELECT issue_past_after_days FROM building_infos
 					WHERE building_infos.building_id = request_infos.building_id) AS issue_past_after_days,
@@ -285,7 +304,7 @@ class Request
 		//For influence the last_update_time if user is tenant (only consider public communications)
 		//if_seen_by_tenant = 1
 		try {
-			$this->crud->query("SELECT request_infos.id,building_id,apartment_id,is_active,location,employee_id,request_type_id,task_type,request_category, request_types.name AS request_type,status_id,approveVisit, timeFromVisit, timeToVisit,message, closed_by, entry_datetime AS created_time,
+			$this->crud->query("SELECT request_infos.id,building_id,apartment_id,request_infos.is_active, request_infos.status_id, location,employee_id,request_type_id,task_type,request_category, request_types.name AS request_type,status_id,approveVisit, timeFromVisit, timeToVisit,message, closed_by, entry_datetime AS created_time,
                                         (if(request_infos.status_id IN (3,4,14,15,16,17,18,19,20,22),'closed','open')) AS issue_status,(SELECT issue_past_after_days FROM building_infos WHERE building_infos.building_id = request_infos.building_id) AS issue_past_after_days,
                                         (SELECT MAX(last_access_time) FROM request_assignees WHERE request_id = request_infos.id AND user_id = :user_id_1) AS last_access_time,
                                         (ifnull((SELECT MAX(entry_date) FROM request_communications WHERE request_id = request_infos.id AND if_seen_by_tenant = 1 ORDER BY entry_date DESC limit 1),entry_datetime )) AS last_update_time

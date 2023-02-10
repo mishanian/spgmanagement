@@ -160,4 +160,3 @@ LI.start_date=(SELECT MAX(start_date) FROM lease_infos WHERE apartment_id=APP.ap
 }
 
 update_tables("", "");
-// die("done");

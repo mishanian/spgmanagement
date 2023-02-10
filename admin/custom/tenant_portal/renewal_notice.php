@@ -20,24 +20,23 @@ include('./renewal_notice_content.php')
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php if (empty($pdf)) { ?>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <?php } ?>
     <style>
-    #signature {
-        width: 300px;
-        height: 200px;
-        border: 1px solid black;
-    }
+        #signature {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
 
-    .tbl {
-        width: 550pt;
-    }
+        .tbl {
+            width: 550pt;
+        }
     </style>
     <style media="print">
-    p {
-        line-height: 150%;
-    }
+        p {
+            line-height: 150%;
+        }
     </style>
 </head>
 
@@ -80,13 +79,13 @@ include('./renewal_notice_content.php')
             $results = $results_history;
             $renewal_notice_date = $results['open_datetime'];
             extract($results); ?>
-    <div class="container"><br /><br /><br />
-        <p>You have already signed the lease.
-            <?php if (file_exists("../../files/renewal_notice/renewal_notice_l" . $lease_id . "_t" . $tenant_id . ".pdf")) {
+            <div class="container"><br /><br /><br />
+                <p>You have already signed the lease.
+                    <?php if (file_exists("../../files/renewal_notice/renewal_notice_l" . $lease_id . "_t" . $tenant_id . ".pdf")) {
                         console_log("<h1>1.1 File Exist</h1>"); ?>
-            <a target='_blank' href=<?= $PDF_file_name ?>>Download the sign PDF</a>
-            <br><a href='../../home?skip=1'>Home Page</a>
-            <?php
+                        <a target='_blank' href=<?= $PDF_file_name ?>>Download the sign PDF</a>
+                        <br><a href='../../home?skip=1'>Home Page</a>
+                    <?php
                         die();
                     } else {
                         console_log("<h1>1.1 File Not Exist</h1>");
@@ -109,18 +108,19 @@ include('./renewal_notice_content.php')
                         $pdf = 1;
                         $params = array(
                             "lease_id" => $lease_id, "tenant_id" => $tenant_id,
-                            "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+                            "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
                             "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
-                            "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date
+                            "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date,
+                            "terms_en" => $terms_en, "terms_fr" => $terms_fr
                         );
 
 
                         $text = render_renewal($params);
                         generatePDF($PDF_file_name, $text); ?>
-            <a target='_blank' href=<?= $PDF_file_name ?>>Download the generated sign PDF</a><br>
-            <a href='../../home?skip=1'>Home Page</a>
-        </p>
-    </div>
+                        <a target='_blank' href=<?= $PDF_file_name ?>>Download the generated sign PDF</a><br>
+                        <a href='../../home?skip=1'>Home Page</a>
+                </p>
+            </div>
     <?php
                     }
                     die();
@@ -294,9 +294,10 @@ include('./renewal_notice_content.php')
                 console_log("renewal_notice_date=" . $renewal_notice_date);
                 $params = array(
                     "lease_id" => $lease_id, "tenant_id" => $tenant_id,
-                    "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+                    "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
                     "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
-                    "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date
+                    "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date,
+                    "terms_en" => $terms_en, "terms_fr" => $terms_fr
                 );
                 // echo "params=";
                 // die(var_dump($params));
@@ -310,8 +311,7 @@ include('./renewal_notice_content.php')
     ?>
     <div class="container"><br /><br /><br />Thanks for your collaboration. <a href='../../home?skip=1'>Home Page</a>
         <br />
-        <a target="_blank"
-            href=<?= "../../files/renewal_notice/renewal_notice_l" . $lease_id . "_t" . $tenant_id . ".pdf" ?>>Download
+        <a target="_blank" href=<?= "../../files/renewal_notice/renewal_notice_l" . $lease_id . "_t" . $tenant_id . ".pdf" ?>>Download
             the sign PDF</a>
         <!-- <button class="btn btn-primary" onclick="self.close()">Close</button> -->
     </div>
@@ -319,28 +319,27 @@ include('./renewal_notice_content.php')
                     $next_start_date = date('Y-m-d', strtotime($end_date . ' + 1 days'));
                     $next_end_date = date('Y-m-d', strtotime($end_date . ' + 365 days'));
     ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <form id="renewForm" action="../renew_lease.php" method="post">
-        <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
-        <input type="hidden" name="length_of_lease" value="12">
-        <input type="hidden" name="lease_amount" value="<?= $monthly_amount ?>">
-        <input type="hidden" name="start_date_new" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
-        <input type="hidden" name="end_date_new" value="<?= date("Y-m-d", strtotime($next_end_date)) ?>">
-        <input type="hidden" name="move_in_date" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
-        <input type="hidden" name="move_out_date_new_datepicker"
-            value="<?= date("Y-m-d", strtotime($next_end_date)) ?>">
-        <input type="hidden" name="comments" value="">
-        <!-- This lease is renewed by signed on tenant portal <?= date("Y-m-d") ?> -->
-        <input type="hidden" name="renew_parking_lease_choice" value="1">
-        <input type="hidden" name="submitted" value="submitted">
-        <input type="hidden" name="signed_on_portal" value="1">
-    </form>
-    <script>
-    var data = $('#renewForm').serializeArray();
-    $.post("../renew_lease.php", data, function(result) {
-        alert(result);
-    });
-    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <form id="renewForm" action="../renew_lease.php" method="post">
+            <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
+            <input type="hidden" name="next_length_of_lease" value="12">
+            <input type="hidden" name="lease_amount" value="<?= $monthly_amount ?>">
+            <input type="hidden" name="start_date_new" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
+            <input type="hidden" name="end_date_new" value="<?= date("Y-m-d", strtotime($next_end_date)) ?>">
+            <input type="hidden" name="move_in_date" value="<?= date("Y-m-d", strtotime($next_start_date)) ?>">
+            <input type="hidden" name="move_out_date_new_datepicker" value="<?= date("Y-m-d", strtotime($next_end_date)) ?>">
+            <input type="hidden" name="comments" value="">
+            <!-- This lease is renewed by signed on tenant portal <?= date("Y-m-d") ?> -->
+            <input type="hidden" name="renew_parking_lease_choice" value="1">
+            <input type="hidden" name="submitted" value="submitted">
+            <input type="hidden" name="signed_on_portal" value="1">
+        </form>
+        <script>
+            var data = $('#renewForm').serializeArray();
+            $.post("../renew_lease.php", data, function(result) {
+                alert(result);
+            });
+        </script>
     <?php
                     console_log("Renew ajax submitted");
                 } ?>
@@ -352,14 +351,14 @@ include('./renewal_notice_content.php')
 <?php if (empty($pdf)) {
     console_log("No PDF -> Generate Form for renewal_notice.php"); ?>
 
-<form action="renewal_notice.php" method="post" enctype="multipart/form-data" name="rform" id="rform">
-    <input type="hidden" name="tenant_id" value="<?= $tenant_id ?>">
-    <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
-    <input type="hidden" name="length_of_lease" value="12">
-    <input type="hidden" name="lease_amount" value="<?= $total_amount ?>">
-    <input type="hidden" name="company_id" value="<?= $company_id ?>">
-    <input type="hidden" name="employee_id" value="<?= $employee_id ?>">
-    <div class="container">
+    <form action="renewal_notice.php" method="post" enctype="multipart/form-data" name="rform" id="rform">
+        <input type="hidden" name="tenant_id" value="<?= $tenant_id ?>">
+        <input type="hidden" name="lease_id" value="<?= $lease_id ?>">
+        <input type="hidden" name="next_length_of_lease" value="12">
+        <input type="hidden" name="lease_amount" value="<?= $total_amount ?>">
+        <input type="hidden" name="company_id" value="<?= $company_id ?>">
+        <input type="hidden" name="employee_id" value="<?= $employee_id ?>">
+        <div class="container">
         <?php
     }
     //show renewal contents
@@ -386,47 +385,48 @@ include('./renewal_notice_content.php')
     extract($row);
     $params = array(
         "lease_id" => $lease_id, "tenant_id" => $tenant_id,
-        "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+        "sign" => $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
         "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal" => $last_day_renewal,
-        "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date
+        "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed" => $is_signed, "email" => $email, "empty" => 0, "renewal_letter_date" => $renewal_letter_date,
+        "terms_en" => $terms_en, "terms_fr" => $terms_fr
     );
     // var_dump($params);
     $text = render_renewal($params);
     echo $text;
     if (empty($pdf)) { ?>
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
         </script> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.10/dist/signature_pad.umd.min.js"></script>
-        <?php
+            <!-- <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script> -->
+            <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.10/dist/signature_pad.umd.min.js"></script>
+            <?php
             console_log("Generate Signature lease_status_id=$lease_status_id");
             if (empty($pdf) && in_array($lease_status_id, array(1, 7))) { ?>
-        <script>
-        // $(document).ready(function() {
-        $(document).ready(function() {
+                <script>
+                    // $(document).ready(function() {
+                    $(document).ready(function() {
 
-            window.signaturePad = new SignaturePad(document.getElementById('signature-pad'));
+                        window.signaturePad = new SignaturePad(document.getElementById('signature-pad'));
 
-            $('#rform').submit(function() {
-                var data = window.signaturePad.toDataURL('image/png');
-                $('#signatureData').val(data);
+                        $('#rform').submit(function() {
+                            var data = window.signaturePad.toDataURL('image/png');
+                            $('#signatureData').val(data);
 
-                if (!$("input[name='accept']:checked").val()) {
-                    alert('Please select any options of renewal or not renewal');
-                    return false;
-                }
-                //alert($('#signatureData').val());
-                if (window.signaturePad.isEmpty()) {
-                    alert('Please Sign below of the page');
-                    return false;
-                }
+                            if (!$("input[name='accept']:checked").val()) {
+                                alert('Please select any options of renewal or not renewal');
+                                return false;
+                            }
+                            //alert($('#signatureData').val());
+                            if (window.signaturePad.isEmpty()) {
+                                alert('Please Sign below of the page');
+                                return false;
+                            }
 
 
-            });
-        })
-        </script>
+                        });
+                    })
+                </script>
         <?php } // if(empty($pdf) && in_array($lease_status_id,array(1,7))){
 
 

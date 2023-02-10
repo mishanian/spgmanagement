@@ -24,6 +24,7 @@ switch ($CUL) {
     case 23: // Project Manager
     case 24: // Project and Property Manager
         include_once("homepage/home_content_employees.php");
+        echo "<hr><h3>Level=$CUL</h3>";
         break;
     case 14: //vendor
         include_once("home_content_vendors.php");

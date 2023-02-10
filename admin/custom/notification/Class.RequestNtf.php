@@ -24,17 +24,23 @@ class RequestNtf
 
   function __construct($request_id)
   {
-    if (getcwd() == "/home/beavertest/public_html/admin") {
-      include_once("../pdo/dbconfig.php");
+    if (strpos(getcwd(), "admin") != false) {
+      $path = "..";
     }
-    if (getcwd() == "/home/beavertest/public_html/admin/custom") {
-      include_once("../../pdo/dbconfig.php");
+    if (strpos(getcwd(), "custom") != false) {
+      $path = "../..";
     }
-    if (getcwd() == "/home/beavertest/public_html/admin/custom/invoice_receipt") {
-      include_once("../../../pdo/dbconfig.php");
+    if (strpos(getcwd(), "invoice_receipt") != false) {
+      $path = "../../..";
     }
+    include_once($path . "/pdo/dbconfig.php");
+    if (!class_exists('Request')) {
+      include($path . "/pdo/Class.Request.php");
+    }
+    $DB_request_ntf = new Request($DB_con);
     $record = $DB_request_ntf->get_request_info($request_id);
-    $this->request_no = 'RQST' . ($record['request_id'] + 1000000);
+    die(var_dump($record));
+    $this->request_no = 'RQST' . ($record['id'] + 1000000);
     $this->building_name = $record['building'];
     $this->building_pic = 'http://www.spgmanagement.com/admin/files/building_pictures/' . $record['building_pic'];
     $this->unit_number = $record['unit_number'];

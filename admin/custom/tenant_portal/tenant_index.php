@@ -1,4 +1,3 @@
-<!-- <script src="https://cdn.rawgit.com/muicss/loadjs/4.2.0/dist/loadjs.min.js"></script><script>var loadjs = require('loadjs');</script> -->
 <? ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -9,18 +8,6 @@ error_reporting(E_ALL);
 <link href="custom/tenant_portal/css/style.css" rel="stylesheet" type="text/css">
 
 <link href="custom/tenant_portal/css/responsive.css" rel="stylesheet" type="text/css">
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-<!--[if lt IE 9]>
-
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-<![endif]-->
 
 <?php
 
@@ -80,9 +67,9 @@ for ($i = 0; $i < count($LeaseInfos); $i++) {
     }
 
     if ($i == 0) {
-        echo "<li  data-aptid='" . $apartment_id . "' class='nav-item'> <a class='nav-link active' style='font-size: 14px' data-aptid='" . $apartment_id . "' data-toggle=\"tab\" href='#b$i'>$building_name - $unit_number - $lease_status_name </a></li>\n"; //- ".$tenant_infos['full_name']."
+        echo "<li  data-aptid='" . $apartment_id . "' class='nav-item'> <a class='nav-link active' style='font-size: 14px' data-aptid='" . $apartment_id . "' data-bs-toggle=\"tab\" href='#b$i'>$building_name - $unit_number - $lease_status_name </a></li>\n"; //- ".$tenant_infos['full_name']."
     } else
-        echo "<li  data-aptid='" . $apartment_id . "' class='nav-item' ><a class='nav-link' data-aptid='" . $apartment_id . "' style='font-size: 14px'  data-toggle=\"tab\" href='#b$i'>$building_name- $unit_number - $lease_status_name </a></li>\n"; //- ".$tenant_infos['full_name']."
+        echo "<li  data-aptid='" . $apartment_id . "' class='nav-item' ><a class='nav-link' data-aptid='" . $apartment_id . "' style='font-size: 14px'  data-bs-toggle=\"tab\" href='#b$i'>$building_name- $unit_number - $lease_status_name </a></li>\n"; //- ".$tenant_infos['full_name']."
 }
 
 

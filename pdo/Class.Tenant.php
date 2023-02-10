@@ -297,7 +297,7 @@ class Tenant
 	{
 		// echo ("$user_id, $unit_id");
 		try {
-			$sql = "SELECT * FROM bulletins WHERE issue_from<=CURDATE() AND issue_to>=CURDATE() AND is_active=1 AND  find_in_set(:unit_id, apartment_ids) AND building_id = (SELECT DISTINCT building_id FROM lease_infos WHERE find_in_set(:user_id,tenant_ids) AND lease_status_id IN (1,2,7,8,9,10) AND apartment_id = :unit_id) 
+			$sql = "SELECT * FROM bulletins WHERE issue_from<=CURDATE() AND issue_to>=CURDATE() AND is_active=1 AND  find_in_set(:unit_id, apartment_ids) AND building_id = (SELECT DISTINCT building_id FROM lease_infos WHERE find_in_set(:user_id,tenant_ids) AND lease_status_id IN (1,2,7,8,9,10) AND apartment_id = :unit_id)
 			AND issue_from <= (SELECT distinct MAX(start_date) FROM lease_infos WHERE FIND_IN_SET(:user_id, tenant_ids) AND lease_status_id IN (1,2,7,8,9,10) AND apartment_id = :unit_id)
 			AND issue_to >= (SELECT distinct MIN(end_date) FROM lease_infos WHERE FIND_IN_SET(:user_id, tenant_ids) AND lease_status_id IN (1,2,7,8,9,10) AND apartment_id = :unit_id)
 			order by create_time desc";

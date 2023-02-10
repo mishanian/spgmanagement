@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // $params = array("lease_id"=>$lease_id,"tenant_id"=>$tenant_id,
-//     "sign"=> $sign, "logo" => $logo, "end_date" => $end_date, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
+//     "sign"=> $sign, "logo" => $logo, "end_date" => $end_date, "next_length_of_lease" => $next_length_of_lease, "pdf" => $pdf, "renewal_notice_date" => $renewal_notice_date, "unit_number" => $unit_number, "address" => $address,
 //     "city" => $city, "province_name" => $province_name, "postal_code" => $postal_code,  "tenant_name" => $tenant_name, "last_day_renewal"=>$last_day_renewal,
 //     "monthly_amount" => $monthly_amount, "lease_status_id" => $lease_status_id, "is_signed"=>$is_signed, "email"=>$email, "renewal_letter_date"=>$renewal_letter_date,
 // );
@@ -20,7 +20,7 @@ function render_renewal($params)
     }
     $end_date = date("Y-m-t", strtotime($end_date));
     $next_start_date = date('Y-m-d', strtotime($end_date . ' + 1 days'));
-    $next_end_date = date("Y-m-t", strtotime($end_date . ' + 365 days'));
+    $next_end_date = date("Y-m-t", strtotime($end_date . " + $next_length_of_lease days"));
     // die("end_date=$end_date next_start_date=$next_start_date next_end_date=$next_end_date");
     if ($pdf == 1 || $email == 1) {
         $table_class = "  width: 100%;";
@@ -106,8 +106,26 @@ function render_renewal($params)
 
 
         </td>
+        </tr>";
 
-        </tr>
+    if (!empty($terms_en) && !empty($terms_fr)) {
+        $text .= "
+            <tr>
+                <td title='English' style='width:50%; word-wrap:break-word; vertical-align: top;'>
+                    <p>
+                        $terms_en
+                    </p>
+                </td>
+                <td title='French' style='width:50%; word-wrap:break-word; vertical-align: top;'>
+                    <p>
+                        $terms_fr
+                    </p>
+                </td>
+            </tr>";
+    }
+
+
+    $text .= "
         <tr>
             <td colspan='2'>";
 
