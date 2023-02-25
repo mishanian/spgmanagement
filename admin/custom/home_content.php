@@ -5,7 +5,9 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 $CUL = PHPMaker2023\spgmanagement\CurrentUserLevel();
-
+if ($CUL == 25 && !empty($_SESSION['UserID'])) {
+    header("Location: logout");
+}
 //if(empty($_SESSION['UserID']) || empty($_SESSION['company_id']) ){header("Location: logout.php"); }//&& $CUL!="-1"
 if (!empty($_SESSION['search_vendor_id']) || !empty($_SESSION['search_vendor_name'])) {
     unset($_SESSION['search_vendor_id']);
@@ -57,12 +59,12 @@ switch ($CUL) {
     default:
         // include_once("home_content_employees.php");
         // include_once("homepage/home_content_employees.php");
-        echo "Please contact supprt with your detail information (level=$CUL) on techsupport@spgmanagement.com ";
+        echo "Please contact support with your detail information (level=$CUL) on techsupport@spgmanagement.com ";
 }
 // die("ul=".$_SESSION['UserLevel']);
 
 ?><style>
-h3 {
-    font-size: 1.3125rem !important;
-}
+    h3 {
+        font-size: 1.3125rem !important;
+    }
 </style>

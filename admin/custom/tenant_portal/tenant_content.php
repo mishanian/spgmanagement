@@ -226,7 +226,7 @@ if ($next_due <= 0) {
                                                             onclick="ew.vars.calc<?= $apartment_id . "_" . $lease_id ?>(<?= $payment['outstanding'] ?>, this.checked,this);">
                                                     </td> -->
                                                     <td><?php
-                                                                if ($payment['invoice_type_id'] == '3') {
+                                                                if ($payment['invoice_type_id'] == '3' && !empty($payment['tenant_comments'])) {
                                                                 ?>
                                                         <div class="customComment" data-bs-trigger="hover"
                                                             title="Comment"
@@ -310,7 +310,8 @@ if ($next_due <= 0) {
                                     $doc_name = $table_field_array[0]['name'];
                                     $documents = $DB_tenant->get_documents($document_category_id, $table_field, $$table_field);
                                 ?>
-                                <?php if (!empty($documents) && false) { // Disable all of documents ?>
+                                <?php if (!empty($documents) && false) { // Disable all of documents
+                                    ?>
                                 <div class="accordion-item">
                                     <div class="accordion-header">
                                         <h5 class="accordion-title">
@@ -751,7 +752,8 @@ if ($next_due <= 0) {
                                             //     $readColor = " white";
                                             // }
                                         ?>
-                                    <tr style="border-bottom:1px solid #D0D0D0; background-color: <?= $readColor ?> ">
+                                    <tr style="border-bottom:1px solid #D0D0D0; background-color: <? // echo $readColor
+                                                                                                            ?> ">
                                         <!-- <td><?php echo $type; ?></td> -->
                                         <td title="<?php echo $message; ?>">
                                             <?php
@@ -795,7 +797,7 @@ if ($next_due <= 0) {
                         <ul>
                             <?php
                             $results = $DB_tenantLease->getRenewDetails($tenant_id, $lease_id);
-
+                            if($results===false){die("No lease found for this tenant");}
                             $date_diff = round((strtotime($lease_end_date) - strtotime(date("Y-m-d"))) / 60 / 60 / 24);
                             if (!empty($results['renewal_notice_date']) && $results['renewal_notice_date'] != "0000-00-00") {
                                 $renewal_due_date = date('Y-m-d', strtotime($results['renewal_notice_date'] . "+30 days"));

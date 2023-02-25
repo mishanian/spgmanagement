@@ -16,9 +16,9 @@ function createPayment($paymentType, $DB_con)
     $Upload_Date = date("Y-m-d");
     $FileCreationNumber = 0;
     $LeasePaymentDetailID[] = 0;
-//$PaymentDate=date_format(date_create($Upload_Date), "dmy");//"DDMMYY";
+    //$PaymentDate=date_format(date_create($Upload_Date), "dmy");//"DDMMYY";
     $day = date("d");
- //   $day = 15;
+    //   $day = 15;
     $lastday = date("t");
     $body = "";
     switch ($day) {
@@ -43,9 +43,8 @@ function createPayment($paymentType, $DB_con)
             $ToDate = date("Y-m-t");
             break;
         default:
-            echo("No Need to Send on $day");
+            echo ("No Need to Send on $day");
             break;
-
     }
 
     if (!empty($FromDate)) {
@@ -64,8 +63,8 @@ function createPayment($paymentType, $DB_con)
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         $financial_last_fileno = $result[0]['FD_file'];
-//echo "LLLL=".$result[0]['FD_file'];
-//print_r($result[0]);
+        //echo "LLLL=".$result[0]['FD_file'];
+        //print_r($result[0]);
 
         $StartLine = "H";
         $Originator = setLength($financial_originator, 10, " ");; //10
@@ -85,7 +84,7 @@ function createPayment($paymentType, $DB_con)
         $FileCreationNumberString = setLength($FileCreationNumber, 4, "0");
 
 
-// Details
+        // Details
         $Counter = 0;
         if ($paymentType == 1) { //ePayment
             $paymentTypeWhere =  " payment_type_id in (1) ";
@@ -96,7 +95,7 @@ function createPayment($paymentType, $DB_con)
         }
 
 
-            $SelectSql = "SELECT lease_payment_detail_id , DBCR, due_date, amount, description, tenant_ids, VT.comments, VT.employee_id, balance, charge, payment, OI.full_name AS owner_name,  financial_institution, financial_accountNo FROM view_tenant_statement VT
+        $SelectSql = "SELECT lease_payment_detail_id , DBCR, due_date, amount, description, tenant_ids, VT.comments, VT.employee_id, balance, charge, payment, OI.full_name AS owner_name,  financial_institution, financial_accountNo FROM view_tenant_statement VT
 LEFT JOIN owner_infos OI ON OI.owner_id=VT.owner_id WHERE  sent_to_bank=0 and  $paymentTypeWhere and DBCR='c' and due_date BETWEEN '" . $FromDate . "' and '" . $ToDate . "'"; //
 
 
@@ -105,7 +104,7 @@ LEFT JOIN owner_infos OI ON OI.owner_id=VT.owner_id WHERE  sent_to_bank=0 and  $
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result) {
-//Header
+            //Header
             $body .= $StartLine . $Originator . $PaymentType . $CPA . $PaymentDueDate . $OriginatorShortName . $FinancialInstitute . $AccountNo . $FileCreationNumberString . $Filler . "\n<br>";
 
             foreach ($result as $row) {
@@ -115,7 +114,7 @@ LEFT JOIN owner_infos OI ON OI.owner_id=VT.owner_id WHERE  sent_to_bank=0 and  $
                 $LeasePaymentDetailID[] = $lease_payment_detail_id;
                 $StartLine = "D";
                 $PayeeName = setLength($owner_name, 23, " ");
-//        echo "----".$PayeeName."---";
+                //        echo "----".$PayeeName."---";
                 $PaymentDueDate = date("dmy");
                 $Originator_Reference_Number = setLength("Beaver AIT", 19, " ");
                 $FinancialInstitutionID = setLength($financial_institution, 9, "0");
@@ -128,7 +127,7 @@ LEFT JOIN owner_infos OI ON OI.owner_id=VT.owner_id WHERE  sent_to_bank=0 and  $
                 $Counter++;
             }
 
-// Tailer
+            // Tailer
             $StartLine = "T";
             $TotalNumberofPayments = setLength($NumberofPayments, 8, "0");
             $TotalValueofPayments = setLength($TotalValueofPayments, 14, "0");
@@ -140,34 +139,28 @@ LEFT JOIN owner_infos OI ON OI.owner_id=VT.owner_id WHERE  sent_to_bank=0 and  $
             //  die($SelectSql);
             $statement = $DB_con->prepare($SelectSql);
             $statement->execute();
-
-
         }
         $SelectSql = "insert into financial_distributes (FD_date, FD_Q, FD_records, FD_file, FD_from_date, FD_to_date, FD_leasePD_ids, FD_type) values ('" . $Upload_Date . "', $Q, $Counter, '$FileCreationNumber', '$FromDate', '$ToDate', '" . implode(", ", $LeasePaymentDetailID) . "' ,'$paymentType')";
-        echo $SelectSql."<br>";
+        echo $SelectSql . "<br>";
         //   die($SelectSql);
         $statement = $DB_con->prepare($SelectSql);
         $statement->execute();
-
-
     } // if (!empty($From_Date))
 
     echo "<hr>" . $body . "<hr>";
     $myfile = fopen("../files/financials/$FileCreationNumber", "w") or die("Unable to open file!");
     fwrite($myfile, str_replace("<br>", "", $body));
     fclose($myfile);
-
 }
 
 
 function setLength($theField, $len, $spacer)
 {
-//    echo "$theField-$spacer-<br>";
-    if ($spacer == " ") {
-        return substr(substr($theField, 0, $len) . str_repeat($spacer, $len - strlen($theField)), 0, $len);
-    } else {
-        return str_repeat($spacer, $len - strlen($theField)) . substr(substr($theField, 0, $len), 0, $len);
+    if (!empty($theField)) {
+        if ($spacer == " ") {
+            return substr(substr($theField, 0, $len) . str_repeat($spacer, $len - strlen($theField)), 0, $len);
+        } else {
+            return str_repeat($spacer, $len - strlen($theField)) . substr(substr($theField, 0, $len), 0, $len);
+        }
     }
 }
-
-?>

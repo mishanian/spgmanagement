@@ -13,7 +13,7 @@ if (!isset($_GET['n'])) {
 }
 if (isset($_GET['fid']) && preg_match('/^([a-f0-9]{32})$/', $_GET['fid'])) {
     $filenames = $DB_Request->getBulletin($secret, $_GET['fid']);
-	die("filenames=$filenames");
+    // die("filenames=$filenames");
     if (!empty($filenames)) {
         $filenames = explode("|", $filenames);
         $filename = $filenames[$n];

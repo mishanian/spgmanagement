@@ -51,7 +51,8 @@
 		"google/recaptcha": "^1.2.4",
 		"phpoffice/phpspreadsheet": "^1.24.1",
 		"ckeditor/ckeditor": "dev-full/stable",
-		"spipu/html2pdf": "^5.2.5"
+		"spipu/html2pdf": "^5.2.5",
+		"sentry/sdk": "^3.3.0"
 	},
 	"autoload": {
 		"psr-4": {
