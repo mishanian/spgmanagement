@@ -67,6 +67,12 @@ class Crud
                     $type = PDO::PARAM_STR;
             }
         }
+        if (is_array($param)) {
+            throw new Exception("Array not allowed for $param in CRUD->bind 77");
+        }
+        if (is_array($value)) {
+            throw new Exception("Array not allowed for $value in CRUD->bind 77");
+        }
 
         $this->stmt->bindValue($param, $value, $type);
     }
