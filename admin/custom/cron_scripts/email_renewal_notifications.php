@@ -4,6 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $today = date("Y-m-d"); // "2023-06-08"; //  // "2023-01-06"; //
+$sendToTenants = false;
 $email_body_management = "Dear Management,<br><br>The renewal notice is generated:<br><br>";
 $generatedCount = 0;
 $sentCount = 0;
@@ -122,7 +123,7 @@ foreach ($rows as $row) {
         // echo $sqlInsertInto . "<br>";
         $insertIntoStmt = $DB_con->prepare($sqlInsertInto);
         $insertIntoStmt->execute();
-        $email_body_management .= "Building: $building_name, Unit: $unit_number, Tenant: $tenant_name, End Date: $end_date, Lease ID: $lease_id";
+        $email_body_management .= "Building: $building_name, Unit: $unit_number, Tenant: $tenant_name, End Date: $end_date, Lease ID: $lease_id<br>\n";
         $generatedCount++;
     }
 }
@@ -130,7 +131,7 @@ if ($generatedCount > 0) {
     $email_body_management .= "Generated on " . date("Y-m-d H:i:s") . "<br>";
     $management_email = "info@mgmgmt.ca";
     $management_name = "SPG Management";
-    MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $management_email, $management_name, "Important - $generatedCount Lease Renewal Notice are Generated", $email_body_management, false, "", "");
+    MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $management_email, $management_name, "Important - $generatedCount Lease Renewal Notice are Generated. end date $end_date_for_sending_renewal", $email_body_management, false, "", "");
     echo "$generatedCount Generated and email to $management_email<br>";
 }
 
@@ -143,9 +144,11 @@ unset($params);
 // start to send email for 175 days before end date
 
 
-$sqlSend = "SELECT LRN.*, BI.building_name FROM lease_renewal_notice LRN
+$sqlSend = "SELECT LRN.*, LI.lease_status_id AS lease_status_id, BI.building_name FROM lease_renewal_notice LRN
 LEFT JOIN building_infos BI ON LRN.building_id=BI.building_id
+LEFT JOIN lease_infos LI ON LRN.lease_id=LI.Id
 where LRN.end_date IN ('$end_date_for_sending_renewal','$end_date_for_sending_renewal_second_try','$end_date_for_sending_renewal_third_try')
+AND LI.lease_status_id IN(1,7)
 AND $where_building";
 // echo $sqlSend;
 $Crud->query($sqlSend);
@@ -183,7 +186,10 @@ foreach ($rows as $row) {
     }
     // $tenant_email = "mishanian@yahoo.com";
     // echo "<tr><td>Send to $tenant_name</td><td>$tenant_email</td><td>$end_date</td></tr>\n";
-    MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $tenant_email, $tenant_name, "Important - Lease Renewal Notice - $building_name # $unit_number", $text, false, "", "");
+    if ($sendToTenants) {
+        MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $tenant_email, $tenant_name, "Important - Lease Renewal Notice - $building_name # $unit_number", $text, false, "", "");
+    }
+    $email_body_management .= "Building: $building_name, Unit: $unit_number, Tenant: $tenant_name, End Date: $end_date, Lease ID: $lease_id<br>\n";
     $sentCount++;
 }
 
@@ -191,7 +197,7 @@ if ($sentCount > 0) {
     $email_body_management .= "Sent on " . date("Y-m-d H:i:s") . "<br>";
     $management_email = "info@mgmgmt.ca";
     $management_name = "SPG Management";
-    MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $management_email, $management_name, "Important - $sentCount Lease Renewal Notice Sent", $email_body_management, false, "", "");
+    MySendEmail("info@mgmgmt.ca", "Info - SPG Management", $management_email, $management_name, "Important - $sentCount Lease Renewal Notice Sent - end date $end_date_for_sending_renewal", $email_body_management, false, "", "");
     echo "$sentCount Sent and emailed to $management_email<br>";
 }
 

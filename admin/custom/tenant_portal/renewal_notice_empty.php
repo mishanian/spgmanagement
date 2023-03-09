@@ -10,6 +10,9 @@ $empty = 1;
 $logo = "";
 $is_signed = 0;
 $sign = "";
+$terms_en = "";
+$terms_fr = "";
+$next_length_of_lease = 365;
 include('./renewal_notice_content.php')
 ?>
 <!DOCTYPE html>
@@ -126,6 +129,8 @@ include('./renewal_notice_content.php')
             $insertIntoStmt->execute();
         } else {
             extract($row);
+            // die(var_dump($terms_en));
+            // die(var_dump($row));
             // $params['building_id'] = $building_id;
             // $params['apartment_id'] = $apartment_id;
             // $params['employee_id'] = $employee_id;

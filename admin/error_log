@@ -1,9 +1,0 @@
-[21-Feb-2023 10:07:03 America/New_York] PHP Warning:  Array to string conversion in /home/spgmgmt/public_html/pdo/Class.Crud.php on line 71
-[22-Feb-2023 19:56:55 America/New_York] PHP Warning:  Undefined array key "company_id" in /home/spgmgmt/public_html/admin/src/userfn.php on line 189
-[22-Feb-2023 19:56:55 America/New_York] PHP Warning:  Undefined array key "company_id" in /home/spgmgmt/public_html/admin/src/userfn.php on line 189
-[23-Feb-2023 13:16:55 America/New_York] PHP Warning:  Array to string conversion in /home/spgmgmt/public_html/pdo/Class.Crud.php on line 71
-[23-Feb-2023 13:16:55 America/New_York] PHP Warning:  hash_file(files/bulletins/lease_payments_40496.pdf): Failed to open stream: No such file or directory in /home/spgmgmt/public_html/admin/models/Bulletins.php on line 2702
-[23-Feb-2023 13:16:55 America/New_York] PHP Warning:  Array to string conversion in /home/spgmgmt/public_html/pdo/Class.Crud.php on line 71
-[23-Feb-2023 13:16:55 America/New_York] PHP Warning:  hash_file(files/bulletins/lease_payments_40496.pdf): Failed to open stream: No such file or directory in /home/spgmgmt/public_html/admin/models/Bulletins.php on line 2702
-[23-Feb-2023 13:22:09 America/New_York] PHP Warning:  Array to string conversion in /home/spgmgmt/public_html/pdo/Class.Crud.php on line 71
-[23-Feb-2023 13:22:10 America/New_York] PHP Warning:  Array to string conversion in /home/spgmgmt/public_html/pdo/Class.Crud.php on line 71

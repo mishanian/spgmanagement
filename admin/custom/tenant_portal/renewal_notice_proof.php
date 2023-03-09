@@ -6,6 +6,9 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 $pdf = 1;
 $email = 0;
+$terms_en = "";
+$terms_fr = "";
+$next_length_of_lease = 365;
 include('./renewal_notice_content.php')
 ?>
 <!DOCTYPE html>
@@ -16,23 +19,22 @@ include('./renewal_notice_content.php')
     <title>Renewal Notice</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-    table {
-        width: 100%;
-    }
+        table {
+            width: 100%;
+        }
 
-    #signature {
-        width: 300px;
-        height: 200px;
-        border: 1px solid black;
-    }
+        #signature {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
     </style>
     <style media="print">
-    p {
-        line-height: 150%;
-    }
+        p {
+            line-height: 150%;
+        }
     </style>
 </head>
 

@@ -68,10 +68,10 @@ class Crud
             }
         }
         if (is_array($param)) {
-            throw new Exception("Array not allowed for $param in CRUD->bind 77");
+            throw new Exception("Array not allowed for param= " . implode(",", $param) . " in CRUD->bind 71");
         }
         if (is_array($value)) {
-            throw new Exception("Array not allowed for $value in CRUD->bind 77");
+            throw new Exception("Array not allowed for value= " . implode(",", $value) . " in CRUD->bind 74");
         }
 
         $this->stmt->bindValue($param, $value, $type);

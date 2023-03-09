@@ -9,6 +9,9 @@ if (empty($_GET['pdf'])) {
 } else {
     $pdf = 1;
 }
+$terms_en = "";
+$terms_fr = "";
+$next_length_of_lease = 365;
 include('./renewal_notice_content.php')
 ?>
 <!DOCTYPE html>

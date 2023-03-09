@@ -32,6 +32,9 @@ if (empty($LeaseInfos)) {
     $renewal_notification_day = $DB_company->getRenewalNotificationDay($company_id);
 
     $results = $DB_tenantLease->getRenewDetails($tenant_id, $lease_id);
+    if (empty($result)) {
+        die("There is no lease linked to the tenant yet. you may inform technical support <a href='mailto:techsupport@spgmanagement.com'>techsupport@spgmanagement.com</a> by sending this error : home page, no lease linked tid: $tenant_id, lid: $lease_id");
+    }
     // die(var_dump($results));
     $date_diff = round((strtotime($lease_end_date) - strtotime(date("Y-m-d"))) / 60 / 60 / 24);
     if (!in_array($results['lease_status_id'], [8, 9]) && $date_diff <= $renewal_notification_day && !empty($results) && $results['renewal'] == 0 && empty($_GET['skip'])) {
